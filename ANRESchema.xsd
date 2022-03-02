@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.anre.ro/ANRESchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="anre" xmlns:anre="http://www.anre.ro/ANRESchema">
+	<xs:simpleType name="ConnectionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="MONOFAZAT"/>
+			<xs:enumeration value="TRIFAZAT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConsumptionCategory">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C1"/>
+			<xs:enumeration value="C2"/>
+			<xs:enumeration value="C3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContractType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FURNIZARE"/>
+			<xs:enumeration value="RETEA"/>
+			<xs:enumeration value="TRANSPORT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CounterType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACTIVE"/>
+			<xs:enumeration value="GAS"/>
+			<xs:enumeration value="REACTIVE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="County">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AB"/>
+			<xs:enumeration value="AG"/>
+			<xs:enumeration value="AR"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="BC"/>
+			<xs:enumeration value="BH"/>
+			<xs:enumeration value="BN"/>
+			<xs:enumeration value="BR"/>
+			<xs:enumeration value="BT"/>
+			<xs:enumeration value="BV"/>
+			<xs:enumeration value="BZ"/>
+			<xs:enumeration value="CJ"/>
+			<xs:enumeration value="CL"/>
+			<xs:enumeration value="CS"/>
+			<xs:enumeration value="CT"/>
+			<xs:enumeration value="CV"/>
+			<xs:enumeration value="DB"/>
+			<xs:enumeration value="DJ"/>
+			<xs:enumeration value="GJ"/>
+			<xs:enumeration value="GL"/>
+			<xs:enumeration value="GR"/>
+			<xs:enumeration value="HD"/>
+			<xs:enumeration value="HR"/>
+			<xs:enumeration value="IF"/>
+			<xs:enumeration value="IL"/>
+			<xs:enumeration value="IS"/>
+			<xs:enumeration value="MH"/>
+			<xs:enumeration value="MM"/>
+			<xs:enumeration value="MS"/>
+			<xs:enumeration value="NT"/>
+			<xs:enumeration value="OT"/>
+			<xs:enumeration value="PH"/>
+			<xs:enumeration value="SB"/>
+			<xs:enumeration value="SJ"/>
+			<xs:enumeration value="SM"/>
+			<xs:enumeration value="SV"/>
+			<xs:enumeration value="TL"/>
+			<xs:enumeration value="TM"/>
+			<xs:enumeration value="TR"/>
+			<xs:enumeration value="VL"/>
+			<xs:enumeration value="VN"/>
+			<xs:enumeration value="VS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Email">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="Guid">
+		<xs:restriction base="xs:string">
+			<xs:length value="32"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Incorporation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AltePersoaneJuridice"/>
+			<xs:enumeration value="AutoritateInstitutiePublica"/>
+			<xs:enumeration value="CompanieNationala"/>
+			<xs:enumeration value="Fundatie"/>
+			<xs:enumeration value="InstitutCulturalAlUnuiStat"/>
+			<xs:enumeration value="InstitutieDeCredit"/>
+			<xs:enumeration value="MisiuneDiplomatica"/>
+			<xs:enumeration value="OficiuConsular"/>
+			<xs:enumeration value="OrganizatieAsociatieCuPersonalitateJuridica"/>
+			<xs:enumeration value="OrganizatiePatronala"/>
+			<xs:enumeration value="OrganizatieSindicala"/>
+			<xs:enumeration value="RegieAutonoma"/>
+			<xs:enumeration value="ReprezentantaComercialaSiEconomicaAleAltuiStat"/>
+			<xs:enumeration value="ReprezentantaDinRomaniaPentruPJStraina"/>
+			<xs:enumeration value="SocietateComerciala"/>
+			<xs:enumeration value="SocietateCooperativa"/>
+			<xs:enumeration value="SocietateNationala"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LegalIDType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CNP"/>
+			<xs:enumeration value="CUI"/>
+			<xs:enumeration value="OTHER"/>
+			<xs:enumeration value="PASSPORT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NetworkType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CA"/>
+			<xs:enumeration value="D"/>
+			<xs:enumeration value="T"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Phone">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PlaceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CLC"/>
+			<xs:enumeration value="POD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TechnicalDataStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CONECTAT"/>
+			<xs:enumeration value="DECONECTAT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Address" type="anre:Address"/>
+	<xs:complexType name="Address">
+		<xs:sequence>
+			<xs:element name="city" type="anre:City" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unitate Administrativ Teritoriala</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="county" type="anre:County" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Judetul</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Extra address information like Building, Stair, Apartment, Floor</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Street number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="position" type="anre:Position" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="City" type="anre:City"/>
+	<xs:complexType name="City">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>SIRUTA code as per https://data.gov.ro/dataset/unitati-administrativ-teritoriale-coduri-siruta/resource/6772b5e3-2444-4bf2-8dcb-162fce602d28f</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Client" type="anre:Client"/>
+	<xs:complexType name="Client">
+		<xs:sequence>
+			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="legalID" type="anre:LegalID" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Contract" type="anre:Contract"/>
+	<xs:complexType name="Contract">
+		<xs:sequence>
+			<xs:element name="additionalDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="additionalNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="client" type="anre:Client" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="executionAddress" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="supplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="type" type="anre:ContractType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContractSignedByClient" type="anre:ContractSignedByClient"/>
+	<xs:complexType name="ContractSignedByClient">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LegalID" type="anre:LegalID"/>
+	<xs:complexType name="LegalID">
+		<xs:sequence/>
+		<xs:attribute name="number" use="optional" type="xs:string"/>
+		<xs:attribute name="type" use="optional" type="anre:LegalIDType"/>
+	</xs:complexType>
+	<xs:element name="Message" type="anre:Message"/>
+	<xs:complexType name="Message">
+		<xs:sequence>
+			<xs:element name="authorID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="authorName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Human readable description of the message in Romanian.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="messageID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Operator" type="anre:Operator"/>
+	<xs:complexType name="Operator">
+		<xs:sequence>
+			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="legalID" type="anre:LegalID" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Place" type="anre:Place"/>
+	<xs:complexType name="Place">
+		<xs:sequence>
+			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PlaceCreatedByOperator" type="anre:PlaceCreatedByOperator"/>
+	<xs:complexType name="PlaceCreatedByOperator">
+		<xs:annotation>
+			<xs:documentation>Submitted when a Operator successfully registers inside it's database a new Place of consumption (POD/CLC)</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The operator sending the message</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>The newly created Place (POD/CLC)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PlaceUpdatedByOperator" type="anre:PlaceUpdatedByOperator"/>
+	<xs:complexType name="PlaceUpdatedByOperator">
+		<xs:sequence>
+			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Position" type="anre:Position"/>
+	<xs:complexType name="Position">
+		<xs:annotation>
+			<xs:documentation>Coordinates must be in accordance
+with WGS84 and must use an ISO 6709 format as follows: [+/-]NN.NNNNNN.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence/>
+		<xs:attribute name="geohash" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>WGS84 GPS position encoded in 10 digits GeoHash as per https://en.wikipedia.org/wiki/Geohash
+Example for Bucharest center: sxfsccrhnq</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="latitude" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Example latitude value for Bucharest center: 44.436339</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="longitude" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Example longitude value for Bucharest center: 26.102571</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Supplier" type="anre:Supplier"/>
+	<xs:complexType name="Supplier">
+		<xs:sequence>
+			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="legalID" type="anre:LegalID" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TechnicalData" type="anre:TechnicalData"/>
+	<xs:complexType name="TechnicalData">
+		<xs:sequence>
+			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterIndexValue" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valoarea citita a contorului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterSeries" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Serie contor</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterType" type="anre:CounterType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="smartMeter" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="status" type="anre:TechnicalDataStatus" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TechnicalDataElectricity" type="anre:TechnicalDataElectricity"/>
+	<xs:complexType name="TechnicalDataElectricity">
+		<xs:annotation>
+			<xs:documentation>Putere aprobata la consum</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:TechnicalData">
+				<xs:sequence>
+					<xs:element name="approvedConsumptionPower" type="xs:double" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approvedProducedPower" type="xs:double" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Putere aprobata la productie</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="voltageLevel" type="xs:double" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TechnicalDataGas" type="anre:TechnicalDataGas"/>
+	<xs:complexType name="TechnicalDataGas">
+		<xs:complexContent>
+			<xs:extension base="anre:TechnicalData">
+				<xs:sequence>
+					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="debit" type="xs:double" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="pressure" type="xs:double" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
