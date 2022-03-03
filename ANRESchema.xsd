@@ -206,7 +206,11 @@
 	<xs:element name="LegalID" type="anre:LegalID"/>
 	<xs:complexType name="LegalID">
 		<xs:sequence/>
-		<xs:attribute name="number" use="optional" type="xs:string"/>
+		<xs:attribute name="number" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>CNP pentru cartea de identitate, CUI pentru societati, Numar pasaport pentru PASAPORT</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 		<xs:attribute name="type" use="optional" type="anre:LegalIDType"/>
 	</xs:complexType>
 	<xs:element name="Message" type="anre:Message"/>
@@ -235,8 +239,16 @@
 		<xs:sequence>
 			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Poate fi de tip TechnicalDataElectricity sau TechnicalDataGas</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="PlaceCreatedByOperator" type="anre:PlaceCreatedByOperator"/>
@@ -264,8 +276,16 @@
 	<xs:element name="PlaceUpdatedByOperator" type="anre:PlaceUpdatedByOperator"/>
 	<xs:complexType name="PlaceUpdatedByOperator">
 		<xs:sequence>
-			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Operatorul care a creat acest loc de consum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Locul de consum nou creat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Position" type="anre:Position"/>
@@ -302,7 +322,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 	<xs:element name="TechnicalData" type="anre:TechnicalData"/>
 	<xs:complexType name="TechnicalData">
 		<xs:sequence>
-			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="1" maxOccurs="1">
+			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
 				</xs:annotation>
@@ -332,14 +352,26 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
-					<xs:element name="approvedConsumptionPower" type="xs:double" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="approvedProducedPower" type="xs:double" minOccurs="0" maxOccurs="1">
+					<xs:element name="approvedConsumptionPower" type="xs:double" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Putere aprobata la productie</xs:documentation>
+							<xs:documentation>Putere aprobata la consum in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="voltageLevel" type="xs:double" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="approvedProducedPower" type="xs:double" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Putere aprobata la productie in locul de consum, masurata in Watt</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>conform tipului de date ConnectionType</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="voltageLevel" type="xs:double" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Tensiunea disponibila in locul de consum, masurata in Volt</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -350,9 +382,17 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
 					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="debit" type="xs:double" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="debit" type="xs:double" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Debitul disponibil in locul de consum</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="pressure" type="xs:double" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="pressure" type="xs:double" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Presiunea disponibila in locul de consum</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
