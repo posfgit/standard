@@ -2,7 +2,7 @@
 
 Documentatia generata in format HTML poate fi accesata ./doc/ANRESchema.html
 
-Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos.
+Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos. Mentionez ca aceasta schema este cu titlu de concept de schimb de mesaje, fluxurile desenate ne fiind cele finale care vor fi implementate conform regulamentului.
 
 ![BigPicture](images/bigpicture.png)
 
