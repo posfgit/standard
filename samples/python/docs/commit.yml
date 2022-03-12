@@ -1,0 +1,10 @@
+summary: "Commit Kafka index"
+description: "Commit index of the last pooled message in the Kafka system."
+consumes:
+- "application/xml"
+- "application/json"
+produces:
+- "application/json"
+responses:
+  200:
+    description: "Committed successfully"

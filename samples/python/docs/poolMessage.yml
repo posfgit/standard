@@ -1,0 +1,13 @@
+summary: "Pool messages from Kafka topic"
+description: "This method pools messages from the Kafka <b>OUT</b> topic so that suppliers and operators can read what POSF sent them. <br/>In header {kafka-offset} will return the offset of of the current message in the queue.<br/><br/>Please set <b>Accept</b> header to application/json or application/xml to specify desired response format"
+consumes:
+- "application/xml"
+- "application/json"
+produces:
+- "application/xml"
+- "application/json"
+responses:
+  204:
+    description: "No content"
+  200:
+    description: "Message in XML or JSON format <anre:Message> ... </anre:Message>"    

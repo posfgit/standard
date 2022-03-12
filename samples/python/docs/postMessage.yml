@@ -1,0 +1,19 @@
+summary: "Post message"
+description: "This method posts a message in the Kafka IN topic for the POSF system to be informed by the operator/supplier sent message"
+consumes:
+- "application/xml"
+- "application/json"
+produces:
+- "application/json"
+- "application/xml"
+parameters:
+- in: "body"
+  name: "body"
+  description: "The message in XML/JSON format according to POSF schema"
+  required: true
+  schema:
+    type: "string"
+    example : "<anre:Message>...</anre:Message>"
+responses:
+  200:
+    description: "Message posted"
