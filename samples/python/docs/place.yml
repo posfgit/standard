@@ -1,0 +1,16 @@
+summary: "Get a place by it's corresponding code"
+description: "This method return a place based on the unique assigned number.<br/><br/>Please set <b>Accept</b> header to application/json or application/xml to specify desired response format"
+produces:
+- "application/json"
+- "application/xml"
+parameters:
+- in: "path"
+  name: "code"
+  description: "The unique code of the Place as mentioned on the invoice"
+  required: true
+  schema:
+    type: "string"
+    example : "112232212356"
+responses:
+  200:
+    description: "XML or JSON representation of the Place"
