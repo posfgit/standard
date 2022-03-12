@@ -33,7 +33,7 @@ Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale 
 # Tipuri de mesaje, emitatori si receptori
 
 | Denumire mesaj | Scop | Sursa | Destinatie | Redirectionat la | Observatii |
-|:--|:--|:--|:--|:--| :--|
+|:--|:------|:--|:--|:--| :--|
 |PlaceCreatedByOperator|Instiintare POSF despre un nou loc de consum|Operatorul|POSF|Nimeni| |
 |ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat clientul| Furnizor,WebPOSF | POSF | Operator, WebPOSF| |
 |ContractNetworkSignedByClient|Contract de retea semnat de client|WebPOSF, Operator|POSF|WebPOSF,Furnizor| |
