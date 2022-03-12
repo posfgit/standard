@@ -41,7 +41,7 @@ python demoPython.py
 7. Se foloseste interfata disponibila la adresa http://localhost:5000/swagger/ pentru a testa API expuse de sistem.
 
 - /place/{code} - accepte orice String ca parametru
-- /broker/postMessage - se testeaza cu mesajul [PlaceCreatedByOperator](../../PlaceCreatedByOperator.xml) dar si cu orice alt String/JSON
+- /broker/postMessage - se testeaza cu mesajul [PlaceCreatedByOperator](../../PlaceCreatedByOperator.xml) dar si cu orice alt String/JSON. Mesajele postate vor putea fi citite cu ajutorul metodei poolMessage
 - /broker/poolMessage - doar dupa ce a fost postat un mesaj
 
 8. Cateva exemple folosind CURL:
