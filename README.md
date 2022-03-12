@@ -21,8 +21,8 @@ PlaceCreatedByOperator
 Pentru fiecare actor care interactioneaza cu API POSF se vor crea 2 cozi de mesaje prin care se va comunica, cozi de mesaje gestionate in tehnologia Kafka.
 ![Kafka pub/sub](https://docs.cloudera.com/documentation/enterprise/6/6.3/images/kafka_topics.png)
 
-- POSF.Operator1.IN - este o coada de mesaje unde scrie POSF iar Operator1 citeste
-- POSF.Operator1.OUT - este o coada de mesaje unde scrie Operator1 iar POSF citeste
+- POSF.Operator1.IN - este o coada de mesaje unde scrie Operator1 iar POSF  citeste
+- POSF.Operator1.OUT - este o coada de mesaje unde scrie POSF iar Operator1 citeste
 
 Unde Operator1 este codul individualizat al fiecarui actor de tip furnizor sau operator.
 
