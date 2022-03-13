@@ -1,6 +1,8 @@
 import atexit
 from ctypes import *
+# depending on environment you need to change the address of librdkafka.dll
 CDLL("C:/Users/user/anaconda3/Lib/site-packages/confluent_kafka.libs/librdkafka-5d2e2910.dll")
+# other location C:\Users\user\AppData\Local\Programs\Python\Python39\Lib\site-packages\confluent_kafka.libs\librdkafka-mmmmmm.dll
 from confluent_kafka import Producer
 from confluent_kafka import Consumer
 from confluent_kafka.admin import AdminClient, NewTopic
