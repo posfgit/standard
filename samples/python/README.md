@@ -21,6 +21,10 @@ docker container top zookeeper
 3. Se instaleaza uneltele pentru serverul API scris in Python 3
 
 ```
+git clone https://github.com/posfgit/standard/
+
+cd samples/python
+
 pip install confluent-kafka
 pip install Flask
 pip install flasgger
@@ -28,12 +32,12 @@ pip install flasgger
 python --version
 ```
 
-4. Se modifica in fisierul demoPython.py adresa IP 192.168.88.180 in adresa IP a masinii locale.
+4. Se modifica in fisierul demoServer.py adresa IP 192.168.88.180 in adresa IP a masinii locale, nu localhost.
 
-5. Se porneste serverul demoPython.py
+5. Se porneste serverul demoServer.py
 
 ```
-python demoPython.py
+python demoServer.py
 ```
 
 6. Cu ajutorul unui software care permite vizualizarea Topics in Kafka, cum ar fi [OffsetExplorer](https://www.kafkatool.com/), se verifica in serverul de Kafkanou  creat existenta a 4 Topics denumite "POSF.Supplier1.IN", "POSF.Supplier1.OUT", "POSF.Operator1.IN", "POSF.Operator1.OUT" 
