@@ -48,9 +48,10 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 
 | Denumire mesaj | Scop | Sursa | Destinatie | Redirectionat la | Observatii |
 |:--|:------|:--|:--|:--| :--|
-|PlaceCreatedByOperator|Instiintare POSF despre un nou loc de consum|Operatorul|POSF|Nimeni| |
-|ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat clientul| Furnizor,WebPOSF | POSF | Operator, WebPOSF| |
-|ContractNetworkSignedByClient|Contract de retea semnat de client|WebPOSF, Operator|POSF|WebPOSF,Furnizor| |
+|PlaceCreatedByOperator|Instiintare POSF despre un nou loc de consum|Operatorul|POSF|Nimeni|Art 25, literia i |
+|PlaceUpdatedByOperator|Instiintare POSF despre actualizare loc de consum|Operatorul|POSF|Nimeni|Art 25, literia j |
+|ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat clientul| Furnizor,WebPOSF | POSF | Operator, WebPOSF|Art 27, litera g |
+|ContractNetworkSignedByClient|Contract de retea semnat de client|WebPOSF, Operator|POSF|WebPOSF,Furnizor| Art 22, litera e|
 |ContractNetworkSignedByOperator|Contract de retea semnat de client|Operator|POSF|WebPOSF,Furnizor| |
 |ContractNetworkSignedBySupplier|Contract de retea semnat de client|WebPOSF, Supplier|POSF|WebPOSF,Operator| |
 
