@@ -30,6 +30,18 @@ Cozile de mesaje sunt accesate folosind un API de interogare (post/pool) pentru 
 
 Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. 
 
+# Mesajele vehiculate in sistem
+
+Toate mesajele au o structura comuna derivata din tipul **Message** care reprezinta un header comun compus din urmatoarele campuri
+
+|Camp|Explicatie|
+|:--|:--|
+|authorID|ID asignat de POSF pentru sistemul IT care emite mesajul|
+|authorName|Nume de cod asignat de POSF pentru sistemul IT care emite mesajul|
+|description|Descriere in text liber al mesajului|
+|messageID|identificator unic al mesajului in format GUID|
+|timestamp|data ora minut secunda la care a fost emis creat mesajul|
+
 # Tipuri de mesaje, emitatori si receptori
 
 | Denumire mesaj | Scop | Sursa | Destinatie | Redirectionat la | Observatii |
@@ -45,3 +57,17 @@ Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale 
 Diagrama de mai jos prezinta fluxul pe care mesajul ContractNetworkSignedBySupplier il parcurge in interiorul sistemului POSF, de la receptie in coada POSF.Supplier.IN pana cand este transmis in cozile de mesaje ale aplicatiei Web si ale operatorului respectiv.
 
 ![ContractNEtworkSignedBySupplier diagram](images/messagepath.png)
+
+# Formatul valorilor
+
+|Tip camp|Format|Exemplu|Observatii|
+|:---|:---|:------|:------|
+|date|YYYY-MM-DD|2022-03-14| |
+|datetime|ISO-8601|2022-03-14T05:51:28+0000||
+|decimal|numar cu zecimale|123.456, +1234.456, -1234.456, -.456, or -456.|Numar cu separator de zecimale . si fara separator la mii sau spatii|
+|boolean|sir de caractere|true, false|cu litere mici, fara spatii|
+|string|sir de carcatere|Strada Morii, Calea Floreasca, |Fara spatii la inceput sau la sfarsit|
+
+
+
+
