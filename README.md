@@ -1,6 +1,6 @@
 # Propunere de lucru pentru specificatia tehnica de interconectare a sistemului POSF cu furnizorii si operatorii
 
-Documentatia generata in format PDF poate fi accesata aici [Schema PDF](./ANRESchema.doc)
+Documentatia generata in format PDF poate fi accesata aici [Schema PDF](./ANRESchema.pdf)
 
 Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos.
 
