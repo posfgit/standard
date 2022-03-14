@@ -76,6 +76,12 @@
 	<xs:simpleType name="Email">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
+	<xs:simpleType name="FUIType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DESEMNAT"/>
+			<xs:enumeration value="NOMINALIZAT"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Guid">
 		<xs:restriction base="xs:string">
 			<xs:length value="32"/>
@@ -175,6 +181,7 @@
 		<xs:sequence>
 			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="legalID" type="anre:LegalID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="posfUser" type="xs:string" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Contract" type="anre:Contract"/>
@@ -189,9 +196,41 @@
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="previousSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="startingDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="supplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="type" type="anre:ContractType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContractCancelledByClient" type="anre:ContractCancelledByClient"/>
+	<xs:complexType name="ContractCancelledByClient">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ContractCancelledBySupplier" type="anre:ContractCancelledBySupplier"/>
+	<xs:complexType name="ContractCancelledBySupplier">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ContractNetworkSignedByOperator" type="anre:ContractNetworkSignedByOperator"/>
+	<xs:complexType name="ContractNetworkSignedByOperator">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="ContractSignedByClient" type="anre:ContractSignedByClient"/>
 	<xs:complexType name="ContractSignedByClient">
@@ -202,6 +241,24 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ContractSignedBySupplier" type="anre:ContractSignedBySupplier"/>
+	<xs:complexType name="ContractSignedBySupplier">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Covention" type="anre:Covention"/>
+	<xs:complexType name="Covention">
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="LegalID" type="anre:LegalID"/>
 	<xs:complexType name="LegalID">
@@ -238,7 +295,11 @@
 	<xs:complexType name="Place">
 		<xs:sequence>
 			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>reprezinta numarul POD sau CLC asa cum se regaseste in factura</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Poate fi de tip TechnicalDataElectricity sau TechnicalDataGas</xs:documentation>
@@ -275,18 +336,22 @@
 	</xs:complexType>
 	<xs:element name="PlaceUpdatedByOperator" type="anre:PlaceUpdatedByOperator"/>
 	<xs:complexType name="PlaceUpdatedByOperator">
-		<xs:sequence>
-			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Operatorul care a creat acest loc de consum</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Locul de consum nou creat</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-		</xs:sequence>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Operatorul care a creat acest loc de consum</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Locul de consum nou creat</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Position" type="anre:Position"/>
 	<xs:complexType name="Position">
@@ -316,6 +381,8 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 	<xs:complexType name="Supplier">
 		<xs:sequence>
 			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="fuiType" type="anre:FUIType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="isFUI" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="legalID" type="anre:LegalID" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -338,8 +405,16 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="counterType" type="anre:CounterType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>data documentului tehnic</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>numarul documentului tehnic</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="smartMeter" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="status" type="anre:TechnicalDataStatus" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
