@@ -2,7 +2,7 @@
 
 Documentatia generata in format PDF poate fi accesata aici [Schema PDF](./ANRESchema.pdf)
 
-Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos. Mentionez ca aceasta schema este cu titlu de concept de schimb de mesaje, fluxurile desenate ne fiind cele finale care vor fi implementate conform regulamentului.
+Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos.  Mentionez ca aceasta schema este cu titlu de concept de schimb de mesaje, fluxurile desenate ne fiind cele finale care vor fi implementate conform regulamentului.
 
 ![BigPicture](images/bigpicture.png)
 
@@ -28,6 +28,8 @@ Unde Operator1 este codul individualizat al fiecarui actor de tip furnizor sau o
 
 Cozile de mesaje sunt accesate folosind un API de interogare (post/pool) pentru care exista un sample care poate fi instalat local [aici SAMPLE API](samples/python/). Metoda push va scrie in coada .IN iar metoda pool va citi din coada .OUT. Recomandam instalarea locala a sample-ului si exersarea metodelor pentru a transmite feedback cu privire la necesitatile tehnologice identificare.
 
+![API sistem](images/apiInterface.png) 
+
 Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. 
 
 # Mesajele vehiculate in sistem
@@ -51,6 +53,7 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |ContractNetworkSignedByClient|Contract de retea semnat de client|WebPOSF, Operator|POSF|WebPOSF,Furnizor| |
 |ContractNetworkSignedByOperator|Contract de retea semnat de client|Operator|POSF|WebPOSF,Furnizor| |
 |ContractNetworkSignedBySupplier|Contract de retea semnat de client|WebPOSF, Supplier|POSF|WebPOSF,Operator| |
+
 
 # Mesajul ContractNetworkSignedBySupplier
 
