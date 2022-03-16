@@ -190,10 +190,22 @@
 			<xs:element name="additionalDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="additionalNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="client" type="anre:Client" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="executionAddress" type="anre:Address" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="expirationDate" type="xs:date" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>data de expirare a contractului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="id" type="anre:Guid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Identificator unic al contractului, folosit si in actele aditionale ulterioare</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="offerCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="previousSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
@@ -222,6 +234,46 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ContractChangedInfo" type="anre:ContractChangedInfo"/>
+	<xs:complexType name="ContractChangedInfo">
+		<xs:annotation>
+			<xs:documentation>Emis cand se actualizeaza date pe contract care nu implica activitati in fluxul informatic</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Descrierea motivelor pentru care au fost solicitate mai multe informatii</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContractMoreInfo" type="anre:ContractMoreInfo"/>
+	<xs:complexType name="ContractMoreInfo">
+		<xs:annotation>
+			<xs:documentation>Trimis de orice parte care solicita mai multe informatii</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Descrierea motivelor pentru care au fost solicitate mai multe informatii</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContractNetworkCancelledByOperator" type="anre:ContractNetworkCancelledByOperator"/>
+	<xs:complexType name="ContractNetworkCancelledByOperator">
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ContractNetworkSignedByClient" type="anre:ContractNetworkSignedByClient"/>
+	<xs:complexType name="ContractNetworkSignedByClient">
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="ContractNetworkSignedByOperator" type="anre:ContractNetworkSignedByOperator"/>
 	<xs:complexType name="ContractNetworkSignedByOperator">
 		<xs:complexContent>
@@ -232,15 +284,17 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ContractNetworkSignedBySupplier" type="anre:ContractNetworkSignedBySupplier"/>
+	<xs:complexType name="ContractNetworkSignedBySupplier">
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="ContractSignedByClient" type="anre:ContractSignedByClient"/>
 	<xs:complexType name="ContractSignedByClient">
-		<xs:complexContent>
-			<xs:extension base="anre:Message">
-				<xs:sequence>
-					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ContractSignedBySupplier" type="anre:ContractSignedBySupplier"/>
 	<xs:complexType name="ContractSignedBySupplier">
@@ -252,13 +306,54 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Covention" type="anre:Covention"/>
-	<xs:complexType name="Covention">
+	<xs:element name="ContractTransferredToFUI" type="anre:ContractTransferredToFUI"/>
+	<xs:complexType name="ContractTransferredToFUI">
 		<xs:sequence>
+			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Convention" type="anre:Convention"/>
+	<xs:complexType name="Convention">
+		<xs:annotation>
+			<xs:documentation>Contract de retea</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="activeSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="unbounded"/>
 			<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ConventionSignedByClient" type="anre:ConventionSignedByClient"/>
+	<xs:complexType name="ConventionSignedByClient">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ConventionSignedByOperator" type="anre:ConventionSignedByOperator"/>
+	<xs:complexType name="ConventionSignedByOperator">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ConventionSignedBySupplier" type="anre:ConventionSignedBySupplier"/>
+	<xs:complexType name="ConventionSignedBySupplier">
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="LegalID" type="anre:LegalID"/>
 	<xs:complexType name="LegalID">
@@ -273,8 +368,16 @@
 	<xs:element name="Message" type="anre:Message"/>
 	<xs:complexType name="Message">
 		<xs:sequence>
-			<xs:element name="authorID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="authorName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="authorID" type="anre:Guid" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ID asignat de POSF pentru sistemul IT care emite mesajul</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="authorName" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Nume de cod asignat de POSF pentru sistemul IT care emite mesajul</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Human readable description of the message in Romanian.</xs:documentation>
@@ -333,6 +436,14 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="PlaceDisconnectedByOperator" type="anre:PlaceDisconnectedByOperator"/>
+	<xs:complexType name="PlaceDisconnectedByOperator">
+		<xs:sequence>
+			<xs:element name="client" type="anre:Client" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="PlaceUpdatedByOperator" type="anre:PlaceUpdatedByOperator"/>
 	<xs:complexType name="PlaceUpdatedByOperator">
@@ -432,7 +543,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 							<xs:documentation>Putere aprobata la consum in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="approvedProducedPower" type="xs:double" minOccurs="0" maxOccurs="1">
+					<xs:element name="approvedProducedPower" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Putere aprobata la productie in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
@@ -442,7 +553,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 							<xs:documentation>conform tipului de date ConnectionType</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="voltageLevel" type="xs:double" minOccurs="1" maxOccurs="1">
+					<xs:element name="voltageLevel" type="xs:decimal" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tensiunea disponibila in locul de consum, masurata in Volt</xs:documentation>
 						</xs:annotation>
@@ -457,13 +568,13 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
 					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="debit" type="xs:double" minOccurs="1" maxOccurs="1">
+					<xs:element name="debit" type="xs:decimal" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Debitul disponibil in locul de consum</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="pressure" type="xs:double" minOccurs="1" maxOccurs="1">
+					<xs:element name="pressure" type="xs:decimal" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Presiunea disponibila in locul de consum</xs:documentation>
 						</xs:annotation>
