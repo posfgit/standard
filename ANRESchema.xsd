@@ -334,7 +334,7 @@
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1">
+					<xs:element name="info" type="xs:string" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Descrierea motivelor pentru care au fost solicitate mai multe informatii</xs:documentation>
 						</xs:annotation>
@@ -352,7 +352,7 @@
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="description" type="xs:string" minOccurs="1" maxOccurs="1">
+					<xs:element name="info" type="xs:string" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Descrierea motivelor pentru care au fost solicitate mai multe informatii</xs:documentation>
 						</xs:annotation>
