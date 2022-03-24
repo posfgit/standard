@@ -555,6 +555,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:element name="messageID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
+		<xs:attribute name="type" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Tipul mesajului, va fi identic cu numele tag-ului Root al mesajului XML: ContractSignedByClient, PlaceCreatedByOperator, etc.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="Operator" type="anre:Operator"/>
 	<xs:complexType name="Operator">
