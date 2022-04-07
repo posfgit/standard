@@ -40,21 +40,59 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |:--|:--|
 |authorID|ID asignat de POSF pentru sistemul IT care emite mesajul|
 |authorName|Nume de cod asignat de POSF pentru sistemul IT care emite mesajul|
+|correlationID|ID unic (guid) atribuit de cel care initiaza sesiunea de comunicare cu POSF, folosit ulterior de cei care raspund la mesaje din cadrul aceleiasi discutii virtuale. De exemplu se creaza un contract semnat de client, se publica in POSF, pentru o usoara urmarire a firului se va genere un ID unic care va fi pus si pe raspunsul din partea sistemelor furnizorului sau operatorului. Un ID de corelare, cunoscut și sub numele de ID de tranzit, este o valoare de identificare unică care este atașată solicitărilor și mesajelor care permit referirea la o anumită tranzacție sau lanț de evenimente.|
 |description|Descriere in text liber al mesajului|
 |messageID|identificator unic al mesajului in format GUID|
 |timestamp|data ora minut secunda la care a fost emis creat mesajul|
+|type|Tipul mesajului, va fi identic cu numele tag-ului Root al mesajului XML: ContractSignedByClient, PlaceCreatedByOperator, etc.|
+
 
 # Tipuri de mesaje, emitatori si receptori
 
-| Denumire mesaj | Scop | Sursa | Destinatie | Redirectionat la | Observatii |
-|:--|:------|:--|:--|:--| :--|
-|PlaceCreatedByOperator|Instiintare POSF despre un nou loc de consum|Operatorul|POSF|Nimeni|Art 25, literia i |
-|PlaceUpdatedByOperator|Instiintare POSF despre actualizare loc de consum|Operatorul|POSF|Nimeni|Art 25, literia j |
-|ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat clientul| Furnizor,WebPOSF | POSF | Operator, WebPOSF|Art 27, litera g |
-|ContractNetworkSignedByClient|Contract de retea semnat de client|WebPOSF, Operator|POSF|WebPOSF,Furnizor| Art 22, litera e|
-|ContractNetworkSignedByOperator|Contract de retea semnat de client|Operator|POSF|WebPOSF,Furnizor| |
-|ContractNetworkSignedBySupplier|Contract de retea semnat de client|WebPOSF, Supplier|POSF|WebPOSF,Operator| |
+## Mesaje pe tema locuri de consum
 
+| Denumire mesaj | Scop | Sursa | Redirectionat la | Observatii |
+|:--|:------|:--|:--|:--|
+|PlaceCreatedByOperator|Instiintare trimisa catre POSF despre crearea unui nou loc de consum|Operatorul|Nimeni|Art 25, literia i |
+|PlaceUpdatedByOperator|Instiintare trimisa catre POSF despre actualizare loc de consum|Operatorul|Nimeni|Art 25, literia j |
+|PlaceDisconnectedByOperator|Instiintare trimisa catre POSF despre deconectare loc de consum|Operatorul|Nimeni|Art 25, literia j |
+
+## Mesaje pe tema contracte de furnizare
+
+| Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat in prealabil si clientul fie la ghiseu fie prin aplicatia furnizorului. Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei POSF, doar cand contractul a fost semnat semnat de ambele parti.| Furnizor,WebPOSF | Operator, WebPOSF|Art 27, litera g |
+|ContractSignedByClient|Instiintare despre contract semnat de client in aplicatia WebPOSF| WebPOSF | Furnizor| |
+|ContractCancelledByClient|Se emite din aplicatia WebPOSF cand un utilizator s-a razgandit in timp ce trimisese deja semnat la furnizor un contract sau daca vrea sa renunte la un contract existent.| WebPOSF | Furnizor| |
+|ContractCancelledBySupplier|Se emite din aplicatia WebPOSF sau sistemul furnizorului cand un furnizor s-a razgandit pe un contract semnat sau vrea sa anuleze un contract existent.| Furnizor, WebPOSF | Operator, WebPOSF| |
+|ContractChangedInfo|Emis cand se actualizeaza date pe contract care nu implica activitati in fluxul informatic, ca de exemplu TechnicalData, adresa de facturare, nume schimbat.| Furnizor, WebPOSF | Operator, Furnizor, WebPOSF| |
+|ContractMoreInfo|Trimis de furnizor/operator care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF | Furnizor, WebPOSF| |
+
+## Mesaje pe tema contracte de retea
+
+| Denumire mesaj | Scop | Sursa  | Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|ContractNetworkSignedByClient|Emis din WebPOSF cand se semneaza contractul de retea de catre Client|WebPOSF, Operator|WebPOSF, Furnizor| |
+|ContractNetworkSignedByOperator|Emis din WebPOSF/platforma Operator cand se semneaza contractul de retea de catre Operator. Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.|Operator|WebPOSF, Furnizor| |
+|ContractNetworkSignedBySupplier|Emis de Furnizor din sistemul propriu sau WebPOSF cand se semneaza contractul de retea de catre Furnizor|WebPOSF, Supplier|WebPOSF,Operator| |
+|ContractNetworkCancelledByOperator|Emis din WebPOSF/platforma Operator cand se doreste anularea contractului de retea cu clientul sau cu Furnizorul|WebPOSF, Supplier|WebPOSF, Supplier| |
+
+## Mesaje pe tema FUI
+
+| Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|ContractSuspendedByAnre|Emis de WebPOSF cand un key user al ANRE introduce faptul ca unui furnizor i s-a suspendat licenta|WebPOSF|WebPOSF, Furnizor, Operator| |
+|ContractActivatedByANRE|Emis de WebPOSF cand un key user al ANRE introduce faptul ca unui furnizor i s-a activat licenta|WebPOSF|WebPOSF, Furnizor, Operator| |
+|ContractTransferredToFUIByOperator|Emis de WebPOSF / platforma operator cand un angajat al operatorului introduce faptul ca un furnizor se afla in imposibilitate de furnizare|WebPOSF, Operator|WebPOSF, Furnizor, Operator| |
+|ContractTransferredToFUIByAnre|Emis de WebPOSF cand un key user ANRE introduce faptul ca in contract se transfera la FUI|WebPOSF|WebPOSF, Furnizor, Operator| |
+
+## Mesaje pe tema conventiilor
+
+| Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|ConventionSignedByOperator|Emis de WebPOSF/platforma operatorului cand a semnat operatorul conventia|WebPOSF, Operator|WebPOSF, Furnizor, Operator| |
+|ConventionSignedByClient|Emis de WebPOSF cand a semnat clientul conventia|WebPOSF|WebPOSF, Furnizor, Operator| |
+|ConventionSignedBySupplier|Emis de WebPOSF.platforma furnizor cand a semnat furnizorul conventia|WebPOSF, Furnizor|WebPOSF, Furnizor, Operator| |
 
 # Mesajul ContractNetworkSignedBySupplier
 
