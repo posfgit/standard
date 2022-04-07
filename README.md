@@ -40,7 +40,7 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |:--|:--|
 |authorID|ID asignat de POSF pentru sistemul IT care emite mesajul|
 |authorName|Nume de cod asignat de POSF pentru sistemul IT care emite mesajul|
-|correlationID|ID unic (guid) atribuit de cel care initiaza sesiunea de comunicare cu POSF, folosit ulterior de cei care raspund la mesaje din cadrul aceleiasi discutii virtuale. De exemplu se creaza un contract semnat de client, se publica in POSF, pentru o usoara urmarire a firului se va genere un ID unic care va fi pus si pe raspunsul din partea sistemelor furnizorului sau operatorului. Un ID de corelare, cunoscut și sub numele de ID de tranzit, este o valoare de identificare unică care este atașată solicitărilor și mesajelor care permit referirea la o anumită tranzacție sau lanț de evenimente.|
+|correlationID|ID unic (guid) atribuit de cel care initiaza sesiunea de comunicare cu POSF, folosit ulterior de cei care raspund la mesaje din cadrul aceleiasi discutii virtuale. De exemplu cand se publica un contract semnat de client, pentru o usoara urmarire a tranzactiei pe termen lung, se va genere un ID unic care va fi utilizat in raspunsul din partea sistemelor furnizorului sau operatorului. Un ID de corelare, cunoscut și sub numele de ID de tranzit, este o valoare de identificare unică care este atașată solicitărilor și mesajelor care permit referirea la o anumită tranzacție sau lanț de evenimente.|
 |description|Descriere in text liber al mesajului|
 |messageID|identificator unic al mesajului in format GUID|
 |timestamp|data ora minut secunda la care a fost emis creat mesajul|
