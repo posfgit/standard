@@ -124,7 +124,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="Guid">
 		<xs:restriction base="xs:string">
-			<xs:length value="32"/>
+			<xs:length value="36"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Incorporation">
@@ -605,7 +605,7 @@
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="info" type="xs:string" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Descrierea informatiilor modificate in cadrul contractului</xs:documentation>
+							<xs:documentation>Descrierea motivelor pentru care au fost solicitate mai multe informatii</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
@@ -1032,13 +1032,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Response" type="anre:Response"/>
 	<xs:complexType name="Response">
-		<xs:complexContent>
-			<xs:extension base="anre:Message">
-				<xs:sequence>
-					<xs:element name="responseID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence/>
 	</xs:complexType>
 	<xs:element name="Supplier" type="anre:Supplier"/>
 	<xs:complexType name="Supplier">
