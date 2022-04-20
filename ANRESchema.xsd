@@ -452,7 +452,7 @@
 		<xs:annotation>
 			<xs:documentation>Informatii Contract</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:sequence minOccurs="0" maxOccurs="1">
 			<xs:element name="additionalDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data act aditional</xs:documentation>
@@ -463,7 +463,7 @@
 					<xs:documentation>Numar act aditional</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="client" type="anre:Client" minOccurs="1" maxOccurs="1">
+			<xs:element name="client" type="anre:Client" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Client</xs:documentation>
 				</xs:annotation>
@@ -503,7 +503,7 @@
 					<xs:documentation>Adresa loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="expirationDate" type="xs:date" minOccurs="1" maxOccurs="1">
+			<xs:element name="expirationDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data de expirare a contractului</xs:documentation>
 				</xs:annotation>
@@ -528,12 +528,12 @@
 					<xs:documentation>Denumire operator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="place" type="anre:Place" minOccurs="1" maxOccurs="1">
+			<xs:element name="place" type="anre:Place" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="previousSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="1">
+			<xs:element name="previousSupplier" type="anre:Supplier" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Furnizorul actual</xs:documentation>
 				</xs:annotation>
@@ -543,7 +543,7 @@
 					<xs:documentation>Data efectiva a schimbarii furnizorului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="supplier" type="anre:Supplier" minOccurs="1" maxOccurs="1">
+			<xs:element name="supplier" type="anre:Supplier" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Furnizorul nou</xs:documentation>
 				</xs:annotation>
@@ -1032,7 +1032,11 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 	</xs:complexType>
 	<xs:element name="Response" type="anre:Response"/>
 	<xs:complexType name="Response">
-		<xs:sequence/>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Supplier" type="anre:Supplier"/>
 	<xs:complexType name="Supplier">
