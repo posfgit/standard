@@ -27,6 +27,8 @@ Mediul de lucru permite apeluri cu date in format XML dar si JSON, in functie de
 
 ![](./img/postman2.png)
 
+Asigurati-va ca ati facut disable la verificarea certificatelor pentru request si din setarile generale Postman.
+
 2. Deschideti din colectia POSF-TEST requestul XML-POOL-SUPPLIER
 
 ![](./img/postman3.png)
@@ -52,6 +54,57 @@ Mediul de lucru permite apeluri cu date in format XML dar si JSON, in functie de
 3. Transmiteti cererea prin butonul SEND din coltul dreapta sus, veti obtine ca raspuns un identificator unic de tip reciposa a mesajului transmis.
 
 4. Puteti verifica aparitia acestui mesaj in coada furnizorului utilizand request-ul XML-POOL-SUPPLIER
+
+
+## Interogarea locurilor de consum folosind /broker/place/#
+
+Pentru a obtine informatii privind un loc de consum se foloseste metoda /broker/place folosind operatia HTTP GET cu  parametru adresa URL a locului de consum. 
+
+Spre exemplu daca avem locul de consum cu numarul ```612-229-1785``` aflat in localitatea ```Alba Iulia``` care are codul SIRUTA ```1017``` in judetul ```Alba```, loc de consum care este de tip ```CLC``` atunci vom folosi metoda ```/broker/place/AB/1017/CLC/612-229-1785``` pentru a solicita date de la sistem despre acest loc de consum. 
+
+API-ul va returna o structura de tip ```Place``` daca este gasit un loc de consum care are acel cod in localitatea respectiva sau HTTP 204 daca nu exista. 
+
+Pentru exemplul nostru sistemul va returna HTTP 200 cu urmatorul continut:
+
+```
+<Place>
+    <address>
+        <city>
+            <code>1017</code>
+            <name>Alba Iulia</name>
+        </city>
+        <county>AB</county>
+        <extended>string</extended>
+        <number>23</number>
+        <position>
+            <geohash>string</geohash>
+            <latitude>string</latitude>
+            <longitude>string</longitude>
+        </position>
+        <postcode>510199</postcode>
+        <street>Bd. Republicii</street>
+    </address>
+    <code>612-229-1785</code>
+    <technicalData>
+        <counterIndexReadDate>2022-04-26</counterIndexReadDate>
+        <counterIndexValue>002</counterIndexValue>
+        <counterSeries>1122332212234</counterSeries>
+        <counterType>ACTIVE</counterType>
+        <date>2022-04-26</date>
+        <documentType>ACORDACCES</documentType>
+        <number>123</number>
+        <smartMeter>true</smartMeter>
+        <status>CONECTAT</status>
+    </technicalData>
+    <type>CLC</type>
+</Place>
+```
+
+Sistemul intoarce structura Place in ultima varianta transmisa prin mesaje de tipul PlaceCreatedByOperator, PlaceUpdatedByOperator, PlaceDisconnectedByOperator. 
+
+Pentru a testa API-ul de pe mediul de test va recomandam sa folositi cererile din POSTMAN numite XML-POST-PlaceCreatedByOperator si XML-GET-Place in aceasta ordine, pentru fiecare din acestea urmand pasii de la 1-4 pentru obtinerea tokenului de autentificare.
+
+Incurajam operatorii sa inceapa sa posteze in mediul de test locurile de consum existente in bazele lor de date pentru a verifica functionarea corecta a interfetelor API.
 
 # Considerente tehnice
 

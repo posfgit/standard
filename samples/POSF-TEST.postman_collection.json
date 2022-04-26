@@ -530,6 +530,547 @@
 			"response": []
 		},
 		{
+			"name": "JSON-POST- PlaceCreatedByOperator-WEBPOSF",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var u= require('uuid')\r",
+							"var ud = u.v4()\r",
+							"console.log(\"uid is:   \" + ud)\r",
+							"var dateNow = new Date()\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"ud\", ud);\r",
+							"postman.setEnvironmentVariable(\"dateNow\", dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "webposf@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "anre-back-office-web-app",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://posf-beta.anre.ro/auth/realms/Anre/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://10.0.100.229:8080",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://10.0.100.75:8888/auth/realms/EXTERN_ADPS/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"authorID\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\",\r\n  \"authorName\": \"string\",\r\n  \"correlationID\": \"{{ud}}\",\r\n  \"description\": \"string\",\r\n  \"messageID\": \"{{ud}}\",\r\n  \"timestamp\": \"{{dateNow}}\",\r\n  \"type\": \"PlaceCreatedByOperator\",\r\n  \"operator\": {\r\n    \"address\": {\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"code\": \"\",\r\n    \"contactAddress\": {\r\n      \"email\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"mobilePhone\": \"string\",\r\n      \"phone\": \"string\"\r\n    },\r\n    \"correspondenceAddress\": {\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"extra\": \"string\",\r\n    \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n    \"legalRepresentative\": {\r\n      \"address\": {\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"lastName\": \"string\",\r\n      \"number\": \"string\",\r\n      \"series\": \"string\",\r\n      \"type\": \"CNP\"\r\n    },\r\n    \"name\": \"string\",\r\n    \"number\": \"string\",\r\n    \"operatorId\": \"string\"\r\n  },\r\n  \"place\": {\r\n    \"address\": {\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"code\": \"MYCODE123\",\r\n    \"technicalData\": {\r\n      \"counterIndexReadDate\": \"2022-04-26\",\r\n      \"counterIndexValue\": \"string\",\r\n      \"counterSeries\": \"string\",\r\n      \"counterType\": \"ACTIVE\",\r\n      \"date\": \"2022-04-26\",\r\n      \"documentType\": \"ACORDACCES\",\r\n      \"number\": \"123\",\r\n      \"smartMeter\": true,\r\n      \"status\": \"CONECTAT\"\r\n    },\r\n    \"type\": \"CLC\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"protocol": "https",
+					"host": [
+						"posf-beta",
+						"anre",
+						"ro"
+					],
+					"path": [
+						"broker",
+						"postMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "XML-POST- PlaceCreatedByOperator-WEBPOSF",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var u= require('uuid')\r",
+							"var ud = u.v4()\r",
+							"console.log(\"uid is:   \" + ud)\r",
+							"var dateNow = new Date()\r",
+							"\r",
+							"window = {};\r",
+							"\r",
+							"pm.sendRequest(\"https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js\", (error, response) => {\r",
+							"    if (error || response.code !== 200) {\r",
+							"        pm.expect.fail('Could not load external library');\r",
+							"    }\r",
+							"\r",
+							"    eval(response.text());\r",
+							"\r",
+							"    code = window.faker.phone.phoneNumber()\r",
+							"    console.log(\"CODE is: \" + code)\r",
+							"\r",
+							"    // This is where you can set the locale. See faker.js docs for all available locales.\r",
+							"    window.faker.locale=\"en\";\r",
+							"    pm.collectionVariables.set(\"city\", window.faker.address.city());\r",
+							"    pm.collectionVariables.set(\"street\", window.faker.address.streetName());\r",
+							"    pm.collectionVariables.set(\"streetNumber\", window.faker.address.streetPrefix());\r",
+							"    pm.collectionVariables.set(\"postCode\", window.faker.address.zipCode());\r",
+							"    pm.collectionVariables.set(\"state\", window.faker.address.state());\r",
+							"    pm.collectionVariables.set(\"code\",code);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"ud\", ud);\r",
+							"postman.setEnvironmentVariable(\"dateNow\", dateNow.toISOString());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "webposf@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "anre-back-office-web-app",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://posf-beta.anre.ro/auth/realms/Anre/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://10.0.100.229:8080",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://10.0.100.75:8888/auth/realms/EXTERN_ADPS/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<PlaceCreatedByOperator>\r\n   <authorID>a3d9414a-bfdf-11ec-9d64-0242ac120002</authorID>\r\n   <authorName>string</authorName>\r\n   <correlationID>{{ud}}</correlationID>\r\n   <description>string</description>\r\n   <messageID>{{ud}}</messageID>\r\n   <operator>\r\n      <address>\r\n         <city>\r\n            <code>string</code>\r\n            <name>string</name>\r\n         </city>\r\n         <county>AB</county>\r\n         <extended>string</extended>\r\n         <number>string</number>\r\n         <position>\r\n            <geohash>string</geohash>\r\n            <latitude>string</latitude>\r\n            <longitude>string</longitude>\r\n         </position>\r\n         <postcode>string</postcode>\r\n         <street>string</street>\r\n      </address>\r\n      <code>string</code>\r\n      <contactAddress>\r\n         <email>string</email>\r\n         <fax>string</fax>\r\n         <mobilePhone>string</mobilePhone>\r\n         <phone>string</phone>\r\n      </contactAddress>\r\n      <correspondenceAddress>\r\n         <city>\r\n            <code>string</code>\r\n            <name>string</name>\r\n         </city>\r\n         <county>AB</county>\r\n         <extended>string</extended>\r\n         <number>string</number>\r\n         <position>\r\n            <geohash>string</geohash>\r\n            <latitude>string</latitude>\r\n            <longitude>string</longitude>\r\n         </position>\r\n         <postcode>string</postcode>\r\n         <street>string</street>\r\n      </correspondenceAddress>\r\n      <extra>string</extra>\r\n      <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>\r\n      <legalRepresentative>\r\n         <address>\r\n            <city>\r\n               <code>string</code>\r\n               <name>string</name>\r\n            </city>\r\n            <county>AB</county>\r\n            <extended>string</extended>\r\n            <number>string</number>\r\n            <position>\r\n               <geohash>string</geohash>\r\n               <latitude>string</latitude>\r\n               <longitude>string</longitude>\r\n            </position>\r\n            <postcode>string</postcode>\r\n            <street>string</street>\r\n         </address>\r\n         <code>string</code>\r\n         <contactAddress>\r\n            <email>string</email>\r\n            <fax>string</fax>\r\n            <mobilePhone>string</mobilePhone>\r\n            <phone>string</phone>\r\n         </contactAddress>\r\n         <correspondenceAddress>\r\n            <city>\r\n               <code>string</code>\r\n               <name>string</name>\r\n            </city>\r\n            <county>AB</county>\r\n            <extended>string</extended>\r\n            <number>string</number>\r\n            <position>\r\n               <geohash>string</geohash>\r\n               <latitude>string</latitude>\r\n               <longitude>string</longitude>\r\n            </position>\r\n            <postcode>string</postcode>\r\n            <street>string</street>\r\n         </correspondenceAddress>\r\n         <extra>string</extra>\r\n         <firstName>string</firstName>\r\n         <lastName>string</lastName>\r\n         <number>string</number>\r\n         <series>string</series>\r\n         <type>CNP</type>\r\n      </legalRepresentative>\r\n      <name>string</name>\r\n      <number>string</number>\r\n      <operatorId>string</operatorId>\r\n   </operator>\r\n   <place>\r\n      <address>\r\n         <city>\r\n            <code>Alba</code>\r\n            <name>Alba</name>\r\n         </city>\r\n         <county>AB</county>\r\n         <extended>string</extended>\r\n         <number>123</number>\r\n         <position>\r\n            <geohash>string</geohash>\r\n            <latitude>string</latitude>\r\n            <longitude>string</longitude>\r\n         </position>\r\n         <postcode>021134</postcode>\r\n         <street>Bd. Republicii</street>\r\n      </address>\r\n      <code>612-229-1785</code>\r\n      <technicalData>\r\n         <counterIndexReadDate>2022-04-26</counterIndexReadDate>\r\n         <counterIndexValue>002</counterIndexValue>\r\n         <counterSeries>1122332212234</counterSeries>\r\n         <counterType>ACTIVE</counterType>\r\n         <date>2022-04-26</date>\r\n         <documentType>ACORDACCES</documentType>\r\n         <number>123</number>\r\n         <smartMeter>true</smartMeter>\r\n         <status>CONECTAT</status>\r\n      </technicalData>\r\n      <type>CLC</type>\r\n   </place>\r\n   <timestamp>{{dateNow}}</timestamp>\r\n   <type>PlaceCreatedByOperator</type>\r\n</PlaceCreatedByOperator>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"protocol": "https",
+					"host": [
+						"posf-beta",
+						"anre",
+						"ro"
+					],
+					"path": [
+						"broker",
+						"postMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON-GET- Place",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "webposf@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "anre-back-office-web-app",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://posf-beta.anre.ro/auth/realms/Anre/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://10.0.100.229:8080",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://10.0.100.75:8888/auth/realms/EXTERN_ADPS/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://posf-beta.anre.ro/broker/place/COD_001",
+					"protocol": "https",
+					"host": [
+						"posf-beta",
+						"anre",
+						"ro"
+					],
+					"path": [
+						"broker",
+						"place",
+						"COD_001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "XML-GET- Place",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "username",
+							"value": "webposf@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "anre-back-office-web-app",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://posf-beta.anre.ro/auth/realms/Anre/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "password_credentials",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "openid profile email",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://10.0.100.229:8080",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://10.0.100.75:8888/auth/realms/EXTERN_ADPS/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://posf-beta.anre.ro/broker/place/612-229-1785",
+					"protocol": "https",
+					"host": [
+						"posf-beta",
+						"anre",
+						"ro"
+					],
+					"path": [
+						"broker",
+						"place",
+						"612-229-1785"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "JSON-POOL- OPERATOR",
 			"protocolProfileBehavior": {
 				"strictSSL": false
@@ -841,7 +1382,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=2",
+					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=22wss",
 					"protocol": "https",
 					"host": [
 						"posf-beta",
@@ -855,7 +1396,7 @@
 					"query": [
 						{
 							"key": "consumerId",
-							"value": "2"
+							"value": "22wss"
 						}
 					]
 				}
@@ -972,6 +1513,32 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "city",
+			"value": ""
+		},
+		{
+			"key": "code",
+			"value": ""
+		},
+		{
+			"key": "street",
+			"value": ""
+		},
+		{
+			"key": "streetNumber",
+			"value": ""
+		},
+		{
+			"key": "postCode",
+			"value": ""
+		},
+		{
+			"key": "state",
+			"value": ""
 		}
 	]
 }
