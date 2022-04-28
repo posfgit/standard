@@ -106,6 +106,12 @@ Pentru a testa API-ul de pe mediul de test va recomandam sa folositi cererile di
 
 Incurajam operatorii sa inceapa sa posteze in mediul de test locurile de consum existente in bazele lor de date pentru a verifica functionarea corecta a interfetelor API.
 
+## Interogarea listei furnizorilor si operatorilor folosind /broker/list/#
+
+Pentru a obtine informatii privind lista de furnizori si operatori se foloseste metoda /broker/list/operator si /broker/list/supplier folosind operatia HTTP GET. Regasiti in Postman exemplu pentru a extrage furnizorii si operatorii in format XML sau JSON
+
+![](./img/postmanlist.png)
+
 # Considerente tehnice
 
 - Mediul de test intoarce raspuns instantaneu la metoda postMessage fara intarzierea apelantului. 
@@ -119,6 +125,3 @@ Mediul test disponibil simuleaza mediul real prin care orice operator/furnizor s
 
 Daca doriti sa vi se creeze useri dedicati de test pentru organizatia dvs. va rugam sa ne transmiteti acest lucru prin reply la conversatia deschisa aici [Mediul de test](https://github.com/posfgit/standard/issues/18). 
 
-Pasi urmatori pentru mediul de test:
-- crearea listei completa de operatori/furnizori si atribuirea de ID unic fiecaruia, user de acces si parola pentru API
-- publicarea nomenclatoarelor (Place, Operatori, Furnizori) prin API
