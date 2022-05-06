@@ -235,9 +235,14 @@
 			<xs:documentation>Adresa</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="building" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Numar Bloc/Cladire</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="city" type="anre:City" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Unitate Administrativ Teritoriala</xs:documentation>
+					<xs:documentation>Unitate Administrativ Teritoriala conform cod siruta (Oras/Comuna/Sat)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="county" type="anre:County" minOccurs="1" maxOccurs="1">
@@ -247,7 +252,17 @@
 			</xs:element>
 			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Informatii extra, cum ar fi Localitate, Sat, Bloc, Etaj, Apartament</xs:documentation>
+					<xs:documentation>Informatii extra care nu sunt cuprinse in aceste campuri</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="flat" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Numarul apartamentului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="floor" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Numarul etajului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
@@ -263,6 +278,11 @@
 			<xs:element name="postcode" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cod postal</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stair" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Scara a imobilului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1">
