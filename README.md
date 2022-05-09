@@ -67,6 +67,7 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |ContractCancelledBySupplier|Se emite din aplicatia WebPOSF sau sistemul furnizorului cand un furnizor s-a razgandit pe un contract semnat sau vrea sa anuleze un contract existent.| Furnizor, WebPOSF | Operator, WebPOSF| |
 |ContractChangedInfo|Emis cand se actualizeaza date pe contract care nu implica activitati in fluxul informatic, ca de exemplu TechnicalData, adresa de facturare, nume schimbat.| Furnizor, WebPOSF | Operator, Furnizor, WebPOSF| |
 |ContractMoreInfo|Trimis de furnizor/operator care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF | Furnizor, WebPOSF| |
+|ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| |
 
 ## Mesaje pe tema contracte de retea
 
@@ -76,6 +77,7 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |ContractNetworkSignedByOperator|Emis din WebPOSF/platforma Operator cand se semneaza contractul de retea de catre Operator. Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.|Operator|WebPOSF, Furnizor| |
 |ContractNetworkSignedBySupplier|Emis de Furnizor din sistemul propriu sau WebPOSF cand se semneaza contractul de retea de catre Furnizor|WebPOSF, Supplier|WebPOSF,Operator| |
 |ContractNetworkCancelledByOperator|Emis din WebPOSF/platforma Operator cand se doreste anularea contractului de retea cu clientul sau cu Furnizorul|WebPOSF, Operator|WebPOSF, Operator, Supplier| |
+|ContractNetworkChangedInfo|Emis de oricare din partile contractului de retea la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contractul de retea|Toti cei mentionati in contractul de retea| |
 
 ## Mesaje pe tema FUI
 
@@ -93,6 +95,7 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |ConventionSignedByOperator|Emis de WebPOSF/platforma operatorului cand a semnat operatorul conventia|WebPOSF, Operator|WebPOSF, Furnizor, Operator| |
 |ConventionSignedByClient|Emis de WebPOSF cand a semnat clientul conventia|WebPOSF|WebPOSF, Furnizor, Operator| |
 |ConventionSignedBySupplier|Emis de WebPOSF.platforma furnizor cand a semnat furnizorul conventia|WebPOSF, Furnizor|WebPOSF, Furnizor, Operator| |
+|ConventionChangedInfo|Emis de oricare din partile conventiei la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in conventie|Toti cei mentionati in conventie| |
 
 # Mesajul ContractNetworkSignedBySupplier
 
@@ -104,10 +107,19 @@ Diagrama de mai jos prezinta fluxul pe care mesajul ContractNetworkSignedBySuppl
 
 Inrolarea unui nou operator/furnizor in sistem presupune optinerea datelor de conectare pentru persoana juridica (user/parola/identificator unic) urmata de introducerea in sistem a datelor pe care ecesta le detine, date care se afla sub incidenta regulamentului, cum ar fi: contracte, locuri de consum, etc.
 
-Procedura de migrare date existente presupune transmiterea de mesaje pentru toate informatiile pe care furnizorul/operatorul le detine, unul cate unul. 
+Procedura de migrare date existente presupune transmiterea de mesaje pentru toate informatiile pe care furnizorul/operatorul le detine, unul cate unul, folosind cateva mesaje specifice care se presupune ca nu vor genera fluxuri informationale in sistemele tertilor.
 
-De exemplu se vor trimite toate locurile de consum existente ale unui operator care se inroleaza in sistem, prin intermediul mesajului PlaceUpdatedByOperator, unul cate unul. Pentru fiecare din aceste mesaje trimise, sistemul informatic al furnizorului/operatorului va memora identificatorul unic returnat de POSF ca dovada a transmisiei ("responseID"). 
-Pentru a marca mesajele care provin din procesul de inrolare recomandam ca pe mesajele care incarca date existente in sistemul informatic, sa se foloseasca campul "Description" din structura Message unde se va completa cu textul "INITIALIZATION". 
+De exemplu, se vor trimite toate locurile de consum existente ale unui operator care se inroleaza in sistem, prin intermediul mesajului PlaceUpdatedByOperator, unul cate unul. Pentru fiecare din aceste mesaje trimise, sistemul informatic al furnizorului/operatorului va memora identificatorul unic returnat de POSF ca dovada a transmisiei ("responseID"). 
+Pentru a marca mesajele care provin din procesul de inrolare/migrare recomandam ca pe mesajele care incarca date existente in sistemul informatic, sa se foloseasca campul "info" din structura mesajului unde se va completa cu textul "INIT". 
+
+Mesaje folosite pentru a incarca date in sistem, fara a presupune ca aceste mesaje declanseaza fluxuri in POSF sau in alte sisteme:
+
+|Eveniment|Mesaj folosit|Observatii|
+|:--|:--|:--|
+|Incarcare contract existent|ContractChangedInfo|Se completeaza campul "info" cu textul "INIT"|
+|Incarcare loc de consum existent|PlaceUpdatedByOperator|Se completeaza campul "info" cu textul "INIT"|
+|Incarcare contract de retea existent|ContractNetworkChangedInfo|Se completeaza campul "info" cu textul "INIT"|
+|Incarcare conventie existenta|ConventionChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 
 # Formatul valorilor
 
