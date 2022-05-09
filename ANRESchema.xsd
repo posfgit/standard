@@ -987,6 +987,11 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>reprezinta numarul POD sau CLC asa cum se regaseste in factura</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Operatorul care detine acest loc de consum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Poate fi de tip TechnicalDataElectricity sau TechnicalDataGas</xs:documentation>
