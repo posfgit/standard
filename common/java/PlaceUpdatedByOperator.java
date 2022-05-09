@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
- *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
+ *         &lt;element name="info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="place" type="{http://www.anre.ro/ANRESchema}Place"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PlaceUpdatedByOperator", propOrder = {
-    "operator",
+    "info",
     "place"
 })
 @XmlRootElement(name = "PlaceUpdatedByOperator")
@@ -40,33 +40,32 @@ public class PlaceUpdatedByOperator
     extends Message
 {
 
-    @XmlElement(required = true)
-    protected Operator operator;
+    protected String info;
     @XmlElement(required = true)
     protected Place place;
 
     /**
-     * Gets the value of the operator property.
+     * Gets the value of the info property.
      * 
      * @return
      *     possible object is
-     *     {@link Operator }
+     *     {@link String }
      *     
      */
-    public Operator getOperator() {
-        return operator;
+    public String getInfo() {
+        return info;
     }
 
     /**
-     * Sets the value of the operator property.
+     * Sets the value of the info property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Operator }
+     *     {@link String }
      *     
      */
-    public void setOperator(Operator value) {
-        this.operator = value;
+    public void setInfo(String value) {
+        this.info = value;
     }
 
     /**
