@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
- *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
  *         &lt;element name="place" type="{http://www.anre.ro/ANRESchema}Place"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -32,7 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PlaceCreatedByOperator", propOrder = {
-    "operator",
     "place"
 })
 @XmlRootElement(name = "PlaceCreatedByOperator")
@@ -41,33 +39,7 @@ public class PlaceCreatedByOperator
 {
 
     @XmlElement(required = true)
-    protected Operator operator;
-    @XmlElement(required = true)
     protected Place place;
-
-    /**
-     * Gets the value of the operator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Operator }
-     *     
-     */
-    public Operator getOperator() {
-        return operator;
-    }
-
-    /**
-     * Sets the value of the operator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Operator }
-     *     
-     */
-    public void setOperator(Operator value) {
-        this.operator = value;
-    }
 
     /**
      * Gets the value of the place property.
