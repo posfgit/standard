@@ -100,6 +100,15 @@ Diagrama de mai jos prezinta fluxul pe care mesajul ContractNetworkSignedBySuppl
 
 ![ContractNEtworkSignedBySupplier diagram](images/messagepath.png)
 
+# Inrolarea in sistem, migrarea datelor existente
+
+Inrolarea unui nou operator/furnizor in sistem presupune optinerea datelor de conectare pentru persoana juridica (user/parola/identificator unic) urmata de introducerea in sistem a datelor pe care ecesta le detine, date care se afla sub incidenta regulamentului, cum ar fi: contracte, locuri de consum, etc.
+
+Procedura de migrare date existente presupune transmiterea de mesaje pentru toate informatiile pe care furnizorul/operatorul le detine, unul cate unul. 
+
+De exemplu se vor trimite toate locurile de consum existente ale unui operator care se inroleaza in sistem, prin intermediul mesajului PlaceUpdatedByOperator, unul cate unul. Pentru fiecare din aceste mesaje trimise, sistemul informatic al furnizorului/operatorului va memora identificatorul unic returnat de POSF ca dovada a transmisiei ("responseID"). 
+Pentru a marca mesajele care provin din procesul de inrolare recomandam ca pe mesajele care incarca date existente in sistemul informatic, sa se foloseasca campul "Description" din structura Message unde se va completa cu textul "INITIALIZATION". 
+
 # Formatul valorilor
 
 |Tip camp|Format|Exemplu|Observatii|
