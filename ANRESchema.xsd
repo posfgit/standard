@@ -445,22 +445,22 @@
 			<xs:documentation>Date contact</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="email" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa de email</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="fax" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="fax" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar fax</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="mobilePhone" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="mobilePhone" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar telefon mobil</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="phone" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="phone" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar telefon fix</xs:documentation>
 				</xs:annotation>
