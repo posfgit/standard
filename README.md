@@ -65,11 +65,10 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 |ContractSignedByClient|Instiintare despre contract semnat de client in aplicatia WebPOSF| WebPOSF | Furnizor| |
 |ContractCancelledByClient|Se emite din aplicatia WebPOSF cand un utilizator s-a razgandit in timp ce trimisese deja semnat la furnizor un contract sau daca vrea sa renunte la un contract existent.| WebPOSF | Furnizor| |
 |ContractCancelledBySupplier|Se emite din aplicatia WebPOSF sau sistemul furnizorului cand un furnizor s-a razgandit pe un contract semnat sau vrea sa anuleze un contract existent.| Furnizor, WebPOSF | Operator, WebPOSF| |
-|ContractChangedInfo|Emis cand se actualizeaza date pe contract care nu implica activitati in fluxul informatic, ca de exemplu TechnicalData, adresa de facturare, nume schimbat.| Furnizor, WebPOSF | Operator, Furnizor, WebPOSF| |
 |ContractMoreInfo|Trimis de furnizor/operator care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF | Furnizor, WebPOSF| |
 |ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| |
 
-## Mesaje pe tema contracte de retea
+## Mesaje pe tema contracte de retea exclusiv pentru cazul in care clientul opteaza o relatie directa cu operatorul
 
 | Denumire mesaj | Scop | Sursa  | Redirectionat la | Observatii |
 |:-|:---------|:-|:-|:-|

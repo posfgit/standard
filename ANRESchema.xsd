@@ -540,7 +540,7 @@
 			</xs:element>
 			<xs:element name="offerCode" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Cod oferta asociata contractului</xs:documentation>
+					<xs:documentation>Cod oferta asociata contractului - Guid</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1">
@@ -571,6 +571,11 @@
 			<xs:element name="type" type="anre:ContractType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tipul contractului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -976,7 +981,7 @@ CNP (pentru cetatenii romani)</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Loc de consum</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:sequence minOccurs="0" maxOccurs="1">
 			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa loc de consum</xs:documentation>
@@ -1000,6 +1005,11 @@ CNP (pentru cetatenii romani)</xs:documentation>
 			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
