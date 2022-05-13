@@ -1,6 +1,6 @@
 # Propunere de lucru pentru specificatia tehnica de interconectare a sistemului POSF cu furnizorii si operatorii
 
-Documentatia generata in format PDF poate fi accesata aici [Schema PDF](./ANRESchema.pdf)
+Documentatia detaliata a tuturor tipurilor de elemente o puteti descarca in format PDF de aici [Schema PDF](./ANRESchema.pdf)
 
 Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos.  Mentionez ca aceasta schema este cu titlu de concept de schimb de mesaje, fluxurile desenate ne fiind cele finale care vor fi implementate conform regulamentului.
 
@@ -9,12 +9,15 @@ Schema de ansamblu prezentata in cadrul sedintei tehnice o regasim mai jos.  Men
 .
 
 
-In fisierul [ANRESchema.xsd](ANRESchema.xsd) este definitia schemei entitatilor si mesajelor propuse, primul mesaj care are o schema aproape completa este ilustrat in imagidea nde mai jos.
+In fisierul [ANRESchema.xsd](ANRESchema.xsd) este definitia schemei entitatilor si mesajelor propuse, primul mesaj care are o schema aproape completa este ilustrat in imagidea nde mai jos. 
 ```
 PlaceCreatedByOperator
 ```
 ![PlaceCreatedByOperator](doc/ANRESchema_p43.png)
 
+Tipurile de elemente definite in fisierul XSD va fi folosit pentru comunicarea prin mesaje in format XML sau JSON cu sistemul POSF. Prezentam o diagrama a acestor tipuri.
+
+![Diagrama tipuri de elemente](img/typesdiagram.png) 
 
 # Tipuri de cozi de mesaje in POSF
 
@@ -48,6 +51,10 @@ Toate mesajele au o structura comuna derivata din tipul **Message** care reprezi
 
 
 # Tipuri de mesaje, emitatori si receptori
+
+Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate prin POSF. Detaliem pentru detaliem fiecare clasa de mesaje in tebele mai jos.
+
+![tipurilor de mesaje](img/messagesdiagram.png)
 
 ## Mesaje pe tema locuri de consum
 
@@ -120,6 +127,28 @@ Mesaje folosite pentru a incarca date in sistem, fara a presupune ca aceste mesa
 |Incarcare contract de retea existent|ContractNetworkChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 |Incarcare conventie existenta|ConventionChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 
+# Fisiere atasate entitatilor
+
+Tipurile de date Contract si Place pot fi insotite de fisiere atasate. Recomandam folosirea de fisiere in standard deschis care sa poata fi vizualizate pe orice dispozitiv electronic fara a instala software suplimentar.
+Fisiere acceptate sunt: PDF, PNG, JPG, ZIP
+
+Pentru a atasa un fisier la un mesaj se va scrie in campul URL al entitatilor Place sau Contract adresa de unde acest fisier se poate descarca. Adresa este de forma https://adresa.emitent.mesaj/adresa/unde/este/fisierul/idunicgeneratsiobfuscatpentrudownload.zip
+
+## Conventii de stocare si acces la fisiere
+
+1. Fisierele atasate la mesajele emise vor fi stocate pe sistemul IT al emitentului.
+2. Fisierele stocate pe platforma POSF pot fi accesate de browsere/clienti autentificati si autorizati sa acceseze informatiile respective, conform emitentului si regulilor de securitate implementate in POSF.
+3. Fisierele stocate pe platformele IT ale furnizorilor/operatorilor vor fi protejate prin limitarea accesului de la adresa IP a POSF si obligativitatea prezentarii unui certificat digital client pentru orice solicitare de acces. Certificatul va fi unic, emis de POSF si prezentat in format cheie privata tuturor furnizorilor/operatorilor.
+4. Durata de stocare a fisierelor este de minim 120 de zile astfel incat sa poata fi descarcate de sistemele care interactioneaza cu aceste mesaje.
+5. POSF va intermedia printr-un API de tip reverse-proxy accesul la fisierele stocate de catre furnizori in sistemele lor, astfel incat sa garantam accesul persoanelor autorizate prin POSF la orice document atasat mesajelor din POSF.
+6. Accesul la porxy va fi limitat la adresele de IP ale furnizorilor inregistrati in POSF.
+
+## Adresa pentru descarcarea fisierelor atasate entitatilor
+
+Daca in entitatea Contract regasim url: https://eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip, atunci orice furnizor care doreste sa descarce acest fisier va apela url-ul urmator, dupa ce s-a autentificat in POSF, pe canal SSL: https://posf-beta.anre.ro/proxy/eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip
+
+Aceasta adresa (https://eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip) nu va returna nimic pentru o solicitare de acces de la un tert care nu are adresa de IP a POSF si care nu prezinta certificatul digital al POSF.
+
 # Formatul valorilor
 
 |Tip camp|Format|Exemplu|Observatii|
@@ -129,6 +158,7 @@ Mesaje folosite pentru a incarca date in sistem, fara a presupune ca aceste mesa
 |decimal|numar cu zecimale|123.456, +1234.456, -1234.456, -.456, or -456.|Numar cu separator de zecimale . si fara separator la mii sau spatii|
 |boolean|sir de caractere|true, false|cu litere mici, fara spatii|
 |string|sir de carcatere|Strada Morii, Calea Floreasca, |Fara spatii la inceput sau la sfarsit|
+|uuid/guid|xxxxxxxx-xxxx-Mxxx-Nxxx-xxxxxxxxxxxx|123e4567-e89b-12d3-a456-426614174000|In its canonical textual representation, the 16 octets of a UUID are represented as 32 hexadecimal (base-16) digits, displayed in five groups separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 hexadecimal characters and 4 hyphens). |
 
 
 
