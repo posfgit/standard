@@ -198,6 +198,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CONECTAT"/>
 			<xs:enumeration value="DECONECTAT"/>
+			<xs:enumeration value="INACTIV"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataType">
@@ -926,29 +927,29 @@ If message hold initialization data please fill "INITIALIZATION" in this field</
 		<xs:annotation>
 			<xs:documentation>Persoana fizica</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1">
+		<xs:sequence minOccurs="0">
+			<xs:element name="address" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa domiciliu</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="code" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar unic de identificare (pentru cetatenii straini)&#xD;
 CNP (pentru cetatenii romani)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contactAddress" type="anre:ContactAddress" minOccurs="1" maxOccurs="1">
+			<xs:element name="contactAddress" type="anre:ContactAddress" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Date contact: Telefon Mobil si Email</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceAddress" type="anre:Address" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa de corespondenta</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="extra" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="extra" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="firstName" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Prenume</xs:documentation>
@@ -959,17 +960,17 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>Nume</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="number" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar act de identitate</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="series" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="series" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Serie act de identitate</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="type" type="anre:LegalIDType" minOccurs="1" maxOccurs="1">
+			<xs:element name="type" type="anre:LegalIDType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tip act de identitate</xs:documentation>
 				</xs:annotation>
