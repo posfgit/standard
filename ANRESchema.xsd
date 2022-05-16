@@ -14,9 +14,9 @@
 			<xs:documentation>Categoria de consum</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="C1"/>
-			<xs:enumeration value="C2"/>
-			<xs:enumeration value="C3"/>
+			<xs:enumeration value="C_1"/>
+			<xs:enumeration value="C_2"/>
+			<xs:enumeration value="C_3"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ContractStatus">
@@ -132,23 +132,23 @@
 			<xs:documentation>Forma juridica</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="AltePersoaneJuridice"/>
-			<xs:enumeration value="AutoritateInstitutiePublica"/>
-			<xs:enumeration value="CompanieNationala"/>
-			<xs:enumeration value="Fundatie"/>
-			<xs:enumeration value="InstitutCulturalAlUnuiStat"/>
-			<xs:enumeration value="InstitutieDeCredit"/>
-			<xs:enumeration value="MisiuneDiplomatica"/>
-			<xs:enumeration value="OficiuConsular"/>
-			<xs:enumeration value="OrganizatieAsociatieCuPersonalitateJuridica"/>
-			<xs:enumeration value="OrganizatiePatronala"/>
-			<xs:enumeration value="OrganizatieSindicala"/>
-			<xs:enumeration value="RegieAutonoma"/>
-			<xs:enumeration value="ReprezentantaComercialaSiEconomicaAleAltuiStat"/>
-			<xs:enumeration value="ReprezentantaDinRomaniaPentruPJStraina"/>
-			<xs:enumeration value="SocietateComerciala"/>
-			<xs:enumeration value="SocietateCooperativa"/>
-			<xs:enumeration value="SocietateNationala"/>
+			<xs:enumeration value="ALTE_PERSOANE_JURIDICE"/>
+			<xs:enumeration value="AUTORITATE_INSTITUTIE_PUBLICA"/>
+			<xs:enumeration value="COMPANIE_NATIONALA"/>
+			<xs:enumeration value="FUNDATIE"/>
+			<xs:enumeration value="INSTITUT_CULTURALAL_UNUI_STAT"/>
+			<xs:enumeration value="INSTITUTIE_DE_CREDIT"/>
+			<xs:enumeration value="MISIUNE_DIPLOMATICA"/>
+			<xs:enumeration value="OFICIU_CONSULAR"/>
+			<xs:enumeration value="ORGANIZATIE_ASOCIATIE_CU_PERSONALITATE_JURIDICA"/>
+			<xs:enumeration value="ORGANIZATIE_PATRONALA"/>
+			<xs:enumeration value="ORGANIZATIE_SINDICALA"/>
+			<xs:enumeration value="REGIE_AUTONOMA"/>
+			<xs:enumeration value="REPREZENTANTA_COMERCIALA_SI_ECONOMICA_ALE_ALTUI_STAT"/>
+			<xs:enumeration value="REPREZENTANTA_DIN_ROMANIA_PENTRU_PJ_STRAINA"/>
+			<xs:enumeration value="SOCIETATE_COMERCIALA"/>
+			<xs:enumeration value="SOCIETATE_COOPERATIVA"/>
+			<xs:enumeration value="SOCIETATE_NATIONALA"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="LegalIDType">
