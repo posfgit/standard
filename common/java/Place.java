@@ -3,7 +3,6 @@ package ro.anre.anreschema.standard;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -20,12 +19,13 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="Place">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;sequence minOccurs="0">
  *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address"/>
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
  *         &lt;element name="technicalData" type="{http://www.anre.ro/ANRESchema}TechnicalData"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}PlaceType"/>
+ *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,22 +40,19 @@ import javax.xml.bind.annotation.XmlType;
     "code",
     "operator",
     "technicalData",
-    "type"
+    "type",
+    "url"
 })
 @XmlRootElement(name = "Place")
 public class Place {
 
-    @XmlElement(required = true)
     protected Address address;
-    @XmlElement(required = true)
     protected String code;
-    @XmlElement(required = true)
     protected Operator operator;
-    @XmlElement(required = true)
     protected TechnicalData technicalData;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected PlaceType type;
+    protected String url;
 
     /**
      * Gets the value of the address property.
@@ -175,6 +172,30 @@ public class Place {
      */
     public void setType(PlaceType value) {
         this.type = value;
+    }
+
+    /**
+     * Gets the value of the url property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * Sets the value of the url property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUrl(String value) {
+        this.url = value;
     }
 
 }

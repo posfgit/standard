@@ -2,7 +2,6 @@
 package ro.anre.anreschema.standard;
 
 import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -14,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="ConsumptionCategory">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="C1"/>
- *     &lt;enumeration value="C2"/>
- *     &lt;enumeration value="C3"/>
+ *     &lt;enumeration value="C_1"/>
+ *     &lt;enumeration value="C_2"/>
+ *     &lt;enumeration value="C_3"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -26,29 +25,16 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum ConsumptionCategory {
 
-    @XmlEnumValue("C1")
-    C_1("C1"),
-    @XmlEnumValue("C2")
-    C_2("C2"),
-    @XmlEnumValue("C3")
-    C_3("C3");
-    private final String value;
-
-    ConsumptionCategory(String v) {
-        value = v;
-    }
+    C_1,
+    C_2,
+    C_3;
 
     public String value() {
-        return value;
+        return name();
     }
 
     public static ConsumptionCategory fromValue(String v) {
-        for (ConsumptionCategory c: ConsumptionCategory.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+        return valueOf(v);
     }
 
 }

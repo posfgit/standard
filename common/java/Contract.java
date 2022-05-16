@@ -44,6 +44,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="startingDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="supplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}ContractType"/>
+ *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -73,7 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "previousSupplier",
     "startingDate",
     "supplier",
-    "type"
+    "type",
+    "url"
 })
 @XmlRootElement(name = "Contract")
 public class Contract {
@@ -114,6 +116,7 @@ public class Contract {
     protected Supplier supplier;
     @XmlSchemaType(name = "string")
     protected ContractType type;
+    protected String url;
 
     /**
      * Gets the value of the additionalDate property.
@@ -593,6 +596,30 @@ public class Contract {
      */
     public void setType(ContractType value) {
         this.type = value;
+    }
+
+    /**
+     * Gets the value of the url property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * Sets the value of the url property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUrl(String value) {
+        this.url = value;
     }
 
 }

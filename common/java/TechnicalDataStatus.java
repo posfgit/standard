@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="CONECTAT"/>
  *     &lt;enumeration value="DECONECTAT"/>
+ *     &lt;enumeration value="INACTIV"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -25,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 public enum TechnicalDataStatus {
 
     CONECTAT,
-    DECONECTAT;
+    DECONECTAT,
+    INACTIV;
 
     public String value() {
         return name();

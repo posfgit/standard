@@ -2,7 +2,6 @@
 package ro.anre.anreschema.standard;
 
 import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -14,23 +13,23 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="Incorporation">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AltePersoaneJuridice"/>
- *     &lt;enumeration value="AutoritateInstitutiePublica"/>
- *     &lt;enumeration value="CompanieNationala"/>
- *     &lt;enumeration value="Fundatie"/>
- *     &lt;enumeration value="InstitutCulturalAlUnuiStat"/>
- *     &lt;enumeration value="InstitutieDeCredit"/>
- *     &lt;enumeration value="MisiuneDiplomatica"/>
- *     &lt;enumeration value="OficiuConsular"/>
- *     &lt;enumeration value="OrganizatieAsociatieCuPersonalitateJuridica"/>
- *     &lt;enumeration value="OrganizatiePatronala"/>
- *     &lt;enumeration value="OrganizatieSindicala"/>
- *     &lt;enumeration value="RegieAutonoma"/>
- *     &lt;enumeration value="ReprezentantaComercialaSiEconomicaAleAltuiStat"/>
- *     &lt;enumeration value="ReprezentantaDinRomaniaPentruPJStraina"/>
- *     &lt;enumeration value="SocietateComerciala"/>
- *     &lt;enumeration value="SocietateCooperativa"/>
- *     &lt;enumeration value="SocietateNationala"/>
+ *     &lt;enumeration value="ALTE_PERSOANE_JURIDICE"/>
+ *     &lt;enumeration value="AUTORITATE_INSTITUTIE_PUBLICA"/>
+ *     &lt;enumeration value="COMPANIE_NATIONALA"/>
+ *     &lt;enumeration value="FUNDATIE"/>
+ *     &lt;enumeration value="INSTITUT_CULTURALAL_UNUI_STAT"/>
+ *     &lt;enumeration value="INSTITUTIE_DE_CREDIT"/>
+ *     &lt;enumeration value="MISIUNE_DIPLOMATICA"/>
+ *     &lt;enumeration value="OFICIU_CONSULAR"/>
+ *     &lt;enumeration value="ORGANIZATIE_ASOCIATIE_CU_PERSONALITATE_JURIDICA"/>
+ *     &lt;enumeration value="ORGANIZATIE_PATRONALA"/>
+ *     &lt;enumeration value="ORGANIZATIE_SINDICALA"/>
+ *     &lt;enumeration value="REGIE_AUTONOMA"/>
+ *     &lt;enumeration value="REPREZENTANTA_COMERCIALA_SI_ECONOMICA_ALE_ALTUI_STAT"/>
+ *     &lt;enumeration value="REPREZENTANTA_DIN_ROMANIA_PENTRU_PJ_STRAINA"/>
+ *     &lt;enumeration value="SOCIETATE_COMERCIALA"/>
+ *     &lt;enumeration value="SOCIETATE_COOPERATIVA"/>
+ *     &lt;enumeration value="SOCIETATE_NATIONALA"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -40,57 +39,30 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum Incorporation {
 
-    @XmlEnumValue("AltePersoaneJuridice")
-    ALTE_PERSOANE_JURIDICE("AltePersoaneJuridice"),
-    @XmlEnumValue("AutoritateInstitutiePublica")
-    AUTORITATE_INSTITUTIE_PUBLICA("AutoritateInstitutiePublica"),
-    @XmlEnumValue("CompanieNationala")
-    COMPANIE_NATIONALA("CompanieNationala"),
-    @XmlEnumValue("Fundatie")
-    FUNDATIE("Fundatie"),
-    @XmlEnumValue("InstitutCulturalAlUnuiStat")
-    INSTITUT_CULTURAL_AL_UNUI_STAT("InstitutCulturalAlUnuiStat"),
-    @XmlEnumValue("InstitutieDeCredit")
-    INSTITUTIE_DE_CREDIT("InstitutieDeCredit"),
-    @XmlEnumValue("MisiuneDiplomatica")
-    MISIUNE_DIPLOMATICA("MisiuneDiplomatica"),
-    @XmlEnumValue("OficiuConsular")
-    OFICIU_CONSULAR("OficiuConsular"),
-    @XmlEnumValue("OrganizatieAsociatieCuPersonalitateJuridica")
-    ORGANIZATIE_ASOCIATIE_CU_PERSONALITATE_JURIDICA("OrganizatieAsociatieCuPersonalitateJuridica"),
-    @XmlEnumValue("OrganizatiePatronala")
-    ORGANIZATIE_PATRONALA("OrganizatiePatronala"),
-    @XmlEnumValue("OrganizatieSindicala")
-    ORGANIZATIE_SINDICALA("OrganizatieSindicala"),
-    @XmlEnumValue("RegieAutonoma")
-    REGIE_AUTONOMA("RegieAutonoma"),
-    @XmlEnumValue("ReprezentantaComercialaSiEconomicaAleAltuiStat")
-    REPREZENTANTA_COMERCIALA_SI_ECONOMICA_ALE_ALTUI_STAT("ReprezentantaComercialaSiEconomicaAleAltuiStat"),
-    @XmlEnumValue("ReprezentantaDinRomaniaPentruPJStraina")
-    REPREZENTANTA_DIN_ROMANIA_PENTRU_PJ_STRAINA("ReprezentantaDinRomaniaPentruPJStraina"),
-    @XmlEnumValue("SocietateComerciala")
-    SOCIETATE_COMERCIALA("SocietateComerciala"),
-    @XmlEnumValue("SocietateCooperativa")
-    SOCIETATE_COOPERATIVA("SocietateCooperativa"),
-    @XmlEnumValue("SocietateNationala")
-    SOCIETATE_NATIONALA("SocietateNationala");
-    private final String value;
-
-    Incorporation(String v) {
-        value = v;
-    }
+    ALTE_PERSOANE_JURIDICE,
+    AUTORITATE_INSTITUTIE_PUBLICA,
+    COMPANIE_NATIONALA,
+    FUNDATIE,
+    INSTITUT_CULTURALAL_UNUI_STAT,
+    INSTITUTIE_DE_CREDIT,
+    MISIUNE_DIPLOMATICA,
+    OFICIU_CONSULAR,
+    ORGANIZATIE_ASOCIATIE_CU_PERSONALITATE_JURIDICA,
+    ORGANIZATIE_PATRONALA,
+    ORGANIZATIE_SINDICALA,
+    REGIE_AUTONOMA,
+    REPREZENTANTA_COMERCIALA_SI_ECONOMICA_ALE_ALTUI_STAT,
+    REPREZENTANTA_DIN_ROMANIA_PENTRU_PJ_STRAINA,
+    SOCIETATE_COMERCIALA,
+    SOCIETATE_COOPERATIVA,
+    SOCIETATE_NATIONALA;
 
     public String value() {
-        return value;
+        return name();
     }
 
     public static Incorporation fromValue(String v) {
-        for (Incorporation c: Incorporation.values()) {
-            if (c.value.equals(v)) {
-                return c;
-            }
-        }
-        throw new IllegalArgumentException(v);
+        return valueOf(v);
     }
 
 }
