@@ -1,6 +1,9 @@
 
 package ro.anre.anreschema.standard;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.time.LocalDate;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -32,6 +35,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="smartMeter" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="status" type="{http://www.anre.ro/ANRESchema}TechnicalDataStatus"/>
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -50,11 +54,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "documentType",
     "number",
     "smartMeter",
-    "status"
+    "status",
+    "type"
 })
 @XmlSeeAlso({
     TechnicalDataGas.class,
     TechnicalDataElectricity.class
+})
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type",  include = JsonTypeInfo.As.EXISTING_PROPERTY, visible = true)
+@JsonSubTypes({
+        @JsonSubTypes.Type(name = "TechnicalDataGas", value = TechnicalDataGas.class),
+        @JsonSubTypes.Type(name = "TechnicalDataElectricity", value = TechnicalDataElectricity.class),
 })
 public class TechnicalData {
 
@@ -81,6 +91,8 @@ public class TechnicalData {
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected TechnicalDataStatus status;
+    @XmlElement(required = true)
+    protected String type;
 
     /**
      * Gets the value of the counterIndexReadDate property.
@@ -288,6 +300,30 @@ public class TechnicalData {
      */
     public void setStatus(TechnicalDataStatus value) {
         this.status = value;
+    }
+
+    /**
+     * Gets the value of the type property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * Sets the value of the type property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setType(String value) {
+        this.type = value;
     }
 
 }

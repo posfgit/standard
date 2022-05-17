@@ -3,7 +3,6 @@ package ro.anre.anreschema.standard;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -20,10 +19,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="mobilePhone" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="fax" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="mobilePhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -42,13 +41,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ContactAddress")
 public class ContactAddress {
 
-    @XmlElement(required = true)
     protected String email;
-    @XmlElement(required = true)
     protected String fax;
-    @XmlElement(required = true)
     protected String mobilePhone;
-    @XmlElement(required = true)
     protected String phone;
 
     /**

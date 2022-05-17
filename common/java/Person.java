@@ -3,7 +3,6 @@ package ro.anre.anreschema.standard;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -20,17 +19,17 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="Person">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address"/>
- *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="contactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress"/>
- *         &lt;element name="correspondenceAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
- *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *       &lt;sequence minOccurs="0">
+ *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="contactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress" minOccurs="0"/>
+ *         &lt;element name="correspondenceAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
+ *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="series" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}LegalIDType"/>
+ *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="series" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}LegalIDType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -55,25 +54,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Person")
 public class Person {
 
-    @XmlElement(required = true)
     protected Address address;
-    @XmlElement(required = true)
     protected String code;
-    @XmlElement(required = true)
     protected ContactAddress contactAddress;
-    @XmlElement(required = true)
     protected Address correspondenceAddress;
-    @XmlElement(required = true)
     protected String extra;
-    @XmlElement(required = true)
     protected String firstName;
-    @XmlElement(required = true)
     protected String lastName;
-    @XmlElement(required = true)
     protected String number;
-    @XmlElement(required = true)
     protected String series;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected LegalIDType type;
 
