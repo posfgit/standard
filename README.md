@@ -103,6 +103,14 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |ConventionSignedBySupplier|Emis de WebPOSF.platforma furnizor cand a semnat furnizorul conventia|WebPOSF, Furnizor|WebPOSF, Furnizor, Operator| |
 |ConventionChangedInfo|Emis de oricare din partile conventiei la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in conventie|Toti cei mentionati in conventie| |
 
+## Mesaje specifice furnizorilor/operatorilor
+
+| Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|SupplierChangedInfo|Emis de WebPOSF/platforma furnizorului cand s-au schimbat date de identificare/persoane/adresa|WebPOSF, Furnizor|WebPOSF,  toti operatorii, toti furnizorii| |
+|OperatorChangedInfo|Emis de platforma operatorului cand s-au schimbat date de identificare/persoane/adresa|Operator|WebPOSF,  toti operatorii, toti furnizorii| |
+
+
 # Mesajul ContractNetworkSignedBySupplier
 
 Diagrama de mai jos prezinta fluxul pe care mesajul ContractNetworkSignedBySupplier il parcurge in interiorul sistemului POSF, de la receptie in coada POSF.Supplier.IN pana cand este transmis in cozile de mesaje ale aplicatiei Web si ale operatorului respectiv.
