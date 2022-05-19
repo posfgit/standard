@@ -146,16 +146,16 @@ Pentru a atasa un fisier la un mesaj se va scrie in campul URL al entitatilor Pl
 
 1. Fisierele atasate la mesajele emise vor fi stocate pe sistemul IT al emitentului.
 2. Fisierele stocate pe platforma POSF pot fi accesate de browsere/clienti autentificati si autorizati sa acceseze informatiile respective, conform emitentului si regulilor de securitate implementate in POSF.
-3. Fisierele stocate pe platformele IT ale furnizorilor/operatorilor vor fi protejate prin limitarea accesului de la adresa IP a POSF si obligativitatea prezentarii unui certificat digital client pentru orice solicitare de acces. Certificatul va fi unic, emis de POSF si prezentat in format cheie privata tuturor furnizorilor/operatorilor.
+3. Fisierele stocate pe platformele IT ale furnizorilor/operatorilor vor fi protejate prin limitarea accesului de la adresa IP a POSF si obligativitatea prezentarii unui certificat digital client pentru orice solicitare de acces. Certificatul va fi unic, emis de POSF si prezentat in format cheie publica tuturor furnizorilor/operatorilor il gasiti aici [CERTIFICAT ACCES FISIERE](.samples/client-posf.pem)
 4. Durata de stocare a fisierelor este de minim 120 de zile astfel incat sa poata fi descarcate de sistemele care interactioneaza cu aceste mesaje.
 5. POSF va intermedia printr-un API de tip reverse-proxy accesul la fisierele stocate de catre furnizori in sistemele lor, astfel incat sa garantam accesul persoanelor autorizate prin POSF la orice document atasat mesajelor din POSF.
 6. Accesul la porxy va fi limitat la adresele de IP ale furnizorilor inregistrati in POSF.
 
 ## Adresa pentru descarcarea fisierelor atasate entitatilor
 
-Daca in entitatea Contract regasim url: https://eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip, atunci orice furnizor care doreste sa descarce acest fisier va apela url-ul urmator, dupa ce s-a autentificat in POSF, pe canal SSL: https://posf-beta.anre.ro/proxy/eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip
+Daca in entitatea Contract regasim url: https://electricandgas-romania.eu/somefolder/otherfolder/file.zip , atunci orice furnizor care doreste sa descarce acest fisier va apela url-ul urmator, dupa ce s-a autentificat in POSF, pe canal SSL: https://posf-beta.anre.ro/broker/file/www.electricandgas-romania.eu/somefolder/otherfolder/file.zip
 
-Aceasta adresa (https://eondistr-storage67.amazon.com/some/folder/path/contractid12se34rew343.zip) nu va returna nimic pentru o solicitare de acces de la un tert care nu are adresa de IP a POSF si care nu prezinta certificatul digital al POSF.
+Aceasta adresa din sistemele IT ale furnizorilor (https://electricandgas-romania.eu/somefolder/otherfolder/file.zip) nu va returna nimic pentru o solicitare de acces de la un tert (HTTP 400) care nu are adresa de IP a POSF si care nu prezinta certificatul digital al POSF.
 
 # Formatul valorilor
 
