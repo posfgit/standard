@@ -37,7 +37,7 @@ Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale 
 
 ## Exemplu in Java
 
-Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermediul limbajlui de programare Java. In cod veti vedea cum se introduce user/parola, se obtine un token de acces si apoi se inteogheaza lista furnizorilor. 
+Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermediul limbajului de programare Java. In cod veti vedea cum se introduce user/parola, se obtine un token de acces si apoi se inteogheaza lista furnizorilor. 
 
 # Mesajele vehiculate in sistem
 
