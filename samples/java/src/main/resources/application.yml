@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+  ssl:
+    enabled: false
+    key-store: classpath:client.jks
+    key-store-password: posf-pass-jks826
+    key-alias: client
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:client.jks
+    trust-store-password: posf-pass-jks826
+    trust-store-type: JKS
+
