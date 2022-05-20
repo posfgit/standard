@@ -35,6 +35,10 @@ Cozile de mesaje sunt accesate folosind un API de interogare (post/pool) pentru 
 
 Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. 
 
+## Exemplu in Java
+
+Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermediul limbajlui de programare Java. In cod veti vedea cum se introduce user/parola, se obtine un token de acces si apoi se inteogheaza lista furnizorilor. 
+
 # Mesajele vehiculate in sistem
 
 Toate mesajele au o structura comuna derivata din tipul **Message** care reprezinta un header comun compus din urmatoarele campuri
