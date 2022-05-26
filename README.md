@@ -170,6 +170,52 @@ Daca in entitatea Contract regasim url: https://electricandgas-romania.eu/somefo
 
 Aceasta adresa din sistemele IT ale furnizorilor (https://electricandgas-romania.eu/somefolder/otherfolder/file.zip) nu va returna nimic pentru o solicitare de acces de la un tert (HTTP 400) care nu are adresa de IP a POSF si care nu prezinta certificatul digital al POSF.
 
+# Medii de testare/staging/productie
+
+POSF este alcătuit din 3 medii:
+|Denumire	|Descriere|	Date continue|
+|:--|:--|:--|
+|Mediu de test|	un sistem IT de încercări, teste si instruire pentru oricine dorește sa își pregătească societatea in vederea înrolării in POSF.|	Date de test, anonimizate|
+|Mediu de staging|	un sistem IT in care societățile economice înrolate in POSF își pot conecta propriile sisteme IT in vederea testării  finale înaintea operaționalizării propriilor sisteme sau a modificărilor aduse acestora in decursul timpului| 	Locuri de consum reale, câteva contracte (nu toate), societăți economice reale|
+|Mediul de producție|	Un sistem IT in care societățile economice licențiate si autorizate de ANRE sa publice in POSF pot interacționa cu acesta.|	Datele la zi publicate de toate societățile interconectate|
+
+# Componente mediu POSF
+
+|Denumire|	Descriere|
+|:--|:--|
+|Broker API (denumit in documentație si POSF)|	Expune către sistemele IT ale societăților comerciale o tehnologie de interconectare standard REST/XML/JSON|
+|Aplicație Web (denumita in documentație WebPOSF)| compusa din:|	
+|-	Modul Client|	Destinat clienților finali|
+|-	Modul Furnizor|	Destinat furnizorilor mici care nu doresc interconectarea cu Broker API|
+|-	Modul Operator|	Destinat operatorilor mici care nu doresc interconectarea cu Broker API|
+|-	Modul ANRE|	Destinat personalului ANRE|
+
+# Din ce este compus un sistem IT al unei societăți care dorește sa interacționeze cu POSF prin Broker API 
+
+|Modul|	Scop|
+|:--|:--|
+|Receptor de mesaje|	Interoghează periodic sistemul POSF pentru a verifica daca exista mesaje pentru societate si le salvează într-o baza de date proprie.|
+|Transmițător de mesaje|	Transmite mesaje in POSF la apariția evenimentelor specifice in cadrul organizației societății comerciale (semnare contract, înființare loc de consum, etc.)|
+|Formulare PDF|	Se încarcă odată cu fiecare oferta din comparatorul ANRE pentru a fi completate automat de aplicația WebPOSF la momentul semnării contractului de către client (format PDF)|
+|Mediu de stocare fișiere expus la POSF|	Expune către POSF contractele si anexele semnate de către angajații societății astfel încât sa poată fi descărcate printr-un canal securizat.|
+
+
+# Etape de parcurs pentru integrarea in POSF prin Broker API :
+
+|Etapa|	Descriere|
+|:--|:-----|
+|1.	Consultare documentație tehnica publica|	Documentația tehnica de acces este disponibil ala adresa https://github.com/posfgit/standard/ unde regăsiți un forum de discuții numit Issues. In cadrul forumului sunt multe întrebări si răspunsuri prin care va invitam sa căutați răspunsuri înainte sa adresați întrebări noi.|
+|2.	Solicitare utilizator/parola de acces in mediul de test|Solicitarea pentru mediul de acces se face conform instrucțiunilor disponibile public aici https://github.com/posfgit/standard/issues/18|
+|3.	Publicare mesaje in POSF|	Se vor publica mesaje in mediul de test conform instrucțiunilor disponibile la adresa https://github.com/posfgit/standard/blob/main/TestEnvironment.md, in vederea încărcării bazei de date de test cu elemente de tip Locuri de consum si Contracte semnate.|
+|4.	Citire mesaje din POSF|	Se vor citi mesaje in mediul de test conform instrucțiunilor disponibile la adresa https://github.com/posfgit/standard/blob/main/TestEnvironment.md si se vor verifica fluxurile interne ale sistemelor IT proprii in vederea verificării ca acestea răspund corespunzător si declanșează sau nu fluxuri specifice |
+|5.	Teste încrucișate|	In perechi (furnizor-furnizor) sau (furnizor-operator) se fac teste de transmitere si recepție mesaje de tipul ContractSignedBySupplier in vederea verificării faptului ca mesajele transmise de FN ajung la FA si OR.|
+|6.	Teste cu ANRE|	Se solicita ANRE verificarea testelor efectuate la pasul 5.|
+|7.	Încărcare mediu staging|	Se solicita acces ANRE in vederea conectării cu mediul de staging unde societatea comerciala își conectează propriul sistem de staging si publica in POSF toate contractele si locurile de consum active|
+|8.	Verificare finala staging|	Se solicita ANRE o verificare finala a integrării pe mediul de staging dupa ce baza de date a societății comerciale a ajuns la zi cu informațiile de transmis in POSF|
+|9.	Avizare tehnica interconectare API|	ANRE avizeaza din punct de vedere tehnic societatea comerciala sa integreze sistemul in mediul de producție POSF, modifica ofertele comerciale din comparator pentru a fi transferate prin sistemul Broker API, transmite credentiale pentru API la mediul de productie. Societatea se conecteaza la mediul de productie si incepe transmiterea contractelor active si a locurilor de consum active precum si orice noua informatie care apare.|
+
+
+
 # Formatul valorilor
 
 |Tip camp|Format|Exemplu|Observatii|
