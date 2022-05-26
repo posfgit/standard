@@ -961,9 +961,14 @@ If message hold initialization data please fill "INITIALIZATION" in this field</
 		<xs:annotation>
 			<xs:documentation>Emis de Operator cand i s-au schimbat datele de identificare/persoane/adresa/etc.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
-		</xs:sequence>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="domainUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Person" type="anre:Person"/>
 	<xs:complexType name="Person">
@@ -1181,6 +1186,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
+					<xs:element name="domainUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
 					<xs:element name="supplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
