@@ -164,6 +164,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Marketing }
+     * 
+     */
+    public Marketing createMarketing() {
+        return new Marketing();
+    }
+
+    /**
+     * Create an instance of {@link ConsumptionItem }
+     * 
+     */
+    public ConsumptionItem createConsumptionItem() {
+        return new ConsumptionItem();
+    }
+
+    /**
      * Create an instance of {@link ContractNetworkChangedInfo }
      * 
      */
@@ -204,6 +220,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SupplierChangedInfo }
+     * 
+     */
+    public SupplierChangedInfo createSupplierChangedInfo() {
+        return new SupplierChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link Supplier }
+     * 
+     */
+    public Supplier createSupplier() {
+        return new Supplier();
+    }
+
+    /**
      * Create an instance of {@link TechnicalDataElectricity }
      * 
      */
@@ -220,11 +252,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Supplier }
+     * Create an instance of {@link Consumption }
      * 
      */
-    public Supplier createSupplier() {
-        return new Supplier();
+    public Consumption createConsumption() {
+        return new Consumption();
     }
 
     /**
@@ -297,6 +329,14 @@ public class ObjectFactory {
      */
     public Response createResponse() {
         return new Response();
+    }
+
+    /**
+     * Create an instance of {@link OperatorChangedInfo }
+     * 
+     */
+    public OperatorChangedInfo createOperatorChangedInfo() {
+        return new OperatorChangedInfo();
     }
 
     /**

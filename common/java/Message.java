@@ -57,6 +57,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     ConventionSignedBySupplier.class,
     ContractCancelledByClient.class,
     ClientInfoUpdated.class,
+    OperatorChangedInfo.class,
     Response.class,
     ContractTransferredToFUIByAnre.class,
     PlaceUpdatedByOperator.class,
@@ -66,6 +67,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     ContractCancelledBySupplier.class,
     ConventionSignedByOperator.class,
     ContractNetworkSignedBySupplier.class,
+    SupplierChangedInfo.class,
     ConventionChangedInfo.class,
     PlaceDisconnectedByOperator.class,
     ContractTransferredToFUIByOperator.class,
@@ -101,6 +103,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
         @JsonSubTypes.Type (name = "PlaceUpdatedByOperator", value = PlaceUpdatedByOperator.class),
         @JsonSubTypes.Type (name = "ConventionChangedInfo", value = ConventionChangedInfo.class),
         @JsonSubTypes.Type (name = "ContractNetworkChangedInfo", value = ContractNetworkChangedInfo.class),
+        @JsonSubTypes.Type (name = "OperatorChangedInfo", value = OperatorChangedInfo.class),
+        @JsonSubTypes.Type (name = "SupplierChangedInfo", value = SupplierChangedInfo.class),
 })
 public class Message {
 
