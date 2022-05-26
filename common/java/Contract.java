@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="additionalDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="additionalNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="client" type="{http://www.anre.ro/ANRESchema}Client" minOccurs="0"/>
+ *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="contractStatus" type="{http://www.anre.ro/ANRESchema}ContractStatus"/>
  *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="conventionNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
@@ -36,6 +37,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="executionAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
  *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.anre.ro/ANRESchema}Guid"/>
+ *         &lt;element name="marketing" type="{http://www.anre.ro/ANRESchema}Marketing" minOccurs="0"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="offerCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator" minOccurs="0"/>
@@ -58,6 +60,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "additionalDate",
     "additionalNumber",
     "client",
+    "consumption",
     "contractStatus",
     "contractWithOperatorNeeded",
     "conventionNeeded",
@@ -67,6 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "executionAddress",
     "expirationDate",
     "id",
+    "marketing",
     "number",
     "offerCode",
     "operator",
@@ -86,6 +90,7 @@ public class Contract {
     protected LocalDate additionalDate;
     protected String additionalNumber;
     protected Client client;
+    protected Consumption consumption;
     @XmlSchemaType(name = "string")
     protected ContractStatus contractStatus;
     protected Boolean contractWithOperatorNeeded;
@@ -104,6 +109,7 @@ public class Contract {
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID id;
+    protected Marketing marketing;
     protected String number;
     protected String offerCode;
     protected Operator operator;
@@ -188,6 +194,30 @@ public class Contract {
      */
     public void setClient(Client value) {
         this.client = value;
+    }
+
+    /**
+     * Gets the value of the consumption property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Consumption }
+     *     
+     */
+    public Consumption getConsumption() {
+        return consumption;
+    }
+
+    /**
+     * Sets the value of the consumption property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Consumption }
+     *     
+     */
+    public void setConsumption(Consumption value) {
+        this.consumption = value;
     }
 
     /**
@@ -404,6 +434,30 @@ public class Contract {
      */
     public void setId(UUID value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the marketing property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Marketing }
+     *     
+     */
+    public Marketing getMarketing() {
+        return marketing;
+    }
+
+    /**
+     * Sets the value of the marketing property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Marketing }
+     *     
+     */
+    public void setMarketing(Marketing value) {
+        this.marketing = value;
     }
 
     /**

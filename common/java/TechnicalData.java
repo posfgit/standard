@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="counterIndexReadDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="counterIndexValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="counterSeries" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -46,6 +47,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TechnicalData", propOrder = {
+    "consumption",
     "counterIndexReadDate",
     "counterIndexValue",
     "counterSeries",
@@ -68,6 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class TechnicalData {
 
+    protected Consumption consumption;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
@@ -93,6 +96,30 @@ public class TechnicalData {
     protected TechnicalDataStatus status;
     @XmlElement(required = true)
     protected String type;
+
+    /**
+     * Gets the value of the consumption property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Consumption }
+     *     
+     */
+    public Consumption getConsumption() {
+        return consumption;
+    }
+
+    /**
+     * Sets the value of the consumption property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Consumption }
+     *     
+     */
+    public void setConsumption(Consumption value) {
+        this.consumption = value;
+    }
 
     /**
      * Gets the value of the counterIndexReadDate property.
