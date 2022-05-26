@@ -114,6 +114,15 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |SupplierChangedInfo|Emis de WebPOSF/platforma furnizorului cand s-au schimbat date de identificare/persoane/adresa|WebPOSF, Furnizor|WebPOSF,  toti operatorii, toti furnizorii| |
 |OperatorChangedInfo|Emis de platforma operatorului cand s-au schimbat date de identificare/persoane/adresa|Operator|WebPOSF,  toti operatorii, toti furnizorii| |
 
+# Exemplu de flux pornind de la ContractSignedBySupplier
+
+Dupa ce se emite mesajul ContractSignedBySupplier, avem urmatoarele mesaje:
+
+1. Daca exista contract de retea intre CF si OR sau FN si OR, se emite ContractNetworkChangedInfo, adica se adauga locul de consum la contractul de retea existent
+2. Daca nu exista contract de retea intre CF si OR sau FN si OR, iar CF vrea direct cu OR, se emit mesajele 
+ContractNetworkSignedByClient si ContractNetworkSignedByOperator
+3. Daca nu exista contract de retea intre CF si OR sau FN si OR, iar serviciul de retea se realizeaza prin FN, se emit mesajele ContractNetworkSignedBySupplier si ContractNetworkSignedByOperator
+
 
 # Mesajul ContractNetworkSignedBySupplier
 
