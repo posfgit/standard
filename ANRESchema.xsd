@@ -440,6 +440,27 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="Consumption" type="anre:Consumption"/>
+	<xs:complexType name="Consumption">
+		<xs:sequence>
+			<xs:element name="item" type="anre:ConsumptionItem" minOccurs="0" maxOccurs="12">
+				<xs:annotation>
+					<xs:documentation>Ianuarie este primul in lista pe pozitia 1, Decembrie este ultimul pe pozitia 12</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ConsumptionItem" type="anre:ConsumptionItem"/>
+	<xs:complexType name="ConsumptionItem">
+		<xs:sequence>
+			<xs:element name="month" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>De la 1 la 12, lunile anului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="ContactAddress" type="anre:ContactAddress"/>
 	<xs:complexType name="ContactAddress">
 		<xs:annotation>
@@ -489,6 +510,7 @@
 					<xs:documentation>Client</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status contract</xs:documentation>
@@ -534,6 +556,7 @@
 					<xs:documentation>Identificator unic al contractului, folosit si in actele aditionale ulterioare</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="marketing" type="anre:Marketing" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar contract</xs:documentation>
@@ -883,6 +906,17 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="Marketing" type="anre:Marketing"/>
+	<xs:complexType name="Marketing">
+		<xs:sequence>
+			<xs:element name="agreeContactTerms" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="agreeGDPRTerms" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="agreePlatformTerms" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="clientIBAN" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="electronicInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="electronicMoneyReturn" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="Message" type="anre:Message"/>
 	<xs:complexType name="Message">
 		<xs:sequence>
@@ -927,20 +961,9 @@ If message hold initialization data please fill "INITIALIZATION" in this field</
 		<xs:annotation>
 			<xs:documentation>Emis de Operator cand i s-au schimbat datele de identificare/persoane/adresa/etc.</xs:documentation>
 		</xs:annotation>
-		<xs:complexContent>
-			<xs:extension base="anre:Message">
-				<xs:sequence>
-					<xs:element name="domainUrl" type="xs:string" minOccurs="0" maxOccurs="1">
-						<xs:annotation>
-							<xs:documentation>Nume de domeniu si calea (URL) de unde POSF poate sa descarce documentele atasate contractelor&#xD;
-&#xD;
-ex: https://545storage.gascompany.com/file/storage/</xs:documentation>
-						</xs:annotation>
-					</xs:element>
-					<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
+		<xs:sequence>
+			<xs:element name="operator" type="anre:Operator" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Person" type="anre:Person"/>
 	<xs:complexType name="Person">
@@ -1158,13 +1181,6 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
-					<xs:element name="domainUrl" type="xs:string" minOccurs="0" maxOccurs="1">
-						<xs:annotation>
-							<xs:documentation>Nume de domeniu si calea (URL) de unde POSF poate sa descarce documentele atasate contractelor&#xD;
-&#xD;
-ex: https://545storage.electriccompany.com/file/storage/</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="supplier" type="anre:Supplier" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1176,6 +1192,7 @@ ex: https://545storage.electriccompany.com/file/storage/</xs:documentation>
 			<xs:documentation>Date tehnice</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
