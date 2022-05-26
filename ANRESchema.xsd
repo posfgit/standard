@@ -251,6 +251,12 @@
 					<xs:documentation>Judetul</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="cua" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cod Unic Adresa conform nomenclatorului RENNS https://renns.ancpi.ro/renns-public/&#xD;
+ca de exemplu "1026-1437922-146504496"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Informatii extra care nu sunt cuprinse in aceste campuri</xs:documentation>
@@ -511,27 +517,27 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="1" maxOccurs="1">
+			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contractare a serviciului de retea direct (CF-OR)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Exista conventie</xs:documentation>
+					<xs:documentation>Este nevoie de conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa de corespondenta Client</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Date de contact Client</xs:documentation>
 				</xs:annotation>
