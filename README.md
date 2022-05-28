@@ -231,6 +231,11 @@ si urmatoarele elemente optionale
 5. Cod postal
 6. Pozitie (coordonare GPS)
 
+informatii de identificare unica
+1. cua (cod unic adresa - string)
+2. authorId - id unic al autorului acestei adrese
+3. cuaAuthor - id unic al adresei din sistemul IT al autorului
+
 Adresele vor fi incarcate in sistemul POSF din urmatoarele surse:
 1. Furnizori/Operatori
 2. Aplicatia WebPOSF avand ca sursa principala RENNS de la ANCPI sau free text.
