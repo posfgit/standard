@@ -87,7 +87,7 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |ContractNetworkSignedByOperator|Emis din WebPOSF/platforma Operator cand se semneaza contractul de retea de catre Operator. Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.|Operator|WebPOSF, Furnizor| |
 |ContractNetworkSignedBySupplier|Emis de Furnizor din sistemul propriu sau WebPOSF cand se semneaza contractul de retea de catre Furnizor|WebPOSF, Supplier|WebPOSF,Operator| |
 |ContractNetworkCancelledByOperator|Emis din WebPOSF/platforma Operator cand se doreste anularea contractului de retea cu clientul sau cu Furnizorul|WebPOSF, Operator|WebPOSF, Operator, Supplier| |
-|ContractNetworkChangedInfo|Emis de oricare din partile contractului de retea la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contractul de retea|Toti cei mentionati in contractul de retea| |
+|ContractNetworkChangedInfo|Emis de oricare din partile contractului de retea la momentul actualizarii de informatii. De exemplu cand intre Operator si Furnizor exista deja un contract de retea, adaugarea unui loc de consum in cadrul contractului respectiv se va face prin emiterea de catre operator a acestui mesaj completand supplier si previousSupplier. [A se vedea discutia din sedinta Zoom la minutul 53 ](https://youtu.be/UfvUjwTwRrA?t=3221).|Oricine este prezent in contractul de retea. |Toti cei mentionati in contractul de retea (CA daca are contract direct, FA, FN)| |
 
 ## Mesaje pe tema FUI
 
@@ -215,6 +215,34 @@ POSF este alcătuit din 3 medii:
 |9.	Avizare tehnica interconectare API|	ANRE avizeaza din punct de vedere tehnic societatea comerciala sa integreze sistemul in mediul de producție POSF, modifica ofertele comerciale din comparator pentru a fi transferate prin sistemul Broker API, transmite credentiale pentru API la mediul de productie. Societatea se conecteaza la mediul de productie si incepe transmiterea contractelor active si a locurilor de consum active precum si orice noua informatie care apare.|
 
 
+# Cateva consideratii despre Adrese 
+
+Informatiile de tip adresa au campurile descrise in schema XSD. Adresele presupun urmatoarele elemente obligatorii:
+1. Judet
+2. Oras (conform codificare SIRUTA)
+3. Nume drum (strada, cale, bulevard)
+4. Numar drum (12B, 15A)
+
+si urmatoarele elemente optionale
+1. Cladire (bloc, pavilion, corp)
+2. Scara
+3. Etaj
+4. Apartament
+5. Cod postal
+6. Pozitie (coordonare GPS)
+
+Adresele vor fi incarcate in sistemul POSF din urmatoarele surse:
+1. Furnizori/Operatori
+2. Aplicatia WebPOSF avand ca sursa principala RENNS de la ANCPI sau free text.
+
+Aplicatia WebPOSF va completa campul "cua" - cod unic de adresa conform nomenclatorului RENNS astfel incat sa garanteze unicitatea oricarei adrese.
+
+ATENTIE! In situatia in care Operatorii/Furnizorii doresc ca aplicatia WebPOSF sa prezinte potentialilor clienti adrese astfel incat sa fie alese si nu scrise "free text" solicitam furnizorilor / operatorilor sa incarce adresele din bazele lor de date in sistemul POSF folosind mesajele AddresChangedInfo completand campurile authorId si cuaAuthor. Astfel sistemul POSF va marca campul adresa cu identificatorul guid al autorului pentru o regasire usoara.
+
+Stabilim urmatoarele conventii:
+1. Daca o adresa are "cua" completat ea este originara din sistem RENNS.
+2. Daca o adresa are authorId ea este orginara din sistemul cu ID-ul respectiv (furnizor/operator/etc.) iar pentru a stabili unicitatea se foloseste campul cuaAuthor
+3. Adresele care au authorId id-ul aplicatiei WebPOSF sunt adrese scrise free text, probabil pentru ca utilizatorul nu le-a regasit in RENNS si nici printre adresele introduse de furnizori in prealabil.
 
 # Formatul valorilor
 

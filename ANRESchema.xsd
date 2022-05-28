@@ -236,6 +236,11 @@
 			<xs:documentation>Adresa</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="authorId" type="anre:Guid" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ID-ul celui care a publicat adresa in sistem. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="building" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar Bloc/Cladire</xs:documentation>
@@ -255,6 +260,11 @@
 				<xs:annotation>
 					<xs:documentation>Cod Unic Adresa conform nomenclatorului RENNS https://renns.ancpi.ro/renns-public/&#xD;
 ca de exemplu "1026-1437922-146504496"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cuaAuthor" type="anre:Guid" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cod Unic de Adresa asa cum se regaseste in sistemul informatic al autorului, in format UUID</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
@@ -282,7 +292,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Coordonate GPS</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="postcode" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="postcode" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cod postal</xs:documentation>
 				</xs:annotation>
@@ -298,6 +308,23 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AddressChangedInfo" type="anre:AddressChangedInfo"/>
+	<xs:complexType name="AddressChangedInfo">
+		<xs:annotation>
+			<xs:documentation>Incarcare adrese in POSF pentru a fi folosite de aplicatia WebPOSF cand permite clientului sa aleaga o adresa postala specifica unui operator.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Structura de tip Adresa completata obligatoriu cu authorId si cuaAuthor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Aggregate" type="anre:Aggregate"/>
 	<xs:complexType name="Aggregate">
