@@ -873,9 +873,9 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 					<xs:documentation>Numar conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Furnizorul actual</xs:documentation>
+					<xs:documentation>Furnizorul sters</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="type" type="anre:ConventionType" minOccurs="1" maxOccurs="1">
@@ -1232,6 +1232,16 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="counterIndexDesc" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>descrierea modalitatii de completare a valorii indexului. De exemplu:&#xD;
+&#xD;
+Pentru o singura valoare se completea numarul citit.&#xD;
+&#xD;
+Pentru mai multe valori se completeaza astfel:&#xD;
+nr cadran:valoare | nr cadran:valoare |</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
