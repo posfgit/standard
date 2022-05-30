@@ -242,7 +242,7 @@ Adresele vor fi incarcate in sistemul POSF din urmatoarele surse:
 
 Aplicatia WebPOSF va completa campul "cua" - cod unic de adresa conform nomenclatorului RENNS astfel incat sa garanteze unicitatea oricarei adrese.
 
-ATENTIE! In situatia in care Operatorii/Furnizorii doresc ca aplicatia WebPOSF sa prezinte potentialilor clienti adrese astfel incat sa fie alese si nu scrise "free text" solicitam furnizorilor / operatorilor sa incarce adresele din bazele lor de date in sistemul POSF folosind mesajele AddresChangedInfo completand campurile authorId si cuaAuthor. Astfel sistemul POSF va marca campul adresa cu identificatorul guid al autorului pentru o regasire usoara.
+ATENTIE! In situatia in care Operatorii/Furnizorii doresc ca aplicatia WebPOSF sa prezinte potentialilor clienti adrese astfel incat sa fie alese si nu scrise "free text" solicitam furnizorilor / operatorilor sa incarce adresele din bazele lor de date in sistemul POSF folosind mesajele AddresChangedInfo completand campurile authorId si cuaAuthor. Astfel sistemul POSF va marca campul adresa cu identificatorul guid al autorului pentru o regasire usoara. Sistemul POSF va prelua adresele transmise de furnizori in mesajele ContractSignedBySupplier si ContractChangedInfo daca adresele au completate authorId si cuaAuthor.
 
 Stabilim urmatoarele conventii:
 1. Daca o adresa are "cua" completat ea este originara din sistem RENNS.
