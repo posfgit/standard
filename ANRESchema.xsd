@@ -236,6 +236,11 @@
 			<xs:documentation>Adresa</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="authorId" type="anre:Guid" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ID-ul celui care a publicat adresa in sistem. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="building" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numar Bloc/Cladire</xs:documentation>
@@ -249,6 +254,17 @@
 			<xs:element name="county" type="anre:County" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Judetul</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cua" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cod Unic Adresa conform nomenclatorului RENNS https://renns.ancpi.ro/renns-public/&#xD;
+ca de exemplu "1026-1437922-146504496"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cuaAuthor" type="anre:Guid" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cod Unic de Adresa asa cum se regaseste in sistemul informatic al autorului, in format UUID</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
@@ -276,7 +292,7 @@
 					<xs:documentation>Coordonate GPS</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="postcode" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="postcode" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Cod postal</xs:documentation>
 				</xs:annotation>
@@ -292,6 +308,23 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AddressChangedInfo" type="anre:AddressChangedInfo"/>
+	<xs:complexType name="AddressChangedInfo">
+		<xs:annotation>
+			<xs:documentation>Incarcare adrese in POSF pentru a fi folosite de aplicatia WebPOSF cand permite clientului sa aleaga o adresa postala specifica unui operator.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Structura de tip Adresa completata obligatoriu cu authorId si cuaAuthor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="Aggregate" type="anre:Aggregate"/>
 	<xs:complexType name="Aggregate">
@@ -511,27 +544,27 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="1" maxOccurs="1">
+			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contractare a serviciului de retea direct (CF-OR)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="conventionNeeded" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Exista conventie</xs:documentation>
+					<xs:documentation>Este nevoie de conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa de corespondenta Client</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Date de contact Client</xs:documentation>
 				</xs:annotation>
@@ -840,9 +873,9 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 					<xs:documentation>Numar conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Furnizorul actual</xs:documentation>
+					<xs:documentation>Furnizorul sters</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="type" type="anre:ConventionType" minOccurs="1" maxOccurs="1">
@@ -1199,6 +1232,16 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="counterIndexDesc" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>descrierea modalitatii de completare a valorii indexului. De exemplu:&#xD;
+&#xD;
+Pentru o singura valoare se completea numarul citit.&#xD;
+&#xD;
+Pentru mai multe valori se completeaza astfel:&#xD;
+nr cadran:valoare | nr cadran:valoare |</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
