@@ -1,0 +1,7 @@
+props:
+  in-folder-name: "IN"
+  out-folder-name: "OUT"
+  receive-folder-name: "receive"
+
+
+
