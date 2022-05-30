@@ -1,0 +1,1 @@
+Parola certificatului este "changeit"
