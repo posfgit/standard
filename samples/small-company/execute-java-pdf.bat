@@ -1,1 +1,1 @@
-java  -Duser=webposf@gmail.com -Dpassword=1234 -Dtype=pdf -Dpdf-input=src/main/resources/docs/model.pdf -Dpdf-sign=src/main/resources/docs/semnatura.jpeg -Dpdf-xml-input=src/main/resources/docs/response-12154.xml -jar posf-1.jar
+java  -Duser=supplier@gmail.com -Dpassword=1234 -Dtype=pdf -Dpdf-input=./docs/model.pdf -Dpdf-xml-input=./docs/msg.xml -Dpdf-client.signature=./docs/semnatura.jpeg -Dpdf-supplier.signature=./docs/semnatura.jpeg -Dpdf-operator.signature=./docs/semnatura.jpeg -jar posf-1.jar

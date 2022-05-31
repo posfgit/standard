@@ -44,8 +44,6 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 				case "pdf":
 					if(System.getProperty("pdf-input") == null){
 						System.out.println("parametrul -Dpdf-input nu este trimis");
-					}else if(System.getProperty("pdf-sign") == null){
-						System.out.println("parametrul -Dpdf-sign nu este trimis");
 					}else if(System.getProperty("pdf-xml-input") == null){
 						System.out.println("parametrul -Dpdf-xml-input nu este trimis");
 					}else{

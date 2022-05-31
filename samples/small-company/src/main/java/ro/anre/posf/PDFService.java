@@ -1,13 +1,11 @@
 package ro.anre.posf;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfStamper;
 import com.lowagie.text.pdf.PushbuttonField;
-import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +24,9 @@ public class PDFService {
     XmlMapper xmlMapper;
 
     private static final String FILE_NAME = System.getProperty("pdf-input");
-    private static final String SIGNATURE_NAME =System.getProperty("pdf-sign");
+    private static final String CLIENT_SIGNATURE_NAME = System.getProperty("pdf-client.signature");
+    private static final String SUPPLIER_SIGNATURE_NAME = System.getProperty("pdf-supplier.signature");
+    private static final String OPERATOR_SIGNATURE_NAME = System.getProperty("pdf-operator.signature");
     private static final String XML_FILE_PATH = System.getProperty("pdf-xml-input");
 
     @SneakyThrows
@@ -51,7 +51,9 @@ public class PDFService {
             form.setField(key, keys.get(key));
         }
 
-        addSignature(form);
+        addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
+        addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
+        addSignature(form, "operator.signature", OPERATOR_SIGNATURE_NAME);
 
         stamper.setFormFlattening(true);
         stamper.close();
@@ -62,14 +64,22 @@ public class PDFService {
     }
 
     @SneakyThrows
-    private void addSignature(AcroFields form) {
-        PushbuttonField ad = form.getNewPushbuttonFromField("client.signature");
+    private void addSignature(AcroFields form, String signature, String signatureName) {
+        if(signatureName == null){
+            return;
+        }
+
+        PushbuttonField ad = form.getNewPushbuttonFromField(signature);
+        if(ad == null){
+            return;
+        }
+
         ad.setProportionalIcon(true);
 
-        try (InputStream signStream = new FileInputStream(SIGNATURE_NAME)) {
+        try (InputStream signStream = new FileInputStream(signatureName)) {
             ad.setImage(Image.getInstance(signStream.readAllBytes()));
         }
 
-        form.replacePushbuttonField("client.signature", ad.getField());
+        form.replacePushbuttonField(signature, ad.getField());
     }
 }
