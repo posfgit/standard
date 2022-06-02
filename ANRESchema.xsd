@@ -267,7 +267,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Cod Unic de Adresa asa cum se regaseste in sistemul informatic al autorului, in format UUID</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="extended" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="extended" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Informatii extra care nu sunt cuprinse in aceste campuri</xs:documentation>
 				</xs:annotation>
@@ -450,7 +450,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Adresa corespondenta</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="extra" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="extra" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="incorporation" type="anre:Incorporation" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Forma juridica</xs:documentation>
