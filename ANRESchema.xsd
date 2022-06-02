@@ -307,6 +307,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Strada</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="streetType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip drum conform nocenclator RENNS (Strada, Bulevard, Cale, etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="AddressChangedInfo" type="anre:AddressChangedInfo"/>
