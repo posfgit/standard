@@ -394,7 +394,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Persoana fizica</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="preCompany" type="anre:Company" minOccurs="1" maxOccurs="1">
+			<xs:element name="preCompany" type="anre:Company" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Parte responsabila cu echilibrarea</xs:documentation>
 				</xs:annotation>
