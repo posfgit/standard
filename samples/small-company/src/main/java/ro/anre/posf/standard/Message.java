@@ -54,6 +54,7 @@ import java.util.UUID;
     ClientInfoUpdated.class,
     OperatorChangedInfo.class,
     Response.class,
+    AddressChangedInfo.class,
     ContractTransferredToFUIByAnre.class,
     PlaceUpdatedByOperator.class,
     ContractNetworkCancelledByOperator.class,
@@ -100,6 +101,7 @@ import java.util.UUID;
         @JsonSubTypes.Type (name = "ContractNetworkChangedInfo", value = ContractNetworkChangedInfo.class),
         @JsonSubTypes.Type (name = "OperatorChangedInfo", value = OperatorChangedInfo.class),
         @JsonSubTypes.Type (name = "SupplierChangedInfo", value = SupplierChangedInfo.class),
+        @JsonSubTypes.Type (name = "AddressChangedInfo", value = AddressChangedInfo.class),
 })
 public class Message {
 
