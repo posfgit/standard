@@ -10,11 +10,11 @@ public class Adapter2
 
 
     public LocalDate unmarshal(String value) {
-        return (ro.anre.anreschema.jaxb.Adapter.parseDate(value));
+        return (ro.anre.anreschema.standard.Adapter.parseDate(value));
     }
 
     public String marshal(LocalDate value) {
-        return (ro.anre.anreschema.jaxb.Adapter.printDate(value));
+        return (ro.anre.anreschema.standard.Adapter.printDate(value));
     }
 
 }

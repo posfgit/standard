@@ -10,11 +10,11 @@ public class Adapter3
 
 
     public UUID unmarshal(String value) {
-        return (ro.anre.anreschema.jaxb.Adapter.parseUuid(value));
+        return (ro.anre.anreschema.standard.Adapter.parseUuid(value));
     }
 
     public String marshal(UUID value) {
-        return (ro.anre.anreschema.jaxb.Adapter.printUuid(value));
+        return (ro.anre.anreschema.standard.Adapter.printUuid(value));
     }
 
 }

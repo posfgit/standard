@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
+ *         &lt;element name="counterIndexDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="counterIndexReadDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="counterIndexValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="counterSeries" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -48,6 +49,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TechnicalData", propOrder = {
     "consumption",
+    "counterIndexDesc",
     "counterIndexReadDate",
     "counterIndexValue",
     "counterSeries",
@@ -71,6 +73,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class TechnicalData {
 
     protected Consumption consumption;
+    protected String counterIndexDesc;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
@@ -119,6 +122,30 @@ public class TechnicalData {
      */
     public void setConsumption(Consumption value) {
         this.consumption = value;
+    }
+
+    /**
+     * Gets the value of the counterIndexDesc property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCounterIndexDesc() {
+        return counterIndexDesc;
+    }
+
+    /**
+     * Sets the value of the counterIndexDesc property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCounterIndexDesc(String value) {
+        this.counterIndexDesc = value;
     }
 
     /**

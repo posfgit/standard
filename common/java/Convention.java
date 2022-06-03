@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Contract"/>
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="removedSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" maxOccurs="unbounded"/>
+ *         &lt;element name="removedSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}ConventionType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -61,7 +61,7 @@ public class Convention {
     protected LocalDate date;
     @XmlElement(required = true)
     protected String number;
-    @XmlElement(name = "removedSupplier", required = true)
+    @XmlElement(name = "removedSupplier")
     protected List<Supplier> removedSuppliers;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
