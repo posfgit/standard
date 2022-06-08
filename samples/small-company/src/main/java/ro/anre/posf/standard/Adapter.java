@@ -8,7 +8,10 @@ import java.util.UUID;
 public class Adapter  {
 
     public static LocalDateTime parseDateTime(String date) {
-        return  LocalDateTime.parse(date, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        if (date.endsWith("Z")) {
+            return LocalDateTime.parse(date.substring(0, date.length() - 1));
+        }
+        return  LocalDateTime.parse(date);
     }
 
     public static String printDateTime(LocalDateTime val) {

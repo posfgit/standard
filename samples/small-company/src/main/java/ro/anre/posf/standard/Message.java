@@ -103,6 +103,7 @@ import java.util.UUID;
         @JsonSubTypes.Type (name = "SupplierChangedInfo", value = SupplierChangedInfo.class),
         @JsonSubTypes.Type (name = "AddressChangedInfo", value = AddressChangedInfo.class),
 })
+@XmlRootElement()
 public class Message {
 
     @XmlElement(required = true)
