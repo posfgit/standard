@@ -1,11 +1,8 @@
 
 package ro.anre.anreschema.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -45,6 +42,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement(name = "Place")
 public class Place {
+
 
     protected Address address;
     protected String code;
