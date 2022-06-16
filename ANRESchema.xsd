@@ -394,7 +394,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Persoana fizica</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="preCompany" type="anre:Company" minOccurs="0" maxOccurs="1">
+			<xs:element name="preCompany" type="anre:Company" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Parte responsabila cu echilibrarea</xs:documentation>
 				</xs:annotation>
@@ -434,8 +434,8 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Persoana juridica</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="address" type="anre:Address" minOccurs="1" maxOccurs="1">
+		<xs:sequence minOccurs="0">
+			<xs:element name="address" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa Sediu Social</xs:documentation>
 				</xs:annotation>
@@ -445,12 +445,12 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>CUI</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contactAddress" type="anre:ContactAddress" minOccurs="1" maxOccurs="1">
+			<xs:element name="contactAddress" type="anre:ContactAddress" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Date contact: Telefon, Mobil, Fax, Email</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceAddress" type="anre:Address" minOccurs="1" maxOccurs="1">
+			<xs:element name="correspondenceAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa corespondenta</xs:documentation>
 				</xs:annotation>
@@ -461,7 +461,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Forma juridica</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="legalRepresentative" type="anre:Person" minOccurs="1" maxOccurs="1">
+			<xs:element name="legalRepresentative" type="anre:Person" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Reprezentant legal</xs:documentation>
 				</xs:annotation>
@@ -613,6 +613,16 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:element name="place" type="anre:Place" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Loc de consum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="previousContractDate" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>data contractului care se anuleaza</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="previousContractNumber" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>numarul contractului care se anuleaza</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="previousSupplier" type="anre:Supplier" minOccurs="0" maxOccurs="1">
@@ -1084,7 +1094,7 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>Operatorul care detine acest loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="1" maxOccurs="1">
+			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Poate fi de tip TechnicalDataElectricity sau TechnicalDataGas</xs:documentation>
 				</xs:annotation>
@@ -1235,7 +1245,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>Date tehnice</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
+		<xs:sequence minOccurs="0">
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="counterIndexDesc" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
@@ -1257,34 +1267,34 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 					<xs:documentation>Valoarea citita a contorului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="counterSeries" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="counterSeries" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Serie contor</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="counterType" type="anre:CounterType" minOccurs="1" maxOccurs="1">
+			<xs:element name="counterType" type="anre:CounterType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tip contor</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="date" type="xs:date" minOccurs="1" maxOccurs="1">
+			<xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data documentului tehnic</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="documentType" type="anre:TechnicalDataType" minOccurs="1" maxOccurs="1">
+			<xs:element name="documentType" type="anre:TechnicalDataType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tipul documentului: &#xD;
 - pentru EE: Certificat de racordare/ Aviz tehnic de racordare&#xD;
 - pentru GN: Aviz tehnic de racordare/ Acord de acces</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="number" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Numarul documentului tehnic</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="smartMeter" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="smartMeter" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Exista un sistem de masurare inteligent</xs:documentation>
 				</xs:annotation>
