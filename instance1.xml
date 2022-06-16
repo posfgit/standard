@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <anre:ContractSignedByClient xmlns:anre="http://www.anre.ro/ANRESchema"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.anre.ro/ANRESchema file:/E:/CloudStation/!TNI/ANRE/standard/ANRESchema.xsd">
     <authorID>authorID0</authorID>
     <authorName>authorName0</authorName>
     <correlationID>correlationID11111111111111111111111</correlationID>
@@ -605,7 +606,9 @@
                 <number>number36</number>
                 <operatorId>operatorId1</operatorId>
             </operator>
-            <technicalData>
+            <type>CLC</type>
+            <url>url0</url>
+            <technicalDataElectricity>
                 <consumption>
                     <item>
                         <month>0</month>
@@ -626,10 +629,13 @@
                 <number>number37</number>
                 <smartMeter>false</smartMeter>
                 <status>CONECTAT</status>
-                <type>type7</type>
-            </technicalData>
-            <type>CLC</type>
-            <url>url0</url>
+                <type>type8</type>
+                <approvedConsumptionPower>0</approvedConsumptionPower>
+                <approvedProducedPower>0</approvedProducedPower>
+                <connectionType>MONOFAZAT</connectionType>
+                <networkType>CA</networkType>
+                <voltageLevel>0</voltageLevel>
+            </technicalDataElectricity>
         </place>
         <previousContractDate>2006-05-04</previousContractDate>
         <previousContractNumber>previousContractNumber0</previousContractNumber>

@@ -1094,11 +1094,6 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>Operatorul care detine acest loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="technicalData" type="anre:TechnicalData" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Poate fi de tip TechnicalDataElectricity sau TechnicalDataGas</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
@@ -1109,6 +1104,10 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="technicalDataElectricity" type="anre:TechnicalDataElectricity" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="technicalDataGas" type="anre:TechnicalDataGas" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="PlaceCreatedByOperator" type="anre:PlaceCreatedByOperator"/>
