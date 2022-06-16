@@ -124,6 +124,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="Guid">
 		<xs:restriction base="xs:string">
+			<xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
 			<xs:length value="36"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -968,7 +969,7 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 	<xs:element name="Message" type="anre:Message"/>
 	<xs:complexType name="Message">
 		<xs:sequence>
-			<xs:element name="authorID" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="authorID" type="anre:Guid" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ID asignat de POSF pentru sistemul IT care emite mesajul</xs:documentation>
 				</xs:annotation>
