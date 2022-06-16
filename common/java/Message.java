@@ -6,12 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
@@ -59,6 +54,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     ClientInfoUpdated.class,
     OperatorChangedInfo.class,
     Response.class,
+    AddressChangedInfo.class,
     ContractTransferredToFUIByAnre.class,
     PlaceUpdatedByOperator.class,
     ContractNetworkCancelledByOperator.class,
@@ -105,9 +101,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
         @JsonSubTypes.Type (name = "ContractNetworkChangedInfo", value = ContractNetworkChangedInfo.class),
         @JsonSubTypes.Type (name = "OperatorChangedInfo", value = OperatorChangedInfo.class),
         @JsonSubTypes.Type (name = "SupplierChangedInfo", value = SupplierChangedInfo.class),
+        @JsonSubTypes.Type (name = "AddressChangedInfo", value = AddressChangedInfo.class),
 })
+@XmlRootElement()
 public class Message {
-
     @XmlElement(required = true)
     protected String authorID;
     @XmlElement(required = true)

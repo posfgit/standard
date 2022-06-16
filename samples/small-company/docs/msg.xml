@@ -1,4 +1,4 @@
-<ContractSignedByClient>
+<anre:ContractSignedByClient xmlns:anre="http://www.anre.ro/ANRESchema">
     <authorID>a3d9414a-bfdf-11ec-9d64-0242ac120002</authorID>
     <authorName>string</authorName>
     <correlationID>552f0c47-8c24-4d76-819a-6ef363b43465</correlationID>
@@ -982,4 +982,4 @@
         <type>FURNIZARE</type>
         <url/>
     </contract>
-</ContractSignedByClient>
+</anre:ContractSignedByClient>

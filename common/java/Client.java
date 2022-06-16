@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="isAgregate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="isPre" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="person" type="{http://www.anre.ro/ANRESchema}Person"/>
- *         &lt;element name="preCompany" type="{http://www.anre.ro/ANRESchema}Company"/>
+ *         &lt;element name="preCompany" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
  *         &lt;element name="prosumer" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="uninterruptible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="vulnerable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
@@ -58,7 +58,6 @@ public class Client {
     protected boolean isPre;
     @XmlElement(required = true)
     protected Person person;
-    @XmlElement(required = true)
     protected Company preCompany;
     protected boolean prosumer;
     protected boolean uninterruptible;

@@ -1,12 +1,8 @@
 
 package ro.anre.anreschema.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -25,7 +21,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="contactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress"/>
  *         &lt;element name="correspondenceAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
- *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="incorporation" type="{http://www.anre.ro/ANRESchema}Incorporation"/>
  *         &lt;element name="legalRepresentative" type="{http://www.anre.ro/ANRESchema}Person"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -55,7 +51,6 @@ import javax.xml.bind.annotation.XmlType;
     Operator.class
 })
 public class Company {
-
     @XmlElement(required = true)
     protected Address address;
     @XmlElement(required = true)
@@ -64,7 +59,6 @@ public class Company {
     protected ContactAddress contactAddress;
     @XmlElement(required = true)
     protected Address correspondenceAddress;
-    @XmlElement(required = true)
     protected String extra;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")

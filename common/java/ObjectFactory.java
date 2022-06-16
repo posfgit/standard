@@ -324,6 +324,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddressChangedInfo }
+     * 
+     */
+    public AddressChangedInfo createAddressChangedInfo() {
+        return new AddressChangedInfo();
+    }
+
+    /**
      * Create an instance of {@link Response }
      * 
      */

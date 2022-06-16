@@ -28,11 +28,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="additionalNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="client" type="{http://www.anre.ro/ANRESchema}Client" minOccurs="0"/>
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
- *         &lt;element name="contractStatus" type="{http://www.anre.ro/ANRESchema}ContractStatus"/>
- *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="conventionNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="correspondenceClientAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
- *         &lt;element name="correspondenceClientContactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress"/>
+ *         &lt;element name="contractStatus" type="{http://www.anre.ro/ANRESchema}ContractStatus" minOccurs="0"/>
+ *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="conventionNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="correspondenceClientAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
+ *         &lt;element name="correspondenceClientContactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress" minOccurs="0"/>
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="executionAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
  *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>

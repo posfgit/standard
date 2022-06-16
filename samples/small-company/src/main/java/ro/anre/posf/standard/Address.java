@@ -2,6 +2,8 @@
 package ro.anre.posf.standard;
 
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.UUID;
 
 
 /**
@@ -16,18 +18,21 @@ import javax.xml.bind.annotation.*;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="authorId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *         &lt;element name="building" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="city" type="{http://www.anre.ro/ANRESchema}City"/>
  *         &lt;element name="county" type="{http://www.anre.ro/ANRESchema}County"/>
  *         &lt;element name="cua" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="cuaAuthor" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
+ *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="flat" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="floor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="position" type="{http://www.anre.ro/ANRESchema}Position" minOccurs="0"/>
- *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="stair" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="streetType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,10 +43,12 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Address", propOrder = {
+    "authorId",
     "building",
     "city",
     "county",
     "cua",
+    "cuaAuthor",
     "extended",
     "flat",
     "floor",
@@ -49,11 +56,15 @@ import javax.xml.bind.annotation.*;
     "position",
     "postcode",
     "stair",
-    "street"
+    "street",
+    "streetType"
 })
 @XmlRootElement(name = "Address")
 public class Address {
 
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID authorId;
     protected String building;
     @XmlElement(required = true)
     protected City city;
@@ -61,18 +72,44 @@ public class Address {
     @XmlSchemaType(name = "string")
     protected County county;
     protected String cua;
-    @XmlElement(required = true)
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID cuaAuthor;
     protected String extended;
     protected String flat;
     protected String floor;
     @XmlElement(required = true)
     protected String number;
     protected Position position;
-    @XmlElement(required = true)
     protected String postcode;
     protected String stair;
     @XmlElement(required = true)
     protected String street;
+    protected String streetType;
+
+    /**
+     * Gets the value of the authorId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public UUID getAuthorId() {
+        return authorId;
+    }
+
+    /**
+     * Sets the value of the authorId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAuthorId(UUID value) {
+        this.authorId = value;
+    }
 
     /**
      * Gets the value of the building property.
@@ -168,6 +205,30 @@ public class Address {
      */
     public void setCua(String value) {
         this.cua = value;
+    }
+
+    /**
+     * Gets the value of the cuaAuthor property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public UUID getCuaAuthor() {
+        return cuaAuthor;
+    }
+
+    /**
+     * Sets the value of the cuaAuthor property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCuaAuthor(UUID value) {
+        this.cuaAuthor = value;
     }
 
     /**
@@ -360,6 +421,30 @@ public class Address {
      */
     public void setStreet(String value) {
         this.street = value;
+    }
+
+    /**
+     * Gets the value of the streetType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStreetType() {
+        return streetType;
+    }
+
+    /**
+     * Sets the value of the streetType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStreetType(String value) {
+        this.streetType = value;
     }
 
 }
