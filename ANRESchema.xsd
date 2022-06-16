@@ -375,11 +375,6 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Agregator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="company" type="anre:Company" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Companie</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="isAgregate" type="xs:boolean" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca face parte dintr-o agregare</xs:documentation>
@@ -388,11 +383,6 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:element name="isPre" type="xs:boolean" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca este delegata o parte responsabila cu echilibrarea</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="person" type="anre:Person" minOccurs="1" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Persoana fizica</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="preCompany" type="anre:Company" minOccurs="0" maxOccurs="1">
@@ -415,6 +405,10 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Vulnerabil</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="company" type="anre:Company" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="person" type="anre:Person" minOccurs="0" maxOccurs="1"/>
+			</xs:choice>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ClientInfoUpdated" type="anre:ClientInfoUpdated"/>
