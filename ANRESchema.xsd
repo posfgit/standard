@@ -370,17 +370,17 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:documentation>Client</xs:documentation>
 		</xs:annotation>
 		<xs:sequence minOccurs="0" maxOccurs="1">
-			<xs:element name="aggregates" type="anre:Company" minOccurs="0" maxOccurs="1">
+			<xs:element name="aggregates" type="anre:Client" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Agregator</xs:documentation>
+					<xs:documentation>Persoana fizica sau juridica care inedplineste rolul de agregator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="isAgregate" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="isAgregate" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca face parte dintr-o agregare</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="isPre" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="isPre" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca este delegata o parte responsabila cu echilibrarea</xs:documentation>
 				</xs:annotation>
@@ -390,17 +390,17 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Parte responsabila cu echilibrarea</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="prosumer" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="prosumer" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Prosumator</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="uninterruptible" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="uninterruptible" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Neintreruptibil</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="vulnerable" type="xs:boolean" minOccurs="1" maxOccurs="1">
+			<xs:element name="vulnerable" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Vulnerabil</xs:documentation>
 				</xs:annotation>
@@ -451,7 +451,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extra" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="incorporation" type="anre:Incorporation" minOccurs="0" maxOccurs="1">
+			<xs:element name="incorporation" type="anre:Incorporation" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Forma juridica</xs:documentation>
 				</xs:annotation>
