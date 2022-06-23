@@ -94,6 +94,7 @@
 			<xs:enumeration value="MS"/>
 			<xs:enumeration value="NT"/>
 			<xs:enumeration value="OT"/>
+			<xs:enumeration value="OTHER"/>
 			<xs:enumeration value="PH"/>
 			<xs:enumeration value="SB"/>
 			<xs:enumeration value="SJ"/>
@@ -252,6 +253,11 @@
 					<xs:documentation>Unitate Administrativ Teritoriala conform cod siruta (Oras/Comuna/Sat)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tara</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="county" type="anre:County" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Judetul</xs:documentation>
@@ -263,9 +269,9 @@
 ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="cuaAuthor" type="anre:Guid" minOccurs="0" maxOccurs="1">
+			<xs:element name="cuaAuthor" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Cod Unic de Adresa asa cum se regaseste in sistemul informatic al autorului, in format UUID</xs:documentation>
+					<xs:documentation>Cod Unic de Adresa asa cum se regaseste in sistemul informatic al autorului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extended" type="xs:string" minOccurs="0" maxOccurs="1">
@@ -451,7 +457,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="extra" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="incorporation" type="anre:Incorporation" minOccurs="1" maxOccurs="1">
+			<xs:element name="incorporation" type="anre:Incorporation" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Forma juridica</xs:documentation>
 				</xs:annotation>
