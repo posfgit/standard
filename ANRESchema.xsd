@@ -17,6 +17,10 @@
 			<xs:enumeration value="C_1"/>
 			<xs:enumeration value="C_2"/>
 			<xs:enumeration value="C_3"/>
+			<xs:enumeration value="C_4"/>
+			<xs:enumeration value="C_5"/>
+			<xs:enumeration value="C_6"/>
+			<xs:enumeration value="C_7"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ContractStatus">
@@ -1319,7 +1323,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
-					<xs:element name="approvedConsumptionPower" type="xs:double" minOccurs="1" maxOccurs="1">
+					<xs:element name="approvedConsumptionPower" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Putere aprobata la consum in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
@@ -1339,7 +1343,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Tip retea: Distributie sau Transport</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="voltageLevel" type="xs:decimal" minOccurs="1" maxOccurs="1">
+					<xs:element name="voltageLevel" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Nivelul de tensiune disponibil in locul de consum, masurata in Volt</xs:documentation>
 						</xs:annotation>
@@ -1361,7 +1365,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Categorie de consum</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="debit" type="xs:decimal" minOccurs="1" maxOccurs="1">
+					<xs:element name="debit" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Debit aprobat</xs:documentation>
 						</xs:annotation>
@@ -1371,7 +1375,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Tip retea: Distributie, Transport sau Conducta de alimentare din amonte</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="pressure" type="xs:decimal" minOccurs="1" maxOccurs="1">
+					<xs:element name="pressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Presiunea disponibila in locul de consum</xs:documentation>
 						</xs:annotation>
