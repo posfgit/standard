@@ -471,6 +471,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Reprezentant legal</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="legalRepresentativeQuality" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Calitatea reprezentantului legal</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Denumire</xs:documentation>
@@ -1004,6 +1009,11 @@ If message hold initialization data please fill "INITIALIZATION" in this field</
 		<xs:complexContent>
 			<xs:extension base="anre:Company">
 				<xs:sequence>
+					<xs:element name="license" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Numar licenta</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="operatorId" type="anre:Guid" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1221,6 +1231,11 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 							<xs:documentation>Este FUI (Furnizor de ultima instanta)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="license" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Numar licenta</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="supplierId" type="anre:Guid" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Identificator unic al furnizorului furnizat de POSF</xs:documentation>
@@ -1259,6 +1274,13 @@ Pentru o singura valoare se completea numarul citit.&#xD;
 &#xD;
 Pentru mai multe valori se completeaza astfel:&#xD;
 nr cadran:valoare | nr cadran:valoare |</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterIndexInterval" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Periodicitatea citirii echipamentelor de masurare masurata in luni:&#xD;
+1 - o luna&#xD;
+2 - doua luni</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
@@ -1370,6 +1392,21 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Debit aprobat</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="maximumPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Presiune maxima</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minimumPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Presiune minima</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="minimumTechnicalPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Presiunea minima tehnologica</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie, Transport sau Conducta de alimentare din amonte</xs:documentation>
@@ -1377,7 +1414,12 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 					</xs:element>
 					<xs:element name="pressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Presiunea disponibila in locul de consum</xs:documentation>
+							<xs:documentation>Presiunea disponibila in locul de consum, conform ATR</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="reservedCapacity" type="xs:decimal" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Capacitate rezervata</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
