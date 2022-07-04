@@ -5,20 +5,20 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class Adapter  {
 
-    public static LocalDateTime parseDateTime(String date) {
-        if (date.endsWith("Z")) {
-            return LocalDateTime.parse(date.substring(0, date.length() - 1));
-        }
-        return  LocalDateTime.parse(date);
+    public static ZonedDateTime parseDateTime(String date) {
+        ZonedDateTime zdtInstanceAtOffset = ZonedDateTime.parse(date, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        return  zdtInstanceAtOffset.withZoneSameInstant(ZoneOffset.UTC);
     }
 
-    public static String printDateTime(LocalDateTime val) {
-        return val.toString();
+    public static String printDateTime(ZonedDateTime val) {
+        return val.withZoneSameInstant(ZoneOffset.UTC).toString();
     }
 
     public static LocalDate parseDate(String date) {

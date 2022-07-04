@@ -1,19 +1,19 @@
 
 package ro.anre.anreschema.standard;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter1
-    extends XmlAdapter<String, LocalDateTime>
+    extends XmlAdapter<String, ZonedDateTime>
 {
 
 
-    public LocalDateTime unmarshal(String value) {
+    public ZonedDateTime unmarshal(String value) {
         return (ro.anre.anreschema.standard.Adapter.parseDateTime(value));
     }
 
-    public String marshal(LocalDateTime value) {
+    public String marshal(ZonedDateTime value) {
         return (ro.anre.anreschema.standard.Adapter.printDateTime(value));
     }
 

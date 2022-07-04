@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -20,7 +21,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="authorID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="authorID" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *         &lt;element name="authorName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="correlationID" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -105,8 +106,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 @XmlRootElement()
 public class Message {
-    @XmlElement(required = true)
-    protected String authorID;
+
+    @XmlElement(required = true, type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID authorID;
     @XmlElement(required = true)
     protected String authorName;
     @XmlElement(required = true, type = String.class)
@@ -119,7 +122,7 @@ public class Message {
     @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter1 .class)
     @XmlSchemaType(name = "dateTime")
-    protected LocalDateTime timestamp;
+    protected ZonedDateTime timestamp;
     @XmlElement(required = true)
     protected String type;
 
@@ -131,7 +134,7 @@ public class Message {
      *     {@link String }
      *     
      */
-    public String getAuthorID() {
+    public UUID getAuthorID() {
         return authorID;
     }
 
@@ -143,7 +146,7 @@ public class Message {
      *     {@link String }
      *     
      */
-    public void setAuthorID(String value) {
+    public void setAuthorID(UUID value) {
         this.authorID = value;
     }
 
@@ -251,7 +254,7 @@ public class Message {
      *     {@link String }
      *     
      */
-    public LocalDateTime getTimestamp() {
+    public ZonedDateTime getTimestamp() {
         return timestamp;
     }
 
@@ -263,7 +266,7 @@ public class Message {
      *     {@link String }
      *     
      */
-    public void setTimestamp(LocalDateTime value) {
+    public void setTimestamp(ZonedDateTime value) {
         this.timestamp = value;
     }
 

@@ -42,6 +42,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="offerCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator" minOccurs="0"/>
  *         &lt;element name="place" type="{http://www.anre.ro/ANRESchema}Place" minOccurs="0"/>
+ *         &lt;element name="previousContractDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+ *         &lt;element name="previousContractNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="previousSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
  *         &lt;element name="startingDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="supplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
@@ -75,6 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "offerCode",
     "operator",
     "place",
+    "previousContractDate",
+    "previousContractNumber",
     "previousSupplier",
     "startingDate",
     "supplier",
@@ -114,6 +118,11 @@ public class Contract {
     protected String offerCode;
     protected Operator operator;
     protected Place place;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter2 .class)
+    @XmlSchemaType(name = "date")
+    protected LocalDate previousContractDate;
+    protected String previousContractNumber;
     protected Supplier previousSupplier;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
@@ -554,6 +563,54 @@ public class Contract {
      */
     public void setPlace(Place value) {
         this.place = value;
+    }
+
+    /**
+     * Gets the value of the previousContractDate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public LocalDate getPreviousContractDate() {
+        return previousContractDate;
+    }
+
+    /**
+     * Sets the value of the previousContractDate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPreviousContractDate(LocalDate value) {
+        this.previousContractDate = value;
+    }
+
+    /**
+     * Gets the value of the previousContractNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPreviousContractNumber() {
+        return previousContractNumber;
+    }
+
+    /**
+     * Sets the value of the previousContractNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPreviousContractNumber(String value) {
+        this.previousContractNumber = value;
     }
 
     /**

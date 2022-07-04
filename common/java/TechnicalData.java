@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * &lt;complexType name="TechnicalData">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;sequence minOccurs="0">
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="counterIndexDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="counterIndexReadDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="counterIndexValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="counterSeries" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="counterType" type="{http://www.anre.ro/ANRESchema}CounterType"/>
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *         &lt;element name="documentType" type="{http://www.anre.ro/ANRESchema}TechnicalDataType"/>
- *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="smartMeter" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="counterSeries" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="counterType" type="{http://www.anre.ro/ANRESchema}CounterType" minOccurs="0"/>
+ *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
+ *         &lt;element name="documentType" type="{http://www.anre.ro/ANRESchema}TechnicalDataType" minOccurs="0"/>
+ *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="smartMeter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="status" type="{http://www.anre.ro/ANRESchema}TechnicalDataStatus"/>
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -65,11 +65,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     TechnicalDataGas.class,
     TechnicalDataElectricity.class
 })
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type",  include = JsonTypeInfo.As.EXISTING_PROPERTY, visible = true)
-@JsonSubTypes({
-        @JsonSubTypes.Type(name = "TechnicalDataGas", value = TechnicalDataGas.class),
-        @JsonSubTypes.Type(name = "TechnicalDataElectricity", value = TechnicalDataElectricity.class),
-})
 public class TechnicalData {
 
     protected Consumption consumption;
@@ -79,25 +74,19 @@ public class TechnicalData {
     @XmlSchemaType(name = "date")
     protected LocalDate counterIndexReadDate;
     protected String counterIndexValue;
-    @XmlElement(required = true)
     protected String counterSeries;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected CounterType counterType;
-    @XmlElement(required = true, type = String.class)
+    @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
     protected LocalDate date;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected TechnicalDataType documentType;
-    @XmlElement(required = true)
     protected String number;
-    protected boolean smartMeter;
-    @XmlElement(required = true)
+    protected Boolean smartMeter;
     @XmlSchemaType(name = "string")
     protected TechnicalDataStatus status;
-    @XmlElement(required = true)
     protected String type;
 
     /**
@@ -319,16 +308,24 @@ public class TechnicalData {
     /**
      * Gets the value of the smartMeter property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isSmartMeter() {
+    public Boolean isSmartMeter() {
         return smartMeter;
     }
 
     /**
      * Sets the value of the smartMeter property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setSmartMeter(boolean value) {
+    public void setSmartMeter(Boolean value) {
         this.smartMeter = value;
     }
 

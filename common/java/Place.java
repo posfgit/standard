@@ -1,8 +1,11 @@
 
 package ro.anre.anreschema.standard;
 
-
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -20,9 +23,12 @@ import javax.xml.bind.annotation.*;
  *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address"/>
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
- *         &lt;element name="technicalData" type="{http://www.anre.ro/ANRESchema}TechnicalData"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}PlaceType"/>
  *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;choice>
+ *           &lt;element name="technicalDataElectricity" type="{http://www.anre.ro/ANRESchema}TechnicalDataElectricity" minOccurs="0"/>
+ *           &lt;element name="technicalDataGas" type="{http://www.anre.ro/ANRESchema}TechnicalDataGas" minOccurs="0"/>
+ *         &lt;/choice>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,21 +42,22 @@ import javax.xml.bind.annotation.*;
     "address",
     "code",
     "operator",
-    "technicalData",
     "type",
-    "url"
+    "url",
+    "technicalDataGas",
+    "technicalDataElectricity"
 })
 @XmlRootElement(name = "Place")
 public class Place {
 
-
     protected Address address;
     protected String code;
     protected Operator operator;
-    protected TechnicalData technicalData;
     @XmlSchemaType(name = "string")
     protected PlaceType type;
     protected String url;
+    protected TechnicalDataGas technicalDataGas;
+    protected TechnicalDataElectricity technicalDataElectricity;
 
     /**
      * Gets the value of the address property.
@@ -125,30 +132,6 @@ public class Place {
     }
 
     /**
-     * Gets the value of the technicalData property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TechnicalData }
-     *     
-     */
-    public TechnicalData getTechnicalData() {
-        return technicalData;
-    }
-
-    /**
-     * Sets the value of the technicalData property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TechnicalData }
-     *     
-     */
-    public void setTechnicalData(TechnicalData value) {
-        this.technicalData = value;
-    }
-
-    /**
      * Gets the value of the type property.
      * 
      * @return
@@ -194,6 +177,54 @@ public class Place {
      */
     public void setUrl(String value) {
         this.url = value;
+    }
+
+    /**
+     * Gets the value of the technicalDataGas property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TechnicalDataGas }
+     *     
+     */
+    public TechnicalDataGas getTechnicalDataGas() {
+        return technicalDataGas;
+    }
+
+    /**
+     * Sets the value of the technicalDataGas property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TechnicalDataGas }
+     *     
+     */
+    public void setTechnicalDataGas(TechnicalDataGas value) {
+        this.technicalDataGas = value;
+    }
+
+    /**
+     * Gets the value of the technicalDataElectricity property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TechnicalDataElectricity }
+     *     
+     */
+    public TechnicalDataElectricity getTechnicalDataElectricity() {
+        return technicalDataElectricity;
+    }
+
+    /**
+     * Sets the value of the technicalDataElectricity property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TechnicalDataElectricity }
+     *     
+     */
+    public void setTechnicalDataElectricity(TechnicalDataElectricity value) {
+        this.technicalDataElectricity = value;
     }
 
 }
