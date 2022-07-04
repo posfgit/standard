@@ -15,14 +15,14 @@ import javax.xml.bind.annotation.*;
  * &lt;complexType name="Company">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address"/>
+ *       &lt;sequence minOccurs="0">
+ *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="contactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress"/>
- *         &lt;element name="correspondenceAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
+ *         &lt;element name="contactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress" minOccurs="0"/>
+ *         &lt;element name="correspondenceAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="incorporation" type="{http://www.anre.ro/ANRESchema}Incorporation"/>
- *         &lt;element name="legalRepresentative" type="{http://www.anre.ro/ANRESchema}Person"/>
+ *         &lt;element name="incorporation" type="{http://www.anre.ro/ANRESchema}Incorporation" minOccurs="0"/>
+ *         &lt;element name="legalRepresentative" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -51,23 +51,15 @@ import javax.xml.bind.annotation.*;
 })
 public class Company {
 
-    @XmlElement(required = true)
     protected Address address;
-    @XmlElement(required = true)
     protected String code;
-    @XmlElement(required = true)
     protected ContactAddress contactAddress;
-    @XmlElement(required = true)
     protected Address correspondenceAddress;
     protected String extra;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected Incorporation incorporation;
-    @XmlElement(required = true)
     protected Person legalRepresentative;
-    @XmlElement(required = true)
     protected String name;
-    @XmlElement(required = true)
     protected String number;
 
     /**

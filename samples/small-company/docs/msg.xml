@@ -1,298 +1,18 @@
-<anre:ContractSignedByClient xmlns:anre="http://www.anre.ro/ANRESchema">
+<anre:ContractSignedByClient  xmlns:anre="http://www.anre.ro/ANRESchema">
     <authorID>a3d9414a-bfdf-11ec-9d64-0242ac120002</authorID>
     <authorName>string</authorName>
-    <correlationID>552f0c47-8c24-4d76-819a-6ef363b43465</correlationID>
+    <correlationID>{{ud}}</correlationID>
     <description>string</description>
-    <messageID>552f0c47-8c24-4d76-819a-6ef363b43465</messageID>
-    <timestamp>2022-05-24T12:44:18.828</timestamp>
+    <messageID>{{ud}}</messageID>
+    <timestamp>{{dateNow}}</timestamp>
     <type>ContractSignedByClient</type>
     <contract>
         <additionalDate>2022-05-09</additionalDate>
         <additionalNumber>string</additionalNumber>
         <client>
-            <aggregates>
-                <address>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </address>
-                <code>string</code>
-                <contactAddress>
-                    <email>string</email>
-                    <fax>string</fax>
-                    <mobilePhone>string</mobilePhone>
-                    <phone>string</phone>
-                </contactAddress>
-                <correspondenceAddress>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </correspondenceAddress>
-                <extra>string</extra>
-                <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>
-                <legalRepresentative>
-                    <address>
-                        <building>string</building>
-                        <city>
-                            <code>string</code>
-                            <name>string</name>
-                        </city>
-                        <county>AB</county>
-                        <cua/>
-                        <extended>string</extended>
-                        <flat>string</flat>
-                        <floor>string</floor>
-                        <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
-                        <postcode>string</postcode>
-                        <stair>string</stair>
-                        <street>string</street>
-                    </address>
-                    <code>string</code>
-                    <contactAddress>
-                        <email>string</email>
-                        <fax>string</fax>
-                        <mobilePhone>string</mobilePhone>
-                        <phone>string</phone>
-                    </contactAddress>
-                    <correspondenceAddress>
-                        <building>string</building>
-                        <city>
-                            <code>string</code>
-                            <name>string</name>
-                        </city>
-                        <county>AB</county>
-                        <cua/>
-                        <extended>string</extended>
-                        <flat>string</flat>
-                        <floor>string</floor>
-                        <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
-                        <postcode>string</postcode>
-                        <stair>string</stair>
-                        <street>string</street>
-                    </correspondenceAddress>
-                    <extra>string</extra>
-                    <firstName>string</firstName>
-                    <lastName>string</lastName>
-                    <number>string</number>
-                    <series>string</series>
-                    <type>CNP</type>
-                </legalRepresentative>
-                <name>string</name>
-                <number>string</number>
-            </aggregates>
-            <company>
-                <address>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </address>
-                <code>string</code>
-                <contactAddress>
-                    <email>string</email>
-                    <fax>string</fax>
-                    <mobilePhone>string</mobilePhone>
-                    <phone>string</phone>
-                </contactAddress>
-                <correspondenceAddress>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </correspondenceAddress>
-                <extra>string</extra>
-                <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>
-                <legalRepresentative>
-                    <address>
-                        <building>string</building>
-                        <city>
-                            <code>string</code>
-                            <name>string</name>
-                        </city>
-                        <county>AB</county>
-                        <cua/>
-                        <extended>string</extended>
-                        <flat>string</flat>
-                        <floor>string</floor>
-                        <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
-                        <postcode>string</postcode>
-                        <stair>string</stair>
-                        <street>string</street>
-                    </address>
-                    <code>string</code>
-                    <contactAddress>
-                        <email>string</email>
-                        <fax>string</fax>
-                        <mobilePhone>string</mobilePhone>
-                        <phone>string</phone>
-                    </contactAddress>
-                    <correspondenceAddress>
-                        <building>string</building>
-                        <city>
-                            <code>string</code>
-                            <name>string</name>
-                        </city>
-                        <county>AB</county>
-                        <cua/>
-                        <extended>string</extended>
-                        <flat>string</flat>
-                        <floor>string</floor>
-                        <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
-                        <postcode>string</postcode>
-                        <stair>string</stair>
-                        <street>string</street>
-                    </correspondenceAddress>
-                    <extra>string</extra>
-                    <firstName>string</firstName>
-                    <lastName>string</lastName>
-                    <number>string</number>
-                    <series>string</series>
-                    <type>CNP</type>
-                </legalRepresentative>
-                <name>string</name>
-                <number>string</number>
-            </company>
+            <aggregates/>
             <isAgregate>true</isAgregate>
             <isPre>true</isPre>
-            <person>
-                <address>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </address>
-                <code>string</code>
-                <contactAddress>
-                    <email>string</email>
-                    <fax>string</fax>
-                    <mobilePhone>string</mobilePhone>
-                    <phone>string</phone>
-                </contactAddress>
-                <correspondenceAddress>
-                    <building>string</building>
-                    <city>
-                        <code>string</code>
-                        <name>string</name>
-                    </city>
-                    <county>AB</county>
-                    <cua/>
-                    <extended>string</extended>
-                    <flat>string</flat>
-                    <floor>string</floor>
-                    <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
-                    <postcode>string</postcode>
-                    <stair>string</stair>
-                    <street>string</street>
-                </correspondenceAddress>
-                <extra>string</extra>
-                <firstName>string</firstName>
-                <lastName>string</lastName>
-                <number>string</number>
-                <series>string</series>
-                <type>CNP</type>
-            </person>
             <preCompany>
                 <address>
                     <building>string</building>
@@ -301,16 +21,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -329,16 +44,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -353,16 +63,11 @@
                             <name>string</name>
                         </city>
                         <county>AB</county>
-                        <cua/>
                         <extended>string</extended>
                         <flat>string</flat>
                         <floor>string</floor>
                         <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
+                        <position geohash="2" latitude="3" longitude="1"/>
                         <postcode>string</postcode>
                         <stair>string</stair>
                         <street>string</street>
@@ -381,16 +86,11 @@
                             <name>string</name>
                         </city>
                         <county>AB</county>
-                        <cua/>
                         <extended>string</extended>
                         <flat>string</flat>
                         <floor>string</floor>
                         <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
+                        <position geohash="2" latitude="3" longitude="1"/>
                         <postcode>string</postcode>
                         <stair>string</stair>
                         <street>string</street>
@@ -408,20 +108,54 @@
             <prosumer>true</prosumer>
             <uninterruptible>true</uninterruptible>
             <vulnerable>true</vulnerable>
+            <person>
+                <address>
+                    <building>string</building>
+                    <city>
+                        <code>string</code>
+                        <name>string</name>
+                    </city>
+                    <county>AB</county>
+                    <extended>string</extended>
+                    <flat>string</flat>
+                    <floor>string</floor>
+                    <number>string</number>
+                    <position geohash="2" latitude="3" longitude="1"/>
+                    <postcode>string</postcode>
+                    <stair>string</stair>
+                    <street>string</street>
+                </address>
+                <code>string</code>
+                <contactAddress>
+                    <email>string</email>
+                    <fax>string</fax>
+                    <mobilePhone>string</mobilePhone>
+                    <phone>string</phone>
+                </contactAddress>
+                <correspondenceAddress>
+                    <building>string</building>
+                    <city>
+                        <code>string</code>
+                        <name>string</name>
+                    </city>
+                    <county>AB</county>
+                    <extended>string</extended>
+                    <flat>string</flat>
+                    <floor>string</floor>
+                    <number>string</number>
+                    <position geohash="2" latitude="3" longitude="1"/>
+                    <postcode>string</postcode>
+                    <stair>string</stair>
+                    <street>string</street>
+                </correspondenceAddress>
+                <extra>string</extra>
+                <firstName>string</firstName>
+                <lastName>string</lastName>
+                <number>string</number>
+                <series>string</series>
+                <type>CNP</type>
+            </person>
         </client>
-        <consumption>
-            <items>
-                <item>
-                    <month>1</month>
-                    <value>212</value>
-                </item>
-                <item>
-                    <month>2</month>
-                    <value>23123</value>
-                </item>
-            </items>
-
-        </consumption>
         <contractStatus>ACTIV</contractStatus>
         <contractWithOperatorNeeded>true</contractWithOperatorNeeded>
         <conventionNeeded>true</conventionNeeded>
@@ -432,16 +166,11 @@
                 <name>string</name>
             </city>
             <county>AB</county>
-            <cua/>
             <extended>string</extended>
             <flat>string</flat>
             <floor>string</floor>
             <number>string</number>
-            <position>
-                <geohash>string</geohash>
-                <latitude>string</latitude>
-                <longitude>string</longitude>
-            </position>
+            <position geohash="2" latitude="3" longitude="1"/>
             <postcode>string</postcode>
             <stair>string</stair>
             <street>string</street>
@@ -460,23 +189,17 @@
                 <name>string</name>
             </city>
             <county>AB</county>
-            <cua/>
             <extended>string</extended>
             <flat>string</flat>
             <floor>string</floor>
             <number>string</number>
-            <position>
-                <geohash>string</geohash>
-                <latitude>string</latitude>
-                <longitude>string</longitude>
-            </position>
+            <position geohash="2" latitude="3" longitude="1"/>
             <postcode>string</postcode>
             <stair>string</stair>
             <street>string</street>
         </executionAddress>
         <expirationDate>2022-05-09</expirationDate>
         <id>3fa85f64-5717-4562-b3fc-2c963f66afa6</id>
-        <marketing/>
         <number>string</number>
         <offerCode>string</offerCode>
         <operator>
@@ -487,16 +210,11 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
@@ -515,16 +233,11 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
@@ -539,16 +252,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -567,16 +275,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -590,7 +293,7 @@
             </legalRepresentative>
             <name>string</name>
             <number>string</number>
-            <operatorId>string</operatorId>
+            <operatorId>a3d9414a-bfdf-11ec-9d64-0242ac120002</operatorId>
         </operator>
         <place>
             <address>
@@ -600,16 +303,11 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
@@ -623,16 +321,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -651,16 +344,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -675,16 +363,11 @@
                             <name>string</name>
                         </city>
                         <county>AB</county>
-                        <cua/>
                         <extended>string</extended>
                         <flat>string</flat>
                         <floor>string</floor>
                         <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
+                        <position geohash="2" latitude="3" longitude="1"/>
                         <postcode>string</postcode>
                         <stair>string</stair>
                         <street>string</street>
@@ -703,16 +386,11 @@
                             <name>string</name>
                         </city>
                         <county>AB</county>
-                        <cua/>
                         <extended>string</extended>
                         <flat>string</flat>
                         <floor>string</floor>
                         <number>string</number>
-                        <position>
-                            <geohash>string</geohash>
-                            <latitude>string</latitude>
-                            <longitude>string</longitude>
-                        </position>
+                        <position geohash="2" latitude="3" longitude="1"/>
                         <postcode>string</postcode>
                         <stair>string</stair>
                         <street>string</street>
@@ -726,17 +404,23 @@
                 </legalRepresentative>
                 <name>string</name>
                 <number>string</number>
-                <operatorId>string</operatorId>
+                <operatorId>a3d9414a-bfdf-11ec-9d64-0242ac120002</operatorId>
             </operator>
-            <technicalData>
+            <type>CLC</type>
+            <technicalDataGas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="anre:TechnicalDataGas">
                 <consumption/>
+                <counterIndexDesc>3</counterIndexDesc>
+
                 <counterIndexReadDate>2022-05-13</counterIndexReadDate>
                 <counterIndexValue>string</counterIndexValue>
                 <counterSeries>string</counterSeries>
                 <counterType>ACTIVE</counterType>
                 <date>2022-05-13</date>
+
                 <documentType>ACORDACCES</documentType>
+
                 <number>string</number>
+
                 <smartMeter>true</smartMeter>
                 <status>CONECTAT</status>
                 <type>TechnicalDataGas</type>
@@ -744,9 +428,7 @@
                 <debit>0</debit>
                 <networkType>CA</networkType>
                 <pressure>0</pressure>
-            </technicalData>
-            <type>CLC</type>
-            <url/>
+            </technicalDataGas>
         </place>
         <previousSupplier>
             <address>
@@ -756,16 +438,11 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
@@ -784,22 +461,19 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
             </correspondenceAddress>
             <extra>string</extra>
+
             <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>
+
             <legalRepresentative>
                 <address>
                     <building>string</building>
@@ -808,16 +482,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -836,16 +505,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -861,7 +525,7 @@
             <number>string</number>
             <fuiType>DESEMNAT</fuiType>
             <isFUI>true</isFUI>
-            <supplierId>string</supplierId>
+            <supplierId>800903d6-bfdf-11ec-9d64-0242ac120002</supplierId>
         </previousSupplier>
         <startingDate>2022-05-09</startingDate>
         <supplier>
@@ -872,16 +536,11 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
@@ -900,22 +559,19 @@
                     <name>string</name>
                 </city>
                 <county>AB</county>
-                <cua/>
                 <extended>string</extended>
                 <flat>string</flat>
                 <floor>string</floor>
                 <number>string</number>
-                <position>
-                    <geohash>string</geohash>
-                    <latitude>string</latitude>
-                    <longitude>string</longitude>
-                </position>
+                <position geohash="2" latitude="3" longitude="1"/>
                 <postcode>string</postcode>
                 <stair>string</stair>
                 <street>string</street>
             </correspondenceAddress>
             <extra>string</extra>
+
             <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>
+
             <legalRepresentative>
                 <address>
                     <building>string</building>
@@ -924,16 +580,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -952,16 +603,11 @@
                         <name>string</name>
                     </city>
                     <county>AB</county>
-                    <cua/>
                     <extended>string</extended>
                     <flat>string</flat>
                     <floor>string</floor>
                     <number>string</number>
-                    <position>
-                        <geohash>string</geohash>
-                        <latitude>string</latitude>
-                        <longitude>string</longitude>
-                    </position>
+                    <position geohash="2" latitude="3" longitude="1"/>
                     <postcode>string</postcode>
                     <stair>string</stair>
                     <street>string</street>
@@ -980,6 +626,6 @@
             <supplierId>800903d6-bfdf-11ec-9d64-0242ac120002</supplierId>
         </supplier>
         <type>FURNIZARE</type>
-        <url/>
     </contract>
+
 </anre:ContractSignedByClient>

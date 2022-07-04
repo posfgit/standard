@@ -44,6 +44,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="MS"/>
  *     &lt;enumeration value="NT"/>
  *     &lt;enumeration value="OT"/>
+ *     &lt;enumeration value="OTHER"/>
  *     &lt;enumeration value="PH"/>
  *     &lt;enumeration value="SB"/>
  *     &lt;enumeration value="SJ"/>
@@ -95,6 +96,7 @@ public enum County {
     MS,
     NT,
     OT,
+    OTHER,
     PH,
     SB,
     SJ,
