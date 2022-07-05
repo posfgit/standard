@@ -2,18 +2,18 @@
 package ro.anre.posf.standard;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 public class Adapter1
-    extends XmlAdapter<String, LocalDateTime>
+    extends XmlAdapter<String, ZonedDateTime>
 {
 
 
-    public LocalDateTime unmarshal(String value) {
+    public ZonedDateTime unmarshal(String value) {
         return (Adapter.parseDateTime(value));
     }
 
-    public String marshal(LocalDateTime value) {
+    public String marshal(ZonedDateTime value) {
         return (Adapter.printDateTime(value));
     }
 

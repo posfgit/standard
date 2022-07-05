@@ -1,10 +1,9 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.UUID;
 
 
 /**
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Company">
  *       &lt;sequence>
- *         &lt;element name="operatorId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="operatorId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -37,7 +36,9 @@ public class Operator
     extends Company
 {
 
-    protected String operatorId;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID operatorId;
 
     /**
      * Gets the value of the operatorId property.
@@ -47,7 +48,7 @@ public class Operator
      *     {@link String }
      *     
      */
-    public String getOperatorId() {
+    public UUID getOperatorId() {
         return operatorId;
     }
 
@@ -59,7 +60,7 @@ public class Operator
      *     {@link String }
      *     
      */
-    public void setOperatorId(String value) {
+    public void setOperatorId(UUID value) {
         this.operatorId = value;
     }
 

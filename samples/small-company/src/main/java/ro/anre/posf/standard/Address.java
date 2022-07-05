@@ -21,9 +21,10 @@ import java.util.UUID;
  *         &lt;element name="authorId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *         &lt;element name="building" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="city" type="{http://www.anre.ro/ANRESchema}City"/>
+ *         &lt;element name="country" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="county" type="{http://www.anre.ro/ANRESchema}County"/>
  *         &lt;element name="cua" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="cuaAuthor" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
+ *         &lt;element name="cuaAuthor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="flat" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="floor" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -46,6 +47,7 @@ import java.util.UUID;
     "authorId",
     "building",
     "city",
+    "country",
     "county",
     "cua",
     "cuaAuthor",
@@ -68,13 +70,12 @@ public class Address {
     protected String building;
     @XmlElement(required = true)
     protected City city;
+    protected String country;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected County county;
     protected String cua;
-    @XmlElement(type = String.class)
-    @XmlJavaTypeAdapter(Adapter3 .class)
-    protected UUID cuaAuthor;
+    protected String cuaAuthor;
     protected String extended;
     protected String flat;
     protected String floor;
@@ -160,6 +161,30 @@ public class Address {
     }
 
     /**
+     * Gets the value of the country property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * Sets the value of the country property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
+    /**
      * Gets the value of the county property.
      * 
      * @return
@@ -215,7 +240,7 @@ public class Address {
      *     {@link String }
      *     
      */
-    public UUID getCuaAuthor() {
+    public String getCuaAuthor() {
         return cuaAuthor;
     }
 
@@ -227,7 +252,7 @@ public class Address {
      *     {@link String }
      *     
      */
-    public void setCuaAuthor(UUID value) {
+    public void setCuaAuthor(String value) {
         this.cuaAuthor = value;
     }
 

@@ -1,7 +1,10 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -15,16 +18,18 @@ import javax.xml.bind.annotation.*;
  * &lt;complexType name="Client">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="aggregates" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
- *         &lt;element name="company" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
- *         &lt;element name="isAgregate" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="isPre" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="person" type="{http://www.anre.ro/ANRESchema}Person"/>
+ *       &lt;sequence minOccurs="0">
+ *         &lt;element name="aggregates" type="{http://www.anre.ro/ANRESchema}Client" minOccurs="0"/>
+ *         &lt;element name="isAgregate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="isPre" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="preCompany" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
- *         &lt;element name="prosumer" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="uninterruptible" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="vulnerable" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="prosumer" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="uninterruptible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="vulnerable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;choice>
+ *           &lt;element name="company" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
+ *           &lt;element name="person" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
+ *         &lt;/choice>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,38 +41,37 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Client", propOrder = {
     "aggregates",
-    "company",
     "isAgregate",
     "isPre",
-    "person",
     "preCompany",
     "prosumer",
     "uninterruptible",
-    "vulnerable"
+    "vulnerable",
+    "person",
+    "company"
 })
 @XmlRootElement(name = "Client")
 public class Client {
 
-    protected Company aggregates;
-    protected Company company;
-    protected boolean isAgregate;
-    protected boolean isPre;
-    @XmlElement(required = true)
-    protected Person person;
+    protected Client aggregates;
+    protected Boolean isAgregate;
+    protected Boolean isPre;
     protected Company preCompany;
-    protected boolean prosumer;
-    protected boolean uninterruptible;
-    protected boolean vulnerable;
+    protected Boolean prosumer;
+    protected Boolean uninterruptible;
+    protected Boolean vulnerable;
+    protected Person person;
+    protected Company company;
 
     /**
      * Gets the value of the aggregates property.
      * 
      * @return
      *     possible object is
-     *     {@link Company }
+     *     {@link Client }
      *     
      */
-    public Company getAggregates() {
+    public Client getAggregates() {
         return aggregates;
     }
 
@@ -76,91 +80,59 @@ public class Client {
      * 
      * @param value
      *     allowed object is
-     *     {@link Company }
+     *     {@link Client }
      *     
      */
-    public void setAggregates(Company value) {
+    public void setAggregates(Client value) {
         this.aggregates = value;
-    }
-
-    /**
-     * Gets the value of the company property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Company }
-     *     
-     */
-    public Company getCompany() {
-        return company;
-    }
-
-    /**
-     * Sets the value of the company property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Company }
-     *     
-     */
-    public void setCompany(Company value) {
-        this.company = value;
     }
 
     /**
      * Gets the value of the isAgregate property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isIsAgregate() {
+    public Boolean isIsAgregate() {
         return isAgregate;
     }
 
     /**
      * Sets the value of the isAgregate property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setIsAgregate(boolean value) {
+    public void setIsAgregate(Boolean value) {
         this.isAgregate = value;
     }
 
     /**
      * Gets the value of the isPre property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isIsPre() {
+    public Boolean isIsPre() {
         return isPre;
     }
 
     /**
      * Sets the value of the isPre property.
      * 
-     */
-    public void setIsPre(boolean value) {
-        this.isPre = value;
-    }
-
-    /**
-     * Gets the value of the person property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Person }
-     *     
-     */
-    public Person getPerson() {
-        return person;
-    }
-
-    /**
-     * Sets the value of the person property.
-     * 
      * @param value
      *     allowed object is
-     *     {@link Person }
+     *     {@link Boolean }
      *     
      */
-    public void setPerson(Person value) {
-        this.person = value;
+    public void setIsPre(Boolean value) {
+        this.isPre = value;
     }
 
     /**
@@ -190,49 +162,121 @@ public class Client {
     /**
      * Gets the value of the prosumer property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isProsumer() {
+    public Boolean isProsumer() {
         return prosumer;
     }
 
     /**
      * Sets the value of the prosumer property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setProsumer(boolean value) {
+    public void setProsumer(Boolean value) {
         this.prosumer = value;
     }
 
     /**
      * Gets the value of the uninterruptible property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isUninterruptible() {
+    public Boolean isUninterruptible() {
         return uninterruptible;
     }
 
     /**
      * Sets the value of the uninterruptible property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setUninterruptible(boolean value) {
+    public void setUninterruptible(Boolean value) {
         this.uninterruptible = value;
     }
 
     /**
      * Gets the value of the vulnerable property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isVulnerable() {
+    public Boolean isVulnerable() {
         return vulnerable;
     }
 
     /**
      * Sets the value of the vulnerable property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setVulnerable(boolean value) {
+    public void setVulnerable(Boolean value) {
         this.vulnerable = value;
+    }
+
+    /**
+     * Gets the value of the person property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Person }
+     *     
+     */
+    public Person getPerson() {
+        return person;
+    }
+
+    /**
+     * Sets the value of the person property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Person }
+     *     
+     */
+    public void setPerson(Person value) {
+        this.person = value;
+    }
+
+    /**
+     * Gets the value of the company property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Company }
+     *     
+     */
+    public Company getCompany() {
+        return company;
+    }
+
+    /**
+     * Sets the value of the company property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Company }
+     *     
+     */
+    public void setCompany(Company value) {
+        this.company = value;
     }
 
 }
