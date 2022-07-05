@@ -6,6 +6,7 @@ import org.apache.commons.lang3.ClassUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -41,6 +42,7 @@ public class ObjectMapperUtil {
                     value instanceof Long ||
                     value instanceof UUID ||
                     value instanceof BigInteger ||
+                    value instanceof BigDecimal ||
                     value instanceof Boolean ||
                     value.getClass().isEnum() ||
                     ClassUtils.isPrimitiveOrWrapper(field.getClass())
