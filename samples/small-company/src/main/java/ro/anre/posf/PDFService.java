@@ -1,6 +1,7 @@
 package ro.anre.posf;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
@@ -16,6 +17,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -45,11 +47,16 @@ public class PDFService {
         String xmlawd = Files.readString(Path.of(XML_FILE_PATH), Charset.defaultCharset());
         Message msg =  xmlMapper.readValue(xmlawd, Message.class);
 
-        Map<String, String> keys =  ObjectMapperUtil.objectFieldMapper(msg, null);
+        Map<String, String> objectKeys =  ObjectMapperUtil.objectFieldMapper(msg, null);
+        List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
+        for (Object key : form.getFields().keySet()){
+            if(!ignoredKeys.contains(key) && (objectKeys.get(key) == null || objectKeys.get(key).isEmpty())){
+                System.out.println("Pathul: " + key + " nu exista in mesaj");
+            }
 
-        for(String key: keys.keySet()) {
-            form.setField(key, keys.get(key));
+            form.setField(key.toString(), objectKeys.get(key));
         }
+
 
         addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
         addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
