@@ -476,7 +476,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Calitatea reprezentantului legal</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
+						<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Denumire</xs:documentation>
 				</xs:annotation>
@@ -655,9 +655,9 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Tipul contractului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1">
+			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui contract</xs:documentation>
+					<xs:documentation>Adrese web unde poate fi accesate fisierele in format electronic ale acestui contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1114,7 +1114,7 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="1">
+			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui loc de consum</xs:documentation>
 				</xs:annotation>
@@ -1236,7 +1236,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 							<xs:documentation>Numar licenta</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="supplierId" type="anre:Guid" minOccurs="0" maxOccurs="1">
+										<xs:element name="supplierId" type="anre:Guid" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Identificator unic al furnizorului furnizat de POSF</xs:documentation>
 						</xs:annotation>
@@ -1283,7 +1283,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 2 - doua luni</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
+						<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
 				</xs:annotation>
@@ -1407,7 +1407,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Presiunea minima tehnologica</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1">
+										<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie, Transport sau Conducta de alimentare din amonte</xs:documentation>
 						</xs:annotation>
