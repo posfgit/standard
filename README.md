@@ -43,6 +43,8 @@ Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermedi
 
 Toate mesajele au o structura comuna derivata din tipul **Message** care reprezinta un header comun compus din urmatoarele campuri
 
+Cateva exemple de mesaje sunt disponibila in folderul [XML](xml/)
+
 |Camp|Explicatie|
 |:--|:--|
 |authorID|ID asignat de POSF pentru sistemul IT care emite mesajul|

@@ -151,6 +151,9 @@
         <type>CLC</type>
         <url>url0</url>
         <url>url1</url>
+        <url>url2</url>
+        <url>url3</url>
+        <url>url4</url>
         <technicalDataGas>
             <consumption>
                 <item>
@@ -160,6 +163,18 @@
                 <item>
                     <month>0</month>
                     <value>value1</value>
+                </item>
+                <item>
+                    <month>0</month>
+                    <value>value2</value>
+                </item>
+                <item>
+                    <month>0</month>
+                    <value>value3</value>
+                </item>
+                <item>
+                    <month>0</month>
+                    <value>value4</value>
                 </item>
             </consumption>
             <counterIndexDesc>counterIndexDesc0</counterIndexDesc>
