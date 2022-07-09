@@ -77,17 +77,17 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |ContractCancelledByClient|Se emite din aplicatia WebPOSF cand un utilizator s-a razgandit in timp ce trimisese deja semnat la furnizor un contract sau daca vrea sa renunte la un contract existent.| WebPOSF | Furnizor| |
 |ContractCancelledBySupplier|Se emite din aplicatia WebPOSF sau sistemul furnizorului cand un furnizor s-a razgandit pe un contract semnat sau vrea sa anuleze un contract existent.| Furnizor, WebPOSF | Furnizor vechi, Operator, WebPOSF| |
 |ContractMoreInfo|Trimis de furnizor care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF modul furnizor | WebPOSF modul client| |
-|ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| |
+|ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| Nu este necesar sa se raspunda la acest mesaj|
 
 ## Mesaje pe tema contracte de retea exclusiv pentru cazul in care clientul opteaza o relatie directa cu operatorul
 
 | Denumire mesaj | Scop | Sursa  | Redirectionat la | Observatii |
 |:-|:---------|:-|:-|:-|
-|ContractNetworkSignedByClient|Emis din WebPOSF cand se semneaza contractul de retea de catre Client|WebPOSF, Operator|WebPOSF, Furnizor| |
+|~~ContractNetworkSignedByClient~~|~~Emis din WebPOSF cand se semneaza contractul de retea de catre Client~~|~~WebPOSF, Operator~~|~~WebPOSF, Furnizor~~|Nu se foloseste in aceasta versiune de standard |
 |ContractNetworkSignedByOperator|Emis din WebPOSF/platforma Operator cand se semneaza contractul de retea de catre Operator. Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.|Operator|WebPOSF, Furnizor| |
 |ContractNetworkSignedBySupplier|Emis de Furnizor din sistemul propriu sau WebPOSF cand se semneaza contractul de retea de catre Furnizor|WebPOSF, Supplier|WebPOSF,Operator| |
 |ContractNetworkCancelledByOperator|Emis din WebPOSF/platforma Operator cand se doreste anularea contractului de retea cu clientul sau cu Furnizorul|WebPOSF, Operator|WebPOSF, Operator, Supplier| |
-|ContractNetworkChangedInfo|Emis de oricare din partile contractului de retea la momentul actualizarii de informatii. De exemplu cand intre Operator si Furnizor exista deja un contract de retea, adaugarea unui loc de consum in cadrul contractului respectiv se va face prin emiterea de catre operator a acestui mesaj completand supplier si previousSupplier. [A se vedea discutia din sedinta Zoom la minutul 53 ](https://youtu.be/UfvUjwTwRrA?t=3221).|Oricine este prezent in contractul de retea. |Toti cei mentionati in contractul de retea (CA daca are contract direct, FA, FN)| |
+|ContractNetworkChangedInfo|Emis doar de Operatorul de retea la momentul actualizarii de informatii pe locul de consum. De exemplu cand intre Operator si Furnizor exista deja un contract de retea, adaugarea unui loc de consum in cadrul contractului respectiv se va face prin emiterea de catre operator a acestui mesaj completand supplier si previousSupplier. De asemenea in momentul cand se incheie contract de retea intre OR si CF[A se vedea discutia din sedinta Zoom la minutul 53 ](https://drive.google.com/file/d/1zwfiNh8W6Sx9lFidysxUSF-U4tzfV5ox/view?usp=sharing).|Operator sau WebPOSF modul operator |Toti cei mentionati in contractul de retea (CF daca are contract direct, FA, FN)| |
 
 ## Mesaje pe tema FUI
 
@@ -95,17 +95,17 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |:-|:---------|:-|:-|:-|
 |ContractSuspendedByAnre|Emis de WebPOSF cand un key user al ANRE introduce faptul ca unui furnizor i s-a suspendat licenta|WebPOSF|WebPOSF, Furnizor, Operator| |
 |ContractActivatedByANRE|Emis de WebPOSF cand un key user al ANRE introduce faptul ca unui furnizor i s-a activat licenta|WebPOSF|WebPOSF, Furnizor, Operator| |
-|ContractTransferredToFUIByOperator|Emis de WebPOSF / platforma operator cand un angajat al operatorului introduce faptul ca un furnizor se afla in imposibilitate de furnizare|WebPOSF, Operator|WebPOSF, Furnizor, Operator| |
-|ContractTransferredToFUIByAnre|Emis de WebPOSF cand un key user ANRE introduce faptul ca in contract se transfera la FUI|WebPOSF|WebPOSF, Furnizor, Operator| |
+|ContractTransferredToFUIByOperator|Emis de WebPOSF / platforma operator cand un angajat al operatorului introduce faptul ca un furnizor se afla in imposibilitate de furnizare sau in cazul in care toate CF de pe locul de consum au expirat|WebPOSF, Operator|WebPOSF, Furnizor, Operator|Sunt aceleasi informatii ca in cazul ContractSignedByClient, cu mentiunea ca furnizorul nu mai emite mesajul de semnare contract |
+|ContractTransferredToFUIByAnre|Emis de WebPOSF cand un key user ANRE introduce in sistemul WebPOSF faptul ca un contract se transfera la FUI|WebPOSF|WebPOSF, Furnizor, Operator| Operatorul va emite ContractNetworkChangedInfo|
 
 ## Mesaje pe tema conventiilor
 
 | Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
 |:-|:---------|:-|:-|:-|
-|ConventionSignedByOperator|Emis de WebPOSF/platforma operatorului cand a semnat operatorul conventia|WebPOSF, Operator|WebPOSF, Furnizor, Operator| |
-|ConventionSignedByClient|Emis de WebPOSF cand a semnat clientul conventia|WebPOSF|WebPOSF, Furnizor, Operator| |
-|ConventionSignedBySupplier|Emis de WebPOSF.platforma furnizor cand a semnat furnizorul conventia|WebPOSF, Furnizor|WebPOSF, Furnizor, Operator| |
-|ConventionChangedInfo|Emis de oricare din partile conventiei la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in conventie|Toti cei mentionati in conventie| |
+|ConventionSignedByOperator|Emis de WebPOSF/platforma operatorului cand a semnat operatorul conventi cu un client si un nou furnizor |WebPOSF, Operator|WebPOSF, Furnizor, Operator| Chiar daca nu este emis acest mesaj, se considera ca in 24 de ore conventia produce efecte conform regulament|
+|~~ConventionSignedByClient~~|~~Emis de WebPOSF cand a semnat clientul conventia~~|~~WebPOSF~~|~~WebPOSF, Furnizor, Operator~~| Nu este folosit in aceasta versiune de standard, consideram ca mesajul de semnare contract contine deja toate informatiile si pentru conventie|
+|ConventionSignedBySupplier|Emis de Furnizor cand a semnat conventia|WebPOSF modul furnizor, Furnizor|WebPOSF modul, Furnizor, Operator| Reprezinta o confirmare ca furnizorul si-a insusit apartanenta la conventie, dar in lipsa emiterii acestui mesaj furnizorul nu este absolvit de responsabilitati. Chiar daca nu o face, se considera ca in 24 de ore conventia produce efecte conform regulament|
+|~~ConventionChangedInfo~~|~~Emis de oricare din partile conventiei la momentul actualizarii de informatii care nu au impact in fluxurile informatice~~|~~Oricine este prezent in conventie~~|~~Toti cei mentionati in conventie~~| Nu mai este cazul, conventia semnata de operator este suficienta, nu vor aparea schimbari utile partilor pe acest document, vor avea aceleasi informatii actualizate din contractele de furnizare sau de retea.|
 
 ## Mesaje specifice furnizorilor/operatorilor
 
