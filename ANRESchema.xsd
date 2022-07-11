@@ -380,11 +380,18 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:documentation>Client</xs:documentation>
 		</xs:annotation>
 		<xs:sequence minOccurs="0" maxOccurs="1">
-			<xs:element name="aggregates" type="anre:Client" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Persoana fizica sau juridica care inedplineste rolul de agregator</xs:documentation>
-				</xs:annotation>
-			</xs:element>
+			<xs:choice minOccurs="0" maxOccurs="1">
+				<xs:element name="aggregateCompany" type="anre:Company" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Persoana juridica care inedplineste rolul de agregator</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="aggregatePerson" type="anre:Person" minOccurs="0" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Persoana fizica care inedplineste rolul de agregator</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
 			<xs:element name="isAgregate" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca face parte dintr-o agregare</xs:documentation>
