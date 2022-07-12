@@ -81,7 +81,7 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |ContractMoreInfo|Trimis de furnizor care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF modul furnizor | WebPOSF modul client| |
 |ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| Nu este necesar sa se raspunda la acest mesaj|
 
-## Mesaje pe tema contracte de retea exclusiv pentru cazul in care clientul opteaza o relatie directa cu operatorul
+## Mesaje pe tema contracte de retea
 
 | Denumire mesaj | Scop | Sursa  | Redirectionat la | Observatii |
 |:-|:---------|:-|:-|:-|
