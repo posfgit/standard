@@ -70,7 +70,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="HOUSEHOLD"/>
-			<xs:enumeration value="NON-HOUSEHOLD"/>
+			<xs:enumeration value="NON_HOUSEHOLD"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="County">

@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<anre:Offer xmlns:anre="http://www.anre.ro/ANRESchema"
+<anre:Address xmlns:anre="http://www.anre.ro/ANRESchema"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.anre.ro/ANRESchema file:/E:/CloudStation/!TNI/ANRE/standard/ANRESchema.xsd">
-    <clientType>clientType0</clientType>
-    <offerType>offerType0</offerType>
-    <tensionLevel>tensionLevel0</tensionLevel>
-    <priceType>priceType0</priceType>
-    <secondShiftPercentage>secondShiftPercentage0</secondShiftPercentage>
-    <thirdShiftPercentage>thirdShiftPercentage0</thirdShiftPercentage>
-    <tipClient>tipClient0</tipClient>
-    <invoiceChannel>invoiceChannel0</invoiceChannel>
-</anre:Offer>
+    <authorId>00000000-0000-0000-0000-000000000000</authorId>
+    <building>building0</building>
+    <city>
+        <code>code0</code>
+        <name>name0</name>
+    </city>
+    <country>country0</country>
+    <county>AB</county>
+    <cua>cua0</cua>
+    <cuaAuthor>cuaAuthor0</cuaAuthor>
+    <extended>extended0</extended>
+    <flat>flat0</flat>
+    <floor>floor0</floor>
+    <number>number0</number>
+    <position/>
+    <postcode>postcode0</postcode>
+    <stair>stair0</stair>
+    <street>street0</street>
+    <streetType>streetType0</streetType>
+</anre:Address>
