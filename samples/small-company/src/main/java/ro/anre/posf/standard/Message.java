@@ -4,10 +4,11 @@ package ro.anre.posf.standard;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.UUID;
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -46,6 +47,7 @@ import java.util.UUID;
     "type"
 })
 @XmlSeeAlso({
+    ConventionGeneratedByPOSF.class,
     ContractSignedBySupplier.class,
     ContractSuspendedByAnre.class,
     ContractSignedByClient.class,
@@ -76,6 +78,7 @@ import java.util.UUID;
 })
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type",  include = JsonTypeInfo.As.EXISTING_PROPERTY, visible = true)
 @JsonSubTypes({
+        @JsonSubTypes.Type (name = "ConventionGeneratedByPOSF", value = ConventionGeneratedByPOSF.class),
         @JsonSubTypes.Type (name = "ClientInfoUpdated", value = ClientInfoUpdated.class),
         @JsonSubTypes.Type (name = "ContractActivatedByANRE", value = ContractActivatedByANRE.class),
         @JsonSubTypes.Type (name = "ContractCancelledByClient", value = ContractCancelledByClient.class),

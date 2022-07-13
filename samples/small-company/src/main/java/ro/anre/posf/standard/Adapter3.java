@@ -1,8 +1,8 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.UUID;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class Adapter3
     extends XmlAdapter<String, UUID>
@@ -10,11 +10,11 @@ public class Adapter3
 
 
     public UUID unmarshal(String value) {
-        return (Adapter.parseUuid(value));
+        return (ro.anre.posf.standard.Adapter.parseUuid(value));
     }
 
     public String marshal(UUID value) {
-        return (Adapter.printUuid(value));
+        return (ro.anre.posf.standard.Adapter.printUuid(value));
     }
 
 }

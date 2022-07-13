@@ -4,23 +4,22 @@ package ro.anre.posf.standard;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Emis de WebPOSF sau de platforma furnizorului cand acesta a semnat conventia.
+ * Emis de POSF cand se creaza o conventie sau apar noi parti intr-o conventie
  * 
- * <p>Java class for ConventionSignedBySupplier complex type.
+ * <p>Java class for ConventionGeneratedByPOSF complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ConventionSignedBySupplier">
+ * &lt;complexType name="ConventionGeneratedByPOSF">
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
- *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Convention"/>
+ *         &lt;element name="convention" type="{http://www.anre.ro/ANRESchema}Convention"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -30,39 +29,38 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ConventionSignedBySupplier", propOrder = {
-    "contract"
+@XmlType(name = "ConventionGeneratedByPOSF", propOrder = {
+    "convention"
 })
-@XmlRootElement(name = "ConventionSignedBySupplier")
-public class ConventionSignedBySupplier
+public class ConventionGeneratedByPOSF
     extends Message
 {
 
     @XmlElement(required = true)
-    protected Convention contract;
+    protected Convention convention;
 
     /**
-     * Gets the value of the contract property.
+     * Gets the value of the convention property.
      * 
      * @return
      *     possible object is
      *     {@link Convention }
      *     
      */
-    public Convention getContract() {
-        return contract;
+    public Convention getConvention() {
+        return convention;
     }
 
     /**
-     * Sets the value of the contract property.
+     * Sets the value of the convention property.
      * 
      * @param value
      *     allowed object is
      *     {@link Convention }
      *     
      */
-    public void setContract(Convention value) {
-        this.contract = value;
+    public void setConvention(Convention value) {
+        this.convention = value;
     }
 
 }

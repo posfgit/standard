@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the ro.anre.anreschema.standard package. 
+ * generated in the ro.anre.posf.standard package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -29,7 +29,7 @@ public class ObjectFactory {
     private final static QName _Company_QNAME = new QName("http://www.anre.ro/ANRESchema", "Company");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ro.anre.anreschema.standard
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ro.anre.posf.standard
      * 
      */
     public ObjectFactory() {
@@ -409,6 +409,14 @@ public class ObjectFactory {
      */
     public ContractSignedBySupplier createContractSignedBySupplier() {
         return new ContractSignedBySupplier();
+    }
+
+    /**
+     * Create an instance of {@link ConventionGeneratedByPOSF }
+     * 
+     */
+    public ConventionGeneratedByPOSF createConventionGeneratedByPOSF() {
+        return new ConventionGeneratedByPOSF();
     }
 
     /**

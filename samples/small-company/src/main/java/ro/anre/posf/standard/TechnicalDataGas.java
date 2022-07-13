@@ -1,8 +1,13 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -18,9 +23,13 @@ import java.math.BigDecimal;
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}TechnicalData">
  *       &lt;sequence>
  *         &lt;element name="category" type="{http://www.anre.ro/ANRESchema}ConsumptionCategory"/>
- *         &lt;element name="debit" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="debit" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="maximumPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="minimumPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="minimumTechnicalPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType"/>
- *         &lt;element name="pressure" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="pressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="reservedCapacity" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -33,8 +42,12 @@ import java.math.BigDecimal;
 @XmlType(name = "TechnicalDataGas", propOrder = {
     "category",
     "debit",
+    "maximumPressure",
+    "minimumPressure",
+    "minimumTechnicalPressure",
     "networkType",
-    "pressure"
+    "pressure",
+    "reservedCapacity"
 })
 @XmlRootElement(name = "TechnicalDataGas")
 public class TechnicalDataGas
@@ -44,13 +57,15 @@ public class TechnicalDataGas
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected ConsumptionCategory category;
-    @XmlElement(required = true)
     protected BigDecimal debit;
+    protected BigDecimal maximumPressure;
+    protected BigDecimal minimumPressure;
+    protected BigDecimal minimumTechnicalPressure;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected NetworkType networkType;
-    @XmlElement(required = true)
     protected BigDecimal pressure;
+    protected BigDecimal reservedCapacity;
 
     /**
      * Gets the value of the category property.
@@ -101,6 +116,78 @@ public class TechnicalDataGas
     }
 
     /**
+     * Gets the value of the maximumPressure property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getMaximumPressure() {
+        return maximumPressure;
+    }
+
+    /**
+     * Sets the value of the maximumPressure property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setMaximumPressure(BigDecimal value) {
+        this.maximumPressure = value;
+    }
+
+    /**
+     * Gets the value of the minimumPressure property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getMinimumPressure() {
+        return minimumPressure;
+    }
+
+    /**
+     * Sets the value of the minimumPressure property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setMinimumPressure(BigDecimal value) {
+        this.minimumPressure = value;
+    }
+
+    /**
+     * Gets the value of the minimumTechnicalPressure property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getMinimumTechnicalPressure() {
+        return minimumTechnicalPressure;
+    }
+
+    /**
+     * Sets the value of the minimumTechnicalPressure property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setMinimumTechnicalPressure(BigDecimal value) {
+        this.minimumTechnicalPressure = value;
+    }
+
+    /**
      * Gets the value of the networkType property.
      * 
      * @return
@@ -146,6 +233,30 @@ public class TechnicalDataGas
      */
     public void setPressure(BigDecimal value) {
         this.pressure = value;
+    }
+
+    /**
+     * Gets the value of the reservedCapacity property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getReservedCapacity() {
+        return reservedCapacity;
+    }
+
+    /**
+     * Sets the value of the reservedCapacity property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setReservedCapacity(BigDecimal value) {
+        this.reservedCapacity = value;
     }
 
 }

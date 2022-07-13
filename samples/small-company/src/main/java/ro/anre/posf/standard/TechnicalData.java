@@ -1,9 +1,15 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -20,6 +26,7 @@ import java.time.LocalDate;
  *       &lt;sequence minOccurs="0">
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="counterIndexDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="counterIndexInterval" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="counterIndexReadDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="counterIndexValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="counterSeries" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -42,6 +49,7 @@ import java.time.LocalDate;
 @XmlType(name = "TechnicalData", propOrder = {
     "consumption",
     "counterIndexDesc",
+    "counterIndexInterval",
     "counterIndexReadDate",
     "counterIndexValue",
     "counterSeries",
@@ -61,6 +69,7 @@ public class TechnicalData {
 
     protected Consumption consumption;
     protected String counterIndexDesc;
+    protected BigDecimal counterIndexInterval;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
@@ -127,6 +136,30 @@ public class TechnicalData {
      */
     public void setCounterIndexDesc(String value) {
         this.counterIndexDesc = value;
+    }
+
+    /**
+     * Gets the value of the counterIndexInterval property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getCounterIndexInterval() {
+        return counterIndexInterval;
+    }
+
+    /**
+     * Sets the value of the counterIndexInterval property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setCounterIndexInterval(BigDecimal value) {
+        this.counterIndexInterval = value;
     }
 
     /**
