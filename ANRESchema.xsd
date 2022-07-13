@@ -1,5 +1,7 @@
 <?xml  version='1.0' encoding='utf-8' ?>
-<xs:schema targetNamespace="http://www.anre.ro/ANRESchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="anre" xmlns:anre="http://www.anre.ro/ANRESchema">
+<xs:schema targetNamespace="http://www.anre.ro/ANRESchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="anre"
+	xmlns:anre="http://www.anre.ro/ANRESchema">
 	<xs:simpleType name="ConnectionType">
 		<xs:annotation>
 			<xs:documentation>Tip racord</xs:documentation>
@@ -60,6 +62,15 @@
 			<xs:enumeration value="ACTIVE"/>
 			<xs:enumeration value="GAS"/>
 			<xs:enumeration value="REACTIVE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ClientType">
+		<xs:annotation>
+			<xs:documentation>Tip client final</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HOUSEHOLD"/>
+			<xs:enumeration value="NON-HOUSEHOLD"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="County">
@@ -129,7 +140,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="Guid">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
+			<xs:pattern
+				value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
 			<xs:length value="36"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -195,6 +207,17 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CLC"/>
 			<xs:enumeration value="POD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceType">
+		<xs:annotation>
+			<xs:documentation>Tipul serviciului</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CONCURENTIAL"/>
+			<xs:enumeration value="UNIVERSAL"/>
+			<xs:enumeration value="REGLEMENTAT"/>
+			<xs:enumeration value="ALTUL"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataStatus">
@@ -392,6 +415,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:choice>
+			<xs:element name="finalClientType" type="anre:ClientType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>casnic sau non-casnic</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="isAgregate" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Daca face parte dintr-o agregare</xs:documentation>
@@ -478,12 +506,13 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Reprezentant legal</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="legalRepresentativeQuality" type="xs:string" minOccurs="0" maxOccurs="1">
+			<xs:element name="legalRepresentativeQuality" type="xs:string" minOccurs="0"
+				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Calitatea reprezentantului legal</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-						<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
+			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Denumire</xs:documentation>
 				</xs:annotation>
@@ -565,13 +594,19 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Client</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="clientAmendments" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Note la contract scrise de client dupa completarea informatiilor dar inainte de semnare PDF</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="consumption" type="anre:Consumption" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="contractStatus" type="anre:ContractStatus" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="0" maxOccurs="1">
+			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="0"
+				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contractare a serviciului de retea direct (CF-OR)</xs:documentation>
 				</xs:annotation>
@@ -581,12 +616,14 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Este nevoie de conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
+			<xs:element name="correspondenceClientAddress" type="anre:Address" minOccurs="0"
+				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa de corespondenta Client</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress" minOccurs="0" maxOccurs="1">
+			<xs:element name="correspondenceClientContactAddress" type="anre:ContactAddress"
+				minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Date de contact Client</xs:documentation>
 				</xs:annotation>
@@ -596,7 +633,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Data contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="executionAddress" type="anre:Address" minOccurs="1" maxOccurs="1">
+			<xs:element name="executionAddress" type="anre:Address" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Adresa loc de consum</xs:documentation>
 				</xs:annotation>
@@ -621,8 +658,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				<xs:annotation>
 					<xs:documentation>Cod oferta asociata contractului - Guid</xs:documentation>
 				</xs:annotation>
-			</xs:element>
-			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1">
+			</xs:element>			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Denumire operator</xs:documentation>
 				</xs:annotation>
@@ -650,6 +686,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:element name="startingDate" type="xs:date" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data efectiva a schimbarii furnizorului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceType" type="anre:ServiceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tipul serviciului din oferta</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="supplier" type="anre:Supplier" minOccurs="0" maxOccurs="1">
@@ -744,7 +785,8 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ContractNetworkCancelledByOperator" type="anre:ContractNetworkCancelledByOperator"/>
+	<xs:element name="ContractNetworkCancelledByOperator"
+		type="anre:ContractNetworkCancelledByOperator"/>
 	<xs:complexType name="ContractNetworkCancelledByOperator">
 		<xs:annotation>
 			<xs:documentation>Emis din WebPOSF/ platforma Operator cand se doreste anularea contractului de retea cu operatorul.</xs:documentation>
@@ -866,7 +908,8 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="ContractTransferredToFUIByOperator" type="anre:ContractTransferredToFUIByOperator"/>
+	<xs:element name="ContractTransferredToFUIByOperator"
+		type="anre:ContractTransferredToFUIByOperator"/>
 	<xs:complexType name="ContractTransferredToFUIByOperator">
 		<xs:annotation>
 			<xs:documentation>Emis de WebPOSF / platforma operator cand un angajat al operatorului introduce faptul ca un furnizor se afla in imposibilitate de furnizare</xs:documentation>
@@ -885,7 +928,8 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:documentation>Conventie contract de retea</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="activeSupplier" type="anre:Supplier" minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="activeSupplier" type="anre:Supplier" minOccurs="0"
+				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Furnizorul nou</xs:documentation>
 				</xs:annotation>
@@ -905,7 +949,8 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 					<xs:documentation>Numar conventie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="removedSupplier" type="anre:Supplier" minOccurs="0"
+				maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Furnizorul sters</xs:documentation>
 				</xs:annotation>
@@ -953,7 +998,21 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 		<xs:complexContent>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
-					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"
+					/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ConventionGeneratedByPOSF">
+		<xs:annotation>
+			<xs:documentation>Emis de POSF cand se creaza o conventie sau apar noi parti intr-o conventie</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"
+					/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -979,6 +1038,7 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:element name="agreePlatformTerms" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="clientIBAN" type="xs:string" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="electronicInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="smsInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="electronicMoneyReturn" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1127,8 +1187,10 @@ CNP (pentru cetatenii romani)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:choice minOccurs="1" maxOccurs="1">
-				<xs:element name="technicalDataElectricity" type="anre:TechnicalDataElectricity" minOccurs="0" maxOccurs="1"/>
-				<xs:element name="technicalDataGas" type="anre:TechnicalDataGas" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="technicalDataElectricity" type="anre:TechnicalDataElectricity"
+					minOccurs="0" maxOccurs="1"/>
+				<xs:element name="technicalDataGas" type="anre:TechnicalDataGas" minOccurs="0"
+					maxOccurs="1"/>
 			</xs:choice>
 		</xs:sequence>
 	</xs:complexType>
@@ -1243,7 +1305,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 							<xs:documentation>Numar licenta</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-										<xs:element name="supplierId" type="anre:Guid" minOccurs="0" maxOccurs="1">
+					<xs:element name="supplierId" type="anre:Guid" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Identificator unic al furnizorului furnizat de POSF</xs:documentation>
 						</xs:annotation>
@@ -1290,7 +1352,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 2 - doua luni</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-						<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
+			<xs:element name="counterIndexReadDate" type="xs:date" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data la care a fost citit contorul</xs:documentation>
 				</xs:annotation>
@@ -1315,7 +1377,8 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 					<xs:documentation>Data documentului tehnic</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="documentType" type="anre:TechnicalDataType" minOccurs="0" maxOccurs="1">
+			<xs:element name="documentType" type="anre:TechnicalDataType" minOccurs="0"
+				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Tipul documentului: &#xD;
 - pentru EE: Certificat de racordare/ Aviz tehnic de racordare&#xD;
@@ -1352,22 +1415,26 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
-					<xs:element name="approvedConsumptionPower" type="xs:decimal" minOccurs="0" maxOccurs="1">
+					<xs:element name="approvedConsumptionPower" type="xs:decimal" minOccurs="0"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Putere aprobata la consum in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="approvedProducedPower" type="xs:decimal" minOccurs="0" maxOccurs="1">
+					<xs:element name="approvedProducedPower" type="xs:decimal" minOccurs="0"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Putere aprobata la productie in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1" maxOccurs="1">
+					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip racord conform tipului de date ConnectionType</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1">
+					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie sau Transport</xs:documentation>
 						</xs:annotation>
@@ -1389,7 +1456,8 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
-					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1" maxOccurs="1">
+					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Categorie de consum</xs:documentation>
 						</xs:annotation>
@@ -1409,12 +1477,14 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Presiune minima</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="minimumTechnicalPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
+					<xs:element name="minimumTechnicalPressure" type="xs:decimal" minOccurs="0"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Presiunea minima tehnologica</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-										<xs:element name="networkType" type="anre:NetworkType" minOccurs="1" maxOccurs="1">
+					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie, Transport sau Conducta de alimentare din amonte</xs:documentation>
 						</xs:annotation>
@@ -1424,7 +1494,8 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Presiunea disponibila in locul de consum, conform ATR</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="reservedCapacity" type="xs:decimal" minOccurs="0" maxOccurs="1">
+					<xs:element name="reservedCapacity" type="xs:decimal" minOccurs="0"
+						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Capacitate rezervata</xs:documentation>
 						</xs:annotation>
