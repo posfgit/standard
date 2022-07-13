@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *       &lt;sequence>
  *         &lt;element name="fuiType" type="{http://www.anre.ro/ANRESchema}FUIType"/>
  *         &lt;element name="isFUI" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="license" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "Supplier", propOrder = {
     "fuiType",
     "isFUI",
+    "license",
     "supplierId"
 })
 @XmlRootElement(name = "Supplier")
@@ -49,6 +51,7 @@ public class Supplier
     @XmlSchemaType(name = "string")
     protected FUIType fuiType;
     protected boolean isFUI;
+    protected String license;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID supplierId;
@@ -91,6 +94,30 @@ public class Supplier
      */
     public void setIsFUI(boolean value) {
         this.isFUI = value;
+    }
+
+    /**
+     * Gets the value of the license property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLicense() {
+        return license;
+    }
+
+    /**
+     * Sets the value of the license property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLicense(String value) {
+        this.license = value;
     }
 
     /**

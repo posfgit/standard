@@ -2,6 +2,8 @@
 package ro.anre.anreschema.standard;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -27,6 +29,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="additionalDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="additionalNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="client" type="{http://www.anre.ro/ANRESchema}Client" minOccurs="0"/>
+ *         &lt;element name="clientAmendments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="contractStatus" type="{http://www.anre.ro/ANRESchema}ContractStatus" minOccurs="0"/>
  *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
@@ -34,7 +37,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="correspondenceClientAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="correspondenceClientContactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress" minOccurs="0"/>
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *         &lt;element name="executionAddress" type="{http://www.anre.ro/ANRESchema}Address"/>
+ *         &lt;element name="executionAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *         &lt;element name="marketing" type="{http://www.anre.ro/ANRESchema}Marketing" minOccurs="0"/>
@@ -46,9 +49,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="previousContractNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="previousSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
  *         &lt;element name="startingDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
+ *         &lt;element name="serviceType" type="{http://www.anre.ro/ANRESchema}ServiceType"/>
  *         &lt;element name="supplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}ContractType"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -62,6 +66,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "additionalDate",
     "additionalNumber",
     "client",
+    "clientAmendments",
     "consumption",
     "contractStatus",
     "contractWithOperatorNeeded",
@@ -81,9 +86,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "previousContractNumber",
     "previousSupplier",
     "startingDate",
+    "serviceType",
     "supplier",
     "type",
-    "url"
+    "urls"
 })
 @XmlRootElement(name = "Contract")
 public class Contract {
@@ -94,6 +100,7 @@ public class Contract {
     protected LocalDate additionalDate;
     protected String additionalNumber;
     protected Client client;
+    protected String clientAmendments;
     protected Consumption consumption;
     @XmlSchemaType(name = "string")
     protected ContractStatus contractStatus;
@@ -128,10 +135,13 @@ public class Contract {
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
     protected LocalDate startingDate;
+    @XmlSchemaType(name = "string")
+    protected ServiceType serviceType;
     protected Supplier supplier;
     @XmlSchemaType(name = "string")
     protected ContractType type;
-    protected String url;
+    @XmlElement(name = "url")
+    protected List<String> urls;
 
     /**
      * Gets the value of the additionalDate property.
@@ -203,6 +213,30 @@ public class Contract {
      */
     public void setClient(Client value) {
         this.client = value;
+    }
+
+    /**
+     * Gets the value of the clientAmendments property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getClientAmendments() {
+        return clientAmendments;
+    }
+
+    /**
+     * Sets the value of the clientAmendments property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setClientAmendments(String value) {
+        this.clientAmendments = value;
     }
 
     /**
@@ -662,6 +696,30 @@ public class Contract {
     }
 
     /**
+     * Gets the value of the serviceType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ServiceType }
+     *     
+     */
+    public ServiceType getServiceType() {
+        return serviceType;
+    }
+
+    /**
+     * Sets the value of the serviceType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ServiceType }
+     *     
+     */
+    public void setServiceType(ServiceType value) {
+        this.serviceType = value;
+    }
+
+    /**
      * Gets the value of the supplier property.
      * 
      * @return
@@ -710,27 +768,32 @@ public class Contract {
     }
 
     /**
-     * Gets the value of the url property.
+     * Gets the value of the urls property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Sets the value of the url property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the urls property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getUrls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
      */
-    public void setUrl(String value) {
-        this.url = value;
+    public List<String> getUrls() {
+        if (urls == null) {
+            urls = new ArrayList<String>();
+        }
+        return this.urls;
     }
 
 }

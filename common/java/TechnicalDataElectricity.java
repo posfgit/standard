@@ -22,11 +22,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}TechnicalData">
  *       &lt;sequence>
- *         &lt;element name="approvedConsumptionPower" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="approvedConsumptionPower" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="approvedProducedPower" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="connectionType" type="{http://www.anre.ro/ANRESchema}ConnectionType"/>
  *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType"/>
- *         &lt;element name="voltageLevel" type="{http://www.w3.org/2001/XMLSchema}decimal"/>
+ *         &lt;element name="voltageLevel" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -48,7 +48,7 @@ public class TechnicalDataElectricity
     extends TechnicalData
 {
 
-    protected double approvedConsumptionPower;
+    protected BigDecimal approvedConsumptionPower;
     protected BigDecimal approvedProducedPower;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
@@ -56,22 +56,29 @@ public class TechnicalDataElectricity
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected NetworkType networkType;
-    @XmlElement(required = true)
     protected BigDecimal voltageLevel;
 
     /**
      * Gets the value of the approvedConsumptionPower property.
      * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
      */
-    public double getApprovedConsumptionPower() {
+    public BigDecimal getApprovedConsumptionPower() {
         return approvedConsumptionPower;
     }
 
     /**
      * Sets the value of the approvedConsumptionPower property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
      */
-    public void setApprovedConsumptionPower(double value) {
+    public void setApprovedConsumptionPower(BigDecimal value) {
         this.approvedConsumptionPower = value;
     }
 
