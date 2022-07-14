@@ -1,7 +1,6 @@
 package ro.anre.posf;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.lowagie.text.DocumentException;
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
@@ -19,6 +18,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class PDFService {
@@ -49,12 +50,27 @@ public class PDFService {
 
         Map<String, String> objectKeys =  ObjectMapperUtil.objectFieldMapper(msg, null);
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
-        for (Object key : form.getFields().keySet()){
-            if(!ignoredKeys.contains(key) && (objectKeys.get(key) == null || objectKeys.get(key).isEmpty())){
-                System.out.println("Pathul: " + key + " nu exista in mesaj");
-            }
 
-            form.setField(key.toString(), objectKeys.get(key));
+        for (Object fieldKey : form.getFields().keySet()){
+            String key = (String) fieldKey;
+            if(key.startsWith("concat(")){
+                concat(key, objectKeys, form);
+            }else if(key.startsWith("!(")){
+                negate(key, objectKeys, form);
+            }else{
+                if(!ignoredKeys.contains(key) && (objectKeys.get(key) == null || objectKeys.get(key).isEmpty())){
+                    System.out.println("Pathul: " + key + " nu exista in mesaj");
+                }else if(!ignoredKeys.contains(key) ){
+                    String val = objectKeys.get(key);
+                    Pattern pattern = Pattern.compile("true|false", Pattern.CASE_INSENSITIVE);
+                    Matcher matcher = pattern.matcher(val);
+                    if(matcher.matches()) {
+                        parseBoolean(key, val, form, false);
+                    }else{
+                        form.setField(key, val);
+                    }
+                }
+            }
         }
 
 
@@ -68,6 +84,47 @@ public class PDFService {
 
         outputStream.flush();
         outputStream.close();
+    }
+
+    @SneakyThrows
+    private void parseBoolean(String key, String val, AcroFields form, boolean negate){
+        if(Boolean.parseBoolean(val)){
+            form.setField(key, negate ? "Off" : "Yes");
+        }else{
+            form.setField(key, negate ? "Yes" : "Off");
+        }
+    }
+
+    @SneakyThrows
+    private void negate(String key, Map<String, String> objectKeys, AcroFields form) {
+        String elName = key.replace("!(","").replace(")","");
+        String elValue = objectKeys.get(elName);
+        if(elValue != null){
+            Pattern pattern = Pattern.compile("true|false", Pattern.CASE_INSENSITIVE);
+            Matcher matcher = pattern.matcher(elValue);
+            if(matcher.matches()) {
+                parseBoolean(key, elValue, form, true);
+            }else{
+                System.out.println("Pathul: " + elName + " nu este de tip boolean");
+            }
+
+        }else{
+            System.out.println("Pathul: " + elName + " nu exista in mesaj");
+        }
+    }
+
+    @SneakyThrows
+    private void concat(String key, Map<String, String> objectKeys, AcroFields form){
+        String[] arr = key.replace("concat(","").replace(")","").split(",");
+        StringBuilder finalVal = new StringBuilder();
+        for (String el : arr) {
+            if(objectKeys.get(el) != null){
+                finalVal.append(objectKeys.get(el));
+            }else{
+                finalVal.append(el.replaceAll("'",""));
+            }
+        }
+        form.setField(key, String.valueOf(finalVal));
     }
 
     @SneakyThrows
