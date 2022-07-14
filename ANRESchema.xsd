@@ -1290,7 +1290,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:Company">
 				<xs:sequence>
-					<xs:element name="fuiType" type="anre:FUIType" minOccurs="1" maxOccurs="1">
+					<xs:element name="fuiType" type="anre:FUIType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip FUI: nominalizat sau desemnat</xs:documentation>
 						</xs:annotation>
