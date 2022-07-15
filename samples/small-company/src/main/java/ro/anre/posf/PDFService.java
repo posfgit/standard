@@ -1,6 +1,9 @@
 package ro.anre.posf;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.github.underscore.Json;
 import com.lowagie.text.Image;
 import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
@@ -9,6 +12,7 @@ import com.lowagie.text.pdf.PushbuttonField;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ro.anre.posf.config.ObjectMapperConfiguration;
 import ro.anre.posf.standard.*;
 
 
@@ -31,6 +35,7 @@ public class PDFService {
     private static final String SUPPLIER_SIGNATURE_NAME = System.getProperty("pdf-supplier.signature");
     private static final String OPERATOR_SIGNATURE_NAME = System.getProperty("pdf-operator.signature");
     private static final String XML_FILE_PATH = System.getProperty("pdf-xml-input");
+
 
     @SneakyThrows
     public void fill() {
@@ -55,9 +60,11 @@ public class PDFService {
                 .getDeclaredMethod("getContract")
                 .invoke(msg);
 
+        String jsonAsString = ObjectMapperConfiguration.get().writeValueAsString(contract);
+        engine.eval("var contract = " + jsonAsString);
 
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
-        engine.put("contract", contract);
+
 
         for (Object fieldKey : form.getFields().keySet()){
             String val = "";
