@@ -576,7 +576,7 @@
             <type>CLC</type>
             <url>url0</url>
             <url>url1</url>
-            <technicalDataGas>
+            <technicalDataElectricity>
                 <consumption>
                     <item>
                         <month>0</month>
@@ -599,15 +599,12 @@
                 <smartMeter>false</smartMeter>
                 <status>CONECTAT</status>
                 <type>type7</type>
-                <category>C_1</category>
-                <debit>0</debit>
-                <maximumPressure>0</maximumPressure>
-                <minimumPressure>0</minimumPressure>
-                <minimumTechnicalPressure>0</minimumTechnicalPressure>
+                <approvedConsumptionPower>1000</approvedConsumptionPower>
+                <approvedProducedPower>20</approvedProducedPower>
+                <connectionType>MONOFAZAT</connectionType>
                 <networkType>CA</networkType>
-                <pressure>0</pressure>
-                <reservedCapacity>0</reservedCapacity>
-            </technicalDataGas>
+                <voltageLevel>1000</voltageLevel>
+            </technicalDataElectricity>
         </place>
         <previousContractDate>2006-05-04</previousContractDate>
         <previousContractNumber>previousContractNumber0</previousContractNumber>

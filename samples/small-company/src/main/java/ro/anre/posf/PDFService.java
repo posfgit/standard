@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 import ro.anre.posf.standard.*;
 
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
 public class PDFService {
@@ -37,6 +37,8 @@ public class PDFService {
         InputStream inputStream = new FileInputStream(FILE_NAME);
         PdfReader reader = new PdfReader(inputStream);
 
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("js");
 
         String outputFileName = String.join("_filled.", FILE_NAME.split("\\.(?=[^\\.]+$)"));
         File outputFile = new File( outputFileName);
@@ -48,27 +50,30 @@ public class PDFService {
         String xmlawd = Files.readString(Path.of(XML_FILE_PATH), Charset.defaultCharset());
         Message msg =  xmlMapper.readValue(xmlawd, Message.class);
 
-        Map<String, String> objectKeys =  ObjectMapperUtil.objectFieldMapper(msg, null);
+        Contract contract = (Contract) msg
+                .getClass()
+                .getDeclaredMethod("getContract")
+                .invoke(msg);
+
+
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
+        engine.put("contract", contract);
 
         for (Object fieldKey : form.getFields().keySet()){
-            String key = (String) fieldKey;
-            if(key.startsWith("concat(")){
-                concat(key, objectKeys, form);
-            }else if(key.startsWith("!(")){
-                negate(key, objectKeys, form);
-            }else{
-                if(!ignoredKeys.contains(key) && (objectKeys.get(key) == null || objectKeys.get(key).isEmpty())){
-                    System.out.println("Pathul: " + key + " nu exista in mesaj");
-                }else if(!ignoredKeys.contains(key) ){
-                    String val = objectKeys.get(key);
-                    Pattern pattern = Pattern.compile("true|false", Pattern.CASE_INSENSITIVE);
-                    Matcher matcher = pattern.matcher(val);
-                    if(matcher.matches()) {
-                        parseBoolean(key, val, form, false);
-                    }else{
-                        form.setField(key, val);
-                    }
+            String val = "";
+            if(!ignoredKeys.contains(fieldKey.toString())){
+                try{
+                    val =  engine.eval(fieldKey.toString()).toString();
+                }catch (ScriptException | NullPointerException e){
+                    System.out.println(e.getMessage() + fieldKey);
+                }
+
+                if(form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_CHECKBOX){
+                    form.setField(fieldKey.toString(), getCheckBoxValue(val));
+                }else if(form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_RADIOBUTTON){
+                    form.setField(fieldKey.toString(), getRadioValue(val, fieldKey.toString(), form));
+                }else{
+                    form.setField(fieldKey.toString(), val);
                 }
             }
         }
@@ -86,46 +91,22 @@ public class PDFService {
         outputStream.close();
     }
 
-    @SneakyThrows
-    private void parseBoolean(String key, String val, AcroFields form, boolean negate){
+
+    private String getCheckBoxValue(String val){
         if(Boolean.parseBoolean(val)){
-            form.setField(key, negate ? "Off" : "Yes");
+            return "Yes";
         }else{
-            form.setField(key, negate ? "Yes" : "Off");
+            return "Off";
         }
     }
-
-    @SneakyThrows
-    private void negate(String key, Map<String, String> objectKeys, AcroFields form) {
-        String elName = key.replace("!(","").replace(")","");
-        String elValue = objectKeys.get(elName);
-        if(elValue != null){
-            Pattern pattern = Pattern.compile("true|false", Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(elValue);
-            if(matcher.matches()) {
-                parseBoolean(key, elValue, form, true);
-            }else{
-                System.out.println("Pathul: " + elName + " nu este de tip boolean");
-            }
-
+    private String getRadioValue(String val, String key, AcroFields form){
+        if(Boolean.parseBoolean(val)){
+            return form.getAppearanceStates(key)[0];
         }else{
-            System.out.println("Pathul: " + elName + " nu exista in mesaj");
+            return "Off";
         }
     }
 
-    @SneakyThrows
-    private void concat(String key, Map<String, String> objectKeys, AcroFields form){
-        String[] arr = key.replace("concat(","").replace(")","").split(",");
-        StringBuilder finalVal = new StringBuilder();
-        for (String el : arr) {
-            if(objectKeys.get(el) != null){
-                finalVal.append(objectKeys.get(el));
-            }else{
-                finalVal.append(el.replaceAll("'",""));
-            }
-        }
-        form.setField(key, String.valueOf(finalVal));
-    }
 
     @SneakyThrows
     private void addSignature(AcroFields form, String signature, String signatureName) {
