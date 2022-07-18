@@ -1176,6 +1176,11 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>Operatorul care detine acest loc de consum</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="hasProsumer" type="xs:boolean" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Daca este certificat de prosumator la locul de consum</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
