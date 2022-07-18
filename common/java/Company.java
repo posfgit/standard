@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="extra" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="incorporation" type="{http://www.anre.ro/ANRESchema}Incorporation" minOccurs="0"/>
  *         &lt;element name="legalRepresentative" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
+ *         &lt;element name="legalRepresentativeQuality" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
@@ -46,6 +47,7 @@ import javax.xml.bind.annotation.XmlType;
     "extra",
     "incorporation",
     "legalRepresentative",
+    "legalRepresentativeQuality",
     "name",
     "number"
 })
@@ -63,6 +65,7 @@ public class Company {
     @XmlSchemaType(name = "string")
     protected Incorporation incorporation;
     protected Person legalRepresentative;
+    protected String legalRepresentativeQuality;
     protected String name;
     protected String number;
 
@@ -232,6 +235,30 @@ public class Company {
      */
     public void setLegalRepresentative(Person value) {
         this.legalRepresentative = value;
+    }
+
+    /**
+     * Gets the value of the legalRepresentativeQuality property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLegalRepresentativeQuality() {
+        return legalRepresentativeQuality;
+    }
+
+    /**
+     * Sets the value of the legalRepresentativeQuality property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLegalRepresentativeQuality(String value) {
+        this.legalRepresentativeQuality = value;
     }
 
     /**

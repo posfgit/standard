@@ -4,6 +4,7 @@ package ro.anre.posf.standard;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -19,7 +20,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence minOccurs="0">
- *         &lt;element name="aggregates" type="{http://www.anre.ro/ANRESchema}Client" minOccurs="0"/>
+ *         &lt;choice minOccurs="0">
+ *           &lt;element name="aggregateCompany" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
+ *           &lt;element name="aggregatePerson" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
+ *         &lt;/choice>
+ *         &lt;element name="finalClientType" type="{http://www.anre.ro/ANRESchema}ClientType" minOccurs="0"/>
  *         &lt;element name="isAgregate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="isPre" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="preCompany" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
@@ -40,7 +45,9 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Client", propOrder = {
-    "aggregates",
+    "aggregatePerson",
+    "aggregateCompany",
+    "finalClientType",
     "isAgregate",
     "isPre",
     "preCompany",
@@ -53,7 +60,10 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Client")
 public class Client {
 
-    protected Client aggregates;
+    protected Person aggregatePerson;
+    protected Company aggregateCompany;
+    @XmlSchemaType(name = "string")
+    protected ClientType finalClientType;
     protected Boolean isAgregate;
     protected Boolean isPre;
     protected Company preCompany;
@@ -64,27 +74,75 @@ public class Client {
     protected Company company;
 
     /**
-     * Gets the value of the aggregates property.
+     * Gets the value of the aggregatePerson property.
      * 
      * @return
      *     possible object is
-     *     {@link Client }
+     *     {@link Person }
      *     
      */
-    public Client getAggregates() {
-        return aggregates;
+    public Person getAggregatePerson() {
+        return aggregatePerson;
     }
 
     /**
-     * Sets the value of the aggregates property.
+     * Sets the value of the aggregatePerson property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Client }
+     *     {@link Person }
      *     
      */
-    public void setAggregates(Client value) {
-        this.aggregates = value;
+    public void setAggregatePerson(Person value) {
+        this.aggregatePerson = value;
+    }
+
+    /**
+     * Gets the value of the aggregateCompany property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Company }
+     *     
+     */
+    public Company getAggregateCompany() {
+        return aggregateCompany;
+    }
+
+    /**
+     * Sets the value of the aggregateCompany property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Company }
+     *     
+     */
+    public void setAggregateCompany(Company value) {
+        this.aggregateCompany = value;
+    }
+
+    /**
+     * Gets the value of the finalClientType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ClientType }
+     *     
+     */
+    public ClientType getFinalClientType() {
+        return finalClientType;
+    }
+
+    /**
+     * Sets the value of the finalClientType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ClientType }
+     *     
+     */
+    public void setFinalClientType(ClientType value) {
+        this.finalClientType = value;
     }
 
     /**

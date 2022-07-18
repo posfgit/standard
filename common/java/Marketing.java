@@ -22,6 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="agreePlatformTerms" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="clientIBAN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="electronicInvoice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="smsInvoice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="electronicMoneyReturn" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
     "agreePlatformTerms",
     "clientIBAN",
     "electronicInvoice",
+    "smsInvoice",
     "electronicMoneyReturn"
 })
 @XmlRootElement(name = "Marketing")
@@ -48,6 +50,7 @@ public class Marketing {
     protected Boolean agreePlatformTerms;
     protected String clientIBAN;
     protected Boolean electronicInvoice;
+    protected Boolean smsInvoice;
     protected Boolean electronicMoneyReturn;
 
     /**
@@ -168,6 +171,30 @@ public class Marketing {
      */
     public void setElectronicInvoice(Boolean value) {
         this.electronicInvoice = value;
+    }
+
+    /**
+     * Gets the value of the smsInvoice property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isSmsInvoice() {
+        return smsInvoice;
+    }
+
+    /**
+     * Sets the value of the smsInvoice property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setSmsInvoice(Boolean value) {
+        this.smsInvoice = value;
     }
 
     /**

@@ -47,6 +47,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "type"
 })
 @XmlSeeAlso({
+    ConventionGeneratedByPOSF.class,
     ContractSignedBySupplier.class,
     ContractSuspendedByAnre.class,
     ContractSignedByClient.class,
@@ -77,6 +78,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type",  include = JsonTypeInfo.As.EXISTING_PROPERTY, visible = true)
 @JsonSubTypes({
+        @JsonSubTypes.Type (name = "ConventionGeneratedByPOSF", value = ConventionGeneratedByPOSF.class),
         @JsonSubTypes.Type (name = "ClientInfoUpdated", value = ClientInfoUpdated.class),
         @JsonSubTypes.Type (name = "ContractActivatedByANRE", value = ContractActivatedByANRE.class),
         @JsonSubTypes.Type (name = "ContractCancelledByClient", value = ContractCancelledByClient.class),

@@ -3,6 +3,7 @@
         xmlns = @XmlNs(prefix = "anre", namespaceURI = "http://www.anre.ro/ANRESchema"))
 package ro.anre.posf.standard;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlNs;
 import javax.xml.bind.annotation.XmlNsForm;
 

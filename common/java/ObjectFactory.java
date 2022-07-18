@@ -412,6 +412,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ConventionGeneratedByPOSF }
+     * 
+     */
+    public ConventionGeneratedByPOSF createConventionGeneratedByPOSF() {
+        return new ConventionGeneratedByPOSF();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TechnicalData }{@code >}}
      * 
      */

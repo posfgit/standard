@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="activeSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" maxOccurs="unbounded"/>
+ *         &lt;element name="activeSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Contract"/>
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -51,7 +51,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement(name = "Convention")
 public class Convention {
 
-    @XmlElement(name = "activeSupplier", required = true)
+    @XmlElement(name = "activeSupplier")
     protected List<Supplier> activeSuppliers;
     @XmlElement(required = true)
     protected Contract contract;

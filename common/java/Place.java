@@ -1,8 +1,11 @@
 
 package ro.anre.anreschema.standard;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -24,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}PlaceType"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;choice>
  *           &lt;element name="technicalDataElectricity" type="{http://www.anre.ro/ANRESchema}TechnicalDataElectricity" minOccurs="0"/>
  *           &lt;element name="technicalDataGas" type="{http://www.anre.ro/ANRESchema}TechnicalDataGas" minOccurs="0"/>
@@ -43,7 +46,7 @@ import javax.xml.bind.annotation.XmlType;
     "code",
     "operator",
     "type",
-    "url",
+    "urls",
     "technicalDataGas",
     "technicalDataElectricity"
 })
@@ -55,7 +58,8 @@ public class Place {
     protected Operator operator;
     @XmlSchemaType(name = "string")
     protected PlaceType type;
-    protected String url;
+    @XmlElement(name = "url")
+    protected List<String> urls;
     protected TechnicalDataGas technicalDataGas;
     protected TechnicalDataElectricity technicalDataElectricity;
 
@@ -156,27 +160,32 @@ public class Place {
     }
 
     /**
-     * Gets the value of the url property.
+     * Gets the value of the urls property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUrl() {
-        return url;
-    }
-
-    /**
-     * Sets the value of the url property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the urls property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getUrls().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
      */
-    public void setUrl(String value) {
-        this.url = value;
+    public List<String> getUrls() {
+        if (urls == null) {
+            urls = new ArrayList<String>();
+        }
+        return this.urls;
     }
 
     /**

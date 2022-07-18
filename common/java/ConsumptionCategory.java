@@ -16,6 +16,10 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="C_1"/>
  *     &lt;enumeration value="C_2"/>
  *     &lt;enumeration value="C_3"/>
+ *     &lt;enumeration value="C_4"/>
+ *     &lt;enumeration value="C_5"/>
+ *     &lt;enumeration value="C_6"/>
+ *     &lt;enumeration value="C_7"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -27,7 +31,11 @@ public enum ConsumptionCategory {
 
     C_1,
     C_2,
-    C_3;
+    C_3,
+    C_4,
+    C_5,
+    C_6,
+    C_7;
 
     public String value() {
         return name();
