@@ -151,6 +151,30 @@ Mesaje folosite pentru a incarca date in sistem, fara a presupune ca aceste mesa
 |Incarcare contract de retea existent|ContractNetworkChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 |Incarcare conventie existenta|ConventionChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 
+# Modele de fisiere PDF si conventii de completare a campurilor
+
+Fisierele PDF pe care aplicatia WebPOSF le va completa automat cu datele clientului si semnatura acestuia vor fi puse la dispozitie de furnizori intr-un format PDF, folosind campuri de tip FormField. Este indicat ca toate campurile sa aibe dimensiuni suficient de lungi si sa fie pozitionate corespunzator astfel incat sa afiseze corect si vizibil informatiile continute.
+
+Recomandam ca in fisiere PDF sa apara cel putin urmatoarele elemente de identificare:
+1. Autorul
+2. Versiunea
+3. Tipul documentului
+4. Titlul cu font mare si vizibil
+5. Numerotarea paginilor
+
+
+![Diagrama fisier PDF](images/pdfdiagram.png)
+
+Fisierele vor respecta urmatoarele conventii:
+
+1. Toate campurile care se vor completa automat vor fi de tipul FormField in PDF
+2. Toate campurile vor respecta conventia denumirii urmand calea elementului din XML. De exemplu daca intr-un camp se doreste sa se completeze automat numele operatorului de retea, acesta va fi denumit "contract.operator.name"
+3. Concatenarea a doua valori intr-un camp poate fi facuta astfel: pentru a completa "nume prenume" se va denumi campul despectiv astfel: contract.client.person.firstName + ' ' contract.client.person.lastName
+4. Elementele de tip bifa sau cerc bifat (checkbox/radiobutton) respecta aceeasi denumire. 
+5. Operatorii folositi mai sus se interpreteaza in sintaxa JavaScript. Mai multe detalii tehnice gasiti in exemplul Java "small-company"
+
+Exemple de fisiere PDF le gasiti [in folderul PDF](./pdf/)
+
 # Fisiere atasate entitatilor
 
 Tipurile de date Contract si Place pot fi insotite de fisiere atasate. Recomandam folosirea de fisiere in standard deschis care sa poata fi vizualizate pe orice dispozitiv electronic fara a instala software suplimentar.
