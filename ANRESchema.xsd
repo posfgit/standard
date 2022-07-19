@@ -1178,7 +1178,11 @@ CNP (pentru cetatenii romani)</xs:documentation>
 			</xs:element>
 			<xs:element name="hasProsumer" type="xs:boolean" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
+<<<<<<< HEAD
 					<xs:documentation>Daca este certificat de prosumator la locul de consum</xs:documentation>
+=======
+					<xs:documentation>Daca are certificat de prosumator</xs:documentation>
+>>>>>>> 3fa90c588066a3982fec3fc9227842d1bd8254ba
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="type" type="anre:PlaceType" minOccurs="1" maxOccurs="1">
