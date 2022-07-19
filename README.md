@@ -35,6 +35,24 @@ Cozile de mesaje sunt accesate folosind un API de interogare (post/pool) pentru 
 
 Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. 
 
+## Lista API in format SWAGGER
+
+Lista tuturor metodelor ce pot fi apelate prin API o gasiti aici (https://posf-beta.anre.ro/broker/swagger-ui/index.html#/)
+
+Principalele metode sunt:
+1. /poolMessage - cere ultimul mesaj primit si trece la urmatorul
+2. /postMessage - trimite un mesaj
+3. /readMessage - citeste ultimul mesaj primit
+4. /commitRead - trece la urmatorul mesaj primit
+5. /profile - intoarce informatii despre contul curent
+6. /list/supplier - lista de furnizori (cu UUID-urile 
+acestora)
+7. /list/operator - lista de operatori (cu UUID-urile 
+acestora)
+8. /list/{id} - detaliile unui furnizor sau operator
+9. /place/{county}/{siruta}/{type}/{code}  -detaliile unui loc de consum (actualizat de operator prin mesajele Place*)
+10. /file/ acces la fisierele atasate mesajelor
+
 ## Exemplu in Java
 
 Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermediul limbajului de programare Java. In cod veti vedea cum se introduce user/parola, se obtine un token de acces si apoi se inteogheaza lista furnizorilor. 
