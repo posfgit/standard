@@ -658,7 +658,8 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 				<xs:annotation>
 					<xs:documentation>Cod oferta asociata contractului - Guid</xs:documentation>
 				</xs:annotation>
-			</xs:element>			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="operator" type="anre:Operator" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Denumire operator</xs:documentation>
 				</xs:annotation>
@@ -703,10 +704,26 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Tipul contractului</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="url" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Adrese web unde poate fi accesate fisierele in format electronic ale acestui contract</xs:documentation>
 				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="name" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>Numele documentului. Denumiri rezervate: Contract de furnizare, Contract de retea - antet, Contract retea, Notificare contract retea, Fotografie index contor, Document de identitate</xs:documentation>
+								</xs:annotation>							
+							</xs:attribute>
+							<xs:attribute name="scope" type="xs:string" use="optional">
+								<xs:annotation>
+									<xs:documentation>Indica cine poate vizualiza aceste documente separand prin virgula. Exemple: all, client, supplier, operator, previousSupplier, nobody</xs:documentation>
+								</xs:annotation>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
@@ -1186,10 +1203,17 @@ CNP (pentru cetatenii romani)</xs:documentation>
 					<xs:documentation>ia valori conform tipului de data PlaceType</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="url" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="url" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>Adresa web unde poate fi accesate fisierele in format electronic ale acestui loc de consum</xs:documentation>
 				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="name" type="xs:string"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
 			</xs:element>
 			<xs:choice minOccurs="1" maxOccurs="1">
 				<xs:element name="technicalDataElectricity" type="anre:TechnicalDataElectricity"
