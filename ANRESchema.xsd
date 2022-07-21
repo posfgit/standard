@@ -348,6 +348,79 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="Offer" type="anre:Offer"/>
+	<xs:complexType name="Offer">
+		<xs:annotation>
+			<xs:documentation>s</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="offerName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="offerCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="clientType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="dutyExemption" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="offerType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="startDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="endDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="productType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceIntervalNote" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="contractDuration" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="offerUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceUndiferentiated" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="pricePerDay" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="pricePerNight" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourOfDayStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourOfDayEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourOfNightStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="hourOfNightEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="subscriptionPrice" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceOfGC" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDiscount" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="discountStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="discountEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceOther" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="validityStart" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="validityEnd" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="monthlyConsumptionStart" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="monthlyConsumptionEnd" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="counterIndexReadingInterval" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="counterIndexTransmissionInterval" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="renuableSourcePercentage" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="yearOfEnergyAcquisition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfCoal" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfGas" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfHidro" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfNuclear" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfWind" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfSolar" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="acquisitionOfOther" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="invoiceDeliveryMeans" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="invoiceFrequency" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="invoiceFrequencyCompany" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="paymentTerm" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="additionalServices" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="otherConditions" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="guarantees" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.household.c1" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.household.c2" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.household.c3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.household.c4" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.household.c5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.nonhousehold.c1" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.nonhousehold.c2" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.nonhousehold.c3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.nonhousehold.c4" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceDS.nonhousehold.c5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceTS.household.c1_3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceTS.household.c4_5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceTS.nonhousehold.c1_3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceTS.nonhousehold.c4_5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceUSP.household.c1_3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceUSP.household.c4_5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceUSP.nonhousehold.c1_3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="priceUSP.nonhousehold.c4_5" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="AddressChangedInfo" type="anre:AddressChangedInfo"/>
 	<xs:complexType name="AddressChangedInfo">
 		<xs:annotation>
