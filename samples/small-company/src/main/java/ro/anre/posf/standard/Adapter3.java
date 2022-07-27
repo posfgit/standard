@@ -1,8 +1,8 @@
 
 package ro.anre.posf.standard;
 
-import java.util.UUID;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.util.UUID;
 
 public class Adapter3
     extends XmlAdapter<String, UUID>

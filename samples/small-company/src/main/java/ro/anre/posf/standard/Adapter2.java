@@ -1,8 +1,8 @@
 
 package ro.anre.posf.standard;
 
-import java.time.LocalDate;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.LocalDate;
 
 public class Adapter2
     extends XmlAdapter<String, LocalDate>
