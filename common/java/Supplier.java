@@ -23,7 +23,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Company">
  *       &lt;sequence>
- *         &lt;element name="fuiType" type="{http://www.anre.ro/ANRESchema}FUIType"/>
+ *         &lt;element name="fuiType" type="{http://www.anre.ro/ANRESchema}FUIType" minOccurs="0"/>
  *         &lt;element name="isFUI" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="license" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
@@ -47,7 +47,6 @@ public class Supplier
     extends Company
 {
 
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected FUIType fuiType;
     protected boolean isFUI;

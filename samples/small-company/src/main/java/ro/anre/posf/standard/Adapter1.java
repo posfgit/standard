@@ -1,8 +1,8 @@
 
 package ro.anre.posf.standard;
 
-import java.time.ZonedDateTime;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.ZonedDateTime;
 
 public class Adapter1
     extends XmlAdapter<String, ZonedDateTime>

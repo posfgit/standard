@@ -4,11 +4,10 @@ package ro.anre.posf.standard;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-import java.util.UUID;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.ZonedDateTime;
+import java.util.UUID;
 
 
 /**

@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 
 /**
@@ -26,8 +28,17 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="address" type="{http://www.anre.ro/ANRESchema}Address"/>
  *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="operator" type="{http://www.anre.ro/ANRESchema}Operator"/>
+ *         &lt;element name="hasProsumer" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="type" type="{http://www.anre.ro/ANRESchema}PlaceType"/>
- *         &lt;element name="url" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="url" maxOccurs="unbounded" minOccurs="0">
+ *           &lt;complexType>
+ *             &lt;simpleContent>
+ *               &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+ *                 &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *               &lt;/extension>
+ *             &lt;/simpleContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *         &lt;choice>
  *           &lt;element name="technicalDataElectricity" type="{http://www.anre.ro/ANRESchema}TechnicalDataElectricity" minOccurs="0"/>
  *           &lt;element name="technicalDataGas" type="{http://www.anre.ro/ANRESchema}TechnicalDataGas" minOccurs="0"/>
@@ -45,6 +56,7 @@ import javax.xml.bind.annotation.XmlType;
     "address",
     "code",
     "operator",
+    "hasProsumer",
     "type",
     "urls",
     "technicalDataGas",
@@ -56,10 +68,11 @@ public class Place {
     protected Address address;
     protected String code;
     protected Operator operator;
+    protected Boolean hasProsumer;
     @XmlSchemaType(name = "string")
     protected PlaceType type;
     @XmlElement(name = "url")
-    protected List<String> urls;
+    protected List<Place.Url> urls;
     protected TechnicalDataGas technicalDataGas;
     protected TechnicalDataElectricity technicalDataElectricity;
 
@@ -136,6 +149,30 @@ public class Place {
     }
 
     /**
+     * Gets the value of the hasProsumer property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isHasProsumer() {
+        return hasProsumer;
+    }
+
+    /**
+     * Sets the value of the hasProsumer property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setHasProsumer(Boolean value) {
+        this.hasProsumer = value;
+    }
+
+    /**
      * Gets the value of the type property.
      * 
      * @return
@@ -177,13 +214,13 @@ public class Place {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link Place.Url }
      * 
      * 
      */
-    public List<String> getUrls() {
+    public List<Place.Url> getUrls() {
         if (urls == null) {
-            urls = new ArrayList<String>();
+            urls = new ArrayList<Place.Url>();
         }
         return this.urls;
     }
@@ -234,6 +271,85 @@ public class Place {
      */
     public void setTechnicalDataElectricity(TechnicalDataElectricity value) {
         this.technicalDataElectricity = value;
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;simpleContent>
+     *     &lt;extension base="&lt;http://www.w3.org/2001/XMLSchema>string">
+     *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
+     *     &lt;/extension>
+     *   &lt;/simpleContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "value"
+    })
+    public static class Url {
+
+        @XmlValue
+        protected String value;
+        @XmlAttribute(name = "name")
+        protected String name;
+
+        /**
+         * Gets the value of the value property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getValue() {
+            return value;
+        }
+
+        /**
+         * Sets the value of the value property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        /**
+         * Gets the value of the name property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * Sets the value of the name property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setName(String value) {
+            this.name = value;
+        }
+
     }
 
 }
