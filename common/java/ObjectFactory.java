@@ -36,6 +36,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Contract }
+     * 
+     */
+    public Contract createContract() {
+        return new Contract();
+    }
+
+    /**
+     * Create an instance of {@link Place }
+     * 
+     */
+    public Place createPlace() {
+        return new Place();
+    }
+
+    /**
      * Create an instance of {@link Operator }
      * 
      */
@@ -124,14 +140,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Contract }
-     * 
-     */
-    public Contract createContract() {
-        return new Contract();
-    }
-
-    /**
      * Create an instance of {@link ContractActivatedByANRE }
      * 
      */
@@ -145,14 +153,6 @@ public class ObjectFactory {
      */
     public PlaceCreatedByOperator createPlaceCreatedByOperator() {
         return new PlaceCreatedByOperator();
-    }
-
-    /**
-     * Create an instance of {@link Place }
-     * 
-     */
-    public Place createPlace() {
-        return new Place();
     }
 
     /**
@@ -356,6 +356,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Offer }
+     * 
+     */
+    public Offer createOffer() {
+        return new Offer();
+    }
+
+    /**
      * Create an instance of {@link ClientInfoUpdated }
      * 
      */
@@ -404,11 +412,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Contract.Url }
+     * 
+     */
+    public Contract.Url createContractUrl() {
+        return new Contract.Url();
+    }
+
+    /**
      * Create an instance of {@link ContractSignedBySupplier }
      * 
      */
     public ContractSignedBySupplier createContractSignedBySupplier() {
         return new ContractSignedBySupplier();
+    }
+
+    /**
+     * Create an instance of {@link Place.Url }
+     * 
+     */
+    public Place.Url createPlaceUrl() {
+        return new Place.Url();
     }
 
     /**
