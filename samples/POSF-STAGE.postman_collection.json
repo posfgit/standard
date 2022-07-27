@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "9647fa1f-fc8c-4283-bd75-3b79a2f3f6e8",
-		"name": "POSF-TEST",
+		"_postman_id": "79cf904e-5ff6-407f-b34f-ff5998c9c36e",
+		"name": "POSF-STAGE",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -33,7 +33,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -113,7 +113,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"authorID\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\",\r\n  \"authorName\": \"string\",\r\n  \"correlationID\": \"{{ud}}\",\r\n  \"description\": \"string\",\r\n  \"messageID\": \"6ae3a6f6-4ed6-4a69-bfad-b5c48522a121\",\r\n  \"timestamp\": \"{{dateNow}}\",\r\n  \"type\": \"ContractNetworkSignedBySupplier\",\r\n  \"contract\": {\r\n    \"additionalDate\": \"2022-05-09\",\r\n    \"additionalNumber\": \"string\",\r\n    \"client\": {\r\n      \"aggregates\": null,\r\n      \"company\": null,\r\n      \"isAgregate\": true,\r\n      \"isPre\": true,\r\n      \"person\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"preCompany\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n        \"legalRepresentative\": {\r\n          \"address\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"code\": \"string\",\r\n          \"contactAddress\": {\r\n            \"email\": \"string\",\r\n            \"fax\": \"string\",\r\n            \"mobilePhone\": \"string\",\r\n            \"phone\": \"string\"\r\n          },\r\n          \"correspondenceAddress\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"extra\": \"string\",\r\n          \"firstName\": \"string\",\r\n          \"lastName\": \"string\",\r\n          \"number\": \"string\",\r\n          \"series\": \"string\",\r\n          \"type\": \"CNP\"\r\n        },\r\n        \"name\": \"string\",\r\n        \"number\": \"string\"\r\n      },\r\n      \"prosumer\": true,\r\n      \"uninterruptible\": true,\r\n      \"vulnerable\": true\r\n    },\r\n    \"contractStatus\": \"ACTIV\",\r\n    \"contractWithOperatorNeeded\": true,\r\n    \"conventionNeeded\": true,\r\n    \"correspondenceClientAddress\": {\r\n      \"building\": \"string\",\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"flat\": \"string\",\r\n      \"floor\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"stair\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"correspondenceClientContactAddress\": {\r\n      \"email\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"mobilePhone\": \"string\",\r\n      \"phone\": \"string\"\r\n    },\r\n    \"date\": \"2022-05-09\",\r\n    \"executionAddress\": {\r\n      \"building\": \"string\",\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"flat\": \"string\",\r\n      \"floor\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"stair\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"expirationDate\": \"2022-05-09\",\r\n    \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n    \"number\": \"string\",\r\n    \"offerCode\": \"string\",\r\n    \"operator\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"operatorId\": \"5b5b51b0-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"place\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"operator\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n        \"legalRepresentative\": {\r\n          \"address\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"code\": \"string\",\r\n          \"contactAddress\": {\r\n            \"email\": \"string\",\r\n            \"fax\": \"string\",\r\n            \"mobilePhone\": \"string\",\r\n            \"phone\": \"string\"\r\n          },\r\n          \"correspondenceAddress\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"extra\": \"string\",\r\n          \"firstName\": \"string\",\r\n          \"lastName\": \"string\",\r\n          \"number\": \"string\",\r\n          \"series\": \"string\",\r\n          \"type\": \"CNP\"\r\n        },\r\n        \"name\": \"string\",\r\n        \"number\": \"string\",\r\n        \"operatorId\": null\r\n      },\r\n\t  \"technicalDataGas\": {\r\n\t\t  \"counterIndexReadDate\": \"2022-05-13\",\r\n\t\t  \"counterIndexValue\": \"string\",\r\n\t\t  \"counterSeries\": \"string\",\r\n\t\t  \"counterType\": \"ACTIVE\",\r\n\t\t  \"date\": \"2022-05-13\",\r\n\t\t  \"documentType\": \"ACORDACCES\",\r\n\t\t  \"number\": \"string\",\r\n\t\t  \"smartMeter\": true,\r\n\t\t  \"status\": \"CONECTAT\",\r\n\t\t  \"type\": \"TechnicalDataGas\",\r\n\t\t  \"category\": \"C_1\",\r\n\t\t  \"debit\": 0,\r\n\t\t  \"networkType\": \"CA\",\r\n\t\t  \"pressure\": 0\r\n\t\t},\r\n      \"type\": \"CLC\"\r\n    },\r\n    \"previousSupplier\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"fuiType\": \"DESEMNAT\",\r\n      \"isFUI\": true,\r\n      \"supplierId\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"startingDate\": \"2022-05-09\",\r\n    \"serviceType\":\"CONCURENTIAL\",\r\n    \"supplier\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"fuiType\": \"DESEMNAT\",\r\n      \"isFUI\": true,\r\n      \"supplierId\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"type\": \"FURNIZARE\",\r\n    \"urls\":[{\r\n        \"value\":\"http://posf-beta.anre.ro/broker/file/intern/6ae3a6f6-4ed6-4a69-bfad-b5c48522a121/bc67297c-a5ef-4863-8d18-ed7dc0722a3b\"\r\n    }]\r\n  }\r\n}",
+					"raw": "{\r\n  \"authorID\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\",\r\n  \"authorName\": \"string\",\r\n  \"correlationID\": \"{{ud}}\",\r\n  \"description\": \"string\",\r\n  \"messageID\": \"6ae3a6f6-4ed6-4a69-bfad-b5c48522a121\",\r\n  \"timestamp\": \"{{dateNow}}\",\r\n  \"type\": \"ContractNetworkSignedBySupplier\",\r\n  \"contract\": {\r\n    \"additionalDate\": \"2022-05-09\",\r\n    \"additionalNumber\": \"string\",\r\n    \"client\": {\r\n      \"aggregates\": null,\r\n      \"company\": null,\r\n      \"isAgregate\": true,\r\n      \"isPre\": true,\r\n      \"person\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"preCompany\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n        \"legalRepresentative\": {\r\n          \"address\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"code\": \"string\",\r\n          \"contactAddress\": {\r\n            \"email\": \"string\",\r\n            \"fax\": \"string\",\r\n            \"mobilePhone\": \"string\",\r\n            \"phone\": \"string\"\r\n          },\r\n          \"correspondenceAddress\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"extra\": \"string\",\r\n          \"firstName\": \"string\",\r\n          \"lastName\": \"string\",\r\n          \"number\": \"string\",\r\n          \"series\": \"string\",\r\n          \"type\": \"CNP\"\r\n        },\r\n        \"name\": \"string\",\r\n        \"number\": \"string\"\r\n      },\r\n      \"prosumer\": true,\r\n      \"uninterruptible\": true,\r\n      \"vulnerable\": true\r\n    },\r\n    \"contractStatus\": \"ACTIV\",\r\n    \"contractWithOperatorNeeded\": true,\r\n    \"conventionNeeded\": true,\r\n    \"correspondenceClientAddress\": {\r\n      \"building\": \"string\",\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"flat\": \"string\",\r\n      \"floor\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"stair\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"correspondenceClientContactAddress\": {\r\n      \"email\": \"string\",\r\n      \"fax\": \"string\",\r\n      \"mobilePhone\": \"string\",\r\n      \"phone\": \"string\"\r\n    },\r\n    \"date\": \"2022-05-09\",\r\n    \"executionAddress\": {\r\n      \"building\": \"string\",\r\n      \"city\": {\r\n        \"code\": \"string\",\r\n        \"name\": \"string\"\r\n      },\r\n      \"county\": \"AB\",\r\n      \"extended\": \"string\",\r\n      \"flat\": \"string\",\r\n      \"floor\": \"string\",\r\n      \"number\": \"string\",\r\n      \"position\": {\r\n        \"geohash\": \"string\",\r\n        \"latitude\": \"string\",\r\n        \"longitude\": \"string\"\r\n      },\r\n      \"postcode\": \"string\",\r\n      \"stair\": \"string\",\r\n      \"street\": \"string\"\r\n    },\r\n    \"expirationDate\": \"2022-05-09\",\r\n    \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n    \"number\": \"string\",\r\n    \"offerCode\": \"string\",\r\n    \"operator\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"operatorId\": \"5b5b51b0-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"place\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"operator\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n        \"legalRepresentative\": {\r\n          \"address\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"code\": \"string\",\r\n          \"contactAddress\": {\r\n            \"email\": \"string\",\r\n            \"fax\": \"string\",\r\n            \"mobilePhone\": \"string\",\r\n            \"phone\": \"string\"\r\n          },\r\n          \"correspondenceAddress\": {\r\n            \"building\": \"string\",\r\n            \"city\": {\r\n              \"code\": \"string\",\r\n              \"name\": \"string\"\r\n            },\r\n            \"county\": \"AB\",\r\n            \"extended\": \"string\",\r\n            \"flat\": \"string\",\r\n            \"floor\": \"string\",\r\n            \"number\": \"string\",\r\n            \"position\": {\r\n              \"geohash\": \"string\",\r\n              \"latitude\": \"string\",\r\n              \"longitude\": \"string\"\r\n            },\r\n            \"postcode\": \"string\",\r\n            \"stair\": \"string\",\r\n            \"street\": \"string\"\r\n          },\r\n          \"extra\": \"string\",\r\n          \"firstName\": \"string\",\r\n          \"lastName\": \"string\",\r\n          \"number\": \"string\",\r\n          \"series\": \"string\",\r\n          \"type\": \"CNP\"\r\n        },\r\n        \"name\": \"string\",\r\n        \"number\": \"string\",\r\n        \"operatorId\": null\r\n      },\r\n\t  \"technicalDataGas\": {\r\n\t\t  \"counterIndexReadDate\": \"2022-05-13\",\r\n\t\t  \"counterIndexValue\": \"string\",\r\n\t\t  \"counterSeries\": \"string\",\r\n\t\t  \"counterType\": \"ACTIVE\",\r\n\t\t  \"date\": \"2022-05-13\",\r\n\t\t  \"documentType\": \"ACORDACCES\",\r\n\t\t  \"number\": \"string\",\r\n\t\t  \"smartMeter\": true,\r\n\t\t  \"status\": \"CONECTAT\",\r\n\t\t  \"type\": \"TechnicalDataGas\",\r\n\t\t  \"category\": \"C_1\",\r\n\t\t  \"debit\": 0,\r\n\t\t  \"networkType\": \"CA\",\r\n\t\t  \"pressure\": 0\r\n\t\t},\r\n      \"type\": \"CLC\"\r\n    },\r\n    \"previousSupplier\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"fuiType\": \"DESEMNAT\",\r\n      \"isFUI\": true,\r\n      \"supplierId\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"startingDate\": \"2022-05-09\",\r\n    \"serviceType\":\"CONCURENTIAL\",\r\n    \"supplier\": {\r\n      \"address\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"code\": \"string\",\r\n      \"contactAddress\": {\r\n        \"email\": \"string\",\r\n        \"fax\": \"string\",\r\n        \"mobilePhone\": \"string\",\r\n        \"phone\": \"string\"\r\n      },\r\n      \"correspondenceAddress\": {\r\n        \"building\": \"string\",\r\n        \"city\": {\r\n          \"code\": \"string\",\r\n          \"name\": \"string\"\r\n        },\r\n        \"county\": \"AB\",\r\n        \"extended\": \"string\",\r\n        \"flat\": \"string\",\r\n        \"floor\": \"string\",\r\n        \"number\": \"string\",\r\n        \"position\": {\r\n          \"geohash\": \"string\",\r\n          \"latitude\": \"string\",\r\n          \"longitude\": \"string\"\r\n        },\r\n        \"postcode\": \"string\",\r\n        \"stair\": \"string\",\r\n        \"street\": \"string\"\r\n      },\r\n      \"extra\": \"string\",\r\n      \"incorporation\": \"ALTE_PERSOANE_JURIDICE\",\r\n      \"legalRepresentative\": {\r\n        \"address\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"code\": \"string\",\r\n        \"contactAddress\": {\r\n          \"email\": \"string\",\r\n          \"fax\": \"string\",\r\n          \"mobilePhone\": \"string\",\r\n          \"phone\": \"string\"\r\n        },\r\n        \"correspondenceAddress\": {\r\n          \"building\": \"string\",\r\n          \"city\": {\r\n            \"code\": \"string\",\r\n            \"name\": \"string\"\r\n          },\r\n          \"county\": \"AB\",\r\n          \"extended\": \"string\",\r\n          \"flat\": \"string\",\r\n          \"floor\": \"string\",\r\n          \"number\": \"string\",\r\n          \"position\": {\r\n            \"geohash\": \"string\",\r\n            \"latitude\": \"string\",\r\n            \"longitude\": \"string\"\r\n          },\r\n          \"postcode\": \"string\",\r\n          \"stair\": \"string\",\r\n          \"street\": \"string\"\r\n        },\r\n        \"extra\": \"string\",\r\n        \"firstName\": \"string\",\r\n        \"lastName\": \"string\",\r\n        \"number\": \"string\",\r\n        \"series\": \"string\",\r\n        \"type\": \"CNP\"\r\n      },\r\n      \"name\": \"string\",\r\n      \"number\": \"string\",\r\n      \"fuiType\": \"DESEMNAT\",\r\n      \"isFUI\": true,\r\n      \"supplierId\": \"a3d9414a-bfdf-11ec-9d64-0242ac120002\"\r\n    },\r\n    \"type\": \"FURNIZARE\"\r\n    \r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,10 +121,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -164,7 +164,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -252,10 +252,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -294,13 +294,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -383,10 +383,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -425,13 +425,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -514,10 +514,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -556,13 +556,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -645,10 +645,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -687,13 +687,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -776,10 +776,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -818,13 +818,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -907,10 +907,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -974,13 +974,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -1063,10 +1063,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1130,13 +1130,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -1219,10 +1219,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/postMessage",
+					"raw": "https://posf-staging.anre.ro/broker/postMessage",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1256,13 +1256,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -1345,10 +1345,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/place/AB/1017/CLC/612-229-1785",
+					"raw": "https://posf-staging.anre.ro/broker/place/AB/1017/CLC/612-229-1785",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1386,13 +1386,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -1475,10 +1475,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/place/AB/1017/CLC/612-229-1785",
+					"raw": "https://posf-staging.anre.ro/broker/place/AB/1017/CLC/612-229-1785",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1505,7 +1505,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -1584,10 +1584,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=5ww333",
+					"raw": "https://posf-staging.anre.ro/broker/poolMessage?consumerId=5ww333",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1616,7 +1616,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -1695,10 +1695,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/readMessage?consumerId=123",
+					"raw": "https://posf-staging.anre.ro/broker/readMessage?consumerId=123",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1727,7 +1727,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -1806,10 +1806,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/commitRead?consumerId=123",
+					"raw": "https://posf-staging.anre.ro/broker/commitRead?consumerId=123",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1837,13 +1837,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -1917,10 +1917,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=222poee44edeftt",
+					"raw": "https://posf-staging.anre.ro/broker/poolMessage?consumerId=222poee44edeftt",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -1948,13 +1948,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2028,10 +2028,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/profile",
+					"raw": "https://posf-staging.anre.ro/broker/profile",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2053,13 +2053,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2133,10 +2133,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=22wss",
+					"raw": "https://posf-staging.anre.ro/broker/poolMessage?consumerId=22wss",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2164,13 +2164,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2244,10 +2244,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/poolMessage?consumerId=5334532233",
+					"raw": "https://posf-staging.anre.ro/broker/poolMessage?consumerId=5334532233",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2287,13 +2287,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2376,10 +2376,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/list/supplier",
+					"raw": "https://posf-staging.anre.ro/broker/list/supplier",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2414,13 +2414,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2503,10 +2503,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/list/supplier",
+					"raw": "https://posf-staging.anre.ro/broker/list/supplier",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2542,7 +2542,7 @@
 					"oauth2": [
 						{
 							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
@@ -2630,10 +2630,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/list/operator",
+					"raw": "https://posf-staging.anre.ro/broker/list/operator",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2668,13 +2668,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2757,10 +2757,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/list/operator",
+					"raw": "https://posf-staging.anre.ro/broker/list/operator",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2794,13 +2794,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -2894,10 +2894,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://posf-beta.anre.ro/broker/file/multipart",
+					"raw": "https://posf-staging.anre.ro/broker/file/multipart",
 					"protocol": "https",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -2932,13 +2932,13 @@
 					"type": "oauth2",
 					"oauth2": [
 						{
-							"key": "clientId",
-							"value": "login",
+							"key": "accessTokenUrl",
+							"value": "https://posf-staging.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
 							"type": "string"
 						},
 						{
-							"key": "accessTokenUrl",
-							"value": "https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+							"key": "clientId",
+							"value": "login",
 							"type": "string"
 						},
 						{
@@ -3021,10 +3021,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://posf-beta.anre.ro/broker/file/intern/6ae3a6f6-4ed6-4a69-bfad-b5c48522a121/bc67297c-a5ef-4863-8d18-ed7dc0722a3b",
+					"raw": "http://posf-staging.anre.ro/broker/file/intern/6ae3a6f6-4ed6-4a69-bfad-b5c48522a121/bc67297c-a5ef-4863-8d18-ed7dc0722a3b",
 					"protocol": "http",
 					"host": [
-						"posf-beta",
+						"posf-staging",
 						"anre",
 						"ro"
 					],
@@ -3084,6 +3084,18 @@
 		{
 			"key": "state",
 			"value": ""
+		},
+		{
+			"key": "BASE-URL",
+			"value": "https://posf-staging.anre.ro"
+		},
+		{
+			"key": "STAGE",
+			"value": "https://posf-staging.anre.ro"
+		},
+		{
+			"key": "BASE",
+			"value": "https://posf-beta.anre.ro"
 		}
 	]
 }
