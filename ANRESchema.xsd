@@ -354,54 +354,287 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:documentation>s</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="offerName" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="offerCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="clientType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="dutyExemption" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="offerType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="startDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="endDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="productType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceIntervalNote" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="contractDuration" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="offerUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceType" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceUndiferentiated" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="pricePerDay" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="pricePerNight" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="hourOfDayStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="hourOfDayEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="hourOfNightStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="hourOfNightEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="subscriptionPrice" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceOfGC" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceDiscount" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="discountStart" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="discountEnd" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceOther" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="validityStart" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="validityEnd" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="monthlyConsumptionStart" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="monthlyConsumptionEnd" type="xs:date" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="counterIndexReadingInterval" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="counterIndexTransmissionInterval" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="renuableSourcePercentage" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="yearOfEnergyAcquisition" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfCoal" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfGas" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfHidro" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfNuclear" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfWind" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfSolar" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="acquisitionOfOther" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="invoiceDeliveryMeans" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="invoiceFrequency" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="invoiceFrequencyCompany" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="paymentTerm" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="additionalServices" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="otherConditions" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="guarantees" type="xs:string" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="priceDS.household.c1" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="offerName" type="xs:string" minOccurs="0" maxOccurs="1"><xs:annotation>
+				<xs:documentation>Denumire oferta</xs:documentation>
+			</xs:annotation></xs:element>
+			<xs:element name="offerCode" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Cod de identificare al ofertei</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clientType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip client (Casnic/Noncasnic)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="dutyExemption" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Scutire plata acciza</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="offerType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip oferta (concurentiala/serviciu universal)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="startDate" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data de inceput aplicare oferta</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="endDate" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data de sfarsit aplicare oferta</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="productType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip produs (pret fix/pret variabil)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceIntervalNote" type="xs:string" minOccurs="0" maxOccurs="1">
+				
+			</xs:element>
+			<xs:element name="contractDuration" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Durata contract (mai mic un an, 1 an, intre 1 an si 2 ani, etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="offerUrl" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Legatura oferta pe situl furnizorului</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip pret (nediferentiat/diferentiat pe zone orare)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceUndiferentiated" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret oferta pentru nediferentiat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pricePerDay" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret pe interval de zi</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pricePerNight" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret pe interval de noapte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="hourOfDayStart" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ora la care incepe intervalul de zi</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="hourOfDayEnd" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ora la care se termina intervalul de zi</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="hourOfNightStart" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ora la care incepe intervalul noapte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="hourOfNightEnd" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ora la care se termina intervalul noapte</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unitOfMeasure" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Unitatea de masura penru pret</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceEnergy" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret energie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceFixedComponent" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret componenta fixa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceTransport" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret transport</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceSystemService" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret servicii sistem</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceDistributionService" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret distributie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceTaxCogeneration" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret taxa cogenerare</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceExciseDuty" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret acciza</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="valueAddedTax" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valoare tva</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceSubscription" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret componenta fixa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceOfGC" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret certificate verzi</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceDiscount" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Discount sau reduceri aplicate</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="discountStart" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data de inceput aplicare reducere</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="discountEnd" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data final aplicare reducere</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceOther" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Alte costuri</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="validityStart" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data start valabilitate oferta</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="validityEnd" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Data de final valabilitate oferta</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="monthlyConsumptionStart" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valoare consum lunar pentru care e valabila oferta, valoarea de inceput</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="monthlyConsumptionEnd" type="xs:date" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Valoare consum lunar pentru care e valabila oferta, valoarea de sfarsit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterIndexReadingInterval" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Frecventa citire contor (lunar, 2 luni, etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="counterIndexTransmissionInterval" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Frecventa index autocitit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="renuableSourcePercentage" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Procent energie din surse regenerabile</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="yearOfEnergyAcquisition" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Anul de achizitie energie electrica pe structura</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfCoal" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Carbune</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfGas" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Gaz</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfHidro" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Hidro</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfNuclear" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Nuclear</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfWind" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Vant</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfSolar" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de Solar</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="acquisitionOfOther" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Achizitie de altele</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="invoiceDeliveryMeans" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Mod trimitere factura</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="invoiceFrequency" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Frecventa emitere factura</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="invoiceFrequencyCompany" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Frecventa trimitere factura pentru persoane juridice</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="paymentTerm" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Termen de plata</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="additionalServices" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Servicii aditionale</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="otherConditions" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Alte conditii</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="guarantees" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Garantii (cu/fara)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceDS.household.c1" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret conform tabel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="priceDS.household.c2" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="priceDS.household.c3" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="priceDS.household.c4" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
