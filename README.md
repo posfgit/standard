@@ -216,6 +216,20 @@ Daca in entitatea Contract regasim url: https://electricandgas-romania.eu/somefo
 
 Aceasta adresa din sistemele IT ale furnizorilor (https://electricandgas-romania.eu/somefolder/otherfolder/file.zip) nu va returna nimic pentru o solicitare de acces de la un tert (HTTP 400) care nu are adresa de IP a POSF si care nu prezinta certificatul digital al POSF.
 
+## Mediu de stocare fisiere in POSF
+
+POSF permite prin API incarcarea de fisiere in vederea atasarii acestora la mesaje. 
+Metoda prin care se poate incarca un fisier in POSF este /broker/file/multipart. pentru care se transmit 2 parametri:
+- messageId (id-ul mesajului la care veti atasa acest fisier)
+- file (fisierul)
+
+Doar urmatoarele tipuri de fisiere sunt acceptate: PDF, PNG, JPG, JPEG.
+Odata incarcat un fisier metoda returneaza un URL de unde acesta poate fi descarcat. Descarcarea fisierului este conditionata de utilizarea unui Token de autentificare si de indeplinirea a uneia din urmatoarele conditii:
+1. Sistemul este autorul fisierului
+2. Sistemul este mentionat intr-un mesaj publicat in POSF la atributul "scope" pe tag-ul URL
+
+Aveti disponibil in POSTMAN un exemplu de upload.
+
 # Medii de testare/staging/productie
 
 POSF este alcătuit din 3 medii:
