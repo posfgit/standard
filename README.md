@@ -228,7 +228,7 @@ Odata incarcat un fisier metoda returneaza un URL de unde acesta poate fi descar
 1. Sistemul este autorul fisierului
 2. Sistemul este mentionat intr-un mesaj publicat in POSF la atributul "scope" pe tag-ul URL
 
-Aveti disponibil in POSTMAN un exemplu de upload.
+Aveti disponibil in POSTMAN un exemplu de upload. https://github.com/posfgit/standard/blob/main/samples/POSF-TEST.postman_collection.json
 
 # Medii de testare/staging/productie
 
