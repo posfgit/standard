@@ -367,6 +367,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Tip client (Casnic/Noncasnic)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="clientCategory" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Categorie client cu consum anual mai mic sau egal...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="dutyExemption" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Scutire plata acciza</xs:documentation>
@@ -628,6 +633,36 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:element name="guarantees" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Garantii (cu/fara)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWh" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceKWh" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz kWh</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhNG" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret gaz</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhTransport" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret transport</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhDistribution" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret distributie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhFixed" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret componenta fixa</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="priceDS.household.c1" type="xs:decimal" minOccurs="0" maxOccurs="1">
