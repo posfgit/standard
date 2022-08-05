@@ -33,7 +33,9 @@ Cozile de mesaje sunt accesate folosind un API de interogare (post/pool) pentru 
 
 ![API sistem](images/apiInterface.png) 
 
-Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. 
+Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale furnizorilor, operatorilor precum si interfata Web pusa la dispozitie clientilor. Schema componentelor este prezentata mai jos
+
+![Componente sistem](images/componente.png) 
 
 ## Lista API in format SWAGGER
 
