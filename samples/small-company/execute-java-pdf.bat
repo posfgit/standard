@@ -3,7 +3,9 @@ java  ^
 -Dpassword=1234 ^
 -Dtype=pdf ^
 -Dpdf-input=./docs/model.pdf ^
+-Dpdf-inputOffer=./docs/model_offer.pdf ^
 -Dpdf-xml-input=./docs/msg.xml ^
+-Dpdf-xml-inputOffer=./docs/offer.xml ^
 -Dpdf-client.signature=./docs/semnatura.jpeg ^
 -Dpdf-supplier.signature=./docs/semnatura.jpeg ^
 -Dpdf-operator.signature=./docs/semnatura.jpeg ^

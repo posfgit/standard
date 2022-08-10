@@ -22,6 +22,17 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
+		System.setProperty("user", "supplier@gmail.com");
+		System.setProperty("password", "1234");
+		System.setProperty("type", "pdf");
+		System.setProperty("pdf-input", "./docs/model.pdf");
+		System.setProperty("pdf-inputOffer", "./docs/model_offer.pdf");
+		System.setProperty("pdf-xml-inputOffer", "./docs/offer.xml");
+		System.setProperty("pdf-xml-input", "./docs/msg.xml");
+		System.setProperty("pdf-client.signature", "./docs/semnatura.jpeg");
+		System.setProperty("pdf-supplier.signature", "./docs/semnatura.jpeg");
+		System.setProperty("pdf-operator.signature", "./docs/semnatura.jpeg");
+
 		if(System.getProperty("user") == null ){
 			System.out.println("parametrul -Duser nu este trimis");
 		}else if(System.getProperty("password") == null){
@@ -44,10 +55,15 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 				case "pdf":
 					if(System.getProperty("pdf-input") == null){
 						System.out.println("parametrul -Dpdf-input nu este trimis");
-					}else if(System.getProperty("pdf-xml-input") == null){
+					} else if (System.getProperty("pdf-inputOffer") == null) {
+						System.out.println("parametrul -Dpdf-inputOffer nu este trimis");
+					} else if (System.getProperty("pdf-xml-inputOffer") == null) {
+						System.out.println("parametrul -Dpdf-xml-inputOffer nu este trimis");
+					} else if(System.getProperty("pdf-xml-input") == null) {
 						System.out.println("parametrul -Dpdf-xml-input nu este trimis");
-					}else{
-						pdfService.fill();
+					}else {
+						pdfService.fill(System.getProperty("pdf-input"), System.getProperty("pdf-xml-input"), "msg");
+						pdfService.fill(System.getProperty("pdf-inputOffer"), System.getProperty("pdf-xml-inputOffer"), "offer");
 					}
 
 					break;
