@@ -22,17 +22,6 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		System.setProperty("user", "supplier@gmail.com");
-		System.setProperty("password", "1234");
-		System.setProperty("type", "pdf");
-		System.setProperty("pdf-input", "./docs/model.pdf");
-		System.setProperty("pdf-inputOffer", "./docs/model_offer.pdf");
-		System.setProperty("pdf-xml-inputOffer", "./docs/offer.xml");
-		System.setProperty("pdf-xml-input", "./docs/msg.xml");
-		System.setProperty("pdf-client.signature", "./docs/semnatura.jpeg");
-		System.setProperty("pdf-supplier.signature", "./docs/semnatura.jpeg");
-		System.setProperty("pdf-operator.signature", "./docs/semnatura.jpeg");
-
 		if(System.getProperty("user") == null ){
 			System.out.println("parametrul -Duser nu este trimis");
 		}else if(System.getProperty("password") == null){
