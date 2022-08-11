@@ -54,6 +54,7 @@ acestora)
 8. /list/{id} - detaliile unui furnizor sau operator
 9. /place/{county}/{siruta}/{type}/{code}  -detaliile unui loc de consum (actualizat de operator prin mesajele Place*)
 10. /file/ acces la fisierele atasate mesajelor
+11. /total intoarce numarul total de mesaje trimise in POSF, grupate pe tip
 
 ## Exemplu in Java
 

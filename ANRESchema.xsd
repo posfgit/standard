@@ -62,6 +62,7 @@
 			<xs:enumeration value="ACTIVE"/>
 			<xs:enumeration value="GAS"/>
 			<xs:enumeration value="REACTIVE"/>
+			<xs:enumeration value="ACTIVE|REACTIVE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ClientType">
@@ -718,6 +719,15 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Denumire companie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Batch" type="anre:Batch"/>
+	<xs:complexType name="Batch">
+		<xs:annotation>
+			<xs:documentation>Lista de mesaje incarcate / descarcate toate odata</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="message" type="anre:Message" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="City" type="anre:City"/>
@@ -1418,7 +1428,7 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 				<xs:annotation>
 					<xs:documentation>Human readable description of the message in Romanian.&#xD;
 &#xD;
-If message hold initialization data please fill "INITIALIZATION" in this field</xs:documentation>
+If message hold initialization data please fill "INIT" in this field</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="messageID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
