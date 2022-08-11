@@ -37,7 +37,7 @@ public class PDFService {
     private Contract contract;
 
     @SneakyThrows
-    public void fill(String fileName, String xmlFile, String pdfType) {
+    public void fill(String fileName, String xmlFile, String xmlFileOffer, String pdfType) {
         InputStream inputStream = new FileInputStream(fileName);
         PdfReader reader = new PdfReader(inputStream);
 
@@ -52,24 +52,19 @@ public class PDFService {
 
         AcroFields form = stamper.getAcroFields();
         String xmlawd = Files.readString(Path.of(xmlFile), Charset.defaultCharset());
+        String xmlawdOffer = Files.readString(Path.of(xmlFileOffer), Charset.defaultCharset());
+        Message msg =  xmlMapper.readValue(xmlawd, Message.class);
 
-        if (pdfType.equals("msg")) {
-            Message msg =  xmlMapper.readValue(xmlawd, Message.class);
-            Contract contract = (Contract) msg
-                    .getClass()
-                    .getDeclaredMethod("getContract")
-                    .invoke(msg);
-            String jsonAsString = ObjectMapperConfiguration.get().writeValueAsString(contract);
-            engine.eval("var contract = " + jsonAsString);
-            this.contract = contract;
-        }
-        if (pdfType.equals("offer")) {
-            Offer offer = xmlMapper.readValue(xmlawd, Offer.class);
-            String jsonAsStringOffer = ObjectMapperConfiguration.get().writeValueAsString(offer);
-            String jsonAsStringMessage = ObjectMapperConfiguration.get().writeValueAsString(this.contract);
-            engine.eval("var offer = " + jsonAsStringOffer);
-            engine.eval("var contract = " + jsonAsStringMessage);
-        }
+        Contract contract = (Contract) msg
+                .getClass()
+                .getDeclaredMethod("getContract")
+                .invoke(msg);
+        String jsonAsString = ObjectMapperConfiguration.get().writeValueAsString(contract);
+        engine.eval("var contract = " + jsonAsString);
+
+        Offer offer = xmlMapper.readValue(xmlawdOffer, Offer.class);
+        String jsonAsStringOffer = ObjectMapperConfiguration.get().writeValueAsString(offer);
+        engine.eval("var offer = " + jsonAsStringOffer);
 
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
 
