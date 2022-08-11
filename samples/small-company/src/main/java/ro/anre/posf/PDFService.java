@@ -34,6 +34,7 @@ public class PDFService {
     private static final String SUPPLIER_SIGNATURE_NAME = System.getProperty("pdf-supplier.signature");
     private static final String OPERATOR_SIGNATURE_NAME = System.getProperty("pdf-operator.signature");
 
+    private Contract contract;
 
     @SneakyThrows
     public void fill(String fileName, String xmlFile, String pdfType) {
@@ -60,11 +61,14 @@ public class PDFService {
                     .invoke(msg);
             String jsonAsString = ObjectMapperConfiguration.get().writeValueAsString(contract);
             engine.eval("var contract = " + jsonAsString);
+            this.contract = contract;
         }
         if (pdfType.equals("offer")) {
             Offer offer = xmlMapper.readValue(xmlawd, Offer.class);
             String jsonAsStringOffer = ObjectMapperConfiguration.get().writeValueAsString(offer);
+            String jsonAsStringMessage = ObjectMapperConfiguration.get().writeValueAsString(this.contract);
             engine.eval("var offer = " + jsonAsStringOffer);
+            engine.eval("var contract = " + jsonAsStringMessage);
         }
 
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
