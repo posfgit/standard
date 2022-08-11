@@ -97,6 +97,7 @@ import java.time.LocalDate;
     "offerName",
     "offerCode",
     "clientType",
+    "clientCategory",
     "dutyExemption",
     "offerType",
     "startDate",
@@ -113,7 +114,16 @@ import java.time.LocalDate;
     "hourOfDayEnd",
     "hourOfNightStart",
     "hourOfNightEnd",
-    "subscriptionPrice",
+    "unitOfMeasure",
+    "priceEnergy",
+    "priceFixedComponent",
+    "priceTransport",
+    "priceSystemService",
+    "priceDistributionService",
+    "priceTaxCogeneration",
+    "priceExciseDuty",
+    "valueAddedTax",
+    "priceSubscription",
     "priceOfGC",
     "priceDiscount",
     "discountStart",
@@ -141,6 +151,12 @@ import java.time.LocalDate;
     "additionalServices",
     "otherConditions",
     "guarantees",
+    "priceMWh",
+    "priceKWh",
+    "priceMWhNG",
+    "priceMWhTransport",
+    "priceMWhDistribution",
+    "priceMWhFixed",
     "priceDSHouseholdC1",
     "priceDSHouseholdC2",
     "priceDSHouseholdC3",
@@ -166,6 +182,7 @@ public class Offer {
     protected String offerName;
     protected String offerCode;
     protected String clientType;
+    protected String clientCategory;
     protected String dutyExemption;
     protected String offerType;
     @XmlElement(type = String.class)
@@ -188,7 +205,16 @@ public class Offer {
     protected String hourOfDayEnd;
     protected String hourOfNightStart;
     protected String hourOfNightEnd;
-    protected BigDecimal subscriptionPrice;
+    protected String unitOfMeasure;
+    protected BigDecimal priceEnergy;
+    protected BigDecimal priceFixedComponent;
+    protected BigDecimal priceTransport;
+    protected BigDecimal priceSystemService;
+    protected BigDecimal priceDistributionService;
+    protected BigDecimal priceTaxCogeneration;
+    protected BigDecimal priceExciseDuty;
+    protected BigDecimal valueAddedTax;
+    protected BigDecimal priceSubscription;
     protected BigDecimal priceOfGC;
     protected BigDecimal priceDiscount;
     protected String discountStart;
@@ -228,6 +254,12 @@ public class Offer {
     protected String additionalServices;
     protected String otherConditions;
     protected String guarantees;
+    protected BigDecimal priceMWh;
+    protected BigDecimal priceKWh;
+    protected BigDecimal priceMWhNG;
+    protected BigDecimal priceMWhTransport;
+    protected BigDecimal priceMWhDistribution;
+    protected BigDecimal priceMWhFixed;
     @XmlElement(name = "priceDS.household.c1")
     protected BigDecimal priceDSHouseholdC1;
     @XmlElement(name = "priceDS.household.c2")
@@ -730,7 +762,7 @@ public class Offer {
      *     
      */
     public BigDecimal getSubscriptionPrice() {
-        return subscriptionPrice;
+        return priceSubscription;
     }
 
     /**
@@ -742,7 +774,7 @@ public class Offer {
      *     
      */
     public void setSubscriptionPrice(BigDecimal value) {
-        this.subscriptionPrice = value;
+        this.priceSubscription = value;
     }
 
     /**
@@ -1825,4 +1857,139 @@ public class Offer {
         this.priceUSPNonhouseholdC45 = value;
     }
 
+    public String getClientCategory() {
+        return clientCategory;
+    }
+
+    public void setClientCategory(String clientCategory) {
+        this.clientCategory = clientCategory;
+    }
+
+    public String getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(String unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
+    public BigDecimal getPriceEnergy() {
+        return priceEnergy;
+    }
+
+    public void setPriceEnergy(BigDecimal priceEnergy) {
+        this.priceEnergy = priceEnergy;
+    }
+
+    public BigDecimal getPriceFixedComponent() {
+        return priceFixedComponent;
+    }
+
+    public void setPriceFixedComponent(BigDecimal priceFixedComponent) {
+        this.priceFixedComponent = priceFixedComponent;
+    }
+
+    public BigDecimal getPriceTransport() {
+        return priceTransport;
+    }
+
+    public void setPriceTransport(BigDecimal priceTransport) {
+        this.priceTransport = priceTransport;
+    }
+
+    public BigDecimal getPriceSystemService() {
+        return priceSystemService;
+    }
+
+    public void setPriceSystemService(BigDecimal priceSystemService) {
+        this.priceSystemService = priceSystemService;
+    }
+
+    public BigDecimal getPriceDistributionService() {
+        return priceDistributionService;
+    }
+
+    public void setPriceDistributionService(BigDecimal priceDistributionService) {
+        this.priceDistributionService = priceDistributionService;
+    }
+
+    public BigDecimal getPriceTaxCogeneration() {
+        return priceTaxCogeneration;
+    }
+
+    public void setPriceTaxCogeneration(BigDecimal priceTaxCogeneration) {
+        this.priceTaxCogeneration = priceTaxCogeneration;
+    }
+
+    public BigDecimal getPriceExciseDuty() {
+        return priceExciseDuty;
+    }
+
+    public void setPriceExciseDuty(BigDecimal priceExciseDuty) {
+        this.priceExciseDuty = priceExciseDuty;
+    }
+
+    public BigDecimal getValueAddedTax() {
+        return valueAddedTax;
+    }
+
+    public void setValueAddedTax(BigDecimal valueAddedTax) {
+        this.valueAddedTax = valueAddedTax;
+    }
+
+    public BigDecimal getPriceSubscription() {
+        return priceSubscription;
+    }
+
+    public void setPriceSubscription(BigDecimal priceSubscription) {
+        this.priceSubscription = priceSubscription;
+    }
+
+    public BigDecimal getPriceMWh() {
+        return priceMWh;
+    }
+
+    public void setPriceMWh(BigDecimal priceMWh) {
+        this.priceMWh = priceMWh;
+    }
+
+    public BigDecimal getPriceKWh() {
+        return priceKWh;
+    }
+
+    public void setPriceKWh(BigDecimal priceKWh) {
+        this.priceKWh = priceKWh;
+    }
+
+    public BigDecimal getPriceMWhNG() {
+        return priceMWhNG;
+    }
+
+    public void setPriceMWhNG(BigDecimal priceMWhNG) {
+        this.priceMWhNG = priceMWhNG;
+    }
+
+    public BigDecimal getPriceMWhTransport() {
+        return priceMWhTransport;
+    }
+
+    public void setPriceMWhTransport(BigDecimal priceMWhTransport) {
+        this.priceMWhTransport = priceMWhTransport;
+    }
+
+    public BigDecimal getPriceMWhDistribution() {
+        return priceMWhDistribution;
+    }
+
+    public void setPriceMWhDistribution(BigDecimal priceMWhDistribution) {
+        this.priceMWhDistribution = priceMWhDistribution;
+    }
+
+    public BigDecimal getPriceMWhFixed() {
+        return priceMWhFixed;
+    }
+
+    public void setPriceMWhFixed(BigDecimal priceMWhFixed) {
+        this.priceMWhFixed = priceMWhFixed;
+    }
 }

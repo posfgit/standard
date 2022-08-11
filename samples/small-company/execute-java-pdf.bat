@@ -2,8 +2,10 @@ java  ^
 -Duser=supplier@gmail.com ^
 -Dpassword=1234 ^
 -Dtype=pdf ^
--Dpdf-input=./docs/model.pdf ^
--Dpdf-xml-input=./docs/msg.xml ^
+-Dpdf-input=./docs/message_model.pdf ^
+-Dpdf-inputOffer=./docs/offer_model.pdf ^
+-Dpdf-xml-input=./docs/Message.xml ^
+-Dpdf-xml-inputOffer=./docs/Offer.xml ^
 -Dpdf-client.signature=./docs/semnatura.jpeg ^
 -Dpdf-supplier.signature=./docs/semnatura.jpeg ^
 -Dpdf-operator.signature=./docs/semnatura.jpeg ^
