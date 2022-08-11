@@ -727,6 +727,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:documentation>Lista de mesaje incarcate / descarcate toate odata</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
+			<xs:element name="count" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Numarul de mesaje continute</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="message" type="anre:Message" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>

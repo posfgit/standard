@@ -55,7 +55,12 @@ acestora)
 9. /place/{county}/{siruta}/{type}/{code}  -detaliile unui loc de consum (actualizat de operator prin mesajele Place*)
 10. /file/ acces la fisierele atasate mesajelor
 11. /total intoarce numarul total de mesaje trimise in POSF, grupate pe tip
+12. /broker/poolBatch - citeste o lista de mesaje 
+13. /broker/readBatch - citeste ultimele N mesaje
+14. /broker/commitReadBatch - trece la urmatoarele N mesaje. ATENTIE!!! daca readBatch intoarce doar N-2 mesaje trebuie sa trimiteti aceeasi valoare la commitBatch, adica N-2. Altfel riscati sa pierdeti mesaje. Gasiti in tipul Batch numarul de mesaje continute pe campul "count"
 
+- toate au un parametru suplimentar "batchSize" de tip intreg, limitat la 100, daca e nevoie mai marim.
+- returneaza tipul Batch care include unul sau mai multe mesaje conform schemei XSD de pe GIT
 ## Exemplu in Java
 
 Gasiti [aici un exemplu](samples/java/)  de conectare la API POSF prin intermediul limbajului de programare Java. In cod veti vedea cum se introduce user/parola, se obtine un token de acces si apoi se inteogheaza lista furnizorilor. 
