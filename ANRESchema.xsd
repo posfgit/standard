@@ -1040,6 +1040,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Furnizorul actual</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="priceType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip pret (nediferentiat/diferentiat pe zone orare), valori posibile: NEDIFERENTIAT,DIFERENTIAT</xs:documentation>
+				</xs:annotation>
+			</xs:element>		
 			<xs:element name="startingDate" type="xs:date" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data efectiva a schimbarii furnizorului</xs:documentation>
