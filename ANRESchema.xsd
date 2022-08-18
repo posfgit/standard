@@ -62,6 +62,7 @@
 			<xs:enumeration value="ACTIVE"/>
 			<xs:enumeration value="GAS"/>
 			<xs:enumeration value="REACTIVE"/>
+			<xs:enumeration value="ACTIVE_REACTIVE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ClientType">
@@ -367,6 +368,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Tip client (Casnic/Noncasnic)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="clientCategory" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Categorie client cu consum anual mai mic sau egal...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="dutyExemption" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Scutire plata acciza</xs:documentation>
@@ -630,6 +636,36 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Garantii (cu/fara)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="priceMWh" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceKWh" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz kWh</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhNG" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret gaz</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhTransport" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret transport</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhDistribution" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret distributie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="priceMWhFixed" type="xs:decimal" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Pret Gaz MWh din care pret componenta fixa</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="priceDS.household.c1" type="xs:decimal" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Pret conform tabel</xs:documentation>
@@ -683,6 +719,20 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Denumire companie</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Batch" type="anre:Batch"/>
+	<xs:complexType name="Batch">
+		<xs:annotation>
+			<xs:documentation>Lista de mesaje incarcate / descarcate toate odata</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="count" type="xs:integer" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Numarul de mesaje continute</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="message" type="anre:Message" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="City" type="anre:City"/>
@@ -990,6 +1040,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Furnizorul actual</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="priceType" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Tip pret (nediferentiat/diferentiat pe zone orare), valori posibile: NEDIFERENTIAT,DIFERENTIAT</xs:documentation>
+				</xs:annotation>
+			</xs:element>		
 			<xs:element name="startingDate" type="xs:date" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Data efectiva a schimbarii furnizorului</xs:documentation>
@@ -1363,6 +1418,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:element name="electronicInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="smsInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="electronicMoneyReturn" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="communicationChannel" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Canal ales pentru comunicare cu clientul, valori posibile: EMAIL,SMS,PHONE,MAIL</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Message" type="anre:Message"/>
@@ -1383,7 +1443,7 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 				<xs:annotation>
 					<xs:documentation>Human readable description of the message in Romanian.&#xD;
 &#xD;
-If message hold initialization data please fill "INITIALIZATION" in this field</xs:documentation>
+If message hold initialization data please fill "INIT" in this field</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="messageID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>

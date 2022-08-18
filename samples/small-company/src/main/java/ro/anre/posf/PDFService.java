@@ -30,38 +30,41 @@ public class PDFService {
     @Autowired
     XmlMapper xmlMapper;
 
-    private static final String FILE_NAME = System.getProperty("pdf-input");
     private static final String CLIENT_SIGNATURE_NAME = System.getProperty("pdf-client.signature");
     private static final String SUPPLIER_SIGNATURE_NAME = System.getProperty("pdf-supplier.signature");
     private static final String OPERATOR_SIGNATURE_NAME = System.getProperty("pdf-operator.signature");
-    private static final String XML_FILE_PATH = System.getProperty("pdf-xml-input");
 
+    private Contract contract;
 
     @SneakyThrows
-    public void fill() {
-        InputStream inputStream = new FileInputStream(FILE_NAME);
+    public void fill(String fileName, String xmlFile, String xmlFileOffer, String pdfType) {
+        InputStream inputStream = new FileInputStream(fileName);
         PdfReader reader = new PdfReader(inputStream);
 
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
 
-        String outputFileName = String.join("_filled.", FILE_NAME.split("\\.(?=[^\\.]+$)"));
+        String outputFileName = String.join("_filled.", fileName.split("\\.(?=[^\\.]+$)"));
         File outputFile = new File( outputFileName);
 
         FileOutputStream outputStream = new FileOutputStream(outputFile);
         PdfStamper stamper = new PdfStamper(reader, outputStream);
 
         AcroFields form = stamper.getAcroFields();
-        String xmlawd = Files.readString(Path.of(XML_FILE_PATH), Charset.defaultCharset());
+        String xmlawd = Files.readString(Path.of(xmlFile), Charset.defaultCharset());
+        String xmlawdOffer = Files.readString(Path.of(xmlFileOffer), Charset.defaultCharset());
         Message msg =  xmlMapper.readValue(xmlawd, Message.class);
 
         Contract contract = (Contract) msg
                 .getClass()
                 .getDeclaredMethod("getContract")
                 .invoke(msg);
-
         String jsonAsString = ObjectMapperConfiguration.get().writeValueAsString(contract);
         engine.eval("var contract = " + jsonAsString);
+
+        Offer offer = xmlMapper.readValue(xmlawdOffer, Offer.class);
+        String jsonAsStringOffer = ObjectMapperConfiguration.get().writeValueAsString(offer);
+        engine.eval("var offer = " + jsonAsStringOffer);
 
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
 
@@ -84,7 +87,6 @@ public class PDFService {
                 }
             }
         }
-
 
         addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
         addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);

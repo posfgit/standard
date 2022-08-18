@@ -387,11 +387,11 @@ public class Offer {
 
     /**
      * Gets the value of the clientCategory property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getClientCategory() {
         return clientCategory;
@@ -399,11 +399,11 @@ public class Offer {
 
     /**
      * Sets the value of the clientCategory property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setClientCategory(String value) {
         this.clientCategory = value;
@@ -795,11 +795,11 @@ public class Offer {
 
     /**
      * Gets the value of the unitOfMeasure property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getUnitOfMeasure() {
         return unitOfMeasure;
@@ -807,11 +807,11 @@ public class Offer {
 
     /**
      * Sets the value of the unitOfMeasure property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setUnitOfMeasure(String value) {
         this.unitOfMeasure = value;
@@ -819,11 +819,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceEnergy property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceEnergy() {
         return priceEnergy;
@@ -831,11 +831,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceEnergy property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceEnergy(BigDecimal value) {
         this.priceEnergy = value;
@@ -843,11 +843,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceFixedComponent property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceFixedComponent() {
         return priceFixedComponent;
@@ -855,11 +855,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceFixedComponent property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceFixedComponent(BigDecimal value) {
         this.priceFixedComponent = value;
@@ -867,11 +867,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceTransport property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceTransport() {
         return priceTransport;
@@ -879,11 +879,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceTransport property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceTransport(BigDecimal value) {
         this.priceTransport = value;
@@ -891,11 +891,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceSystemService property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceSystemService() {
         return priceSystemService;
@@ -903,11 +903,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceSystemService property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceSystemService(BigDecimal value) {
         this.priceSystemService = value;
@@ -915,11 +915,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceDistributionService property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceDistributionService() {
         return priceDistributionService;
@@ -927,11 +927,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceDistributionService property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceDistributionService(BigDecimal value) {
         this.priceDistributionService = value;
@@ -939,11 +939,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceTaxCogeneration property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceTaxCogeneration() {
         return priceTaxCogeneration;
@@ -951,11 +951,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceTaxCogeneration property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceTaxCogeneration(BigDecimal value) {
         this.priceTaxCogeneration = value;
@@ -963,11 +963,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceExciseDuty property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceExciseDuty() {
         return priceExciseDuty;
@@ -975,11 +975,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceExciseDuty property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceExciseDuty(BigDecimal value) {
         this.priceExciseDuty = value;
@@ -987,11 +987,11 @@ public class Offer {
 
     /**
      * Gets the value of the valueAddedTax property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getValueAddedTax() {
         return valueAddedTax;
@@ -999,11 +999,11 @@ public class Offer {
 
     /**
      * Sets the value of the valueAddedTax property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setValueAddedTax(BigDecimal value) {
         this.valueAddedTax = value;
@@ -1683,11 +1683,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceMWh property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceMWh() {
         return priceMWh;
@@ -1695,11 +1695,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceMWh property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceMWh(BigDecimal value) {
         this.priceMWh = value;
@@ -1707,11 +1707,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceKWh property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceKWh() {
         return priceKWh;
@@ -1719,11 +1719,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceKWh property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceKWh(BigDecimal value) {
         this.priceKWh = value;
@@ -1731,11 +1731,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceMWhNG property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceMWhNG() {
         return priceMWhNG;
@@ -1743,11 +1743,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceMWhNG property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceMWhNG(BigDecimal value) {
         this.priceMWhNG = value;
@@ -1755,11 +1755,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceMWhTransport property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceMWhTransport() {
         return priceMWhTransport;
@@ -1767,11 +1767,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceMWhTransport property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceMWhTransport(BigDecimal value) {
         this.priceMWhTransport = value;
@@ -1779,11 +1779,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceMWhDistribution property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceMWhDistribution() {
         return priceMWhDistribution;
@@ -1791,11 +1791,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceMWhDistribution property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceMWhDistribution(BigDecimal value) {
         this.priceMWhDistribution = value;
@@ -1803,11 +1803,11 @@ public class Offer {
 
     /**
      * Gets the value of the priceMWhFixed property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public BigDecimal getPriceMWhFixed() {
         return priceMWhFixed;
@@ -1815,11 +1815,11 @@ public class Offer {
 
     /**
      * Sets the value of the priceMWhFixed property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *     
+     *
      */
     public void setPriceMWhFixed(BigDecimal value) {
         this.priceMWhFixed = value;
@@ -2257,4 +2257,139 @@ public class Offer {
         this.priceUSPNonhouseholdC45 = value;
     }
 
+    public String getClientCategory() {
+        return clientCategory;
+    }
+
+    public void setClientCategory(String clientCategory) {
+        this.clientCategory = clientCategory;
+    }
+
+    public String getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(String unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
+    public BigDecimal getPriceEnergy() {
+        return priceEnergy;
+    }
+
+    public void setPriceEnergy(BigDecimal priceEnergy) {
+        this.priceEnergy = priceEnergy;
+    }
+
+    public BigDecimal getPriceFixedComponent() {
+        return priceFixedComponent;
+    }
+
+    public void setPriceFixedComponent(BigDecimal priceFixedComponent) {
+        this.priceFixedComponent = priceFixedComponent;
+    }
+
+    public BigDecimal getPriceTransport() {
+        return priceTransport;
+    }
+
+    public void setPriceTransport(BigDecimal priceTransport) {
+        this.priceTransport = priceTransport;
+    }
+
+    public BigDecimal getPriceSystemService() {
+        return priceSystemService;
+    }
+
+    public void setPriceSystemService(BigDecimal priceSystemService) {
+        this.priceSystemService = priceSystemService;
+    }
+
+    public BigDecimal getPriceDistributionService() {
+        return priceDistributionService;
+    }
+
+    public void setPriceDistributionService(BigDecimal priceDistributionService) {
+        this.priceDistributionService = priceDistributionService;
+    }
+
+    public BigDecimal getPriceTaxCogeneration() {
+        return priceTaxCogeneration;
+    }
+
+    public void setPriceTaxCogeneration(BigDecimal priceTaxCogeneration) {
+        this.priceTaxCogeneration = priceTaxCogeneration;
+    }
+
+    public BigDecimal getPriceExciseDuty() {
+        return priceExciseDuty;
+    }
+
+    public void setPriceExciseDuty(BigDecimal priceExciseDuty) {
+        this.priceExciseDuty = priceExciseDuty;
+    }
+
+    public BigDecimal getValueAddedTax() {
+        return valueAddedTax;
+    }
+
+    public void setValueAddedTax(BigDecimal valueAddedTax) {
+        this.valueAddedTax = valueAddedTax;
+    }
+
+    public BigDecimal getPriceSubscription() {
+        return priceSubscription;
+    }
+
+    public void setPriceSubscription(BigDecimal priceSubscription) {
+        this.priceSubscription = priceSubscription;
+    }
+
+    public BigDecimal getPriceMWh() {
+        return priceMWh;
+    }
+
+    public void setPriceMWh(BigDecimal priceMWh) {
+        this.priceMWh = priceMWh;
+    }
+
+    public BigDecimal getPriceKWh() {
+        return priceKWh;
+    }
+
+    public void setPriceKWh(BigDecimal priceKWh) {
+        this.priceKWh = priceKWh;
+    }
+
+    public BigDecimal getPriceMWhNG() {
+        return priceMWhNG;
+    }
+
+    public void setPriceMWhNG(BigDecimal priceMWhNG) {
+        this.priceMWhNG = priceMWhNG;
+    }
+
+    public BigDecimal getPriceMWhTransport() {
+        return priceMWhTransport;
+    }
+
+    public void setPriceMWhTransport(BigDecimal priceMWhTransport) {
+        this.priceMWhTransport = priceMWhTransport;
+    }
+
+    public BigDecimal getPriceMWhDistribution() {
+        return priceMWhDistribution;
+    }
+
+    public void setPriceMWhDistribution(BigDecimal priceMWhDistribution) {
+        this.priceMWhDistribution = priceMWhDistribution;
+    }
+
+    public BigDecimal getPriceMWhFixed() {
+        return priceMWhFixed;
+    }
+
+    public void setPriceMWhFixed(BigDecimal priceMWhFixed) {
+        this.priceMWhFixed = priceMWhFixed;
+    }
 }
