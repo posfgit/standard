@@ -1382,6 +1382,7 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ConventionGeneratedByPOSF" type="anre:ConventionGeneratedByPOSF"/>
 	<xs:complexType name="ConventionGeneratedByPOSF">
 		<xs:annotation>
 			<xs:documentation>Emis de POSF cand se creaza o conventie sau apar noi parti intr-o conventie</xs:documentation>
