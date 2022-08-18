@@ -52,46 +52,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Operator }
-     * 
-     */
-    public Operator createOperator() {
-        return new Operator();
-    }
-
-    /**
-     * Create an instance of {@link Company }
-     * 
-     */
-    public Company createCompany() {
-        return new Company();
-    }
-
-    /**
-     * Create an instance of {@link Address }
-     * 
-     */
-    public Address createAddress() {
-        return new Address();
-    }
-
-    /**
-     * Create an instance of {@link ContactAddress }
-     * 
-     */
-    public ContactAddress createContactAddress() {
-        return new ContactAddress();
-    }
-
-    /**
-     * Create an instance of {@link Person }
-     * 
-     */
-    public Person createPerson() {
-        return new Person();
-    }
-
-    /**
      * Create an instance of {@link ConventionSignedByClient }
      * 
      */
@@ -113,6 +73,22 @@ public class ObjectFactory {
      */
     public Convention createConvention() {
         return new Convention();
+    }
+
+    /**
+     * Create an instance of {@link Company }
+     * 
+     */
+    public Company createCompany() {
+        return new Company();
+    }
+
+    /**
+     * Create an instance of {@link Address }
+     * 
+     */
+    public Address createAddress() {
+        return new Address();
     }
 
     /**
@@ -148,14 +124,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PlaceCreatedByOperator }
-     * 
-     */
-    public PlaceCreatedByOperator createPlaceCreatedByOperator() {
-        return new PlaceCreatedByOperator();
-    }
-
-    /**
      * Create an instance of {@link ContractNetworkSignedByClient }
      * 
      */
@@ -164,59 +132,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Marketing }
-     * 
-     */
-    public Marketing createMarketing() {
-        return new Marketing();
-    }
-
-    /**
-     * Create an instance of {@link ConsumptionItem }
-     * 
-     */
-    public ConsumptionItem createConsumptionItem() {
-        return new ConsumptionItem();
-    }
-
-    /**
-     * Create an instance of {@link ContractNetworkChangedInfo }
-     * 
-     */
-    public ContractNetworkChangedInfo createContractNetworkChangedInfo() {
-        return new ContractNetworkChangedInfo();
-    }
-
-    /**
      * Create an instance of {@link ContractTransferredToFUIByOperator }
      * 
      */
     public ContractTransferredToFUIByOperator createContractTransferredToFUIByOperator() {
         return new ContractTransferredToFUIByOperator();
-    }
-
-    /**
-     * Create an instance of {@link PlaceDisconnectedByOperator }
-     * 
-     */
-    public PlaceDisconnectedByOperator createPlaceDisconnectedByOperator() {
-        return new PlaceDisconnectedByOperator();
-    }
-
-    /**
-     * Create an instance of {@link Client }
-     * 
-     */
-    public Client createClient() {
-        return new Client();
-    }
-
-    /**
-     * Create an instance of {@link ConventionChangedInfo }
-     * 
-     */
-    public ConventionChangedInfo createConventionChangedInfo() {
-        return new ConventionChangedInfo();
     }
 
     /**
@@ -236,19 +156,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TechnicalDataElectricity }
+     * Create an instance of {@link Client }
      * 
      */
-    public TechnicalDataElectricity createTechnicalDataElectricity() {
-        return new TechnicalDataElectricity();
+    public Client createClient() {
+        return new Client();
     }
 
     /**
-     * Create an instance of {@link TechnicalData }
+     * Create an instance of {@link Person }
      * 
      */
-    public TechnicalData createTechnicalData() {
-        return new TechnicalData();
+    public Person createPerson() {
+        return new Person();
+    }
+
+    /**
+     * Create an instance of {@link ContractNetworkSignedBySupplier }
+     * 
+     */
+    public ContractNetworkSignedBySupplier createContractNetworkSignedBySupplier() {
+        return new ContractNetworkSignedBySupplier();
     }
 
     /**
@@ -260,11 +188,155 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ContractNetworkSignedBySupplier }
+     * Create an instance of {@link ConsumptionItem }
      * 
      */
-    public ContractNetworkSignedBySupplier createContractNetworkSignedBySupplier() {
-        return new ContractNetworkSignedBySupplier();
+    public ConsumptionItem createConsumptionItem() {
+        return new ConsumptionItem();
+    }
+
+    /**
+     * Create an instance of {@link ContactAddress }
+     * 
+     */
+    public ContactAddress createContactAddress() {
+        return new ContactAddress();
+    }
+
+    /**
+     * Create an instance of {@link ContractChangedInfo }
+     * 
+     */
+    public ContractChangedInfo createContractChangedInfo() {
+        return new ContractChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link PlaceUpdatedByOperator }
+     * 
+     */
+    public PlaceUpdatedByOperator createPlaceUpdatedByOperator() {
+        return new PlaceUpdatedByOperator();
+    }
+
+    /**
+     * Create an instance of {@link AddressChangedInfo }
+     * 
+     */
+    public AddressChangedInfo createAddressChangedInfo() {
+        return new AddressChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link Offer }
+     * 
+     */
+    public Offer createOffer() {
+        return new Offer();
+    }
+
+    /**
+     * Create an instance of {@link ConventionSignedBySupplier }
+     * 
+     */
+    public ConventionSignedBySupplier createConventionSignedBySupplier() {
+        return new ConventionSignedBySupplier();
+    }
+
+    /**
+     * Create an instance of {@link TechnicalData }
+     * 
+     */
+    public TechnicalData createTechnicalData() {
+        return new TechnicalData();
+    }
+
+    /**
+     * Create an instance of {@link ContractSignedByClient }
+     * 
+     */
+    public ContractSignedByClient createContractSignedByClient() {
+        return new ContractSignedByClient();
+    }
+
+    /**
+     * Create an instance of {@link Marketing }
+     * 
+     */
+    public Marketing createMarketing() {
+        return new Marketing();
+    }
+
+    /**
+     * Create an instance of {@link Operator }
+     * 
+     */
+    public Operator createOperator() {
+        return new Operator();
+    }
+
+    /**
+     * Create an instance of {@link Contract.Url }
+     * 
+     */
+    public Contract.Url createContractUrl() {
+        return new Contract.Url();
+    }
+
+    /**
+     * Create an instance of {@link ContractSignedBySupplier }
+     * 
+     */
+    public ContractSignedBySupplier createContractSignedBySupplier() {
+        return new ContractSignedBySupplier();
+    }
+
+    /**
+     * Create an instance of {@link PlaceCreatedByOperator }
+     * 
+     */
+    public PlaceCreatedByOperator createPlaceCreatedByOperator() {
+        return new PlaceCreatedByOperator();
+    }
+
+    /**
+     * Create an instance of {@link ContractNetworkChangedInfo }
+     * 
+     */
+    public ContractNetworkChangedInfo createContractNetworkChangedInfo() {
+        return new ContractNetworkChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link PlaceDisconnectedByOperator }
+     * 
+     */
+    public PlaceDisconnectedByOperator createPlaceDisconnectedByOperator() {
+        return new PlaceDisconnectedByOperator();
+    }
+
+    /**
+     * Create an instance of {@link ConventionChangedInfo }
+     * 
+     */
+    public ConventionChangedInfo createConventionChangedInfo() {
+        return new ConventionChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link Batch }
+     * 
+     */
+    public Batch createBatch() {
+        return new Batch();
+    }
+
+    /**
+     * Create an instance of {@link TechnicalDataElectricity }
+     * 
+     */
+    public TechnicalDataElectricity createTechnicalDataElectricity() {
+        return new TechnicalDataElectricity();
     }
 
     /**
@@ -292,14 +364,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ContractChangedInfo }
-     * 
-     */
-    public ContractChangedInfo createContractChangedInfo() {
-        return new ContractChangedInfo();
-    }
-
-    /**
      * Create an instance of {@link ContractNetworkCancelledByOperator }
      * 
      */
@@ -308,27 +372,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PlaceUpdatedByOperator }
-     * 
-     */
-    public PlaceUpdatedByOperator createPlaceUpdatedByOperator() {
-        return new PlaceUpdatedByOperator();
-    }
-
-    /**
      * Create an instance of {@link ContractTransferredToFUIByAnre }
      * 
      */
     public ContractTransferredToFUIByAnre createContractTransferredToFUIByAnre() {
         return new ContractTransferredToFUIByAnre();
-    }
-
-    /**
-     * Create an instance of {@link AddressChangedInfo }
-     * 
-     */
-    public AddressChangedInfo createAddressChangedInfo() {
-        return new AddressChangedInfo();
     }
 
     /**
@@ -356,14 +404,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Offer }
-     * 
-     */
-    public Offer createOffer() {
-        return new Offer();
-    }
-
-    /**
      * Create an instance of {@link ClientInfoUpdated }
      * 
      */
@@ -380,22 +420,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConventionSignedBySupplier }
-     * 
-     */
-    public ConventionSignedBySupplier createConventionSignedBySupplier() {
-        return new ConventionSignedBySupplier();
-    }
-
-    /**
-     * Create an instance of {@link ContractSignedByClient }
-     * 
-     */
-    public ContractSignedByClient createContractSignedByClient() {
-        return new ContractSignedByClient();
-    }
-
-    /**
      * Create an instance of {@link Aggregate }
      * 
      */
@@ -409,22 +433,6 @@ public class ObjectFactory {
      */
     public ContractSuspendedByAnre createContractSuspendedByAnre() {
         return new ContractSuspendedByAnre();
-    }
-
-    /**
-     * Create an instance of {@link Contract.Url }
-     * 
-     */
-    public Contract.Url createContractUrl() {
-        return new Contract.Url();
-    }
-
-    /**
-     * Create an instance of {@link ContractSignedBySupplier }
-     * 
-     */
-    public ContractSignedBySupplier createContractSignedBySupplier() {
-        return new ContractSignedBySupplier();
     }
 
     /**

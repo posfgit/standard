@@ -43,6 +43,7 @@ import java.util.UUID;
  *         &lt;element name="previousContractDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="previousContractNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="previousSupplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
+ *         &lt;element name="priceType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="startingDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *         &lt;element name="serviceType" type="{http://www.anre.ro/ANRESchema}ServiceType"/>
  *         &lt;element name="supplier" type="{http://www.anre.ro/ANRESchema}Supplier" minOccurs="0"/>
@@ -89,6 +90,7 @@ import java.util.UUID;
     "previousContractDate",
     "previousContractNumber",
     "previousSupplier",
+    "priceType",
     "startingDate",
     "serviceType",
     "supplier",
@@ -135,6 +137,7 @@ public class Contract {
     protected LocalDate previousContractDate;
     protected String previousContractNumber;
     protected Supplier previousSupplier;
+    protected String priceType;
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter2 .class)
     @XmlSchemaType(name = "date")
@@ -673,6 +676,30 @@ public class Contract {
      */
     public void setPreviousSupplier(Supplier value) {
         this.previousSupplier = value;
+    }
+
+    /**
+     * Gets the value of the priceType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPriceType() {
+        return priceType;
+    }
+
+    /**
+     * Sets the value of the priceType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPriceType(String value) {
+        this.priceType = value;
     }
 
     /**

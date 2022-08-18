@@ -16,6 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ACTIVE"/>
  *     &lt;enumeration value="GAS"/>
  *     &lt;enumeration value="REACTIVE"/>
+ *     &lt;enumeration value="ACTIVE_REACTIVE"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -27,7 +28,8 @@ public enum CounterType {
 
     ACTIVE,
     GAS,
-    REACTIVE;
+    REACTIVE,
+    ACTIVE_REACTIVE;
 
     public String value() {
         return name();

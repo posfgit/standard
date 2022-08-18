@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="electronicInvoice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="smsInvoice" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="electronicMoneyReturn" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="communicationChannel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
     "clientIBAN",
     "electronicInvoice",
     "smsInvoice",
-    "electronicMoneyReturn"
+    "electronicMoneyReturn",
+    "communicationChannel"
 })
 @XmlRootElement(name = "Marketing")
 public class Marketing {
@@ -52,6 +54,7 @@ public class Marketing {
     protected Boolean electronicInvoice;
     protected Boolean smsInvoice;
     protected Boolean electronicMoneyReturn;
+    protected String communicationChannel;
 
     /**
      * Gets the value of the agreeContactTerms property.
@@ -219,6 +222,30 @@ public class Marketing {
      */
     public void setElectronicMoneyReturn(Boolean value) {
         this.electronicMoneyReturn = value;
+    }
+
+    /**
+     * Gets the value of the communicationChannel property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCommunicationChannel() {
+        return communicationChannel;
+    }
+
+    /**
+     * Sets the value of the communicationChannel property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCommunicationChannel(String value) {
+        this.communicationChannel = value;
     }
 
 }
