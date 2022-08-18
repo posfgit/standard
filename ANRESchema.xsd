@@ -62,7 +62,7 @@
 			<xs:enumeration value="ACTIVE"/>
 			<xs:enumeration value="GAS"/>
 			<xs:enumeration value="REACTIVE"/>
-			<xs:enumeration value="ACTIVE|REACTIVE"/>
+			<xs:enumeration value="ACTIVE_REACTIVE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ClientType">
@@ -1418,6 +1418,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:element name="electronicInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="smsInvoice" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="electronicMoneyReturn" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="communicationChannel" type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Canal ales pentru comunicare cu clientul, valori posibile: EMAIL,SMS,PHONE,MAIL</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Message" type="anre:Message"/>
