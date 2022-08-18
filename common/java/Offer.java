@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="offerName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="offerCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="clientType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="clientCategory" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dutyExemption" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="offerType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
@@ -43,7 +44,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="hourOfDayEnd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="hourOfNightStart" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="hourOfNightEnd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="subscriptionPrice" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="unitOfMeasure" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="priceEnergy" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceFixedComponent" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceTransport" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceSystemService" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceDistributionService" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceTaxCogeneration" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceExciseDuty" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="valueAddedTax" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceSubscription" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="priceOfGC" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="priceDiscount" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="discountStart" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -71,6 +81,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="additionalServices" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="otherConditions" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="guarantees" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="priceMWh" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceKWh" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceMWhNG" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceMWhTransport" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceMWhDistribution" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="priceMWhFixed" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="priceDS.household.c1" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="priceDS.household.c2" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="priceDS.household.c3" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
@@ -102,6 +118,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "offerName",
     "offerCode",
     "clientType",
+    "clientCategory",
     "dutyExemption",
     "offerType",
     "startDate",
@@ -118,7 +135,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "hourOfDayEnd",
     "hourOfNightStart",
     "hourOfNightEnd",
-    "subscriptionPrice",
+    "unitOfMeasure",
+    "priceEnergy",
+    "priceFixedComponent",
+    "priceTransport",
+    "priceSystemService",
+    "priceDistributionService",
+    "priceTaxCogeneration",
+    "priceExciseDuty",
+    "valueAddedTax",
+    "priceSubscription",
     "priceOfGC",
     "priceDiscount",
     "discountStart",
@@ -146,6 +172,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "additionalServices",
     "otherConditions",
     "guarantees",
+    "priceMWh",
+    "priceKWh",
+    "priceMWhNG",
+    "priceMWhTransport",
+    "priceMWhDistribution",
+    "priceMWhFixed",
     "priceDSHouseholdC1",
     "priceDSHouseholdC2",
     "priceDSHouseholdC3",
@@ -171,6 +203,7 @@ public class Offer {
     protected String offerName;
     protected String offerCode;
     protected String clientType;
+    protected String clientCategory;
     protected String dutyExemption;
     protected String offerType;
     @XmlElement(type = String.class)
@@ -193,7 +226,16 @@ public class Offer {
     protected String hourOfDayEnd;
     protected String hourOfNightStart;
     protected String hourOfNightEnd;
-    protected BigDecimal subscriptionPrice;
+    protected String unitOfMeasure;
+    protected BigDecimal priceEnergy;
+    protected BigDecimal priceFixedComponent;
+    protected BigDecimal priceTransport;
+    protected BigDecimal priceSystemService;
+    protected BigDecimal priceDistributionService;
+    protected BigDecimal priceTaxCogeneration;
+    protected BigDecimal priceExciseDuty;
+    protected BigDecimal valueAddedTax;
+    protected BigDecimal priceSubscription;
     protected BigDecimal priceOfGC;
     protected BigDecimal priceDiscount;
     protected String discountStart;
@@ -233,6 +275,12 @@ public class Offer {
     protected String additionalServices;
     protected String otherConditions;
     protected String guarantees;
+    protected BigDecimal priceMWh;
+    protected BigDecimal priceKWh;
+    protected BigDecimal priceMWhNG;
+    protected BigDecimal priceMWhTransport;
+    protected BigDecimal priceMWhDistribution;
+    protected BigDecimal priceMWhFixed;
     @XmlElement(name = "priceDS.household.c1")
     protected BigDecimal priceDSHouseholdC1;
     @XmlElement(name = "priceDS.household.c2")
@@ -340,6 +388,30 @@ public class Offer {
      */
     public void setClientType(String value) {
         this.clientType = value;
+    }
+
+    /**
+     * Gets the value of the clientCategory property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getClientCategory() {
+        return clientCategory;
+    }
+
+    /**
+     * Sets the value of the clientCategory property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setClientCategory(String value) {
+        this.clientCategory = value;
     }
 
     /**
@@ -727,27 +799,243 @@ public class Offer {
     }
 
     /**
-     * Gets the value of the subscriptionPrice property.
+     * Gets the value of the unitOfMeasure property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    /**
+     * Sets the value of the unitOfMeasure property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setUnitOfMeasure(String value) {
+        this.unitOfMeasure = value;
+    }
+
+    /**
+     * Gets the value of the priceEnergy property.
      * 
      * @return
      *     possible object is
      *     {@link BigDecimal }
      *     
      */
-    public BigDecimal getSubscriptionPrice() {
-        return subscriptionPrice;
+    public BigDecimal getPriceEnergy() {
+        return priceEnergy;
     }
 
     /**
-     * Sets the value of the subscriptionPrice property.
+     * Sets the value of the priceEnergy property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
      *     
      */
-    public void setSubscriptionPrice(BigDecimal value) {
-        this.subscriptionPrice = value;
+    public void setPriceEnergy(BigDecimal value) {
+        this.priceEnergy = value;
+    }
+
+    /**
+     * Gets the value of the priceFixedComponent property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceFixedComponent() {
+        return priceFixedComponent;
+    }
+
+    /**
+     * Sets the value of the priceFixedComponent property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceFixedComponent(BigDecimal value) {
+        this.priceFixedComponent = value;
+    }
+
+    /**
+     * Gets the value of the priceTransport property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceTransport() {
+        return priceTransport;
+    }
+
+    /**
+     * Sets the value of the priceTransport property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceTransport(BigDecimal value) {
+        this.priceTransport = value;
+    }
+
+    /**
+     * Gets the value of the priceSystemService property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceSystemService() {
+        return priceSystemService;
+    }
+
+    /**
+     * Sets the value of the priceSystemService property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceSystemService(BigDecimal value) {
+        this.priceSystemService = value;
+    }
+
+    /**
+     * Gets the value of the priceDistributionService property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceDistributionService() {
+        return priceDistributionService;
+    }
+
+    /**
+     * Sets the value of the priceDistributionService property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceDistributionService(BigDecimal value) {
+        this.priceDistributionService = value;
+    }
+
+    /**
+     * Gets the value of the priceTaxCogeneration property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceTaxCogeneration() {
+        return priceTaxCogeneration;
+    }
+
+    /**
+     * Sets the value of the priceTaxCogeneration property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceTaxCogeneration(BigDecimal value) {
+        this.priceTaxCogeneration = value;
+    }
+
+    /**
+     * Gets the value of the priceExciseDuty property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceExciseDuty() {
+        return priceExciseDuty;
+    }
+
+    /**
+     * Sets the value of the priceExciseDuty property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceExciseDuty(BigDecimal value) {
+        this.priceExciseDuty = value;
+    }
+
+    /**
+     * Gets the value of the valueAddedTax property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getValueAddedTax() {
+        return valueAddedTax;
+    }
+
+    /**
+     * Sets the value of the valueAddedTax property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setValueAddedTax(BigDecimal value) {
+        this.valueAddedTax = value;
+    }
+
+    /**
+     * Gets the value of the priceSubscription property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceSubscription() {
+        return priceSubscription;
+    }
+
+    /**
+     * Sets the value of the priceSubscription property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceSubscription(BigDecimal value) {
+        this.priceSubscription = value;
     }
 
     /**
@@ -1396,6 +1684,150 @@ public class Offer {
      */
     public void setGuarantees(String value) {
         this.guarantees = value;
+    }
+
+    /**
+     * Gets the value of the priceMWh property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceMWh() {
+        return priceMWh;
+    }
+
+    /**
+     * Sets the value of the priceMWh property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceMWh(BigDecimal value) {
+        this.priceMWh = value;
+    }
+
+    /**
+     * Gets the value of the priceKWh property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceKWh() {
+        return priceKWh;
+    }
+
+    /**
+     * Sets the value of the priceKWh property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceKWh(BigDecimal value) {
+        this.priceKWh = value;
+    }
+
+    /**
+     * Gets the value of the priceMWhNG property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceMWhNG() {
+        return priceMWhNG;
+    }
+
+    /**
+     * Sets the value of the priceMWhNG property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceMWhNG(BigDecimal value) {
+        this.priceMWhNG = value;
+    }
+
+    /**
+     * Gets the value of the priceMWhTransport property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceMWhTransport() {
+        return priceMWhTransport;
+    }
+
+    /**
+     * Sets the value of the priceMWhTransport property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceMWhTransport(BigDecimal value) {
+        this.priceMWhTransport = value;
+    }
+
+    /**
+     * Gets the value of the priceMWhDistribution property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceMWhDistribution() {
+        return priceMWhDistribution;
+    }
+
+    /**
+     * Sets the value of the priceMWhDistribution property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceMWhDistribution(BigDecimal value) {
+        this.priceMWhDistribution = value;
+    }
+
+    /**
+     * Gets the value of the priceMWhFixed property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public BigDecimal getPriceMWhFixed() {
+        return priceMWhFixed;
+    }
+
+    /**
+     * Sets the value of the priceMWhFixed property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigDecimal }
+     *     
+     */
+    public void setPriceMWhFixed(BigDecimal value) {
+        this.priceMWhFixed = value;
     }
 
     /**
