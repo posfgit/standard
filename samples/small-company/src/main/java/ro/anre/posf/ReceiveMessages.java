@@ -32,17 +32,23 @@ public class ReceiveMessages {
     public void receive() throws IOException, InterruptedException {
         String outPath = "./" + receiveFolderName + "/";
         int maxMessage = Integer.parseInt(System.getProperty("max-message"));
+        boolean own = false;
+
+        if (System.getProperty("own") != null) {
+            own = Boolean.parseBoolean(System.getProperty("own"));
+        }
+
         if(this.checkRequirements(outPath)){
             UserDTO user = this.utils.getUserPassFromUser();
 
             String token = this.utils.login(user);
-            this.getMessage(token, outPath, 0, maxMessage);
+            this.getMessage(token, outPath, 0, maxMessage, own);
         }
     }
 
-    public void getMessage(String token, String outPath, int count, int maxMessage) throws IOException, InterruptedException {
+    public void getMessage(String token, String outPath, int count, int maxMessage, boolean own) throws IOException, InterruptedException {
         ResponseEntity<String> response = restTemplate
-                .exchange("https://posf-beta.anre.ro/broker/poolMessage",
+                .exchange("https://posf-beta.anre.ro/broker" + (own ? "/own/" : "/" ) + "poolMessage",
                         HttpMethod.GET,
                         setPayload(token),
                         String.class);
@@ -55,7 +61,7 @@ public class ReceiveMessages {
 
             if(maxMessage > count){
                 Thread.sleep(3000);
-                getMessage(token, outPath, count, maxMessage);
+                getMessage(token, outPath, count, maxMessage, own);
             }else{
                 System.out.println("Limita max-message a fost atinsa , rulati iar");
             }

@@ -43,7 +43,7 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 				case "receive":
 					if(System.getProperty("max-message") == null){
 						System.out.println("parametrul -Dmax-message nu este trimis");
-					}else{
+					} else {
 						posfClientReceiver.receive();
 					}
 
