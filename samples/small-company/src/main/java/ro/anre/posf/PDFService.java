@@ -92,7 +92,7 @@ public class PDFService {
         addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
         addSignature(form, "operator.signature", OPERATOR_SIGNATURE_NAME);
 
-        stamper.setFormFlattening(true);
+//        stamper.setFormFlattening(true);
         stamper.close();
         reader.close();
 
