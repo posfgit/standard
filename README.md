@@ -320,6 +320,8 @@ Stabilim urmatoarele conventii:
 2. Daca o adresa are authorId ea este orginara din sistemul cu ID-ul respectiv (furnizor/operator/etc.) iar pentru a stabili unicitatea se foloseste campul cuaAuthor
 3. Adresele care au authorId id-ul aplicatiei WebPOSF sunt adrese scrise free text, probabil pentru ca utilizatorul nu le-a regasit in RENNS si nici printre adresele introduse de furnizori in prealabil.
 
+Nomenclatorul SIRUTA se gaseste la adresa https://insse.ro/cms/files/chestionare/invatamant/Siruta_2021.xlsx, se va folosi coloana SIRUTA, nu sirsup.
+
 # Formatul valorilor
 
 |Tip camp|Format|Exemplu|Observatii|

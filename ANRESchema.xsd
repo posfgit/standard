@@ -743,7 +743,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 		<xs:sequence>
 			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>SIRUTA code as per https://data.gov.ro/dataset/unitati-administrativ-teritoriale-coduri-siruta/resource/6772b5e3-2444-4bf2-8dcb-162fce602d28f</xs:documentation>
+					<xs:documentation>SIRUTA code as per https://insse.ro/cms/files/chestionare/invatamant/Siruta_2021.xlsx column SIRUTA</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
