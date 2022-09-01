@@ -594,6 +594,51 @@
                     <networkType>CA</networkType>
                     <voltageLevel>0</voltageLevel>
                 </technicalDataElectricity>
+                <extraData>
+                    <technicalDataElectricity>
+                        <consumption>
+                        </consumption>
+                        <counterIndexDesc>counterIndexDesc0</counterIndexDesc>
+                        <counterIndexInterval>0</counterIndexInterval>
+                        <counterIndexReadDate>2006-05-04</counterIndexReadDate>
+                        <counterIndexValue>counterIndexValue0</counterIndexValue>
+                        <counterSeries>counterSeries0</counterSeries>
+                        <counterType>ACTIVE</counterType>
+                        <date>2006-05-04</date>
+                        <documentType>ACORDACCES</documentType>
+                        <number>number34</number>
+                        <smartMeter>false</smartMeter>
+                        <status>CONECTAT</status>
+                        <type>type6</type>
+                        <approvedConsumptionPower>0</approvedConsumptionPower>
+                        <approvedProducedPower>0</approvedProducedPower>
+                        <connectionType>MONOFAZAT</connectionType>
+                        <networkType>CA</networkType>
+                        <voltageLevel>0</voltageLevel>
+                    </technicalDataElectricity>
+                    <technicalDataElectricity>
+                        <consumption>
+                        </consumption>
+                        <counterIndexDesc>counterIndexDesc0</counterIndexDesc>
+                        <counterIndexInterval>0</counterIndexInterval>
+                        <counterIndexReadDate>2006-05-04</counterIndexReadDate>
+                        <counterIndexValue>counterIndexValue0</counterIndexValue>
+                        <counterSeries>counterSeries0</counterSeries>
+                        <counterType>ACTIVE</counterType>
+                        <date>2006-05-04</date>
+                        <documentType>ACORDACCES</documentType>
+                        <number>number34</number>
+                        <smartMeter>false</smartMeter>
+                        <status>CONECTAT</status>
+                        <type>type6</type>
+                        <approvedConsumptionPower>0</approvedConsumptionPower>
+                        <approvedProducedPower>0</approvedProducedPower>
+                        <connectionType>MONOFAZAT</connectionType>
+                        <networkType>CA</networkType>
+                        <voltageLevel>0</voltageLevel>
+                    </technicalDataElectricity>
+                    
+                </extraData>
             </place>
             <previousContractDate>2006-05-04</previousContractDate>
             <previousContractNumber>previousContractNumber0</previousContractNumber>

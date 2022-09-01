@@ -1588,7 +1588,23 @@ CNP (pentru cetatenii romani)</xs:documentation>
 				<xs:element name="technicalDataGas" type="anre:TechnicalDataGas" minOccurs="1"
 					maxOccurs="1"/>
 			</xs:choice>
+			<xs:element name="extraData" minOccurs="0" maxOccurs="1" type="anre:TechnicalDatas">
+				<xs:annotation>
+					<xs:documentation>Elemente de tip technical data pentru contoare suplimentare. Se completeaza doar daca exista 2 sau mai multe contoare la locul de consum. Va contine obligatoriu si elementul technicaldata care se regaseste in continutul mesajului, chiar daca este duplicat. Totalul elementelor din extraData va fi numarul de contoare instalate. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TechnicalDatas">
+		<xs:annotation>
+			<xs:documentation>Elemente de tip technical data pentru contoare suplimentare. Se completeaza doar daca exista 2 sau mai multe contoare la locul de consum. Va contine obligatoriu si elementul technicaldata care se regaseste in continutul mesajului, chiar daca este duplicat. Totalul elementelor din extraData va fi numarul de contoare instalate. </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="technicalDataElectricity" type="anre:TechnicalDataElectricity"
+				minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="technicalDataGas" type="anre:TechnicalDataGas" minOccurs="0"
+				maxOccurs="unbounded"/>
+		</xs:sequence>				
 	</xs:complexType>
 	<xs:element name="PlaceCreatedByOperator" type="anre:PlaceCreatedByOperator"/>
 	<xs:complexType name="PlaceCreatedByOperator">
@@ -1823,13 +1839,13 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Putere aprobata la productie in locul de consum, masurata in Watt</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="1"
+					<xs:element name="connectionType" type="anre:ConnectionType" minOccurs="0"
 						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip racord conform tipului de date ConnectionType</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1"
+					<xs:element name="networkType" type="anre:NetworkType" minOccurs="0"
 						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie sau Transport</xs:documentation>
