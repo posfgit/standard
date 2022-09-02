@@ -1895,7 +1895,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 							<xs:documentation>Presiunea minima tehnologica</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="networkType" type="anre:NetworkType" minOccurs="1"
+					<xs:element name="networkType" type="anre:NetworkType" minOccurs="0"
 						maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Tip retea: Distributie, Transport sau Conducta de alimentare din amonte</xs:documentation>
