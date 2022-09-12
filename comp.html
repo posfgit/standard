@@ -232,6 +232,9 @@
 				'properties_TechnicalDataGas_networkType', 
 				'properties_TechnicalDataGas_pressure', 
 				'properties_TechnicalDataGas_reservedCapacity', 
+				'properties_Place_extraData', 
+				'properties_TechnicalDatas_technicalDataElectricity', 
+				'properties_TechnicalDatas_technicalDataGas', 
 				'properties_http___www.anre.ro_ANRESchema_Contract_previousContractDate', 
 				'properties_http___www.anre.ro_ANRESchema_Contract_previousContractNumber', 
 				'properties_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
@@ -410,6 +413,7 @@ var usedByBoxes= new Array('usedBy_ConnectionType',
 				'usedBy_TechnicalDataElectricity', 
 				'usedBy_TechnicalData', 
 				'usedBy_TechnicalDataGas', 
+				'usedBy_TechnicalDatas', 
 				'usedBy_Supplier', 
 				'usedBy_http___www.anre.ro_ANRESchema_ContractActivatedByANRE', 
 				'usedBy_http___www.anre.ro_ANRESchema_ContractCancelledByClient', 
@@ -670,6 +674,9 @@ var sourceBoxes= new Array('source_Address',
 				'source_TechnicalDataGas_networkType', 
 				'source_TechnicalDataGas_pressure', 
 				'source_TechnicalDataGas_reservedCapacity', 
+				'source_Place_extraData', 
+				'source_TechnicalDatas_technicalDataElectricity', 
+				'source_TechnicalDatas_technicalDataGas', 
 				'source_http___www.anre.ro_ANRESchema_Contract_previousContractDate', 
 				'source_http___www.anre.ro_ANRESchema_Contract_previousContractNumber', 
 				'source_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
@@ -802,6 +809,7 @@ var sourceBoxes= new Array('source_Address',
 				'source_TechnicalDataElectricity', 
 				'source_TechnicalData', 
 				'source_TechnicalDataGas', 
+				'source_TechnicalDatas', 
 				'source_Supplier', 
 				'source_http___www.anre.ro_ANRESchema_ContractActivatedByANRE', 
 				'source_http___www.anre.ro_ANRESchema_ContractCancelledByClient', 
@@ -880,6 +888,9 @@ var instanceBoxes= new Array('instance_Address',
 				'instance_Place_technicalDataElectricity', 
 				'instance_TechnicalData_consumption', 
 				'instance_Place_technicalDataGas', 
+				'instance_Place_extraData', 
+				'instance_TechnicalDatas_technicalDataElectricity', 
+				'instance_TechnicalDatas_technicalDataGas', 
 				'instance_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
 				'instance_http___www.anre.ro_ANRESchema_Contract_supplier', 
 				'instance_ContractActivatedByANRE', 
@@ -1173,6 +1184,9 @@ var diagramBoxes= new Array('diagram_Address',
 				'diagram_TechnicalDataGas_networkType', 
 				'diagram_TechnicalDataGas_pressure', 
 				'diagram_TechnicalDataGas_reservedCapacity', 
+				'diagram_Place_extraData', 
+				'diagram_TechnicalDatas_technicalDataElectricity', 
+				'diagram_TechnicalDatas_technicalDataGas', 
 				'diagram_http___www.anre.ro_ANRESchema_Contract_previousContractDate', 
 				'diagram_http___www.anre.ro_ANRESchema_Contract_previousContractNumber', 
 				'diagram_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
@@ -1305,6 +1319,7 @@ var diagramBoxes= new Array('diagram_Address',
 				'diagram_TechnicalDataElectricity', 
 				'diagram_TechnicalData', 
 				'diagram_TechnicalDataGas', 
+				'diagram_TechnicalDatas', 
 				'diagram_Supplier', 
 				'diagram_http___www.anre.ro_ANRESchema_ContractActivatedByANRE', 
 				'diagram_http___www.anre.ro_ANRESchema_ContractCancelledByClient', 
@@ -1503,6 +1518,7 @@ var annotationBoxes= new Array('annotations_http___www.anre.ro_ANRESchema_Addres
 				'annotations_TechnicalDataGas_networkType', 
 				'annotations_TechnicalDataGas_pressure', 
 				'annotations_TechnicalDataGas_reservedCapacity', 
+				'annotations_Place_extraData', 
 				'annotations_http___www.anre.ro_ANRESchema_Contract_previousContractDate', 
 				'annotations_http___www.anre.ro_ANRESchema_Contract_previousContractNumber', 
 				'annotations_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
@@ -1565,6 +1581,7 @@ var annotationBoxes= new Array('annotations_http___www.anre.ro_ANRESchema_Addres
 				'annotations_TechnicalDataElectricity', 
 				'annotations_TechnicalData', 
 				'annotations_TechnicalDataGas', 
+				'annotations_TechnicalDatas', 
 				'annotations_Supplier', 
 				'annotations_http___www.anre.ro_ANRESchema_ContractActivatedByANRE', 
 				'annotations_http___www.anre.ro_ANRESchema_ContractCancelledByClient', 
@@ -1645,6 +1662,9 @@ var modelBoxes= new Array('model_Address',
 				'model_Place_technicalDataElectricity', 
 				'model_TechnicalData_consumption', 
 				'model_Place_technicalDataGas', 
+				'model_Place_extraData', 
+				'model_TechnicalDatas_technicalDataElectricity', 
+				'model_TechnicalDatas_technicalDataGas', 
 				'model_http___www.anre.ro_ANRESchema_Contract_previousSupplier', 
 				'model_http___www.anre.ro_ANRESchema_Contract_supplier', 
 				'model_ContractActivatedByANRE', 
@@ -1735,6 +1755,7 @@ var modelBoxes= new Array('model_Address',
 				'model_TechnicalDataElectricity', 
 				'model_TechnicalData', 
 				'model_TechnicalDataGas', 
+				'model_TechnicalDatas', 
 				'model_Supplier', 
 				'model_http___www.anre.ro_ANRESchema_ContractActivatedByANRE', 
 				'model_http___www.anre.ro_ANRESchema_ContractCancelledByClient', 
@@ -2262,6 +2283,7 @@ var modelBoxes= new Array('model_Address',
                                                 <div><b><a href="ANRESchema.html#TechnicalData" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalData</a></b></div>
                                                 <div><b><a href="ANRESchema.html#TechnicalDataElectricity" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataElectricity</a></b></div>
                                                 <div><b><a href="ANRESchema.html#TechnicalDataGas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataGas</a></b></div>
+                                                <div><b><a href="ANRESchema.html#TechnicalDatas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDatas</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -2537,6 +2559,7 @@ var modelBoxes= new Array('model_Address',
                                           <div><b><a href="ANRESchema.html#TechnicalData" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalData</a></b></div>
                                           <div><b><a href="ANRESchema.html#TechnicalDataElectricity" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataElectricity</a></b></div>
                                           <div><b><a href="ANRESchema.html#TechnicalDataGas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataGas</a></b></div>
+                                          <div><b><a href="ANRESchema.html#TechnicalDatas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDatas</a></b></div>
                                        </div>
                                     </td>
                                  </tr>
@@ -2813,6 +2836,7 @@ var modelBoxes= new Array('model_Address',
                                                 <div><b><a href="ANRESchema.html#TechnicalData" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalData</a></b></div>
                                                 <div><b><a href="ANRESchema.html#TechnicalDataElectricity" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataElectricity</a></b></div>
                                                 <div><b><a href="ANRESchema.html#TechnicalDataGas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDataGas</a></b></div>
+                                                <div><b><a href="ANRESchema.html#TechnicalDatas" target="_self" title="http://www.anre.ro/ANRESchema">anre:TechnicalDatas</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -2836,7 +2860,7 @@ var modelBoxes= new Array('model_Address',
       </div>
       <div class="footer">
          <hr />
-         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Developer.</div>
       </div>
    </body>
 </html>
