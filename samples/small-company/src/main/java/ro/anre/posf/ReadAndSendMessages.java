@@ -89,7 +89,7 @@ public class ReadAndSendMessages {
 
     public Response sendMessage(String token, String xml){
         return restTemplate
-                .exchange("https://posf-beta.anre.ro/broker/postMessage",
+                .exchange(SpringBootConsoleApplication.domain + "/broker/postMessage",
                         HttpMethod.POST,
                         setPayload(token, xml),
                         Response.class)

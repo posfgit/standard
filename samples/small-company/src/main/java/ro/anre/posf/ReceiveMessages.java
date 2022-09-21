@@ -48,7 +48,7 @@ public class ReceiveMessages {
 
     public void getMessage(String token, String outPath, int count, int maxMessage, boolean own) throws IOException, InterruptedException {
         ResponseEntity<String> response = restTemplate
-                .exchange("https://posf-beta.anre.ro/broker" + (own ? "/own/" : "/" ) + "poolMessage",
+                .exchange(SpringBootConsoleApplication.domain  + "/broker" + (own ? "/own/" : "/" ) + "poolMessage",
                         HttpMethod.GET,
                         setPayload(token),
                         String.class);

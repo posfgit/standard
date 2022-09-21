@@ -40,7 +40,7 @@ public class Utils {
         HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(map, headers);
 
         ResponseEntity<Map> token = restTemplate
-                .exchange("https://posf-beta.anre.ro/auth/realms/BROKER/protocol/openid-connect/token",
+                .exchange(SpringBootConsoleApplication.domain  + "/auth/realms/BROKER/protocol/openid-connect/token",
                         HttpMethod.POST,
                         entity,
                         Map.class);
