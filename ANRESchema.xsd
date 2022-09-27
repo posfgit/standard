@@ -1876,23 +1876,23 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 					</xs:element>
 					<xs:element name="debit" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Debit aprobat</xs:documentation>
+							<xs:documentation>Debit aprobat masurat in mc/h</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="maximumPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Presiune maxima</xs:documentation>
+							<xs:documentation>Presiune maxima masurata in Pa</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="minimumPressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Presiune minima</xs:documentation>
+							<xs:documentation>Presiune minima masurata in Pa</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="minimumTechnicalPressure" type="xs:decimal" minOccurs="0"
 						maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Presiunea minima tehnologica</xs:documentation>
+							<xs:documentation>Presiunea minima tehnologica masurata in Pa</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="networkType" type="anre:NetworkType" minOccurs="0"
@@ -1903,13 +1903,13 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 					</xs:element>
 					<xs:element name="pressure" type="xs:decimal" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Presiunea disponibila in locul de consum, conform ATR</xs:documentation>
+							<xs:documentation>Presiunea disponibila in locul de consum, conform ATR masurata in Pa</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="reservedCapacity" type="xs:decimal" minOccurs="0"
 						maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Capacitate rezervata</xs:documentation>
+							<xs:documentation>Capacitate rezervata masurata in MWh/h</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>

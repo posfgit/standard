@@ -19,15 +19,13 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 	@Autowired
 	PDFService pdfService;
 
+	public static String domain = "";
+
 	@Override
 	public void run(String... args) throws Exception {
 
-//		System.setProperty("user", "supplier@gmail.com");
-//		System.setProperty("password", "1234");
-//		System.setProperty("type", "pdf");
-//		System.setProperty("pdf-input", "./docs/model.pdf");
-//		System.setProperty("pdf-xml-inputOffer", "./docs/Offer.xml");
-//		System.setProperty("pdf-xml-input", "./docs/Message.xml");
+
+		SpringBootConsoleApplication.domain = System.getProperty("domain");
 
 		if(System.getProperty("user") == null ){
 			System.out.println("parametrul -Duser nu este trimis");
@@ -38,10 +36,15 @@ public class SpringBootConsoleApplication  implements CommandLineRunner{
 		}else {
 			switch (System.getProperty("type")){
 				case "send":
+					if(System.getProperty("domain") == null){
+						System.out.println("parametrul -Ddomain nu este trimis");
+					}
 					readAndSendMessages.start();
 					break;
 				case "receive":
-					if(System.getProperty("max-message") == null){
+					if(System.getProperty("domain") == null){
+						System.out.println("parametrul -Ddomain nu este trimis");
+					}else if(System.getProperty("max-message") == null){
 						System.out.println("parametrul -Dmax-message nu este trimis");
 					} else {
 						posfClientReceiver.receive();

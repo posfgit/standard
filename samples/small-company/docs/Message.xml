@@ -186,91 +186,53 @@
             <prosumer>false</prosumer>
             <uninterruptible>false</uninterruptible>
             <vulnerable>false</vulnerable>
-            <company>
+            <person>
                 <address>
-                    <authorId>00000000-0000-0000-0000-000000000000</authorId>
-                    <building>building4</building>
+                    <building>string</building>
                     <city>
-                        <code>code12</code>
-                        <name>name10</name>
+                        <code>1026</code>
+                        <name>string</name>
                     </city>
-                    <country>country4</country>
                     <county>AB</county>
-                    <cua>cua4</cua>
-                    <cuaAuthor>cuaAuthor4</cuaAuthor>
-                    <extended>extended4</extended>
-                    <flat>flat4</flat>
-                    <floor>floor4</floor>
-                    <number>number12</number>
-                    <position/>
-                    <postcode>postcode4</postcode>
-                    <stair>stair4</stair>
-                    <street>street8</street>
-                    <streetType>streetType4</streetType>
+                    <extended>string</extended>
+                    <flat>string</flat>
+                    <floor>string</floor>
+                    <number>string</number>
+                    <position geohash="2" latitude="3" longitude="1"/>
+                    <postcode>string</postcode>
+                    <stair>string</stair>
+                    <street>string</street>
                 </address>
-                <code>code13</code>
+                <code>string</code>
                 <contactAddress>
-                    <email>email2</email>
-                    <fax>fax2</fax>
-                    <mobilePhone>mobilePhone2</mobilePhone>
-                    <phone>phone2</phone>
+                    <email>string</email>
+                    <fax>string</fax>
+                    <mobilePhone>string</mobilePhone>
+                    <phone>string</phone>
                 </contactAddress>
                 <correspondenceAddress>
-                    <authorId>00000000-0000-0000-0000-000000000000</authorId>
-                    <building>building5</building>
+                    <building>string</building>
                     <city>
-                        <code>code14</code>
-                        <name>name11</name>
+                        <code>1026</code>
+                        <name>string</name>
                     </city>
-                    <country>country5</country>
                     <county>AB</county>
-                    <cua>cua5</cua>
-                    <cuaAuthor>cuaAuthor5</cuaAuthor>
-                    <extended>extended5</extended>
-                    <flat>flat5</flat>
-                    <floor>floor5</floor>
-                    <number>number13</number>
-                    <position/>
-                    <postcode>postcode5</postcode>
-                    <stair>stair5</stair>
-                    <street>street9</street>
-                    <streetType>streetType5</streetType>
+                    <extended>string</extended>
+                    <flat>string</flat>
+                    <floor>string</floor>
+                    <number>string</number>
+                    <position geohash="2" latitude="3" longitude="1"/>
+                    <postcode>string</postcode>
+                    <stair>string</stair>
+                    <street>string</street>
                 </correspondenceAddress>
-                <extra>extra4</extra>
-                <incorporation>ALTE_PERSOANE_JURIDICE</incorporation>
-                <legalRepresentative>
-                    <address>
-                        <city>
-                            <code>code15</code>
-                            <name>name12</name>
-                        </city>
-                        <county>AB</county>
-                        <number>number14</number>
-                        <street>street10</street>
-                    </address>
-                    <code>code16</code>
-                    <contactAddress>
-                    </contactAddress>
-                    <correspondenceAddress>
-                        <city>
-                            <code>code17</code>
-                            <name>name13</name>
-                        </city>
-                        <county>AB</county>
-                        <number>number15</number>
-                        <street>street11</street>
-                    </correspondenceAddress>
-                    <extra>extra5</extra>
-                    <firstName>firstName2</firstName>
-                    <lastName>lastName2</lastName>
-                    <number>number16</number>
-                    <series>series2</series>
-                    <type>CNP</type>
-                </legalRepresentative>
-                <legalRepresentativeQuality>legalRepresentativeQuality2</legalRepresentativeQuality>
-                <name>name14</name>
-                <number>number17</number>
-            </company>
+                <extra>string</extra>
+                <firstName>string</firstName>
+                <lastName>string</lastName>
+                <number>string</number>
+                <series>string</series>
+                <type>CNP</type>
+            </person>
         </client>
         <clientAmendments>clientAmendments0</clientAmendments>
         <consumption>
@@ -576,35 +538,27 @@
             <type>CLC</type>
             <url>url0</url>
             <url>url1</url>
-            <technicalDataElectricity>
-                <consumption>
-                    <item>
-                        <month>0</month>
-                        <value>value2</value>
-                    </item>
-                    <item>
-                        <month>0</month>
-                        <value>value3</value>
-                    </item>
-                </consumption>
-                <counterIndexDesc>counterIndexDesc0</counterIndexDesc>
-                <counterIndexInterval>0</counterIndexInterval>
-                <counterIndexReadDate>2006-05-04</counterIndexReadDate>
-                <counterIndexValue>counterIndexValue0</counterIndexValue>
-                <counterSeries>counterSeries0</counterSeries>
+            <technicalDataGas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="anre:TechnicalDataGas">
+                <consumption/>
+                <counterIndexDesc>3</counterIndexDesc>
+
+                <counterIndexReadDate>2022-05-13</counterIndexReadDate>
+                <counterIndexValue>string</counterIndexValue>
+                <counterSeries>string</counterSeries>
                 <counterType>ACTIVE</counterType>
-                <date>2006-05-04</date>
+                <date>2022-05-13</date>
                 <documentType>ACORDACCES</documentType>
-                <number>number34</number>
-                <smartMeter>false</smartMeter>
+                <number>string</number>
+                <smartMeter>true</smartMeter>
                 <status>CONECTAT</status>
-                <type>type7</type>
-                <approvedConsumptionPower>1000</approvedConsumptionPower>
-                <approvedProducedPower>20</approvedProducedPower>
-                <connectionType>MONOFAZAT</connectionType>
+                <type>TechnicalDataGas</type>
+
+                <category>C_1</category>
+                <debit>0</debit>
                 <networkType>CA</networkType>
-                <voltageLevel>1000</voltageLevel>
-            </technicalDataElectricity>
+                <pressure>0</pressure>
+                <reservedCapacity>5</reservedCapacity>
+            </technicalDataGas>
         </place>
         <previousContractDate>2006-05-04</previousContractDate>
         <previousContractNumber>previousContractNumber0</previousContractNumber>
