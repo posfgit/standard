@@ -1107,6 +1107,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate aceste informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1120,6 +1125,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate aceste informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1133,6 +1143,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate aceste informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1146,7 +1161,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="info" type="xs:string" minOccurs="1" maxOccurs="1">
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
 						</xs:annotation>
@@ -1183,6 +1198,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1211,6 +1231,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1226,6 +1251,11 @@ Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1239,6 +1269,11 @@ Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1252,6 +1287,11 @@ Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1266,6 +1306,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1279,6 +1324,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1292,6 +1342,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1306,6 +1361,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1374,6 +1434,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1388,6 +1453,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 				<xs:sequence>
 					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"
 					/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1402,6 +1472,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 				<xs:sequence>
 					<xs:element name="convention" type="anre:Convention" minOccurs="1" maxOccurs="1"
 					/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1415,6 +1490,11 @@ Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei PO
 			<xs:extension base="anre:Message">
 				<xs:sequence>
 					<xs:element name="contract" type="anre:Convention" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
