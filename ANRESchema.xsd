@@ -1709,6 +1709,11 @@ CNP (pentru cetatenii romani)</xs:documentation>
 							<xs:documentation>The newly created Place (POD/CLC)</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
