@@ -971,7 +971,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Status contract</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="0"
+			<xs:element name="contractWithOperatorNeeded" type="xs:boolean" minOccurs="1"
 				maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Contractare a serviciului de retea direct (CF-OR)</xs:documentation>
@@ -1854,7 +1854,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 			</xs:element>
 			<xs:element name="counterIndexInterval" type="xs:decimal" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Periodicitatea citirii echipamentelor de masurare masurata in luni:&#xD;
+					<xs:documentation>Periodicitatea citirii echipamentelor de masurare, masurata in luni:&#xD;
 1 - o luna&#xD;
 2 - doua luni</xs:documentation>
 				</xs:annotation>
