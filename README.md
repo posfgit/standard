@@ -105,7 +105,7 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |:-|:---------|:-|:-|:-|
 |ContractSignedBySupplier|Instiintare despre contract semnat de furnizor, dupa ce a semnat in prealabil si clientul fie la ghiseu fie prin aplicatia furnizorului. Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei POSF, doar cand contractul a fost semnat semnat de ambele parti.| Furnizor,WebPOSF | Operator, WebPOSF, Furnizor vechi|Art 27, litera g |
 |ContractSignedByClient|Instiintare despre contract semnat de client in aplicatia WebPOSF| WebPOSF | Furnizor nou| |
-|ContractCancelledByClient|Se emite din aplicatia WebPOSF cand un utilizator s-a razgandit in timp ce trimisese deja semnat la furnizor un contract sau daca vrea sa renunte la un contract existent.| WebPOSF | Furnizor| |
+|ContractCancelledByClient|Se emite din aplicatia WebPOSF cand un utilizator s-a razgandit in timp ce trimisese deja semnat la furnizor un contract sau daca vrea sa renunte la un contract existent.| WebPOSF | Furnizor nou, furnizor vechi, Operator| |
 |ContractCancelledBySupplier|Se emite din aplicatia WebPOSF sau sistemul furnizorului cand un furnizor s-a razgandit pe un contract semnat sau vrea sa anuleze un contract existent.| Furnizor, WebPOSF | Furnizor vechi, Operator, WebPOSF| |
 |ContractMoreInfo|Trimis de furnizor care solicita mai multe informatii de la cealalta parte.| Furnizor, WebPOSF modul furnizor | WebPOSF modul client| |
 |ContractChangedInfo|Emis de oricare din partile contractului la momentul actualizarii de informatii care nu au impact in fluxurile informatice|Oricine este prezent in contract|Toti cei mentionati in contract| Nu este necesar sa se raspunda la acest mesaj|
