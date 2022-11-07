@@ -1,14 +1,9 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
-import java.util.UUID;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.util.UUID;
 
 
 /**
@@ -26,7 +21,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="fuiType" type="{http://www.anre.ro/ANRESchema}FUIType" minOccurs="0"/>
  *         &lt;element name="isFUI" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="license" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
+ *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -51,7 +46,7 @@ public class Supplier
     protected FUIType fuiType;
     protected boolean isFUI;
     protected String license;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID supplierId;
 

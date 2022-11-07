@@ -33,9 +33,10 @@ import java.util.List;
  *           &lt;/complexType>
  *         &lt;/element>
  *         &lt;choice>
- *           &lt;element name="technicalDataElectricity" type="{http://www.anre.ro/ANRESchema}TechnicalDataElectricity" minOccurs="0"/>
- *           &lt;element name="technicalDataGas" type="{http://www.anre.ro/ANRESchema}TechnicalDataGas" minOccurs="0"/>
+ *           &lt;element name="technicalDataElectricity" type="{http://www.anre.ro/ANRESchema}TechnicalDataElectricity"/>
+ *           &lt;element name="technicalDataGas" type="{http://www.anre.ro/ANRESchema}TechnicalDataGas"/>
  *         &lt;/choice>
+ *         &lt;element name="extraData" type="{http://www.anre.ro/ANRESchema}TechnicalDatas" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -53,7 +54,8 @@ import java.util.List;
     "type",
     "urls",
     "technicalDataGas",
-    "technicalDataElectricity"
+    "technicalDataElectricity",
+    "extraData"
 })
 @XmlRootElement(name = "Place")
 public class Place {
@@ -65,9 +67,10 @@ public class Place {
     @XmlSchemaType(name = "string")
     protected PlaceType type;
     @XmlElement(name = "url")
-    protected List<Url> urls;
+    protected List<Place.Url> urls;
     protected TechnicalDataGas technicalDataGas;
     protected TechnicalDataElectricity technicalDataElectricity;
+    protected TechnicalDatas extraData;
 
     /**
      * Gets the value of the address property.
@@ -207,13 +210,13 @@ public class Place {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Url }
+     * {@link Place.Url }
      * 
      * 
      */
-    public List<Url> getUrls() {
+    public List<Place.Url> getUrls() {
         if (urls == null) {
-            urls = new ArrayList<Url>();
+            urls = new ArrayList<Place.Url>();
         }
         return this.urls;
     }
@@ -264,6 +267,30 @@ public class Place {
      */
     public void setTechnicalDataElectricity(TechnicalDataElectricity value) {
         this.technicalDataElectricity = value;
+    }
+
+    /**
+     * Gets the value of the extraData property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TechnicalDatas }
+     *     
+     */
+    public TechnicalDatas getExtraData() {
+        return extraData;
+    }
+
+    /**
+     * Sets the value of the extraData property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TechnicalDatas }
+     *     
+     */
+    public void setExtraData(TechnicalDatas value) {
+        this.extraData = value;
     }
 
 

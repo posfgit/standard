@@ -46,7 +46,6 @@ import java.util.UUID;
     "type"
 })
 @XmlSeeAlso({
-    ConventionGeneratedByPOSF.class,
     ContractSuspendedByAnre.class,
     ContractCancelledByClient.class,
     ClientInfoUpdated.class,
@@ -67,6 +66,7 @@ import java.util.UUID;
     AddressChangedInfo.class,
     PlaceUpdatedByOperator.class,
     ContractChangedInfo.class,
+    ConventionGeneratedByPOSF.class,
     ContractNetworkSignedBySupplier.class,
     SupplierChangedInfo.class,
     ContractTransferredToFUIByOperator.class,

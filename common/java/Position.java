@@ -1,15 +1,12 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
- * Coordinates must be in accordance
+ * Coordinates must be in accordance
+
  * 				with WGS84 and must use an ISO 6709 format as follows: [+/-]NN.NNNNNN.
  * 
  * <p>Java class for Position complex type.

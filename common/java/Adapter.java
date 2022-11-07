@@ -1,10 +1,6 @@
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +14,9 @@ public class Adapter  {
     }
 
     public static String printDateTime(ZonedDateTime val) {
-        return val.withZoneSameInstant(ZoneOffset.UTC).toString();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+        return val.withZoneSameInstant(ZoneOffset.UTC).format(dtf);
     }
 
     public static LocalDate parseDate(String date) {

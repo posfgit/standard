@@ -1,13 +1,8 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
+import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -27,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="maximumPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="minimumPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="minimumTechnicalPressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType"/>
+ *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType" minOccurs="0"/>
  *         &lt;element name="pressure" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="reservedCapacity" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *       &lt;/sequence>
@@ -61,7 +56,6 @@ public class TechnicalDataGas
     protected BigDecimal maximumPressure;
     protected BigDecimal minimumPressure;
     protected BigDecimal minimumTechnicalPressure;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected NetworkType networkType;
     protected BigDecimal pressure;

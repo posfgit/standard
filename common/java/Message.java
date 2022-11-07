@@ -1,14 +1,13 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-import java.util.UUID;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.ZonedDateTime;
+import java.util.UUID;
 
 
 /**
@@ -47,7 +46,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "type"
 })
 @XmlSeeAlso({
-    ConventionGeneratedByPOSF.class,
     ContractSuspendedByAnre.class,
     ContractCancelledByClient.class,
     ClientInfoUpdated.class,
@@ -68,6 +66,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     AddressChangedInfo.class,
     PlaceUpdatedByOperator.class,
     ContractChangedInfo.class,
+    ConventionGeneratedByPOSF.class,
     ContractNetworkSignedBySupplier.class,
     SupplierChangedInfo.class,
     ContractTransferredToFUIByOperator.class,
