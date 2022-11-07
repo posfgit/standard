@@ -1,4 +1,4 @@
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ApiError", propOrder = {
         "status",
-        "message"
+        "message",
+        "error"
 })
 @XmlRootElement(name = "ApiError")
 @NoArgsConstructor
@@ -20,8 +21,15 @@ public class ApiError {
     @XmlElement(required = true)
     private String message;
 
+    @XmlElement(required = true)
+    private String error;
+
     public ApiError(HttpStatus status, String message) {
         this.status = status.value();
         this.message = message;
+        this.error = status.getReasonPhrase();
     }
+
+
+
 }

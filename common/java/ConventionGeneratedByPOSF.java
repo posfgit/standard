@@ -1,10 +1,7 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -20,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
  *         &lt;element name="convention" type="{http://www.anre.ro/ANRESchema}Convention"/>
+ *         &lt;element name="info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -30,14 +28,17 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ConventionGeneratedByPOSF", propOrder = {
-    "convention"
+    "convention",
+    "info"
 })
+@XmlRootElement(name = "ConventionGeneratedByPOSF")
 public class ConventionGeneratedByPOSF
     extends Message
 {
 
     @XmlElement(required = true)
     protected Convention convention;
+    protected String info;
 
     /**
      * Gets the value of the convention property.
@@ -61,6 +62,30 @@ public class ConventionGeneratedByPOSF
      */
     public void setConvention(Convention value) {
         this.convention = value;
+    }
+
+    /**
+     * Gets the value of the info property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInfo() {
+        return info;
+    }
+
+    /**
+     * Sets the value of the info property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInfo(String value) {
+        this.info = value;
     }
 
 }

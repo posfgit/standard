@@ -1,5 +1,5 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;

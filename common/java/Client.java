@@ -1,11 +1,7 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -21,8 +17,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence minOccurs="0">
  *         &lt;choice minOccurs="0">
- *           &lt;element name="aggregateCompany" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
- *           &lt;element name="aggregatePerson" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
+ *           &lt;element name="aggregateCompany" type="{http://www.anre.ro/ANRESchema}Company"/>
+ *           &lt;element name="aggregatePerson" type="{http://www.anre.ro/ANRESchema}Person"/>
  *         &lt;/choice>
  *         &lt;element name="finalClientType" type="{http://www.anre.ro/ANRESchema}ClientType" minOccurs="0"/>
  *         &lt;element name="isAgregate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
@@ -32,8 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="uninterruptible" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="vulnerable" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;choice>
- *           &lt;element name="company" type="{http://www.anre.ro/ANRESchema}Company" minOccurs="0"/>
- *           &lt;element name="person" type="{http://www.anre.ro/ANRESchema}Person" minOccurs="0"/>
+ *           &lt;element name="company" type="{http://www.anre.ro/ANRESchema}Company"/>
+ *           &lt;element name="person" type="{http://www.anre.ro/ANRESchema}Person"/>
  *         &lt;/choice>
  *       &lt;/sequence>
  *     &lt;/restriction>

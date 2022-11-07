@@ -1,5 +1,5 @@
 
-package ro.anre.anreschema.standard;
+package ro.anre.posf.standard;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
@@ -20,6 +20,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="C_5"/>
  *     &lt;enumeration value="C_6"/>
  *     &lt;enumeration value="C_7"/>
+ *     &lt;enumeration value="C_8"/>
+ *     &lt;enumeration value="C_9"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -35,7 +37,19 @@ public enum ConsumptionCategory {
     C_4,
     C_5,
     C_6,
-    C_7;
+    C_7,
+
+    /**
+     * Client cu consum anual mai mic sau egal cu 28000 MWh
+     * 
+     */
+    C_8,
+
+    /**
+     * Client cu consum anual de peste 28000 MWh
+     * 
+     */
+    C_9;
 
     public String value() {
         return name();
