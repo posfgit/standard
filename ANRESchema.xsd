@@ -231,6 +231,18 @@
 			<xs:enumeration value="ALTUL"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ReasonType">
+		<xs:annotation>
+			<xs:documentation>Tipuri de motiv pentru reziliere</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FINAL_CONTRACT"/>
+			<xs:enumeration value="INCETARE_LA_CERERE"/>
+			<xs:enumeration value="NEPLATA"/>
+			<xs:enumeration value="INCETARE_ACTIVITATE"/>
+			<xs:enumeration value="LIPSA_PROPRIETATE"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataStatus">
 		<xs:annotation>
 			<xs:documentation>Status loc de consum</xs:documentation>
@@ -1148,6 +1160,60 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 							<xs:documentation>Descrierea motivelor pentru care au fost publicate aceste informatii</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NotificationDeadlineReached">
+		<xs:annotation>
+			<xs:documentation>Se emite din POSF automat pentru toate contractele ajunse la termen.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care a fost publicata aceasta notificare</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NotificationDeadlineDue">
+		<xs:annotation>
+			<xs:documentation>Se emite din POSF automat pentru toate contractele care vor ajunge la termen in 7 zile calendaristice</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care a fost publicata aceasta notificare</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NotificationPublishedBySupplier">
+		<xs:annotation>
+			<xs:documentation>Se emite din aplicatia WebPOSF sau sistemul furnizorului.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care a fost publicata aceasta notificare</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reason" type="anre:ReasonType" minOccurs="1" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
