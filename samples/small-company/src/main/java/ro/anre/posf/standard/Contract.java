@@ -148,7 +148,7 @@ public class Contract {
     @XmlSchemaType(name = "string")
     protected ContractType type;
     @XmlElement(name = "url")
-    protected List<Url> urls;
+    protected List<Contract.Url> urls;
 
     /**
      * Gets the value of the additionalDate property.
@@ -816,13 +816,13 @@ public class Contract {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Url }
+     * {@link Contract.Url }
      * 
      * 
      */
-    public List<Url> getUrls() {
+    public List<Contract.Url> getUrls() {
         if (urls == null) {
-            urls = new ArrayList<Url>();
+            urls = new ArrayList<Contract.Url>();
         }
         return this.urls;
     }

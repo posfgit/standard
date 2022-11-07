@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.*;
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
  *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Contract"/>
+ *         &lt;element name="info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -27,7 +28,8 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContractTransferredToFUIByOperator", propOrder = {
-    "contract"
+    "contract",
+    "info"
 })
 @XmlRootElement(name = "ContractTransferredToFUIByOperator")
 public class ContractTransferredToFUIByOperator
@@ -36,6 +38,7 @@ public class ContractTransferredToFUIByOperator
 
     @XmlElement(required = true)
     protected Contract contract;
+    protected String info;
 
     /**
      * Gets the value of the contract property.
@@ -59,6 +62,30 @@ public class ContractTransferredToFUIByOperator
      */
     public void setContract(Contract value) {
         this.contract = value;
+    }
+
+    /**
+     * Gets the value of the info property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInfo() {
+        return info;
+    }
+
+    /**
+     * Sets the value of the info property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInfo(String value) {
+        this.info = value;
     }
 
 }

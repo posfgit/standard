@@ -21,7 +21,7 @@ import java.util.UUID;
  *         &lt;element name="fuiType" type="{http://www.anre.ro/ANRESchema}FUIType" minOccurs="0"/>
  *         &lt;element name="isFUI" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="license" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
+ *         &lt;element name="supplierId" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -46,7 +46,7 @@ public class Supplier
     protected FUIType fuiType;
     protected boolean isFUI;
     protected String license;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID supplierId;
 

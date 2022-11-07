@@ -19,7 +19,7 @@ import java.util.UUID;
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Company">
  *       &lt;sequence>
  *         &lt;element name="license" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="operatorId" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
+ *         &lt;element name="operatorId" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -39,7 +39,7 @@ public class Operator
 {
 
     protected String license;
-    @XmlElement(type = String.class)
+    @XmlElement(required = true, type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID operatorId;
 

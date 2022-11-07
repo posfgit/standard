@@ -19,8 +19,8 @@ import java.math.BigDecimal;
  *       &lt;sequence>
  *         &lt;element name="approvedConsumptionPower" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="approvedProducedPower" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
- *         &lt;element name="connectionType" type="{http://www.anre.ro/ANRESchema}ConnectionType"/>
- *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType"/>
+ *         &lt;element name="connectionType" type="{http://www.anre.ro/ANRESchema}ConnectionType" minOccurs="0"/>
+ *         &lt;element name="networkType" type="{http://www.anre.ro/ANRESchema}NetworkType" minOccurs="0"/>
  *         &lt;element name="voltageLevel" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -45,10 +45,8 @@ public class TechnicalDataElectricity
 
     protected BigDecimal approvedConsumptionPower;
     protected BigDecimal approvedProducedPower;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected ConnectionType connectionType;
-    @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected NetworkType networkType;
     protected BigDecimal voltageLevel;

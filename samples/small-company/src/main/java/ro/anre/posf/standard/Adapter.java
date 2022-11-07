@@ -14,7 +14,9 @@ public class Adapter  {
     }
 
     public static String printDateTime(ZonedDateTime val) {
-        return val.withZoneSameInstant(ZoneOffset.UTC).toString();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+        return val.withZoneSameInstant(ZoneOffset.UTC).format(dtf);
     }
 
     public static LocalDate parseDate(String date) {
