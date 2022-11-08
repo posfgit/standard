@@ -156,6 +156,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificationPublishedBySupplier }
+     * 
+     */
+    public NotificationPublishedBySupplier createNotificationPublishedBySupplier() {
+        return new NotificationPublishedBySupplier();
+    }
+
+    /**
      * Create an instance of {@link Client }
      * 
      */
@@ -233,6 +241,14 @@ public class ObjectFactory {
      */
     public AddressChangedInfo createAddressChangedInfo() {
         return new AddressChangedInfo();
+    }
+
+    /**
+     * Create an instance of {@link NotificationPublishedByOperator }
+     * 
+     */
+    public NotificationPublishedByOperator createNotificationPublishedByOperator() {
+        return new NotificationPublishedByOperator();
     }
 
     /**
@@ -340,6 +356,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificationDeadlineDue }
+     * 
+     */
+    public NotificationDeadlineDue createNotificationDeadlineDue() {
+        return new NotificationDeadlineDue();
+    }
+
+    /**
      * Create an instance of {@link TechnicalDataElectricity }
      * 
      */
@@ -436,6 +460,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificationDeadlineReached }
+     * 
+     */
+    public NotificationDeadlineReached createNotificationDeadlineReached() {
+        return new NotificationDeadlineReached();
+    }
+
+    /**
      * Create an instance of {@link ContractSuspendedByAnre }
      * 
      */
@@ -457,30 +489,6 @@ public class ObjectFactory {
      */
     public TechnicalDatas createTechnicalDatas() {
         return new TechnicalDatas();
-    }
-
-    /**
-     * Create an instance of {@link NotificationPublishedBySupplier }
-     * 
-     */
-    public NotificationPublishedBySupplier createNotificationPublishedBySupplier() {
-        return new NotificationPublishedBySupplier();
-    }
-
-    /**
-     * Create an instance of {@link NotificationDeadlineDue }
-     * 
-     */
-    public NotificationDeadlineDue createNotificationDeadlineDue() {
-        return new NotificationDeadlineDue();
-    }
-
-    /**
-     * Create an instance of {@link NotificationDeadlineReached }
-     * 
-     */
-    public NotificationDeadlineReached createNotificationDeadlineReached() {
-        return new NotificationDeadlineReached();
     }
 
     /**
