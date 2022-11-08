@@ -1,20 +1,25 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Se emite din aplicatia WebPOSF sau sistemul furnizorului.
+ * Se emite din aplicatia WebPOSF sau sistemul operatorului.
  * 
- * <p>Java class for NotificationPublishedBySupplier complex type.
+ * <p>Java class for NotificationPublishedByOperator complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="NotificationPublishedBySupplier">
+ * &lt;complexType name="NotificationPublishedByOperator">
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
@@ -32,15 +37,15 @@ import java.time.LocalDate;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NotificationPublishedBySupplier", propOrder = {
+@XmlType(name = "NotificationPublishedByOperator", propOrder = {
     "contract",
     "info",
     "dueDate",
     "reason",
     "reasonDesc"
 })
-@XmlRootElement(name = "NotificationPublishedBySupplier")
-public class NotificationPublishedBySupplier
+@XmlRootElement(name = "NotificationPublishedByOperator")
+public class NotificationPublishedByOperator
     extends Message
 {
 
