@@ -50,6 +50,7 @@ import java.util.UUID;
     NotificationDeadlineDue.class,
     NotificationDeadlineReached.class,
     ContractSuspendedByAnre.class,
+    NotificationDeadlineReached.class,
     ContractCancelledByClient.class,
     ClientInfoUpdated.class,
     OperatorChangedInfo.class,
@@ -59,6 +60,7 @@ import java.util.UUID;
     ContractNetworkSignedByOperator.class,
     ContractCancelledBySupplier.class,
     ConventionSignedByOperator.class,
+    NotificationDeadlineDue.class,
     ConventionChangedInfo.class,
     PlaceDisconnectedByOperator.class,
     ContractNetworkChangedInfo.class,
@@ -66,11 +68,13 @@ import java.util.UUID;
     ContractSignedBySupplier.class,
     ContractSignedByClient.class,
     ConventionSignedBySupplier.class,
+    NotificationPublishedByOperator.class,
     AddressChangedInfo.class,
     PlaceUpdatedByOperator.class,
     ContractChangedInfo.class,
     ConventionGeneratedByPOSF.class,
     ContractNetworkSignedBySupplier.class,
+    NotificationPublishedBySupplier.class,
     SupplierChangedInfo.class,
     ContractTransferredToFUIByOperator.class,
     ContractNetworkSignedByClient.class,
@@ -110,6 +114,7 @@ import java.util.UUID;
         @JsonSubTypes.Type (name = "NotificationPublishedBySupplier", value = NotificationPublishedBySupplier.class),
         @JsonSubTypes.Type (name = "NotificationDeadlineDue", value = NotificationDeadlineDue.class),
         @JsonSubTypes.Type (name = "NotificationDeadlineReached", value = NotificationDeadlineReached.class),
+        @JsonSubTypes.Type (name = "NotificationPublishedByOperator", value = NotificationPublishedByOperator.class),
 })
 @XmlRootElement()
 public class Message {
