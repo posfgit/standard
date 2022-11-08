@@ -211,6 +211,7 @@ Toti furnizorii care doresc sa verifice daca un operator este pregatit sa primea
 
 Sistemul POSF va transmite mesaje intre actorii din piata doar daca aceste mesaje fac referire la un loc de consum al unui operator pregatit, adica marcat cu true pe tag-ul "operational", in caz contrat fiind returnata eroare "406 Not acceptable". Mesajele cu flag-ul INIT se primesc dar nu se transmit mai departe.
 
+Observatii vom regasi la acest link: https://github.com/posfgit/standard/issues/185
 
 # Modele de fisiere PDF si conventii de completare a campurilor
 
