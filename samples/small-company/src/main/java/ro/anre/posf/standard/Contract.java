@@ -27,7 +27,7 @@ import java.util.UUID;
  *         &lt;element name="clientAmendments" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="consumption" type="{http://www.anre.ro/ANRESchema}Consumption" minOccurs="0"/>
  *         &lt;element name="contractStatus" type="{http://www.anre.ro/ANRESchema}ContractStatus" minOccurs="0"/>
- *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="contractWithOperatorNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="conventionNeeded" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="correspondenceClientAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="correspondenceClientContactAddress" type="{http://www.anre.ro/ANRESchema}ContactAddress" minOccurs="0"/>
