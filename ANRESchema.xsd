@@ -1157,6 +1157,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="NotificationDeadlineReached" type="anre:NotificationDeadlineReached"/>
 	<xs:complexType name="NotificationDeadlineReached">
 		<xs:annotation>
 			<xs:documentation>Se emite din POSF automat pentru toate contractele ajunse la termen.</xs:documentation>
@@ -1174,6 +1175,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="NotificationDeadlineDue" type="anre:NotificationDeadlineDue"/>
 	<xs:complexType name="NotificationDeadlineDue">
 		<xs:annotation>
 			<xs:documentation>Se emite din POSF automat pentru toate contractele care vor ajunge la termen in 7 zile calendaristice</xs:documentation>
@@ -1192,9 +1194,31 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="NotificationPublishedBySupplier" type="anre:NotificationPublishedBySupplier"/>
 	<xs:complexType name="NotificationPublishedBySupplier">
 		<xs:annotation>
 			<xs:documentation>Se emite din aplicatia WebPOSF sau sistemul furnizorului.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care a fost publicata aceasta notificare</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reason" type="anre:ReasonType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="NotificationPublishedByOperator" type="anre:NotificationPublishedByOperator"/>
+	<xs:complexType name="NotificationPublishedByOperator">
+		<xs:annotation>
+			<xs:documentation>Se emite din aplicatia WebPOSF sau sistemul operatorului.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="anre:Message">
