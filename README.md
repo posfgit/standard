@@ -207,7 +207,7 @@ Pentru a putea derula activitati de contractare si schimbare furnizor prin inter
 1. Operatorul sa incarce locurile de consum in POSF
 2. Operatorul sa se declare ca fiind pregatit sa receptioneze si sa trimita mesaje prin POSF.
 
-Toti furnizorii care doresc sa verifice daca un operator este pregatit sa primeasca mesaje prin POSF pot folosi api-ul /broker/list/operator verificand tag-ul XML "operational"="true". 
+Toti furnizorii care doresc sa verifice daca un operator este pregatit sa primeasca mesaje prin POSF pot folosi api-ul /broker/list/operator verificand tag-ul XML "operational"="true". Activarea acestui flag se va face pentru moment prin solicitare catre servicedesk@anre.ro specificand uuid-ul pe care doriti sa il declarati operational.
 
 Sistemul POSF va transmite mesaje intre actorii din piata doar daca aceste mesaje fac referire la un loc de consum al unui operator pregatit, adica marcat cu true pe tag-ul "operational", in caz contrat fiind returnata eroare "406 Not acceptable". Mesajele cu flag-ul INIT se primesc dar nu se transmit mai departe.
 
