@@ -230,15 +230,14 @@
 	</xs:simpleType>
 	<xs:simpleType name="ReasonType">
 		<xs:annotation>
-			<xs:documentation>Tipuri de motiv pentru reziliere</xs:documentation>
+			<xs:documentation>Tipuri de motiv pentru incetare</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="FINAL_CONTRACT"/>
-			<xs:enumeration value="INCETARE_LA_CERERE"/>
-			<xs:enumeration value="NEPLATA"/>
-			<xs:enumeration value="INCETARE_ACTIVITATE"/>
-			<xs:enumeration value="LIPSA_PROPRIETATE"/>
-			<xs:enumeration value="OTHER"/>
+			<xs:enumeration value="AJUNGERE_LA_TERMEN"/>
+			<xs:enumeration value="DENUNTARE"/>
+			<xs:enumeration value="REZILIERE"/>
+			<xs:enumeration value="ACORDUL_PARTILOR"/>
+			<xs:enumeration value="ALTELE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataStatus">
@@ -1208,6 +1207,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					</xs:element>
 					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="reason" type="anre:ReasonType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
