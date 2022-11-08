@@ -460,6 +460,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificationPublishedBySupplier }
+     * 
+     */
+    public NotificationPublishedBySupplier createNotificationPublishedBySupplier() {
+        return new NotificationPublishedBySupplier();
+    }
+
+    /**
+     * Create an instance of {@link NotificationDeadlineDue }
+     * 
+     */
+    public NotificationDeadlineDue createNotificationDeadlineDue() {
+        return new NotificationDeadlineDue();
+    }
+
+    /**
+     * Create an instance of {@link NotificationDeadlineReached }
+     * 
+     */
+    public NotificationDeadlineReached createNotificationDeadlineReached() {
+        return new NotificationDeadlineReached();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TechnicalData }{@code >}}
      * 
      */
