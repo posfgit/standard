@@ -146,6 +146,22 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |SupplierChangedInfo|Emis de WebPOSF/platforma furnizorului cand s-au schimbat date de identificare/persoane/adresa|WebPOSF, Furnizor|WebPOSF,  toti operatorii, toti furnizorii| |
 |OperatorChangedInfo|Emis de platforma operatorului cand s-au schimbat date de identificare/persoane/adresa|Operator|WebPOSF,  toti operatorii, toti furnizorii| |
 
+
+## Mesaje de tip notificare intre partile unui contract
+
+| Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
+|:-|:---------|:-|:-|:-|
+|NotificationDeadlineReached|Emis automat de sistemul POSF in ziua imediat urmatoare (00:00+1) pentru toate contractele ajunse la terment in ziua anterioara. |POSF|Toate partile din contract| Operatorul de retea dupa caz va trimite un mesaj in cadrul POSF pentru trecere la FUI sau deconectare (ContractTransferredToFUIByOperator sau PlaceDisconnectedByOperator|
+|NotificationDeadlineDue|Emis automat de sistemul POSF cu 7 zile anterior ajungerii la termen ale unui contract activ|POSF | Toate partile din contract| Daca mesajul nu este urmat de un mesaj specific de contract, acesta nu produce nici un efect in cadrul relatiilor contractuale |
+|NotificationPublishedBySupplier|Emis de furnizor prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Furnizor|Toate partile din contract| |
+|NotificationPublishedByOperator|Emis de operator prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Operator|Toate partile din contract| |
+
+Notificarile nu sunt  elemente obligatorii, sunt privite ca optionale in sistemul POSF, in sensul in care daca nu sunt urmate de un mesaj ferm de tip Contract* acestea nu vor produce nici un efect.
+
+Notificarile care se trimit in avans detin un camp numit "dueDate" prin care se va specifica data de la care va intra in efectivitate respectiva schimbare din contract, fie ca este urmata de un mesaj de tip Contract* fie ajungand la termen un anumit contract.
+
+Notificarile care presupun un motiv anume vor contine si un cam denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem.
+
 # Exemplu de flux pornind de la ContractSignedBySupplier
 
 Dupa ce se emite mesajul ContractSignedBySupplier, avem urmatoarele mesaje:
