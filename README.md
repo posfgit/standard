@@ -60,6 +60,7 @@ acestora)
 13. /broker/readBatch - citeste ultimele N mesaje
 14. /broker/commitReadBatch - trece la urmatoarele N mesaje. ATENTIE!!! daca readBatch intoarce doar N-2 mesaje trebuie sa trimiteti aceeasi valoare la commitBatch, adica N-2. Altfel riscati sa pierdeti mesaje. Gasiti in tipul Batch numarul de mesaje continute pe campul "count"
 15. /own/poolMessage,readMessage,commitMessage citesc mesajele publicate de autor
+16. /borker/refused/paged de tip POST cu parametri ex: {"page":0, pageSize:10} intoarce mesajele incarcate care nu pot fi interpretate de aplicatia WebPOSF.
 
 
 - toate au un parametru suplimentar "batchSize" de tip intreg, limitat la 100, daca e nevoie mai marim.
