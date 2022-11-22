@@ -61,7 +61,7 @@ acestora)
 14. /broker/commitReadBatch - trece la urmatoarele N mesaje. ATENTIE!!! daca readBatch intoarce doar N-2 mesaje trebuie sa trimiteti aceeasi valoare la commitBatch, adica N-2. Altfel riscati sa pierdeti mesaje. Gasiti in tipul Batch numarul de mesaje continute pe campul "count"
 15. /own/poolMessage,readMessage,commitMessage citesc mesajele publicate de autor
 16. /borker/refused/paged de tip POST cu parametri ex: {"page":0, pageSize:10} intoarce mesajele incarcate care nu pot fi interpretate de aplicatia WebPOSF.
-17. /borker/allow_switch de tip POST cu parametri ex: {"person_id":"1234567890123", "place_type":"CLC", "place_code":"123321233", "starting_date":"dataschimbarii", "action":"switch/new/cancel"} are ca rezultat HTTP200 cu {"result":"allow"} daca respectiva persoana fizica/juridica (identificata prin CNP/CUI) poate initia proces de schimbare furnizor prin POSF incepand cu data comunicata. Discutii pe issue aici https://github.com/posfgit/standard/issues/197. Sistemul returneaza valorile astfel {"result":"allow/deny"} cu HTTP200 in cazul in care locul de consum exista. 
+17. /borker/allow_contract de tip POST cu parametri ex: {"code":"1234567890123", "place_type":"CLC", "place_code":"123321233", "starting_date":"dataschimbarii"} are ca rezultat HTTP200 cu {"result":"allow"} daca respectiva persoana fizica/juridica (identificata prin CNP/CUI) poate initia proces de schimbare furnizor prin POSF incepand cu data comunicata. Discutii pe issue aici https://github.com/posfgit/standard/issues/197. Sistemul returneaza valorile astfel {"result":"allow/deny"} cu HTTP200 in cazul in care locul de consum exista. 
 
 
 - toate cererile de citit mesaje au un parametru suplimentar "batchSize" de tip intreg, limitat la 100, daca e nevoie mai marim.
