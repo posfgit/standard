@@ -1019,6 +1019,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Identificator unic al contractului, folosit si in actele aditionale ulterioare</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="isFUIContract" type="xs:boolean" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>true daca este contract pornind de la o oferta de FUI sau daca a fost trimis la FUI de catre OR/ANRE</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="marketing" type="anre:Marketing" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="number" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
