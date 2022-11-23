@@ -46,9 +46,6 @@ import java.util.UUID;
     "type"
 })
 @XmlSeeAlso({
-    NotificationPublishedBySupplier.class,
-    NotificationDeadlineDue.class,
-    NotificationDeadlineReached.class,
     ContractSuspendedByAnre.class,
     NotificationDeadlineReached.class,
     ContractCancelledByClient.class,
