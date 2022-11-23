@@ -35,6 +35,7 @@ import java.util.UUID;
  *         &lt;element name="executionAddress" type="{http://www.anre.ro/ANRESchema}Address" minOccurs="0"/>
  *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.anre.ro/ANRESchema}Guid"/>
+ *         &lt;element name="isFUIContract" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="marketing" type="{http://www.anre.ro/ANRESchema}Marketing" minOccurs="0"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="offerCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -82,6 +83,7 @@ import java.util.UUID;
     "executionAddress",
     "expirationDate",
     "id",
+    "isFUIContract",
     "marketing",
     "number",
     "offerCode",
@@ -126,6 +128,7 @@ public class Contract {
     @XmlElement(type = String.class)
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID id;
+    protected Boolean isFUIContract;
     protected Marketing marketing;
     protected String number;
     protected String offerCode;
@@ -484,6 +487,30 @@ public class Contract {
      */
     public void setId(UUID value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the isFUIContract property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isIsFUIContract() {
+        return isFUIContract;
+    }
+
+    /**
+     * Sets the value of the isFUIContract property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setIsFUIContract(Boolean value) {
+        this.isFUIContract = value;
     }
 
     /**
