@@ -60,9 +60,11 @@ acestora)
 13. /broker/readBatch - citeste ultimele N mesaje
 14. /broker/commitReadBatch - trece la urmatoarele N mesaje. ATENTIE!!! daca readBatch intoarce doar N-2 mesaje trebuie sa trimiteti aceeasi valoare la commitBatch, adica N-2. Altfel riscati sa pierdeti mesaje. Gasiti in tipul Batch numarul de mesaje continute pe campul "count"
 15. /own/poolMessage,readMessage,commitMessage citesc mesajele publicate de autor
+16. /borker/refused/paged de tip POST cu parametri ex: {"page":0, pageSize:10} intoarce mesajele incarcate care nu pot fi interpretate de aplicatia WebPOSF.
+17. /borker/allow_contract de tip POST cu parametri ex: {"code":"1234567890123", "place_type":"CLC", "place_code":"123321233", "starting_date":"dataschimbarii"} are ca rezultat HTTP200 cu {"result":"allow"} daca respectiva persoana fizica/juridica (identificata prin CNP/CUI) poate initia proces de schimbare furnizor prin POSF incepand cu data comunicata. Discutii pe issue aici https://github.com/posfgit/standard/issues/197. Sistemul returneaza valorile astfel {"result":"allow/deny"} cu HTTP200 in cazul in care locul de consum exista. 
 
 
-- toate au un parametru suplimentar "batchSize" de tip intreg, limitat la 100, daca e nevoie mai marim.
+- toate cererile de citit mesaje au un parametru suplimentar "batchSize" de tip intreg, limitat la 100, daca e nevoie mai marim.
 - returneaza tipul Batch care include unul sau mai multe mesaje conform schemei XSD de pe GIT
 ## Exemplu in Java
 
@@ -149,6 +151,8 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 
 ## Mesaje de tip notificare intre partile unui contract
 
+Introducem o categorie noua de mesaje numite notificari pentru a fi folosite de actorii din piata in cadrul contractelor incarcate in POSF.
+
 | Denumire mesaj | Scop | Sursa |  Redirectionat la | Observatii |
 |:-|:---------|:-|:-|:-|
 |NotificationDeadlineReached|Emis automat de sistemul POSF in ziua imediat urmatoare (00:00+1) pentru toate contractele ajunse la terment in ziua anterioara. |POSF|Toate partile din contract| Operatorul de retea dupa caz va trimite un mesaj in cadrul POSF pentru trecere la FUI sau deconectare (ContractTransferredToFUIByOperator sau PlaceDisconnectedByOperator|
@@ -156,11 +160,14 @@ Diagrama de mai jos prezinta tipurile de mesaje care pot fi trimise/receptionate
 |NotificationPublishedBySupplier|Emis de furnizor prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Furnizor|Toate partile din contract| |
 |NotificationPublishedByOperator|Emis de operator prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Operator|Toate partile din contract| |
 
-Notificarile nu sunt  elemente obligatorii, sunt privite ca optionale in sistemul POSF, in sensul in care daca nu sunt urmate de un mesaj ferm de tip Contract* acestea nu vor produce nici un efect.
+Notificarile nu sunt  elemente obligatorii, sunt privite ca optionale in sistemul POSF, in sensul in care daca NU sunt urmate de un mesaj ferm de tip Contract* acestea nu vor produce nici un efect.
 
-Notificarile care se trimit in avans detin un camp numit "dueDate" prin care se va specifica data de la care va intra in efectivitate respectiva schimbare din contract, fie ca este urmata de un mesaj de tip Contract* fie ajungand la termen un anumit contract.
+Notificarile care se trimit in avans detin un camp numit "dueDate" prin care se va specifica data de la care va intra in efectivitate respectiva modificare de contract.
 
-Notificarile care presupun un motiv anume vor contine si un cam denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem.
+Notificarile care presupun un motiv anume vor contine si un camp denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem. Suplimentar exista si un camp "reasonDesc" in care se poate completa text liber.
+
+Deschidem un issue de discutii pe tema notificarilor aici:
+https://github.com/posfgit/standard/issues/184
 
 # Exemplu de flux pornind de la ContractSignedBySupplier
 
@@ -195,6 +202,18 @@ Mesaje folosite pentru a incarca date in sistem, fara a presupune ca aceste mesa
 |Incarcare loc de consum existent|PlaceUpdatedByOperator|Se completeaza campul "info" cu textul "INIT"|
 |Incarcare contract de retea existent|ContractNetworkChangedInfo|Se completeaza campul "info" cu textul "INIT"|
 |Incarcare conventie existenta|ConventionChangedInfo|Se completeaza campul "info" cu textul "INIT"|
+
+# Operationalizarea operatorilor
+
+Pentru a putea derula activitati de contractare si schimbare furnizor prin intermediul mesajelor din POSF sunt necesare 2 conditii:
+1. Operatorul sa incarce locurile de consum in POSF
+2. Operatorul sa se declare ca fiind pregatit sa receptioneze si sa trimita mesaje prin POSF.
+
+Toti furnizorii care doresc sa verifice daca un operator este pregatit sa primeasca mesaje prin POSF pot folosi api-ul /broker/list/operator verificand tag-ul XML "operational"="true". Activarea acestui flag se va face pentru moment prin solicitare catre servicedesk@anre.ro specificand uuid-ul pe care doriti sa il declarati operational.
+
+Sistemul POSF va transmite mesaje intre actorii din piata doar daca aceste mesaje fac referire la un loc de consum al unui operator pregatit, adica marcat cu true pe tag-ul "operational", in caz contrat fiind returnata eroare "406 Not acceptable". Mesajele cu flag-ul INIT se primesc dar nu se transmit mai departe.
+
+Observatii vom regasi la acest link: https://github.com/posfgit/standard/issues/185
 
 # Modele de fisiere PDF si conventii de completare a campurilor
 
