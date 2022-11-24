@@ -18,6 +18,8 @@ import javax.xml.bind.annotation.*;
  *       &lt;sequence>
  *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Contract"/>
  *         &lt;element name="info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="reason" type="{http://www.anre.ro/ANRESchema}ReasonType" minOccurs="0"/>
+ *         &lt;element name="reasonDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -29,7 +31,9 @@ import javax.xml.bind.annotation.*;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContractTransferredToFUIByAnre", propOrder = {
     "contract",
-    "info"
+    "info",
+    "reason",
+    "reasonDesc"
 })
 @XmlRootElement(name = "ContractTransferredToFUIByAnre")
 public class ContractTransferredToFUIByAnre
@@ -39,6 +43,9 @@ public class ContractTransferredToFUIByAnre
     @XmlElement(required = true)
     protected Contract contract;
     protected String info;
+    @XmlSchemaType(name = "string")
+    protected ReasonType reason;
+    protected String reasonDesc;
 
     /**
      * Gets the value of the contract property.
@@ -86,6 +93,54 @@ public class ContractTransferredToFUIByAnre
      */
     public void setInfo(String value) {
         this.info = value;
+    }
+
+    /**
+     * Gets the value of the reason property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ReasonType }
+     *     
+     */
+    public ReasonType getReason() {
+        return reason;
+    }
+
+    /**
+     * Sets the value of the reason property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ReasonType }
+     *     
+     */
+    public void setReason(ReasonType value) {
+        this.reason = value;
+    }
+
+    /**
+     * Gets the value of the reasonDesc property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getReasonDesc() {
+        return reasonDesc;
+    }
+
+    /**
+     * Sets the value of the reasonDesc property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setReasonDesc(String value) {
+        this.reasonDesc = value;
     }
 
 }
