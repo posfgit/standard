@@ -36,6 +36,7 @@ import java.util.UUID;
  *         &lt;element name="expirationDate" type="{http://www.w3.org/2001/XMLSchema}date" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *         &lt;element name="isFUIContract" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="isNewContract" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="marketing" type="{http://www.anre.ro/ANRESchema}Marketing" minOccurs="0"/>
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="offerCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -84,6 +85,7 @@ import java.util.UUID;
     "expirationDate",
     "id",
     "isFUIContract",
+    "isNewContract",
     "marketing",
     "number",
     "offerCode",
@@ -129,6 +131,7 @@ public class Contract {
     @XmlJavaTypeAdapter(Adapter3 .class)
     protected UUID id;
     protected Boolean isFUIContract;
+    protected Boolean isNewContract;
     protected Marketing marketing;
     protected String number;
     protected String offerCode;
@@ -511,6 +514,30 @@ public class Contract {
      */
     public void setIsFUIContract(Boolean value) {
         this.isFUIContract = value;
+    }
+
+    /**
+     * Gets the value of the isNewContract property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isIsNewContract() {
+        return isNewContract;
+    }
+
+    /**
+     * Sets the value of the isNewContract property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setIsNewContract(Boolean value) {
+        this.isNewContract = value;
     }
 
     /**
