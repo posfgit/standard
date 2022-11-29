@@ -1,2 +1,224 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<anre:ContractSignedByClient xmlns:anre="http://www.anre.ro/ANRESchema"><authorID>6726a778-4fca-4cef-88c2-290101c2bdd5</authorID><authorName>MONSSON TRADING S.R.L.</authorName><correlationID>6ca79e9f-03e2-47eb-95e3-4e2260fc0287</correlationID><messageID>55f74e5e-f813-48e1-8df2-4f0959671e54</messageID><timestamp>2022-10-07T14:30:26Z</timestamp><type>ContractSignedByClient</type><contract><client><isPre>false</isPre><uninterruptible>true</uninterruptible><vulnerable>false</vulnerable><company><address><building></building><city><code>60428</code><name>Constanta</name></city><country>Romania</country><county>CT</county><flat></flat><floor></floor><number>1</number><postcode></postcode><street>Timisanei</street></address><code>RO35021324</code><legalRepresentative><firstName>Mincu </firstName><lastName>Constantin</lastName></legalRepresentative><legalRepresentativeQuality>Administrator</legalRepresentativeQuality><name>DALUCO MIN SRL</name><number>J13/2053/2015</number></company></client><correspondenceClientAddress><building></building><city><code>60428</code><name>Constanta</name></city><country>Romania</country><county>CT</county><flat></flat><floor></floor><number>1</number><postcode></postcode><street>Timisanei</street></correspondenceClientAddress><date>2018-11-30</date><executionAddress><building></building><city><code>60428</code><name>Constanta</name></city><country>Romania</country><county>CT</county><flat></flat><floor></floor><number>1</number><street>Timisanei</street></executionAddress><expirationDate>2022-10-30</expirationDate><id>fc8902f1-1040-c38e-45d5-e16647652cf2</id><number>211.18</number><operator><code>23308833</code><name>Distrigaz Sud Retele SRL</name><number>J40/2728/2008</number><operatorId>4d5dce10-4f86-4bff-930c-23feac1dd5a5</operatorId></operator><place><address><building></building><city><code>60428</code><name>Constanta</name></city><country>Romania</country><county>CT</county><flat></flat><floor></floor><number>1</number><street>Timisanei</street></address><code>DGSCTCTA0000517063</code><operator><code>23308833</code><name>Distrigaz Sud Retele SRL</name><number>J40/2728/2008</number><operatorId>4d5dce10-4f86-4bff-930c-23feac1dd5a5</operatorId></operator><type>CLC</type><technicalDataGas><status>CONECTAT</status><type>TechnicalDataGas</type><category>C_2</category></technicalDataGas></place><previousSupplier><address><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></address><code>25032083</code><correspondenceAddress><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></correspondenceAddress><incorporation>ALTE_PERSOANE_JURIDICE</incorporation><legalRepresentative><address><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></address><firstName>Andrei</firstName><lastName>Muntmark</lastName></legalRepresentative><name>MONSSON TRADING</name><number>J13/228/2009</number><isFUI>false</isFUI><supplierId>6726a778-4fca-4cef-88c2-290101c2bdd5</supplierId></previousSupplier><startingDate>2018-11-30</startingDate><serviceType>ALTUL</serviceType><supplier><address><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></address><code>25032083</code><correspondenceAddress><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></correspondenceAddress><incorporation>ALTE_PERSOANE_JURIDICE</incorporation><legalRepresentative><address><city><code>60419</code><name>Constanta</name></city><county>CT</county><number>14</number><postcode>900735</postcode><street>Nicolae Titulescu</street></address><firstName>Andrei</firstName><lastName>Muntmark</lastName></legalRepresentative><name>MONSSON TRADING</name><number>J13/228/2009</number><isFUI>false</isFUI><supplierId>6726a778-4fca-4cef-88c2-290101c2bdd5</supplierId></supplier><type>FURNIZARE</type></contract></anre:ContractSignedByClient>
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:ContractSignedBySupplier
+    xmlns:ns0="http://www.anre.ro/ANRESchema">
+    <authorID>31393fa2-d5bd-11ec-9d64-0242ac120002</authorID>
+    <authorName>ENEL ENERGIE MUNTENIA SA</authorName>
+    <correlationID>7e175c2a-ff60-470c-bea5-9d3d20bd07c9</correlationID>
+    <description>a3h3Y000000qY9rQAE</description>
+    <messageID>7F0C03A3-4B52-4B60-AD36-5C461FB93786</messageID>
+    <timestamp>2022-11-21T15:00:16Z</timestamp>
+    <type/>
+    <contract>
+        <client>
+            <finalClientType>HOUSEHOLD</finalClientType>
+            <isAgregate>false</isAgregate>
+            <isPre>false</isPre>
+            <prosumer>false</prosumer>
+            <uninterruptible>false</uninterruptible>
+            <vulnerable>false</vulnerable>
+            <person>
+                <address>
+                    <building>1</building>
+                    <city>
+                        <code>13819</code>
+                        <name>ALBESTII DE ARGES</name>
+                    </city>
+                    <county>AG</county>
+                    <extended>NULL</extended>
+                    <flat>6</flat>
+                    <floor>1</floor>
+                    <number>3</number>
+                    <postcode>117005</postcode>
+                    <stair>M12</stair>
+                    <street>ALBESTII DE ARGES</street>
+                    <streetType>STRADA</streetType>
+                </address>
+                <code>2850312033355</code>
+                <contactAddress>
+                    <email>andreeacristina.stoica@enel.com</email>
+                    <fax>NULL</fax>
+                    <mobilePhone>0737600142</mobilePhone>
+                    <phone>NULL</phone>
+                </contactAddress>
+                <correspondenceAddress>
+                    <building>NULL</building>
+                    <city>
+                        <code>13631</code>
+                        <name>CURTEA DE ARGES</name>
+                    </city>
+                    <county>AG</county>
+                    <extended>NULL</extended>
+                    <flat>NULL</flat>
+                    <floor>NULL</floor>
+                    <number>4</number>
+                    <postcode>115300</postcode>
+                    <stair>NULL</stair>
+                    <street>Banu Maracine</street>
+                    <streetType>Strada</streetType>
+                </correspondenceAddress>
+                <firstName>ANDREEA</firstName>
+                <lastName>STOICA</lastName>
+                <number>234900</number>
+                <series>RR</series>
+                <type>OTHER</type>
+            </person>
+        </client>
+        <contractStatus>ACTIV</contractStatus>
+        <contractWithOperatorNeeded>false</contractWithOperatorNeeded>
+        <correspondenceClientAddress>
+            <building>NULL</building>
+            <city>
+                <code>13631</code>
+                <name>CURTEA DE ARGES</name>
+            </city>
+            <county>AG</county>
+            <extended>NULL</extended>
+            <flat>NULL</flat>
+            <floor>NULL</floor>
+            <number>4</number>
+            <postcode>115300</postcode>
+            <stair>NULL</stair>
+            <street>Banu Maracine</street>
+            <streetType>Strada</streetType>
+        </correspondenceClientAddress>
+        <correspondenceClientContactAddress>
+            <email>NULL</email>
+            <mobilePhone>NULL</mobilePhone>
+        </correspondenceClientContactAddress>
+        <date>2022-11-21</date>
+        <executionAddress>
+            <building>NULL</building>
+            <city>
+                <code>179196</code>
+                <name>SECTOR 6</name>
+            </city>
+            <county>B</county>
+            <extended>NULL</extended>
+            <flat>NULL</flat>
+            <floor>NULL</floor>
+            <number>22</number>
+            <postcode>062385</postcode>
+            <stair>NULL</stair>
+            <street>Chemarii</street>
+            <streetType>STRADA</streetType>
+        </executionAddress>
+        <id>4d669013-7e59-4389-86a3-654c3b71aa1e</id>
+        <marketing>
+            <agreeContactTerms>true</agreeContactTerms>
+            <agreeGDPRTerms>false</agreeGDPRTerms>
+            <agreePlatformTerms>true</agreePlatformTerms>
+            <clientIBAN>NULL</clientIBAN>
+            <electronicInvoice>false</electronicInvoice>
+            <electronicMoneyReturn>false</electronicMoneyReturn>
+        </marketing>
+        <number>42546399_123</number>
+        <operator>
+            <code>RO23308833</code>
+            <name>DISTRIGAZ SUD RETELE SRL</name>
+            <number>J40/2728/2008</number>
+            <operatorId>4d5dce10-4f86-4bff-930c-23feac1dd5a5</operatorId>
+        </operator>
+        <place>
+            <address>
+                <building>NULL</building>
+                <city>
+                    <code>179196</code>
+                    <name>SECTOR 6</name>
+                </city>
+                <county>B</county>
+                <extended>NULL</extended>
+                <flat>NULL</flat>
+                <floor>NULL</floor>
+                <number>22</number>
+                <postcode>062385</postcode>
+                <stair>NULL</stair>
+                <street>Chemarii</street>
+                <streetType>STRADA</streetType>
+            </address>
+            <code>DGS56027</code>
+            <operator>
+                <code>RO23308833</code>
+                <name>DISTRIGAZ SUD RETELE SRL</name>
+                <number>J40/2728/2008</number>
+                <operatorId>4d5dce10-4f86-4bff-930c-23feac1dd5a5</operatorId>
+            </operator>
+            <type>CLC</type>
+            <technicalDataGas>
+                <counterIndexDesc>23456.0</counterIndexDesc>
+                <counterIndexReadDate>2022-11-21</counterIndexReadDate>
+                <counterIndexValue>23456.0</counterIndexValue>
+                <counterSeries></counterSeries>
+                <category>C_1</category>
+                <networkType>D</networkType>
+                <pressure>6.0</pressure>
+            </technicalDataGas>
+        </place>
+        <previousSupplier>
+            <code>RO13093222</code>
+            <contactAddress>
+                <email>serviciidistributie@ro.engie.com</email>
+                <fax>NULL</fax>
+                <phone>0721630610</phone>
+            </contactAddress>
+            <incorporation>SOCIETATE_COMERCIALA</incorporation>
+            <name>ENGIE Romania SA</name>
+            <number>J40/5447/2000</number>
+            <isFUI>false</isFUI>
+            <supplierId>59f71e13-0b06-4eea-b419-4ede51c24bc0</supplierId>
+        </previousSupplier>
+        <startingDate>2022-12-01</startingDate>
+        <serviceType>CONCURENTIAL</serviceType>
+        <supplier>
+            <address>
+                <building>NULL</building>
+                <city>
+                    <code>179141</code>
+                    <name>SECTOR 3</name>
+                </city>
+                <county>B</county>
+                <extended>NULL</extended>
+                <flat>camera 5.3</flat>
+                <floor>5</floor>
+                <number>30</number>
+                <postcode>011171</postcode>
+                <stair>NULL</stair>
+                <street>Mircea Voda</street>
+                <streetType>Bulevardul</streetType>
+            </address>
+            <code>RO24387371</code>
+            <contactAddress>
+                <email>contacteem.ro@enel.com</email>
+                <fax>0372871079</fax>
+                <phone>021 9977</phone>
+            </contactAddress>
+            <correspondenceAddress>
+                <building>NULL</building>
+                <city>
+                    <code>179141</code>
+                    <name>SECTOR 3</name>
+                </city>
+                <county>B</county>
+                <extended>NULL</extended>
+                <flat>camera 5.3</flat>
+                <floor>5</floor>
+                <number>30</number>
+                <postcode>011171</postcode>
+                <stair>NULL</stair>
+                <street>Mircea Voda</street>
+                <streetType>Bulevardul</streetType>
+            </correspondenceAddress>
+            <incorporation>SOCIETATE_COMERCIALA</incorporation>
+            <legalRepresentative>
+                <firstName>NULL</firstName>
+                <lastName>NULL</lastName>
+            </legalRepresentative>
+            <name>ENEL ENERGIE MUNTENIA SA</name>
+            <number>J40/14506/2008</number>
+            <fuiType>DESEMNAT</fuiType>
+            <isFUI>false</isFUI>
+            <supplierId>31393fa2-d5bd-11ec-9d64-0242ac120002</supplierId>
+        </supplier>
+        <type>FURNIZARE</type>
+        <url>https://posf-dev.enel.ro/{19220CCD-3E54-4581-91FD-388EA453A8ED}</url>
+    </contract>
+</ns0:ContractSignedBySupplier>

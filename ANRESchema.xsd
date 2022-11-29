@@ -1264,6 +1264,8 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 							<xs:documentation>Descrierea motivelor pentru care au fost publicate noi informatii</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element name="reason" type="anre:ReasonType" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>					
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
