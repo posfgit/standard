@@ -234,9 +234,38 @@
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="AJUNGERE_LA_TERMEN"/>
-			<xs:enumeration value="DENUNTARE"/>
-			<xs:enumeration value="REZILIERE"/>
+			<xs:enumeration value="ANULARE_SCHIMBARE_FURNIZOR"/>
+			<xs:enumeration value="DENUNTARE">
+				<xs:annotation>
+					<xs:documentation>Folosit doar la cererea clientului</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DENUNTARE_INCETARE_LOC">
+				<xs:annotation>
+					<xs:documentation>Folosit la cererea clientului cand se solicita ridicarea contorului</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REZILIERE">
+				<xs:annotation>
+					<xs:documentation>Folosit doar la cererea furnizorului</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="REZILIERE_NEPLATA">
+				<xs:annotation>
+					<xs:documentation>Folosit doar la cererea furnizorului in caz de neplata</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ACORDUL_PARTILOR"/>
+			<xs:enumeration value="EROARE_MATERIALA">
+				<xs:annotation>
+					<xs:documentation>Folosit pentru a informa ca mesajul trimis anterior de semnare contract a fost introdus gresit</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EROARE_PROCESARE">
+				<xs:annotation>
+					<xs:documentation>Folosit pentru a informa ca mesajul primit (semnare sau modificare) nu poate fi procesat de sistem (in special de catre OD cand emite NotificationPublishedByOperator). In campul reasonDesc se va completa descrierea problemei intampinate</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="ALTELE"/>
 		</xs:restriction>
 	</xs:simpleType>
