@@ -1933,7 +1933,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 					</xs:element>
 					<xs:element name="isFUI" type="xs:boolean" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>Este FUI (Furnizor de ultima instanta)</xs:documentation>
+							<xs:documentation>Este FUI (Furnizor de ultima instanta), este vorba de calitatea de FUI a Supplier, nu de tipul contractului. Pentru tipul contractului FUI se foloseste isFUIContract din Contract</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="license" type="xs:string" minOccurs="0" maxOccurs="1">
