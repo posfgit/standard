@@ -791,7 +791,7 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 		<xs:sequence>
 			<xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>SIRUTA code as per https://insse.ro/cms/files/chestionare/invatamant/Siruta_2021.xlsx column SIRUTA</xs:documentation>
+					<xs:documentation>SIRUTA/SIRSUP code as per https://insse.ro/cms/files/chestionare/invatamant/Siruta_2021.xlsx column SIRUTA sau SIRSUP</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
