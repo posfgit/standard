@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
 /**
  * Instiintare despre contract semnat de furnizor, dupa ce a semnat in prealabil si clientul fie la ghiseu fie prin aplicatia furnizorului.
 
- * 				Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei POSF, doar cand contractul a fost semnat semnat de ambele parti.
+ *                 Se emite si cand furnizorul deruleaza procesul de semnare in afara platformei POSF, doar cand contractul a fost semnat semnat de ambele parti.
  * 
  * <p>Java class for ContractSignedBySupplier complex type.
  * 
