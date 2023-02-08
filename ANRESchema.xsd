@@ -308,6 +308,25 @@
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="TechnicalDataMode">
+		<xs:annotation>
+			<xs:documentation>Regim de operare:&#xD;
+- Sezonier&#xD;
+- Permanent</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SEZONIER">
+				<xs:annotation>
+					<xs:documentation>Regim sezonier</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PERMANENT">
+				<xs:annotation>
+					<xs:documentation>Regim permanent</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:element name="Address" type="anre:Address"/>
 	<xs:complexType name="Address">
 		<xs:annotation>
@@ -2033,6 +2052,11 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 			<xs:element name="status" type="anre:TechnicalDataStatus" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Status: Conectat/ Deconectat</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="operatingMode" type="anre:TechnicalDataMode" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Regimul de operare al locului, sezonier sau permanent</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="type" type="xs:string" minOccurs="1" maxOccurs="1">
