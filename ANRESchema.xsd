@@ -268,6 +268,11 @@
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ACORDUL_PARTILOR"/>
+			<xs:enumeration value="ACORDUL_PARTILOR_INCETARE_LOC">
+				<xs:annotation>
+					<xs:documentation>Folosit in cazul in care se inceteaza cu acordul partilor, si cand se solicita ridicarea contorului</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="EROARE_MATERIALA">
 				<xs:annotation>
 					<xs:documentation>Folosit pentru a informa ca mesajul trimis anterior de semnare contract a fost introdus gresit</xs:documentation>
