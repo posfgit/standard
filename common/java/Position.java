@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
 /**
  * Coordinates must be in accordance
 
- * 				with WGS84 and must use an ISO 6709 format as follows: [+/-]NN.NNNNNN.
+ *                 with WGS84 and must use an ISO 6709 format as follows: [+/-]NN.NNNNNN.
  * 
  * <p>Java class for Position complex type.
  * 

@@ -46,6 +46,7 @@ import java.util.UUID;
     "type"
 })
 @XmlSeeAlso({
+    NotificationErrorMessage.class,
     ContractSuspendedByAnre.class,
     NotificationDeadlineReached.class,
     ContractCancelledByClient.class,
@@ -112,6 +113,7 @@ import java.util.UUID;
         @JsonSubTypes.Type (name = "NotificationDeadlineDue", value = NotificationDeadlineDue.class),
         @JsonSubTypes.Type (name = "NotificationDeadlineReached", value = NotificationDeadlineReached.class),
         @JsonSubTypes.Type (name = "NotificationPublishedByOperator", value = NotificationPublishedByOperator.class),
+        @JsonSubTypes.Type (name = "NotificationErrorMessage", value = NotificationErrorMessage.class),
 })
 @XmlRootElement()
 public class Message {

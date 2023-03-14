@@ -31,6 +31,7 @@ import java.time.LocalDate;
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="smartMeter" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="status" type="{http://www.anre.ro/ANRESchema}TechnicalDataStatus"/>
+ *         &lt;element name="operatingMode" type="{http://www.anre.ro/ANRESchema}TechnicalDataMode" minOccurs="0"/>
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -54,6 +55,7 @@ import java.time.LocalDate;
     "number",
     "smartMeter",
     "status",
+    "operatingMode",
     "type"
 })
 @XmlSeeAlso({
@@ -83,6 +85,8 @@ public class TechnicalData {
     protected Boolean smartMeter;
     @XmlSchemaType(name = "string")
     protected TechnicalDataStatus status;
+    @XmlSchemaType(name = "string")
+    protected TechnicalDataMode operatingMode;
     protected String type;
 
     /**
@@ -371,6 +375,30 @@ public class TechnicalData {
      */
     public void setStatus(TechnicalDataStatus value) {
         this.status = value;
+    }
+
+    /**
+     * Gets the value of the operatingMode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TechnicalDataMode }
+     *     
+     */
+    public TechnicalDataMode getOperatingMode() {
+        return operatingMode;
+    }
+
+    /**
+     * Sets the value of the operatingMode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TechnicalDataMode }
+     *     
+     */
+    public void setOperatingMode(TechnicalDataMode value) {
+        this.operatingMode = value;
     }
 
     /**

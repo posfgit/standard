@@ -1,21 +1,25 @@
 
 package ro.anre.posf.standard;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.UUID;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Se emite din aplicatia WebPOSF sau sistemul furnizorului.
+ * Se emite din aplicatia WebPOSF sau sistemul operatorului.
  * 
- * <p>Java class for NotificationPublishedBySupplier complex type.
+ * <p>Java class for NotificationErrorMessage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="NotificationPublishedBySupplier">
+ * &lt;complexType name="NotificationErrorMessage">
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.anre.ro/ANRESchema}Message">
  *       &lt;sequence>
@@ -34,7 +38,7 @@ import java.util.UUID;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NotificationPublishedBySupplier", propOrder = {
+@XmlType(name = "NotificationErrorMessage", propOrder = {
     "contract",
     "info",
     "dueDate",
@@ -42,8 +46,7 @@ import java.util.UUID;
     "reasonDesc",
     "refMessageID"
 })
-@XmlRootElement(name = "NotificationPublishedBySupplier")
-public class NotificationPublishedBySupplier
+public class NotificationErrorMessage
     extends Message
 {
 

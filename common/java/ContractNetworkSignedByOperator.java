@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.*;
 /**
  * Emis din WebPOSF/platforma Operator cand se semneaza contractul de retea de catre Operator.
 
- * 				
+ *                 
 
- * 				Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.
+ *                 Pentru tipul de contract TRANSPORT doar operatorul emite, ceilalti doar iau nota de mesaj.
  * 
  * <p>Java class for ContractNetworkSignedByOperator complex type.
  * 
