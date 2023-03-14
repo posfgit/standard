@@ -492,6 +492,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link NotificationErrorMessage }
+     * 
+     */
+    public NotificationErrorMessage createNotificationErrorMessage() {
+        return new NotificationErrorMessage();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link TechnicalData }{@code >}}
      * 
      */

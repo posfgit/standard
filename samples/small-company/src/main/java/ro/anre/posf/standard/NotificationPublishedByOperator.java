@@ -1,14 +1,10 @@
 
 package ro.anre.posf.standard;
 
-import java.time.LocalDate;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
+import java.util.UUID;
 
 
 /**
@@ -26,8 +22,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *         &lt;element name="contract" type="{http://www.anre.ro/ANRESchema}Contract"/>
  *         &lt;element name="info" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="dueDate" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *         &lt;element name="reason" type="{http://www.anre.ro/ANRESchema}ReasonType"/>
+ *         &lt;element name="reason" type="{http://www.anre.ro/ANRESchema}NotificationReasonType"/>
  *         &lt;element name="reasonDesc" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="refMessageID" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -42,7 +39,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "info",
     "dueDate",
     "reason",
-    "reasonDesc"
+    "reasonDesc",
+    "refMessageID"
 })
 @XmlRootElement(name = "NotificationPublishedByOperator")
 public class NotificationPublishedByOperator
@@ -58,8 +56,11 @@ public class NotificationPublishedByOperator
     protected LocalDate dueDate;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
-    protected ReasonType reason;
+    protected NotificationReasonType reason;
     protected String reasonDesc;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID refMessageID;
 
     /**
      * Gets the value of the contract property.
@@ -138,10 +139,10 @@ public class NotificationPublishedByOperator
      * 
      * @return
      *     possible object is
-     *     {@link ReasonType }
+     *     {@link NotificationReasonType }
      *     
      */
-    public ReasonType getReason() {
+    public NotificationReasonType getReason() {
         return reason;
     }
 
@@ -150,10 +151,10 @@ public class NotificationPublishedByOperator
      * 
      * @param value
      *     allowed object is
-     *     {@link ReasonType }
+     *     {@link NotificationReasonType }
      *     
      */
-    public void setReason(ReasonType value) {
+    public void setReason(NotificationReasonType value) {
         this.reason = value;
     }
 
@@ -179,6 +180,30 @@ public class NotificationPublishedByOperator
      */
     public void setReasonDesc(String value) {
         this.reasonDesc = value;
+    }
+
+    /**
+     * Gets the value of the refMessageID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public UUID getRefMessageID() {
+        return refMessageID;
+    }
+
+    /**
+     * Sets the value of the refMessageID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRefMessageID(UUID value) {
+        this.refMessageID = value;
     }
 
 }
