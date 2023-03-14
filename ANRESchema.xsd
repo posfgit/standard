@@ -228,13 +228,25 @@
 			<xs:enumeration value="ALTUL"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ReasonType">
+	<xs:simpleType name="NotificationReasonType">
 		<xs:annotation>
 			<xs:documentation>Tipuri de motiv pentru incetare</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="AJUNGERE_LA_TERMEN"/>
-			<xs:enumeration value="ANULARE_SCHIMBARE_FURNIZOR"/>
+			<xs:enumeration value="EROARE_PROCESARE">
+				<xs:annotation>
+					<xs:documentation>Folosit pentru a informa ca mesajul primit (semnare sau modificare) nu poate fi procesat de sistem (in special de catre OD cand emite NotificationPublishedByOperator). In campul reasonDesc se va completa descrierea problemei intampinate</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>			
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReasonType">
+		<xs:annotation>
+			<xs:documentation>Tipuri de motiv pentru incetare</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ANULARE_CERERE_CONTRACTARE"/>
 			<xs:enumeration value="DENUNTARE">
 				<xs:annotation>
 					<xs:documentation>Folosit doar la cererea clientului</xs:documentation>
@@ -256,17 +268,16 @@
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ACORDUL_PARTILOR"/>
+			<xs:enumeration value="ACORDUL_PARTILOR_INCETARE_LOC">
+				<xs:annotation>
+					<xs:documentation>Folosit in cazul in care se inceteaza cu acordul partilor, si cand se solicita ridicarea contorului</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="EROARE_MATERIALA">
 				<xs:annotation>
 					<xs:documentation>Folosit pentru a informa ca mesajul trimis anterior de semnare contract a fost introdus gresit</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="EROARE_PROCESARE">
-				<xs:annotation>
-					<xs:documentation>Folosit pentru a informa ca mesajul primit (semnare sau modificare) nu poate fi procesat de sistem (in special de catre OD cand emite NotificationPublishedByOperator). In campul reasonDesc se va completa descrierea problemei intampinate</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="ALTELE"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataStatus">
@@ -1271,8 +1282,13 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="reason" type="anre:ReasonType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reason" type="anre:NotificationReasonType" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="refMessageID" type="anre:Guid" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MessageID la care se face referire in cazul in care acesta trebuie indicat</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -1292,8 +1308,38 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
-					<xs:element name="reason" type="anre:ReasonType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reason" type="anre:NotificationReasonType" minOccurs="1" maxOccurs="1"/>
 					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="refMessageID" type="anre:Guid" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MessageID la care se face referire in cazul in care acesta trebuie indicat</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NotificationErrorMessage">
+		<xs:annotation>
+			<xs:documentation>Se emite din aplicatia WebPOSF sau sistemul operatorului.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="anre:Message">
+				<xs:sequence>
+					<xs:element name="contract" type="anre:Contract" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="info" type="xs:string" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>Descrierea motivelor pentru care a fost publicata aceasta notificare</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="dueDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reason" type="anre:NotificationReasonType" minOccurs="1" maxOccurs="1"/>
+					<xs:element name="reasonDesc" type="xs:string" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="refMessageID" type="anre:Guid" minOccurs="0" maxOccurs="1">
+						<xs:annotation>
+							<xs:documentation>MessageID la care se face referire in cazul in care acesta trebuie indicat</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

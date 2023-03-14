@@ -169,6 +169,33 @@ Notificarile care presupun un motiv anume vor contine si un camp denumit "reason
 Deschidem un issue de discutii pe tema notificarilor aici:
 https://github.com/posfgit/standard/issues/184
 
+## Motive de incetare contract 
+
+Incepand cu data 13.03.2023 platforma POSF nu va mai primi mesaje ContractCancelledBySupplier daca nu are completat campul reason cu una din valorile de mai jos:
+
+- ANULARE_CERERE_CONTRACTARE
+- DENUNTARE
+- DENUNTARE_INCETARE_LOC
+- REZILIERE
+- REZILIERE_NEPLATA
+- ACORDUL_PARTILOR
+- ACORDUL_PARTILOR_INCETARE_LOC
+- EROARE_MATERIALA
+
+Explicatii:
+
+- ANULARE_CERERE_CONTRACTARE - folosit de Client/Furnizor in intervalul celor 14 zile
+- DENUNTARE - Folosit doar la cererea clientului, fara ridicare contor
+- DENUNTARE_INCETARE_LOC - Folosit la cererea clientului cand specifica ca nu doreste sa mai consume la locul respectiv, avand ca implicatie ridicarea contorului doar la gaze naturale
+- REZILIERE - Folosit doar la cererea furnizorului, fara sa indice o problema de neplata
+- REZILIERE_NEPLATA - Folosit doar la cererea furnizorului doar in caz de neplata
+- ACORDUL_PARTILOR - Motiv de incetare contract cu acordul partilor
+- ACORDUL_PARTILOR_INCETARE_LOC - Motiv de incetare contract cu acordul partilor, cand clientul specifica ca nu doreste sa mai consume la locul respectiv, avand ca implicatie ridicarea contorului doar la gaze naturale
+- EROARE_MATERIALA - Folosit pentru a informa ca mesajul trimis anterior de semnare contract (doar mesajele CSBS) a fost introdus gresit. Pentru acest caz e nevoie ca previousSupplier sa publice in POSF CCI cu actualizarea datelor contractului existent astfel incat acesta sa intre din nou in vigoare. Fiind o eroare, autorul acestei erori e responsabil sa contacteze previous supplier si OD in afara POSF astfel incat sa se corecteze situatia contractuala si a consumului alocat.
+
+Aceste motive au fost in consultare cu FZ si OD  aici:
+https://github.com/posfgit/standard/issues/231
+
 # Exemplu de flux pornind de la ContractSignedBySupplier
 
 Dupa ce se emite mesajul ContractSignedBySupplier, avem urmatoarele mesaje:
