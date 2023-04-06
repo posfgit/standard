@@ -1738,6 +1738,10 @@ If message hold initialization data please fill "INIT" in this field</xs:documen
 			<xs:element name="messageID" type="anre:Guid" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="type" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="posfMessageID" type="anre:Guid" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>ID asignat de POSF la receptionarea mesajului pentru a garanta unicitatea. Este egal cu responseID, valoarea care se returneaza la incarcarea oricarui mesaj in sistem.</xs:documentation>
+				</xs:annotation>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Operator" type="anre:Operator"/>
@@ -1976,7 +1980,7 @@ Example for Bucharest center: sxfsccrhnq</xs:documentation>
 				<xs:sequence>
 					<xs:element name="responseID" type="anre:Guid" minOccurs="1" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>ID unic generat de POSF</xs:documentation>
+							<xs:documentation>responseID este un identificator unic generat de POSF care se transforma in campul posfMessageID care se ataseaza la orice mesaj receptionat in POSF</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
