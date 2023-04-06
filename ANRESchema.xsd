@@ -1742,6 +1742,7 @@ If message hold initialization data please fill "INIT" in this field</xs:documen
 				<xs:annotation>
 					<xs:documentation>ID asignat de POSF la receptionarea mesajului pentru a garanta unicitatea. Este egal cu responseID, valoarea care se returneaza la incarcarea oricarui mesaj in sistem.</xs:documentation>
 				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="Operator" type="anre:Operator"/>
