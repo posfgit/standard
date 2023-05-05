@@ -196,6 +196,17 @@ Explicatii:
 Aceste motive au fost in consultare cu FZ si OD  aici:
 https://github.com/posfgit/standard/issues/231
 
+# Referitor la schimbarile administrative 
+
+Schimbarile administrative (de ex. adresa sau denumire, fara schimbarea CUI/CNP-ului) se pot realiza in felul urmator:
+
+Prin API:
+- schimbarile de titular prin CSBS, iar alte schimbari administrative (de ex. adresa sau denumire, fara schimbarea CUI/CNP-ului) prin CCI.
+
+Prin web POSF:
+- pentru toate schimbarile administrative se trimite CSBS, iar al doilea index si prelungirea valabilitatii contractului se trimit cu CCI.
+
+
 # Exemplu de flux pornind de la ContractSignedBySupplier
 
 Dupa ce se emite mesajul ContractSignedBySupplier, avem urmatoarele mesaje:
