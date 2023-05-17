@@ -27,6 +27,7 @@ import java.util.UUID;
  *         &lt;element name="messageID" type="{http://www.anre.ro/ANRESchema}Guid"/>
  *         &lt;element name="timestamp" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
  *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="posfMessageID" type="{http://www.anre.ro/ANRESchema}Guid" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,7 +44,8 @@ import java.util.UUID;
     "description",
     "messageID",
     "timestamp",
-    "type"
+    "type",
+    "posfMessageID"
 })
 @XmlSeeAlso({
     NotificationErrorMessage.class,
@@ -136,6 +138,9 @@ public class Message {
     protected ZonedDateTime timestamp;
     @XmlElement(required = true)
     protected String type;
+    @XmlElement(type = String.class)
+    @XmlJavaTypeAdapter(Adapter3 .class)
+    protected UUID posfMessageID;
 
     /**
      * Gets the value of the authorID property.
@@ -303,6 +308,30 @@ public class Message {
      */
     public void setType(String value) {
         this.type = value;
+    }
+
+    /**
+     * Gets the value of the posfMessageID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public UUID getPosfMessageID() {
+        return posfMessageID;
+    }
+
+    /**
+     * Sets the value of the posfMessageID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPosfMessageID(UUID value) {
+        this.posfMessageID = value;
     }
 
 }

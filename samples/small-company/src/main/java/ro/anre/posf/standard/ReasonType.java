@@ -22,6 +22,7 @@ import java.util.List;
  *     &lt;enumeration value="REZILIERE"/>
  *     &lt;enumeration value="REZILIERE_NEPLATA"/>
  *     &lt;enumeration value="ACORDUL_PARTILOR"/>
+ *     &lt;enumeration value="ACORDUL_PARTILOR_INCETARE_LOC"/>
  *     &lt;enumeration value="EROARE_MATERIALA"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -58,6 +59,12 @@ public enum ReasonType {
      */
     REZILIERE_NEPLATA,
     ACORDUL_PARTILOR,
+
+    /**
+     * Folosit in cazul in care se inceteaza cu acordul partilor, si cand se solicita ridicarea contorului
+     * 
+     */
+    ACORDUL_PARTILOR_INCETARE_LOC,
 
     /**
      * Folosit pentru a informa ca mesajul trimis anterior de semnare contract a fost introdus gresit
