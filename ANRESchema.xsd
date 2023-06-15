@@ -864,6 +864,11 @@ ca de exemplu "1026-1437922-146504496"</xs:documentation>
 					<xs:documentation>Daca este delegata o parte responsabila cu echilibrarea</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="isSelfSupplierEE" type="xs:boolean" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Autofurnizare</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="preCompany" type="anre:Company" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Parte responsabila cu echilibrarea</xs:documentation>
