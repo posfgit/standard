@@ -9,6 +9,7 @@ import com.lowagie.text.pdf.AcroFields;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfStamper;
 import com.lowagie.text.pdf.PushbuttonField;
+import com.opencsv.CSVWriter;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +46,7 @@ public class PDFService {
         ScriptEngine engine = manager.getEngineByName("js");
 
         String outputFileName = String.join("_filled.", fileName.split("\\.(?=[^\\.]+$)"));
-        File outputFile = new File( outputFileName);
+        File outputFile = new File(outputFileName);
 
         FileOutputStream outputStream = new FileOutputStream(outputFile);
         PdfStamper stamper = new PdfStamper(reader, outputStream);
@@ -53,7 +54,7 @@ public class PDFService {
         AcroFields form = stamper.getAcroFields();
         String xmlawd = Files.readString(Path.of(xmlFile), Charset.defaultCharset());
         String xmlawdOffer = Files.readString(Path.of(xmlFileOffer), Charset.defaultCharset());
-        Message msg =  xmlMapper.readValue(xmlawd, Message.class);
+        Message msg = xmlMapper.readValue(xmlawd, Message.class);
 
         Contract contract = (Contract) msg
                 .getClass()
@@ -67,51 +68,67 @@ public class PDFService {
         engine.eval("var offer = " + jsonAsStringOffer);
 
         List<String> ignoredKeys = List.of("client.signature", "supplier.signature", "operator.signature");
+        File file = new File("pdf-result.csv");
+        try {
+            FileWriter outputfile = new FileWriter(file);
+            CSVWriter writer = new CSVWriter(outputfile);
+            String[] header = {"Field", "OK/NOK"};
+            writer.writeNext(header);
 
 
-        for (Object fieldKey : form.getFields().keySet()){
-            String val = "";
-            if(!ignoredKeys.contains(fieldKey.toString())){
-                try{
-                    val =  engine.eval(fieldKey.toString()).toString();
-                }catch (ScriptException | NullPointerException e){
-                    System.out.println(e.getMessage() + fieldKey);
-                }
+            for (Object fieldKey : form.getFields().keySet()) {
+                String val = "";
+                if (!ignoredKeys.contains(fieldKey.toString())) {
+                    String[] data2 = {fieldKey.toString(), "OK"};
+                    try {
+                        val = engine.eval(fieldKey.toString()).toString();
+                    } catch (ScriptException | NullPointerException  e) {
+                        data2[1] = ("NOK");
+                    }
 
-                if(form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_CHECKBOX){
-                    form.setField(fieldKey.toString(), getCheckBoxValue(val));
-                }else if(form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_RADIOBUTTON){
-                    form.setField(fieldKey.toString(), getRadioValue(val, fieldKey.toString(), form));
-                }else{
-                    form.setField(fieldKey.toString(), val);
+                    if (form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_CHECKBOX) {
+                        form.setField(fieldKey.toString(), getCheckBoxValue(val));
+                    } else if (form.getFieldType(fieldKey.toString()) == AcroFields.FIELD_TYPE_RADIOBUTTON) {
+                        form.setField(fieldKey.toString(), getRadioValue(val, fieldKey.toString(), form));
+                    } else {
+                        form.setField(fieldKey.toString(), val);
+                    }
+
+                    writer.writeNext(data2);
                 }
             }
-        }
 
-        addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
-        addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
-        addSignature(form, "operator.signature", OPERATOR_SIGNATURE_NAME);
+            addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
+            addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
+            addSignature(form, "operator.signature", OPERATOR_SIGNATURE_NAME);
 
 //        stamper.setFormFlattening(true);
-        stamper.close();
-        reader.close();
+            stamper.close();
+            reader.close();
 
-        outputStream.flush();
-        outputStream.close();
+            outputStream.flush();
+            outputStream.close();
+
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
-    private String getCheckBoxValue(String val){
-        if(Boolean.parseBoolean(val)){
+    private String getCheckBoxValue(String val) {
+        if (Boolean.parseBoolean(val)) {
             return "Yes";
-        }else{
+        } else {
             return "Off";
         }
     }
-    private String getRadioValue(String val, String key, AcroFields form){
-        if(Boolean.parseBoolean(val)){
+
+    private String getRadioValue(String val, String key, AcroFields form) {
+        if (Boolean.parseBoolean(val)) {
             return form.getAppearanceStates(key)[0];
-        }else{
+        } else {
             return "Off";
         }
     }
@@ -119,12 +136,12 @@ public class PDFService {
 
     @SneakyThrows
     private void addSignature(AcroFields form, String signature, String signatureName) {
-        if(signatureName == null){
+        if (signatureName == null) {
             return;
         }
 
         PushbuttonField ad = form.getNewPushbuttonFromField(signature);
-        if(ad == null){
+        if (ad == null) {
             return;
         }
 
