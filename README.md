@@ -160,12 +160,13 @@ Introducem o categorie noua de mesaje numite notificari pentru a fi folosite de 
 |NotificationPublishedBySupplier|Emis de furnizor prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Furnizor|Toate partile din contract| |
 |NotificationPublishedByOperator|Emis de operator prin WebPOSF sau sistemul propriu pentru a notifica partile dintr-un contract despre potentiala activare a unei clauze contractuale la o data limita. | WebPOSF sau Operator|Toate partile din contract| |
 
-Notificarile nu sunt  elemente obligatorii, sunt privite ca optionale in sistemul POSF, in sensul in care daca NU sunt urmate de un mesaj ferm de tip Contract* acestea nu vor produce nici un efect.
+Notificarile emise de POSF, nu sunt considerate elemente obligatorii în sistemul POSF. Aceste notificări au rol de informare. Cu alte cuvinte, dacă aceste notificări nu sunt urmate de un mesaj ferm de tip Contract*, atunci ele nu vor declansa in POSF nicio actiune.
+
+Indiferent dacă se primesc sau nu NotificationDeadlineReached sau NotificationDeadlineDue, OR are obligatia să ia în considerare data de expirare (expirationDate) din mesajele ContractSignedBySupplier, ContractChangedInfo, ContractTransferredToFUIByOperator și ContractTransferredToFUIByAnre și să acționeze în POSF conform regulamentului. Aceste mesaje sunt esențiale pentru a se asigura de faptul că au informațiile necesare despre contracte și termenele limită asociate acestora.
 
 Notificarile care se trimit in avans detin un camp numit "dueDate" prin care se va specifica data de la care va intra in efectivitate respectiva modificare de contract.
 
-Notificarile care presupun un motiv anume vor contine si un camp denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem. Suplimentar exista si un camp "reasonDesc" in care se poate completa text liber.
-
+Notificarile care presupun un motiv anume vor contine si un camp denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem.
 Deschidem un issue de discutii pe tema notificarilor aici:
 https://github.com/posfgit/standard/issues/184
 
