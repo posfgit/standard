@@ -167,6 +167,7 @@ Indiferent dacă se primesc sau nu NotificationDeadlineReached sau NotificationD
 Notificarile care se trimit in avans detin un camp numit "dueDate" prin care se va specifica data de la care va intra in efectivitate respectiva modificare de contract.
 
 Notificarile care presupun un motiv anume vor contine si un camp denumit "reason" de tip nomanclator prin care se poate transmite intre parti motivul notificarii. In schema XSD gasiti tipurile de motive acceptate de sistem.
+
 Deschidem un issue de discutii pe tema notificarilor aici:
 https://github.com/posfgit/standard/issues/184
 
