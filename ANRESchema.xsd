@@ -288,6 +288,7 @@
 			<xs:enumeration value="CONECTAT"/>
 			<xs:enumeration value="DECONECTAT"/>
 			<xs:enumeration value="INACTIV"/>
+			<xs:enumeration value="DEZAFECTAT"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TechnicalDataType">
