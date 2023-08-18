@@ -2071,7 +2071,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 			</xs:element>
 			<xs:element name="counterIndexValue" type="xs:string" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>Valoarea citita a contorului</xs:documentation>
+					<xs:documentation>Valoarea citita a contorului , poate fi doar o singura valoare (exemplu: 140.2) sau mai multe in formatul: numar cadran:valoare | numar cadran:valoare ( exemplu:  6.4.6.8:102.23 | 6.4.6.1:100.1)  </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="counterSeries" type="xs:string" minOccurs="0" maxOccurs="1">
