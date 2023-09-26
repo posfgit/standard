@@ -225,6 +225,13 @@ Diagrama de mai jos prezinta fluxul pe care mesajul ContractNetworkSignedBySuppl
 
 ![ContractNEtworkSignedBySupplier diagram](images/messagepath.png)
 
+
+# Precizari privind starea locurilor de consum:
+- CONECTAT - locul de consum este conectat, poate avea contracte de furnizare active, se pot adauga contracte noi de furnizare sau se pot realiza schimbari de furnizor
+- INACTIV - locul de consum nefinalizat, fara contor montat, se va trece in stare CONECTAT pentru a adauga contracte de furnizare
+- DECONECTAT - locul de consum este deconectat, EE: nu mai sunt contracte de furnizare active, se pot adauga contracte noi de furnizare, GN: s-a deconectat pentru neplata, se pot realiza schimbari de furnizor
+- DEZAFECTAT - locul de consum se poate trece in stare dezafectat doar daca nu mai sunt contracte active si nu se mai pot incheia contracte pe locul de consum in status dezafectat - Atentie! Urmeaza sa fie implementat pe mediul de productie.
+
 # Inrolarea in sistem, migrarea datelor existente
 
 Inrolarea unui nou operator/furnizor in sistem presupune optinerea datelor de conectare pentru persoana juridica (user/parola/identificator unic) urmata de introducerea in sistem a datelor pe care ecesta le detine, date care se afla sub incidenta regulamentului, cum ar fi: contracte, locuri de consum, etc.
