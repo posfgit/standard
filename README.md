@@ -39,7 +39,7 @@ Sistemul POSF va fi responsabil cu rutarea mesajelor intre cozile de mesaje ale 
 
 ## Lista API in format SWAGGER
 
-Lista tuturor metodelor ce pot fi apelate prin API o gasiti aici (https://posf-beta.anre.ro/broker/swagger-ui/index.html#/)
+Lista tuturor metodelor ce pot fi apelate prin API o gasiti aici (https://posf-staging.anre.ro/broker/swagger-ui/index.html#/)
 
 Principalele metode sunt:
 1. /poolMessage - cere ultimul mesaj primit si trece la urmatorul
