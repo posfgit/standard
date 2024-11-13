@@ -280,7 +280,7 @@ Fisierele vor respecta urmatoarele conventii:
 
 1. Toate campurile care se vor completa automat vor fi de tipul FormField in PDF
 2. Toate campurile vor respecta conventia denumirii urmand calea elementului din XML. De exemplu daca intr-un camp se doreste sa se completeze automat numele operatorului de retea, acesta va fi denumit "contract.operator.name"
-3. Concatenarea a doua valori intr-un camp poate fi facuta astfel: pentru a completa "nume prenume" se va denumi campul despectiv astfel: ``contract.client.person.firstName + ' ' contract.client.person.lastName``
+3. Concatenarea a doua valori intr-un camp poate fi facuta astfel: pentru a completa "nume prenume" se va denumi campul despectiv astfel: ``contract.client.person.firstName + ' ' + contract.client.person.lastName``
 4. Elementele de tip bifa sau cerc bifat (checkbox/radiobutton) respecta aceeasi denumire. Pentru a afisa bifa in functie de o conditie se poate folosi urmatoarea sintaxa: ``contract.client.finalClientType == 'HOUSEHOLD'``
 5. Elementele cu aparitie multipla se acceseaza folosind paranteze patrate ca pentru un sir cu index incepand de la zero ``contract.consumption[0].value``
 6. Sintaxa folosita mai sus se interpreteaza in limbaj JavaScript. Mai multe detalii tehnice gasiti in exemplul Java [small-company](./samples/small-company/src/main/java/ro/anre/posf/PDFService.java)
