@@ -171,6 +171,27 @@ Notificarile care presupun un motiv anume vor contine si un camp denumit "reason
 Deschidem un issue de discutii pe tema notificarilor aici:
 https://github.com/posfgit/standard/issues/184
 
+## Detalii privind schimbarea de furnizor 
+
+Precizam faptul ca mentiunile de mai jos nu se aplica pentru contractele noi, ci doar pentru schimbarea de furnizor.
+
+*Gaze Naturale - CF - Persoane Juridice*
+- trimiterea unui mesaj de tip ContractSignedBySupplier, pentru orice contract care este pe acelasi loc de consum (acelasi place_id), este diferit de contractul curent si nu este INCETAT sau SUSPENDAT, va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE.
+
+*Gaze Naturale - CF - Persoane Fizice*
+- trimiterea unui mesaj de tip ContractSignedBySupplier, pentru orice contract care este pe acelasi loc de consum (acelasi place_id), este diferit de contractul curent si nu este INCETAT sau SUSPENDAT, va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE.
+
+*Energie Electrica - CF - Persoane Fizice*
+- trimiterea unui mesaj de tip ContractSignedBySupplier, pentru orice contract care este incheiat cu o persoana fizica, este diferit de contractul curent, este pe acelasi loc de consum (acelasi place_id) si nu este INCETAT sau SUSPENDAT, va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE.
+- trimiterea unui mesaj de tip ContractSignedBySupplier nu închide contractul actual pentru persoane juridice, fiind necesar ca furnizorul actual (previousSupplier) sa trimita un ContractCancelledBySupplier pentru aceste situatii.
+
+*Energie Electrica - CF - Persoane Juridice*
+- trimiterea unui mesaj de tip ContractSignedBySupplier, pentru orice contract care este pe acelasi loc de consum (acelasi place_id), este diferit de contractul curent, nu este INCETAT sau SUSPENDAT si este incheiat cu acelasi furnizor sau cu acelasi furnizor precedent daca exista, va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE.
+- trimiterea unui mesaj de tip ContractSignedBySupplier nu închide contractul actual, daca furnizorul contractului actual este diferit de furnizorul nou sau furnizorul precedent, fiind necesar să trimiteți un ContractCancelledBySupplier pentru aceste situatii.
+
+*Cazuri exceptionale - prin INIT*
+Pentru toate situatiile mentionate mai sus privind statusul ACTIV_IN_CURS_DE_SCHIMBARE, daca se introduce ContractSignedBySupplier cu INIT (date retroactive), nu se va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE, ci se va schimba statusul in INCETAT. 
+
 ## Motive de incetare contract 
 
 Incepand cu data 13.03.2023 platforma POSF nu va mai primi mesaje ContractCancelledBySupplier daca nu are completat campul reason cu una din valorile de mai jos:
