@@ -173,7 +173,7 @@ https://github.com/posfgit/standard/issues/184
 
 ## Detalii privind schimbarea de furnizor 
 
-Precizam faptul ca mentiunile de mai jos nu se aplica pentru contractele noi, ci doar pentru schimbarea de furnizor.
+Precizam faptul ca mentiunile de mai jos se aplica pentru cererile de schimbare a furnizorului.
 
 *Gaze Naturale - CF - Persoane Juridice*
 - trimiterea unui mesaj de tip ContractSignedBySupplier, pentru orice contract care este pe acelasi loc de consum (acelasi place_id), este diferit de contractul curent si nu este INCETAT sau SUSPENDAT, va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE.
