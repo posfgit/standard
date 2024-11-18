@@ -190,7 +190,7 @@ Precizam faptul ca mentiunile de mai jos nu se aplica pentru contractele noi, ci
 - trimiterea unui mesaj de tip ContractSignedBySupplier nu închide contractul actual, daca furnizorul contractului actual este diferit de furnizorul nou sau furnizorul precedent, fiind necesar să trimiteți un ContractCancelledBySupplier pentru aceste situatii.
 
 *Cazuri exceptionale - prin INIT*
-Pentru toate situatiile mentionate mai sus privind statusul ACTIV_IN_CURS_DE_SCHIMBARE, daca se introduce ContractSignedBySupplier cu INIT (date retroactive), nu se va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE, ci se va schimba statusul in INCETAT. 
+- pentru toate situatiile mentionate mai sus privind statusul ACTIV_IN_CURS_DE_SCHIMBARE, daca se introduce ContractSignedBySupplier cu INIT (date retroactive), nu se va schimba statusul in ACTIV_IN_CURS_DE_SCHIMBARE, ci se va schimba statusul in INCETAT. 
 
 ## Motive de incetare contract 
 
