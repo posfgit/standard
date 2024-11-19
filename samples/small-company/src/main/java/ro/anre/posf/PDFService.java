@@ -95,14 +95,15 @@ public class PDFService {
                     }
 
                     writer.writeNext(data2);
-                }else {
+                }else if(fieldKey.toString().contains("client.signature") && msg.getType().equals("ContractSignedByClient")){
                     addSignature(form, fieldKey.toString(), CLIENT_SIGNATURE_NAME);
+                }else if(fieldKey.toString().contains("supplier.signature") && msg.getType().equals("ContractSignedBySupplier")){
+                    addSignature(form, fieldKey.toString(), SUPPLIER_SIGNATURE_NAME);
+                }else if(fieldKey.toString().contains("operator.signature") && msg.getType().equals("ContractNetworkSignedByOperator")){
+                    addSignature(form, fieldKey.toString(), OPERATOR_SIGNATURE_NAME);
                 }
             }
 
-            addSignature(form, "client.signature", CLIENT_SIGNATURE_NAME);
-            addSignature(form, "supplier.signature", SUPPLIER_SIGNATURE_NAME);
-            addSignature(form, "operator.signature", OPERATOR_SIGNATURE_NAME);
 
 //        stamper.setFormFlattening(true);
             stamper.close();
