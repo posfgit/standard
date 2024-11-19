@@ -78,7 +78,7 @@ public class PDFService {
 
             for (Object fieldKey : form.getFields().keySet()) {
                 String val = "";
-                if (!ignoredKeys.contains(fieldKey.toString())) {
+                if (ignoredKeys.stream().noneMatch(ik -> fieldKey.toString().contains(ik))) {
                     String[] data2 = {fieldKey.toString(), "OK"};
                     try {
                         val = engine.eval(fieldKey.toString()).toString();
@@ -95,6 +95,8 @@ public class PDFService {
                     }
 
                     writer.writeNext(data2);
+                }else {
+                    addSignature(form, fieldKey.toString(), CLIENT_SIGNATURE_NAME);
                 }
             }
 
