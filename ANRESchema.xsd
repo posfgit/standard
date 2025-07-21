@@ -2168,7 +2168,7 @@ nr cadran:valoare | nr cadran:valoare |</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="anre:TechnicalData">
 				<xs:sequence>
-					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="1" maxOccurs="1">
+					<xs:element name="category" type="anre:ConsumptionCategory" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
 							<xs:documentation>Categorie de consum</xs:documentation>
 						</xs:annotation>
